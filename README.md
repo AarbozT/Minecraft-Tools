@@ -29,11 +29,12 @@ Some of this things include:
 - And a lot of other planned tools in the near future, so please stay tuned for more...
 
 It also contains a bit of publicity in it's menu, with links to the free music albums made by myself (Júpiter Mauro),
-and 2 friends of mine, David Maeso and Fratelli Stellari. Finally it also includes an internal wiki about the Hermitcraft server.
+and 2 friends of mine, David Maeso and Fratelli Stellari. Finally it also includes an internal wiki about the Hermitcraft server and it's members.
 
-Anyone is more than welcome to collaborate in this project and make more perfect and bigger. I'm opened to listen any suggestion,
-although some things are difficult to make, so maybe you're the one that can help to improve it or add new features to it.
+Anyone is more than welcome to collaborate in this project and make it more perfect and bigger. I'm opened to listen any suggestion, although some things are difficult to make, so maybe you're the one that can help to improve it or add new features to it.
 
 Also feel free to use any part of it's code in your own project, but please remember to give credit to me as the original author.
+
+Note: the application shows English as it's language, but internally is programmed in Spanish, which is my country.
 
 Thanks a lot for all your help and have a great day! ;-)
