@@ -1,0 +1,43 @@
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\bin\Debug\Minecraft Tools.exe.config
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\bin\Debug\Minecraft Tools.exe
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\bin\Debug\Minecraft Tools.pdb
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Acerca.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Administrador_Copias_Seguridad.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Afinador_Bloques_Nota.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Exportador_Estructuras_Internas.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Codificador_Descodificador_Archivos.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Salvapantallas_El_Fin.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Secretos.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Visor_Nombres_Encantamientos.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Plantilla.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Visor_Densidades_Bloques.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Descagador_Skins_Automático.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Diseñador_Estandartes_Escudos.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Exportador_Estructuras_Pintadas.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Gracias.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Información_Miembros_Hermitcraft.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Información_Bloques.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Nombre_Usuario.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Reconstructor_Estructura_Archivos_Recursos.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Reloj_Minecraft_Tiempo_Real.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Selector_Herramientas.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Visor_Ayuda.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Buscador_Chunks_Limos.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Calculadora_Infinita_Semillas_Mundos.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Generador_Miniaturas_Color_Medio.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Comparador_Versiones_JAR.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Depurador.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Generador_Estructuras_Personalizadas.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Generador_Pixel_Art.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Principal.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Properties.Resources.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Selector_Bloques.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Visor_Cuadros.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Visor_Información_Bloques.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Visor_Información_Entidades.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Visor_Mundos_Realista_2D.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Visor_NBT.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft_Tools.Ventana_Visor_Ofertas_Aldeanos.resources
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft Tools.csproj.GenerateResource.Cache
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft Tools.exe
+C:\Users\Jupisoft\documents\visual studio 2015\Projects\Minecraft Tools\Minecraft Tools\obj\Debug\Minecraft Tools.pdb
