@@ -1,3 +1,5 @@
+* EDIT: I haven't uploaded all the resources yet... sorry.
+
 # Minecraft-Tools
 Minecraft Tools for 1.13.1+ made in C#
 
