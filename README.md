@@ -1,5 +1,9 @@
 # Minecraft-Tools
-Minecraft Tools for 1.13.1+ made in C#
+Minecraft Tools for 1.13.1+ made in C#:
+
+* EDIT: a file named "A24938DB" with 26.601 real minecraft skins inside is missing from "Minecraft-Tools-master\Minecraft Tools\bin\Debug\Secrets\Skins\" because is over 25 MB (it's about 57 MB), so if you want to have it, now you can download from here, but please add it manually to the path above:
+
+http://www.mediafire.com/file/o2genjqdcekxa65/A24938DB/file
 
 Hello everyone my goal is to have an "all-in-one" free Minecraft tool, that could be used for anything Minecraft related. I have no intention to compete against others to see which one makes the best tool, but instead compete against myself to see how far I'll be able to develop it. I've never wanted any fame or money, I'm just looking for perfection in my creations, and to achieve this I knew I had to release it's source code to be able to help the Minecraft community as well, and since several people asked me to publish my app here, now you'll also be able to collaborate with your own ideas to improve it even more, so feel free to download it and play with it's code. Thanks a lot for your attention! :-)
 
