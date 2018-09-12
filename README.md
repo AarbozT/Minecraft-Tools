@@ -1,7 +1,7 @@
 # Minecraft-Tools
 Minecraft Tools for 1.13.1+ made in C#:
 
-* EDIT: a file named "A24938DB" with 26.601 real Minecraft skins inside is missing from "Minecraft-Tools-master\Minecraft Tools\bin\Debug\Secrets\Skins\" because is over 25 MB (it's about 57 MB), so if you want to have it, now you can download from here, but please add it manually to the path above:
+* EDIT: a file named "A24938DB" with 26.601 real Minecraft skins inside is missing from "Minecraft-Tools-master\Minecraft Tools\bin\Debug\Secrets\Skins\" because is over 25 MB (it's about 57 MB), so if you want to have it, now you can download it from here, but please add it manually to the path described above once you've downloaded the source code of this application and extracted it from it's zip file:
 
 http://www.mediafire.com/file/o2genjqdcekxa65/A24938DB/file
 
