@@ -1,10 +1,9 @@
-* EDIT: I haven't uploaded all the resources yet... sorry.
-
 # Minecraft-Tools
 Minecraft Tools for 1.13.1+ made in C#
 
-Hello everyone my goal is to have an "all-in-one" free Minecraft tool, that could be used for anything Minecraft related.
-Some of this things include:
+Hello everyone my goal is to have an "all-in-one" free Minecraft tool, that could be used for anything Minecraft related. I have no intention to compete against others to see which one makes the best tool, but instead compete against myself to see how far I'll be able to develop it. I've never wanted any fame or money, I'm just looking for perfection in my creations, and to achieve this I knew I had to release it's source code to be able to help the Minecraft community as well, and since several people asked me to publish my app here, now you'll also be able to collaborate with your own ideas to improve it even more, so feel free to download it and play with it's code. Thanks a lot for your attention! :-)
+
+Some of it's main features include:
 
 - Pixel art generator with the highest quality available
 - NBT viewer and editor (editor not yet implemented)
