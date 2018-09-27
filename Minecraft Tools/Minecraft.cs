@@ -1282,7 +1282,7 @@ namespace Minecraft_Tools
                         Diccionario_Índice_Estructuras_Ocultas.Add(Diccionario_Nombre_Índice["minecraft:sea_lantern"], null);
                         Diccionario_Índice_Estructuras_Ocultas.Add(Diccionario_Nombre_Índice["minecraft:sea_pickle"], null);
                         Diccionario_Índice_Estructuras_Ocultas.Add(Diccionario_Nombre_Índice["minecraft:sign"], null);
-                        Diccionario_Índice_Estructuras_Ocultas.Add(Diccionario_Nombre_Índice["minecraft:snow_block"], null);
+                        //Diccionario_Índice_Estructuras_Ocultas.Add(Diccionario_Nombre_Índice["minecraft:snow_block"], null); // From Igloos, but fails on Ice Spike biomes.
                         Diccionario_Índice_Estructuras_Ocultas.Add(Diccionario_Nombre_Índice["minecraft:spawner"], null);
                         Diccionario_Índice_Estructuras_Ocultas.Add(Diccionario_Nombre_Índice["minecraft:spruce_door"], null);
                         Diccionario_Índice_Estructuras_Ocultas.Add(Diccionario_Nombre_Índice["minecraft:spruce_fence"], null);

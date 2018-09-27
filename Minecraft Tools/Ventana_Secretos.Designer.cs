@@ -474,7 +474,7 @@
             this.Grupo_Códigos_Fuente.Size = new System.Drawing.Size(162, 383);
             this.Grupo_Códigos_Fuente.TabIndex = 4;
             this.Grupo_Códigos_Fuente.TabStop = false;
-            this.Grupo_Códigos_Fuente.Text = "Minecraft source codes";
+            this.Grupo_Códigos_Fuente.Text = "Minecraft sources";
             // 
             // textBox22
             // 

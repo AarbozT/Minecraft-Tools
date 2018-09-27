@@ -136,7 +136,7 @@
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Aleatoria = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Separador_8 = new System.Windows.Forms.ToolStripSeparator();
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Visor_Ayuda = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Interno = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Excepciones = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Cambiar_Nombre_Usuario = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Acerca = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Herramientas_Separador_1 = new System.Windows.Forms.ToolStripSeparator();
@@ -179,7 +179,8 @@
             this.Menú_Principal_Herramienta_Predeterminada_Separador_1 = new System.Windows.Forms.ToolStripSeparator();
             this.Menú_Principal_Ayuda = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Ayuda_Visor_Ayuda = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Ayuda_Depurador_Interno = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menú_Principal_Ayuda_Depurador_Excepciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menú_Principal_Ayuda_Registro_Cambios = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Ayuda_Cambiar_Nombre_Usuario = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Ayuda_Separador_1 = new System.Windows.Forms.ToolStripSeparator();
             this.Menú_Principal_Ayuda_Reddit_Hermitcraft = new System.Windows.Forms.ToolStripMenuItem();
@@ -218,10 +219,30 @@
             this.Temporizador_Principal = new System.Windows.Forms.Timer(this.components);
             this.Picture_Hermitcraft = new System.Windows.Forms.PictureBox();
             this.Picture_Splash = new System.Windows.Forms.PictureBox();
+            this.Picture_Personaje_Derecha = new System.Windows.Forms.PictureBox();
+            this.Tabla_Inferior = new System.Windows.Forms.TableLayoutPanel();
+            this.Picture_Personaje_Izquierda = new System.Windows.Forms.PictureBox();
+            this.Picture_Minecraft = new System.Windows.Forms.PictureBox();
+            this.Picture_Mojang = new System.Windows.Forms.PictureBox();
+            this.Picture_Jupisoft = new System.Windows.Forms.PictureBox();
+            this.Tabla_Central = new System.Windows.Forms.TableLayoutPanel();
+            this.Tabla_Superior = new System.Windows.Forms.TableLayoutPanel();
+            this.Picture_Mineral_Derecha = new System.Windows.Forms.PictureBox();
+            this.Picture_Mineral_Izquierda = new System.Windows.Forms.PictureBox();
             this.Menú_Principal.SuspendLayout();
             this.Barra_Estado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Hermitcraft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Splash)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Personaje_Derecha)).BeginInit();
+            this.Tabla_Inferior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Personaje_Izquierda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Minecraft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Mojang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Jupisoft)).BeginInit();
+            this.Tabla_Central.SuspendLayout();
+            this.Tabla_Superior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Mineral_Derecha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Mineral_Izquierda)).BeginInit();
             this.SuspendLayout();
             // 
             // Menú_Principal
@@ -238,7 +259,7 @@
             this.Menú_Principal_Ayuda});
             this.Menú_Principal.Location = new System.Drawing.Point(0, 0);
             this.Menú_Principal.Name = "Menú_Principal";
-            this.Menú_Principal.Size = new System.Drawing.Size(884, 24);
+            this.Menú_Principal.Size = new System.Drawing.Size(984, 24);
             this.Menú_Principal.TabIndex = 0;
             this.Menú_Principal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_Principal_KeyDown);
             // 
@@ -926,7 +947,7 @@
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Aleatoria,
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Separador_8,
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Visor_Ayuda,
-            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Interno,
+            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Excepciones,
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Cambiar_Nombre_Usuario,
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Acerca});
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada.ForeColor = System.Drawing.Color.Black;
@@ -1197,13 +1218,13 @@
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Visor_Ayuda.Text = "Help viewer";
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Visor_Ayuda.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Click);
             // 
-            // Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Interno
+            // Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Excepciones
             // 
-            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Interno.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Interno.Name = "Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Interno";
-            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Interno.Size = new System.Drawing.Size(328, 22);
-            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Interno.Text = "Internal debugger";
-            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Interno.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Click);
+            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Excepciones.ForeColor = System.Drawing.Color.Black;
+            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Excepciones.Name = "Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Excepciones";
+            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Excepciones.Size = new System.Drawing.Size(328, 22);
+            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Excepciones.Text = "Exception debugger";
+            this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Excepciones.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Click);
             // 
             // Menú_Principal_Herramientas_Herramienta_Predeterminada_Cambiar_Nombre_Usuario
             // 
@@ -1229,7 +1250,7 @@
             // Menú_Principal_Herramientas_Visor_Mundos_Realista_2D
             // 
             this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.Image = global::Minecraft_Tools.Properties.Resources.Minecraft;
+            this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.Image = global::Minecraft_Tools.Properties.Resources.Visor_Mundos_2D;
             this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.Name = "Menú_Principal_Herramientas_Visor_Mundos_Realista_2D";
             this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.ShortcutKeys = System.Windows.Forms.Keys.F5;
             this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.Size = new System.Drawing.Size(397, 22);
@@ -1557,7 +1578,8 @@
             // 
             this.Menú_Principal_Ayuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menú_Principal_Ayuda_Visor_Ayuda,
-            this.Menú_Principal_Ayuda_Depurador_Interno,
+            this.Menú_Principal_Ayuda_Depurador_Excepciones,
+            this.Menú_Principal_Ayuda_Registro_Cambios,
             this.Menú_Principal_Ayuda_Cambiar_Nombre_Usuario,
             this.Menú_Principal_Ayuda_Separador_1,
             this.Menú_Principal_Ayuda_Reddit_Hermitcraft,
@@ -1589,14 +1611,23 @@
             this.Menú_Principal_Ayuda_Visor_Ayuda.Text = "Help viewer...";
             this.Menú_Principal_Ayuda_Visor_Ayuda.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Visor_Ayuda_Click);
             // 
-            // Menú_Principal_Ayuda_Depurador_Interno
+            // Menú_Principal_Ayuda_Depurador_Excepciones
             // 
-            this.Menú_Principal_Ayuda_Depurador_Interno.Image = global::Minecraft_Tools.Properties.Resources.Excepción;
-            this.Menú_Principal_Ayuda_Depurador_Interno.Name = "Menú_Principal_Ayuda_Depurador_Interno";
-            this.Menú_Principal_Ayuda_Depurador_Interno.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.Menú_Principal_Ayuda_Depurador_Interno.Size = new System.Drawing.Size(457, 22);
-            this.Menú_Principal_Ayuda_Depurador_Interno.Text = "Internal debuger...";
-            this.Menú_Principal_Ayuda_Depurador_Interno.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Depurador_Interno_Click);
+            this.Menú_Principal_Ayuda_Depurador_Excepciones.Image = global::Minecraft_Tools.Properties.Resources.Excepción;
+            this.Menú_Principal_Ayuda_Depurador_Excepciones.Name = "Menú_Principal_Ayuda_Depurador_Excepciones";
+            this.Menú_Principal_Ayuda_Depurador_Excepciones.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.Menú_Principal_Ayuda_Depurador_Excepciones.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Depurador_Excepciones.Text = "Exception debugger...";
+            this.Menú_Principal_Ayuda_Depurador_Excepciones.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Depurador_Excepciones_Click);
+            // 
+            // Menú_Principal_Ayuda_Registro_Cambios
+            // 
+            this.Menú_Principal_Ayuda_Registro_Cambios.Image = global::Minecraft_Tools.Properties.Resources.Registro_Cambios;
+            this.Menú_Principal_Ayuda_Registro_Cambios.Name = "Menú_Principal_Ayuda_Registro_Cambios";
+            this.Menú_Principal_Ayuda_Registro_Cambios.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.Menú_Principal_Ayuda_Registro_Cambios.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Registro_Cambios.Text = "Change log...";
+            this.Menú_Principal_Ayuda_Registro_Cambios.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Registro_Cambios_Click);
             // 
             // Menú_Principal_Ayuda_Cambiar_Nombre_Usuario
             // 
@@ -1761,9 +1792,9 @@
             this.Barra_Estado_Separador_7,
             this.Barra_Estado_Etiqueta_Sugerencia,
             this.Barra_Estado_Separador_8});
-            this.Barra_Estado.Location = new System.Drawing.Point(0, 656);
+            this.Barra_Estado.Location = new System.Drawing.Point(0, 636);
             this.Barra_Estado.Name = "Barra_Estado";
-            this.Barra_Estado.Size = new System.Drawing.Size(884, 25);
+            this.Barra_Estado.Size = new System.Drawing.Size(984, 25);
             this.Barra_Estado.TabIndex = 3;
             this.Barra_Estado.Text = "Status bar";
             // 
@@ -1885,12 +1916,13 @@
             // 
             this.Picture_Hermitcraft.BackColor = System.Drawing.Color.Transparent;
             this.Picture_Hermitcraft.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Picture_Hermitcraft.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Picture_Hermitcraft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Picture_Hermitcraft.Image = global::Minecraft_Tools.Properties.Resources.Hermitcraft;
             this.Picture_Hermitcraft.InitialImage = null;
-            this.Picture_Hermitcraft.Location = new System.Drawing.Point(0, 24);
+            this.Picture_Hermitcraft.Location = new System.Drawing.Point(140, 0);
+            this.Picture_Hermitcraft.Margin = new System.Windows.Forms.Padding(0);
             this.Picture_Hermitcraft.Name = "Picture_Hermitcraft";
-            this.Picture_Hermitcraft.Size = new System.Drawing.Size(884, 208);
+            this.Picture_Hermitcraft.Size = new System.Drawing.Size(704, 208);
             this.Picture_Hermitcraft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Picture_Hermitcraft.TabIndex = 34;
             this.Picture_Hermitcraft.TabStop = false;
@@ -1899,29 +1931,189 @@
             // Picture_Splash
             // 
             this.Picture_Splash.BackColor = System.Drawing.Color.Transparent;
-            this.Picture_Splash.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Picture_Splash.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Picture_Splash.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Picture_Splash.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Picture_Splash.InitialImage = null;
-            this.Picture_Splash.Location = new System.Drawing.Point(0, 448);
+            this.Picture_Splash.Location = new System.Drawing.Point(140, 0);
+            this.Picture_Splash.Margin = new System.Windows.Forms.Padding(0);
             this.Picture_Splash.Name = "Picture_Splash";
-            this.Picture_Splash.Size = new System.Drawing.Size(884, 208);
+            this.Picture_Splash.Size = new System.Drawing.Size(704, 208);
             this.Picture_Splash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Picture_Splash.TabIndex = 35;
             this.Picture_Splash.TabStop = false;
             this.Picture_Splash.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Picture_Splash_MouseDown);
+            // 
+            // Picture_Personaje_Derecha
+            // 
+            this.Picture_Personaje_Derecha.BackColor = System.Drawing.Color.Transparent;
+            this.Picture_Personaje_Derecha.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Picture_Personaje_Derecha.InitialImage = null;
+            this.Picture_Personaje_Derecha.Location = new System.Drawing.Point(844, 8);
+            this.Picture_Personaje_Derecha.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.Picture_Personaje_Derecha.Name = "Picture_Personaje_Derecha";
+            this.Picture_Personaje_Derecha.Size = new System.Drawing.Size(140, 200);
+            this.Picture_Personaje_Derecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Picture_Personaje_Derecha.TabIndex = 36;
+            this.Picture_Personaje_Derecha.TabStop = false;
+            // 
+            // Tabla_Inferior
+            // 
+            this.Tabla_Inferior.BackColor = System.Drawing.Color.Transparent;
+            this.Tabla_Inferior.ColumnCount = 3;
+            this.Tabla_Inferior.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.Tabla_Inferior.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.Tabla_Inferior.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.Tabla_Inferior.Controls.Add(this.Picture_Personaje_Derecha, 2, 0);
+            this.Tabla_Inferior.Controls.Add(this.Picture_Splash, 1, 0);
+            this.Tabla_Inferior.Controls.Add(this.Picture_Personaje_Izquierda, 0, 0);
+            this.Tabla_Inferior.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Tabla_Inferior.Location = new System.Drawing.Point(0, 428);
+            this.Tabla_Inferior.Margin = new System.Windows.Forms.Padding(0);
+            this.Tabla_Inferior.Name = "Tabla_Inferior";
+            this.Tabla_Inferior.RowCount = 1;
+            this.Tabla_Inferior.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.Tabla_Inferior.Size = new System.Drawing.Size(984, 208);
+            this.Tabla_Inferior.TabIndex = 37;
+            // 
+            // Picture_Personaje_Izquierda
+            // 
+            this.Picture_Personaje_Izquierda.BackColor = System.Drawing.Color.Transparent;
+            this.Picture_Personaje_Izquierda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Picture_Personaje_Izquierda.InitialImage = null;
+            this.Picture_Personaje_Izquierda.Location = new System.Drawing.Point(0, 8);
+            this.Picture_Personaje_Izquierda.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.Picture_Personaje_Izquierda.Name = "Picture_Personaje_Izquierda";
+            this.Picture_Personaje_Izquierda.Size = new System.Drawing.Size(140, 200);
+            this.Picture_Personaje_Izquierda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Picture_Personaje_Izquierda.TabIndex = 38;
+            this.Picture_Personaje_Izquierda.TabStop = false;
+            // 
+            // Picture_Minecraft
+            // 
+            this.Picture_Minecraft.BackColor = System.Drawing.Color.Transparent;
+            this.Picture_Minecraft.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.Picture_Minecraft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Picture_Minecraft.Image = global::Minecraft_Tools.Properties.Resources.minecraft_logo;
+            this.Picture_Minecraft.InitialImage = null;
+            this.Picture_Minecraft.Location = new System.Drawing.Point(0, 0);
+            this.Picture_Minecraft.Margin = new System.Windows.Forms.Padding(0);
+            this.Picture_Minecraft.Name = "Picture_Minecraft";
+            this.Picture_Minecraft.Size = new System.Drawing.Size(396, 196);
+            this.Picture_Minecraft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Picture_Minecraft.TabIndex = 39;
+            this.Picture_Minecraft.TabStop = false;
+            this.Picture_Minecraft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Picture_Minecraft_MouseDown);
+            // 
+            // Picture_Mojang
+            // 
+            this.Picture_Mojang.BackColor = System.Drawing.Color.Transparent;
+            this.Picture_Mojang.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.Picture_Mojang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Picture_Mojang.Image = global::Minecraft_Tools.Properties.Resources.mojang_logo;
+            this.Picture_Mojang.InitialImage = null;
+            this.Picture_Mojang.Location = new System.Drawing.Point(588, 0);
+            this.Picture_Mojang.Margin = new System.Windows.Forms.Padding(0);
+            this.Picture_Mojang.Name = "Picture_Mojang";
+            this.Picture_Mojang.Size = new System.Drawing.Size(396, 196);
+            this.Picture_Mojang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Picture_Mojang.TabIndex = 40;
+            this.Picture_Mojang.TabStop = false;
+            this.Picture_Mojang.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Picture_Mojang_MouseDown);
+            // 
+            // Picture_Jupisoft
+            // 
+            this.Picture_Jupisoft.BackColor = System.Drawing.Color.Transparent;
+            this.Picture_Jupisoft.Cursor = System.Windows.Forms.Cursors.Help;
+            this.Picture_Jupisoft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Picture_Jupisoft.Image = global::Minecraft_Tools.Properties.Resources.Jupisoft_192;
+            this.Picture_Jupisoft.InitialImage = null;
+            this.Picture_Jupisoft.Location = new System.Drawing.Point(396, 0);
+            this.Picture_Jupisoft.Margin = new System.Windows.Forms.Padding(0);
+            this.Picture_Jupisoft.Name = "Picture_Jupisoft";
+            this.Picture_Jupisoft.Size = new System.Drawing.Size(192, 196);
+            this.Picture_Jupisoft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Picture_Jupisoft.TabIndex = 41;
+            this.Picture_Jupisoft.TabStop = false;
+            this.Picture_Jupisoft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Picture_Jupisoft_MouseDown);
+            // 
+            // Tabla_Central
+            // 
+            this.Tabla_Central.BackColor = System.Drawing.Color.Transparent;
+            this.Tabla_Central.ColumnCount = 3;
+            this.Tabla_Central.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.Tabla_Central.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 192F));
+            this.Tabla_Central.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.Tabla_Central.Controls.Add(this.Picture_Minecraft, 0, 0);
+            this.Tabla_Central.Controls.Add(this.Picture_Mojang, 2, 0);
+            this.Tabla_Central.Controls.Add(this.Picture_Jupisoft, 1, 0);
+            this.Tabla_Central.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tabla_Central.Location = new System.Drawing.Point(0, 232);
+            this.Tabla_Central.Margin = new System.Windows.Forms.Padding(0);
+            this.Tabla_Central.Name = "Tabla_Central";
+            this.Tabla_Central.RowCount = 1;
+            this.Tabla_Central.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.Tabla_Central.Size = new System.Drawing.Size(984, 196);
+            this.Tabla_Central.TabIndex = 42;
+            // 
+            // Tabla_Superior
+            // 
+            this.Tabla_Superior.BackColor = System.Drawing.Color.Transparent;
+            this.Tabla_Superior.ColumnCount = 3;
+            this.Tabla_Superior.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.Tabla_Superior.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.Tabla_Superior.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.Tabla_Superior.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.Tabla_Superior.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.Tabla_Superior.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.Tabla_Superior.Controls.Add(this.Picture_Mineral_Derecha, 2, 0);
+            this.Tabla_Superior.Controls.Add(this.Picture_Mineral_Izquierda, 0, 0);
+            this.Tabla_Superior.Controls.Add(this.Picture_Hermitcraft, 1, 0);
+            this.Tabla_Superior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Tabla_Superior.Location = new System.Drawing.Point(0, 24);
+            this.Tabla_Superior.Name = "Tabla_Superior";
+            this.Tabla_Superior.RowCount = 1;
+            this.Tabla_Superior.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.Tabla_Superior.Size = new System.Drawing.Size(984, 208);
+            this.Tabla_Superior.TabIndex = 43;
+            // 
+            // Picture_Mineral_Derecha
+            // 
+            this.Picture_Mineral_Derecha.BackColor = System.Drawing.Color.Transparent;
+            this.Picture_Mineral_Derecha.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Picture_Mineral_Derecha.InitialImage = null;
+            this.Picture_Mineral_Derecha.Location = new System.Drawing.Point(844, 0);
+            this.Picture_Mineral_Derecha.Margin = new System.Windows.Forms.Padding(0);
+            this.Picture_Mineral_Derecha.Name = "Picture_Mineral_Derecha";
+            this.Picture_Mineral_Derecha.Size = new System.Drawing.Size(140, 208);
+            this.Picture_Mineral_Derecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Picture_Mineral_Derecha.TabIndex = 40;
+            this.Picture_Mineral_Derecha.TabStop = false;
+            // 
+            // Picture_Mineral_Izquierda
+            // 
+            this.Picture_Mineral_Izquierda.BackColor = System.Drawing.Color.Transparent;
+            this.Picture_Mineral_Izquierda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Picture_Mineral_Izquierda.InitialImage = null;
+            this.Picture_Mineral_Izquierda.Location = new System.Drawing.Point(0, 0);
+            this.Picture_Mineral_Izquierda.Margin = new System.Windows.Forms.Padding(0);
+            this.Picture_Mineral_Izquierda.Name = "Picture_Mineral_Izquierda";
+            this.Picture_Mineral_Izquierda.Size = new System.Drawing.Size(140, 208);
+            this.Picture_Mineral_Izquierda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Picture_Mineral_Izquierda.TabIndex = 39;
+            this.Picture_Mineral_Izquierda.TabStop = false;
             // 
             // Ventana_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Red;
-            this.BackgroundImage = global::Minecraft_Tools.Properties.Resources.Jupisoft_256;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(884, 681);
-            this.Controls.Add(this.Picture_Splash);
-            this.Controls.Add(this.Picture_Hermitcraft);
-            this.Controls.Add(this.Barra_Estado);
+            this.BackgroundImage = global::Minecraft_Tools.Properties.Resources.bg;
+            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.Tabla_Central);
+            this.Controls.Add(this.Tabla_Superior);
             this.Controls.Add(this.Menú_Principal);
+            this.Controls.Add(this.Tabla_Inferior);
+            this.Controls.Add(this.Barra_Estado);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.Menú_Principal;
@@ -1940,6 +2132,16 @@
             this.Barra_Estado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Hermitcraft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Splash)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Personaje_Derecha)).EndInit();
+            this.Tabla_Inferior.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Personaje_Izquierda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Minecraft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Mojang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Jupisoft)).EndInit();
+            this.Tabla_Central.ResumeLayout(false);
+            this.Tabla_Superior.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Mineral_Derecha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Mineral_Izquierda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1961,7 +2163,7 @@
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Depurador_Interno;
+        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Depurador_Excepciones;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Ayuda_Separador_1;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Ayuda_Separador_2;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ver;
@@ -1999,7 +2201,7 @@
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Herramienta_Predeterminada_Separador_4;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Visor_Ayuda;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Acerca;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Interno;
+        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Excepciones;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Visor_NBT;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Visor_NBT;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Exportador_Estructuras_Pintadas;
@@ -2135,6 +2337,17 @@
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ver_Universal_Minecraft_Editor;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Licencia;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_GitHub;
+        private System.Windows.Forms.PictureBox Picture_Personaje_Derecha;
+        private System.Windows.Forms.TableLayoutPanel Tabla_Inferior;
+        private System.Windows.Forms.PictureBox Picture_Personaje_Izquierda;
+        private System.Windows.Forms.PictureBox Picture_Minecraft;
+        private System.Windows.Forms.PictureBox Picture_Mojang;
+        private System.Windows.Forms.PictureBox Picture_Jupisoft;
+        private System.Windows.Forms.TableLayoutPanel Tabla_Central;
+        private System.Windows.Forms.TableLayoutPanel Tabla_Superior;
+        private System.Windows.Forms.PictureBox Picture_Mineral_Derecha;
+        private System.Windows.Forms.PictureBox Picture_Mineral_Izquierda;
+        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Registro_Cambios;
     }
 }
 

@@ -118,7 +118,7 @@ namespace Minecraft_Tools
             {
                 this.Text = Texto_Título;
                 this.WindowState = FormWindowState.Maximized;
-                //MessageBox.Show(SevenZip.SevenZipBase.CurrentLibraryFeatures.ToString());
+                //MessageBox.Show(SevenZip.SevenZipBase.CurrentLibraryFeatures.ToString()); // ExtractAll (Read-only)
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
         }

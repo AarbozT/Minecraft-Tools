@@ -61,7 +61,7 @@ namespace Minecraft_Tools
             // Soon...
 
             Visor_Ayuda,
-            Depurador_Interno,
+            Depurador_Excepciones,
             Cambiar_Nombre_Usuario,
             Acerca,
 
@@ -385,30 +385,42 @@ namespace Minecraft_Tools
                 {
                     Matriz_Imágenes_Fuente = new Bitmap[256];
                     Matriz_Ancho_Fuente = new int[256];
-                    for (int Índice = 0; Índice < 256; Índice++)
+                    for (int Y = 0, Índice = 0; Y < 128; Y += 8)
                     {
-                        Bitmap Imagen = Program.Obtener_Imagen_Recursos("Fuente_ascii_" + Índice.ToString());
-                        if (Imagen != null)
+                        for (int X = 0; X < 128; X += 8, Índice++)
                         {
-                            Matriz_Imágenes_Fuente[Índice] = Imagen;
-                            Matriz_Ancho_Fuente[Índice] = Imagen.Width;
+                            Bitmap Imagen = Resources.Fuente_ascii.Clone(new Rectangle(X, Y, 8, 8), PixelFormat.Format32bppArgb);
+                            Rectangle Rectángulo = Program.Buscar_Zona_Recorte_Imagen(Imagen);
+                            if (Rectángulo.X > -1 && Rectángulo.Y > -1 && Rectángulo.X < int.MaxValue && Rectángulo.Y < int.MaxValue && Rectángulo.Width > 0 && Rectángulo.Height > 0)
+                            {
+                                Rectángulo.Y = 0; // Don't move it vertically.
+                                Rectángulo.Height = 8;
+                                Matriz_Imágenes_Fuente[Índice] = Imagen.Clone(Rectángulo, PixelFormat.Format32bppArgb);
+                                Matriz_Ancho_Fuente[Índice] = Rectángulo.Width;
+                            }
+                            else Matriz_Ancho_Fuente[Índice] = 4;
                         }
-                        else Matriz_Ancho_Fuente[Índice] = 4;
                     }
                 }
                 if (Matriz_Imágenes_Fuente_SGA == null || Matriz_Imágenes_Fuente_SGA.Length <= 0)
                 {
                     Matriz_Imágenes_Fuente_SGA = new Bitmap[256];
                     Matriz_Ancho_Fuente_SGA = new int[256];
-                    for (int Índice = 0; Índice < 256; Índice++)
+                    for (int Y = 0, Índice = 0; Y < 128; Y += 8)
                     {
-                        Bitmap Imagen_SGA = Program.Obtener_Imagen_Recursos("Fuente_ascii_sga_" + Índice.ToString());
-                        if (Imagen_SGA != null)
+                        for (int X = 0; X < 128; X += 8, Índice++)
                         {
-                            Matriz_Imágenes_Fuente_SGA[Índice] = Imagen_SGA;
-                            Matriz_Ancho_Fuente_SGA[Índice] = Imagen_SGA.Width;
+                            Bitmap Imagen = Resources.Fuente_ascii_sga.Clone(new Rectangle(X, Y, 8, 8), PixelFormat.Format32bppArgb);
+                            Rectangle Rectángulo = Program.Buscar_Zona_Recorte_Imagen(Imagen);
+                            if (Rectángulo.X > -1 && Rectángulo.Y > -1 && Rectángulo.X < int.MaxValue && Rectángulo.Y < int.MaxValue && Rectángulo.Width > 0 && Rectángulo.Height > 0)
+                            {
+                                Rectángulo.Y = 0; // Don't move it vertically.
+                                Rectángulo.Height = 8;
+                                Matriz_Imágenes_Fuente_SGA[Índice] = Imagen.Clone(Rectángulo, PixelFormat.Format32bppArgb);
+                                Matriz_Ancho_Fuente_SGA[Índice] = Rectángulo.Width;
+                            }
+                            else Matriz_Ancho_Fuente_SGA[Índice] = 4;
                         }
-                        else Matriz_Ancho_Fuente_SGA[Índice] = 4;
                     }
                 }
 
@@ -659,13 +671,13 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Menú_Principal_Ayuda_Depurador_Interno_Click(object sender, EventArgs e)
+        private void Menú_Principal_Ayuda_Depurador_Excepciones_Click(object sender, EventArgs e)
         {
             try
             {
                 Temporizador_Principal.Stop();
                 Registro_Restablecer_Opciones();
-                Ventana_Depurador Ventana = new Ventana_Depurador();
+                Ventana_Depurador_Excepciones Ventana = new Ventana_Depurador_Excepciones();
                 Ventana.ShowDialog(this);
                 Ventana.Dispose();
                 Ventana = null;
@@ -761,7 +773,7 @@ namespace Minecraft_Tools
                     // Soon...
 
                     else if (Variable_Herramienta == Herramientas.Visor_Ayuda) Menú_Principal_Ayuda_Visor_Ayuda.PerformClick();
-                    else if (Variable_Herramienta == Herramientas.Depurador_Interno) Menú_Principal_Ayuda_Depurador_Interno.PerformClick();
+                    else if (Variable_Herramienta == Herramientas.Depurador_Excepciones) Menú_Principal_Ayuda_Depurador_Excepciones.PerformClick();
                     else if (Variable_Herramienta == Herramientas.Cambiar_Nombre_Usuario) Menú_Principal_Ayuda_Cambiar_Nombre_Usuario.PerformClick();
                     else if (Variable_Herramienta == Herramientas.Acerca) Menú_Principal_Ayuda_Acerca.PerformClick();
 
@@ -1025,7 +1037,7 @@ namespace Minecraft_Tools
                 Barra_Estado_Botón_Excepción.Image = Resources.Excepción_Gris;
                 Barra_Estado_Botón_Excepción.ForeColor = Color.Black;
                 Barra_Estado_Botón_Excepción.Text = "Exceptions: 0";
-                Ventana_Depurador Ventana = new Ventana_Depurador();
+                Ventana_Depurador_Excepciones Ventana = new Ventana_Depurador_Excepciones();
                 Ventana.ShowDialog(this);
                 Ventana.Dispose();
                 Ventana = null;
@@ -1033,16 +1045,146 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
+        /// <summary>
+        /// Contains the original names of the Minecraft blocks included within the Minecraft launcher, which are actually included in the library file called "launcher.dll", inside the folder called "game", near the executable launcher. Note: to extract it's resources, simply install 7-zip (it's free) and right click the library file and finally select to extract it's files anywhere you like.
+        /// </summary>
+        internal static readonly string[] Matriz_Nombres_Bloques_Launcher_Minerales = new string[]
+        {
+            "Coal_Block",
+            "Coal_Ore",
+            "Diamond_Block",
+            "Diamond_Ore",
+            "Emerald_Block",
+            "Emerald_Ore",
+            "Gold_Block",
+            "Gold_Ore",
+            "Iron_Block",
+            "Iron_Ore",
+            "Lapis_Ore",
+            "Quartz_Ore",
+            "Redstone_Block",
+            "Redstone_Ore"
+        };
+
+        /// <summary>
+        /// Contains the original names of the Minecraft blocks included within the Minecraft launcher, which are actually included in the library file called "launcher.dll", inside the folder called "game", near the executable launcher. Note: to extract it's resources, simply install 7-zip (it's free) and right click the library file and finally select to extract it's files anywhere you like.
+        /// </summary>
+        internal static readonly string[] Matriz_Nombres_Bloques_Launcher = new string[]
+        {
+            "Bedrock",
+            "Bookshelf",
+            "Brick",
+            "Chest",
+            "Clay",
+            "Coal_Block",
+            "Coal_Ore",
+            "Cobblestone",
+            "Crafting_Table",
+            "Diamond_Block",
+            "Diamond_Ore",
+            "Dirt",
+            "Dirt_Podzol",
+            "Dirt_Snow",
+            "Emerald_Block",
+            "Emerald_Ore",
+            "End_Stone",
+            "Farmland",
+            "Furnace",
+            "Furnace_On",
+            "Glass",
+            "Glowstone",
+            "Gold_Block",
+            "Gold_Ore",
+            "Grass",
+            "Gravel",
+            "Hardened_Clay",
+            "Ice_Packed",
+            "Iron_Block",
+            "Iron_Ore",
+            "Lapis_Ore",
+            "Leaves_Birch",
+            "Leaves_Jungle",
+            "Leaves_Oak",
+            "Leaves_Spruce",
+            "Log_Acacia",
+            "Log_Birch",
+            "Log_DarkOak",
+            "Log_Jungle",
+            "Log_Oak",
+            "Log_Spruce",
+            "Mycelium",
+            "Nether_Brick",
+            "Netherrack",
+            "Obsidian",
+            "Planks_Acacia",
+            "Planks_Birch",
+            "Planks_DarkOak",
+            "Planks_Jungle",
+            "Planks_Oak",
+            "Planks_Spruce",
+            "Quartz_Ore",
+            "Red_Sand",
+            "Red_Sandstone",
+            "Redstone_Block",
+            "Redstone_Ore",
+            "Sand",
+            "Sandstone",
+            "Snow",
+            "Soul_Sand",
+            "Stone",
+            "Stone_Andesite",
+            "Stone_Diorite",
+            "Stone_Granite",
+            "TNT",
+            "Wool"
+        };
+
         private void Temporizador_Principal_Tick(object sender, EventArgs e)
         {
             try
             {
+                /*string[] aa = Directory.GetFiles(@"C:\Users\Jupisoft\Desktop\Miniaturas 2018_09_27_02_23_10_220\launcher\assets\images\icons", "*.png", SearchOption.TopDirectoryOnly);
+                Array.Sort(aa);
+                List<string> Listaa = new List<string>();
+                foreach (string Ruta in aa)
+                {
+                    Listaa.Add(Path.GetFileNameWithoutExtension(Ruta));
+                }
+                File.WriteAllLines(Program.Obtener_Ruta_Temporal_Escritorio() + ".txt", Listaa.ToArray(), Encoding.Unicode);
+                Application.Exit(); // 2018_09_27_02_57_56_474*/
                 // Change the splash text randomly every 2,5 seconds.
                 long Milisegundos = Splash_Cronómetro.ElapsedMilliseconds / 2500L;
                 if (Milisegundos != Splash_Milisegundo_Anterior || Variable_Alfabeto_Galáctico != Splash_Alfabeto_Galáctico_Anterior)
                 {
                     if (Milisegundos != Splash_Milisegundo_Anterior)
                     {
+                        Picture_Mineral_Izquierda.Image = Program.Obtener_Imagen_Recursos(Matriz_Nombres_Bloques_Launcher[Program.Rand.Next(0, Matriz_Nombres_Bloques_Launcher.Length)]);
+                        Picture_Mineral_Derecha.Image = Program.Obtener_Imagen_Recursos(Matriz_Nombres_Bloques_Launcher[Program.Rand.Next(0, Matriz_Nombres_Bloques_Launcher.Length)]);
+
+                        /*Bitmap Imagen_Bloque_Izquierda = Program.Obtener_Imagen_Recursos(Matriz_Nombres_Bloques_Launcher[Program.Rand.Next(0, Matriz_Nombres_Bloques_Launcher.Length)]);
+                        Bitmap Imagen_Bloque_Derecha = Program.Obtener_Imagen_Recursos(Matriz_Nombres_Bloques_Launcher[Program.Rand.Next(0, Matriz_Nombres_Bloques_Launcher.Length)]);
+
+                        int Girar = Program.Rand.Next(0, 4);
+                        if (Girar == 1) Imagen_Bloque_Izquierda.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                        else if (Girar == 2) Imagen_Bloque_Izquierda.RotateFlip(RotateFlipType.Rotate180FlipNone);
+                        else if (Girar == 3) Imagen_Bloque_Izquierda.RotateFlip(RotateFlipType.Rotate270FlipNone);
+
+                        Girar = Program.Rand.Next(0, 4);
+                        if (Girar == 1) Imagen_Bloque_Derecha.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                        else if (Girar == 2) Imagen_Bloque_Derecha.RotateFlip(RotateFlipType.Rotate180FlipNone);
+                        else if (Girar == 3) Imagen_Bloque_Derecha.RotateFlip(RotateFlipType.Rotate270FlipNone);
+
+                        Picture_Bloque_Izquierda.Image = Imagen_Bloque_Izquierda;
+                        Picture_Bloque_Derecha.Image = Imagen_Bloque_Derecha;*/
+
+                        //Picture_Bloque_Izquierda.Image = Program.Obtener_Imagen_Recursos(Matriz_Nombres_Bloques_Launcher[Program.Rand.Next(0, Matriz_Nombres_Bloques_Launcher.Length)]);
+                        //Picture_Bloque_Derecha.Image = Program.Obtener_Imagen_Recursos(Matriz_Nombres_Bloques_Launcher[Program.Rand.Next(0, Matriz_Nombres_Bloques_Launcher.Length)]);
+
+                        Bitmap Imagen_Izquierda = Program.Obtener_Imagen_Recursos("mc_char_" + Program.Rand.Next(0, 8).ToString());
+                        Imagen_Izquierda.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                        Picture_Personaje_Izquierda.Image = Imagen_Izquierda;
+                        Picture_Personaje_Derecha.Image = Program.Obtener_Imagen_Recursos("mc_char_" + Program.Rand.Next(0, 8).ToString());
+
                         Splash_Texto = Minecraft_Splashes.Matriz_Líneas[Program.Rand.Next(0, Minecraft_Splashes.Matriz_Líneas.Length)];
                         if (string.IsNullOrEmpty(Splash_Texto)) Splash_Texto = "?";
                         if (Milisegundos % 4L == 0) // Only show every 4 splashes.
@@ -1076,7 +1218,8 @@ namespace Minecraft_Tools
                     Pintar.SmoothingMode = SmoothingMode.None;
                     for (int Índice_Caracter = 0, Índice_X = 0; Índice_Caracter < Splash_Texto.Length; Índice_Caracter++)
                     {
-                        int Valor_Caracter = (int)Splash_Texto[Índice_Caracter];
+                        //int Valor_Caracter = (int)Splash_Texto[Índice_Caracter];
+                        int Valor_Caracter = "\u00c0\u00c1\u00c2\u00c8\u00ca\u00cb\u00cd\u00d3\u00d4\u00d5\u00da\u00df\u00e3\u00f5\u011f\u0130\u0131\u0152\u0153\u015e\u015f\u0174\u0175\u017e\u0207\u0000\u0000\u0000\u0000\u0000\u0000\u0000 !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\u0000\u00c7\u00fc\u00e9\u00e2\u00e4\u00e0\u00e5\u00e7\u00ea\u00eb\u00e8\u00ef\u00ee\u00ec\u00c4\u00c5\u00c9\u00e6\u00c6\u00f4\u00f6\u00f2\u00fb\u00f9\u00ff\u00d6\u00dc\u00f8\u00a3\u00d8\u00d7\u0192\u00e1\u00ed\u00f3\u00fa\u00f1\u00d1\u00aa\u00ba\u00bf\u00ae\u00ac\u00bd\u00bc\u00a1\u00ab\u00bb\u2591\u2592\u2593\u2502\u2524\u2561\u2562\u2556\u2555\u2563\u2551\u2557\u255d\u255c\u255b\u2510\u2514\u2534\u252c\u251c\u2500\u253c\u255e\u255f\u255a\u2554\u2569\u2566\u2560\u2550\u256c\u2567\u2568\u2564\u2565\u2559\u2558\u2552\u2553\u256b\u256a\u2518\u250c\u2588\u2584\u258c\u2590\u2580\u03b1\u03b2\u0393\u03c0\u03a3\u03c3\u03bc\u03c4\u03a6\u0398\u03a9\u03b4\u221e\u2205\u2208\u2229\u2261\u00b1\u2265\u2264\u2320\u2321\u00f7\u2248\u00b0\u2219\u00b7\u221a\u207f\u00b2\u25a0\u0000".IndexOf(Splash_Texto[Índice_Caracter]);
                         if (Valor_Caracter < 0 || Valor_Caracter > 255) Valor_Caracter = (int)'?';
                         if (!Variable_Alfabeto_Galáctico)
                         {
@@ -1440,7 +1583,7 @@ namespace Minecraft_Tools
             {
                 Temporizador_Principal.Stop();
                 Registro_Restablecer_Opciones();
-                Ventana_Descagador_Skins_Automático Ventana = new Ventana_Descagador_Skins_Automático();
+                Ventana_Descargador_Skins_Automático Ventana = new Ventana_Descargador_Skins_Automático();
                 Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
                 Ventana.ShowDialog(this);
                 Ventana.Dispose();
@@ -1565,7 +1708,7 @@ namespace Minecraft_Tools
                 // Soon...
 
                 else if (Herramienta == Herramientas.Visor_Ayuda) Menú_Principal_Ayuda_Visor_Ayuda.PerformClick();
-                else if (Herramienta == Herramientas.Depurador_Interno) Menú_Principal_Ayuda_Depurador_Interno.PerformClick();
+                else if (Herramienta == Herramientas.Depurador_Excepciones) Menú_Principal_Ayuda_Depurador_Excepciones.PerformClick();
                 else if (Herramienta == Herramientas.Cambiar_Nombre_Usuario) Menú_Principal_Ayuda_Cambiar_Nombre_Usuario.PerformClick();
                 else if (Herramienta == Herramientas.Acerca) Menú_Principal_Ayuda_Acerca.PerformClick();
             }
@@ -2327,6 +2470,7 @@ namespace Minecraft_Tools
                                     }
                                     catch (Exception Excepción)
                                     {
+                                        // Should this "expected" exception be recorded?
                                         Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null);
                                         continue; // Skip the files that couldn't be loaded as zip files because they should be already encrypted.
                                     }
@@ -2417,6 +2561,67 @@ namespace Minecraft_Tools
             try
             {
                 Program.Ejecutar_Ruta("https://github.com/Jupisoft111/Minecraft-Tools", ProcessWindowStyle.Normal);
+
+                //SevenZip.SevenZipBase.
+                //ICSharpCode.SharpZipLib.Zip.ZipFile.Create(0).TestArchive(0, ICSharpCode.SharpZipLib.Zip.TestStrategy.
+
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Picture_Jupisoft_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                //if (e.Button != MouseButtons.Right)
+                {
+                    Registro_Restablecer_Opciones();
+                    Ventana_Acerca Ventana = new Ventana_Acerca();
+                    DialogResult Resultado = Ventana.ShowDialog(this);
+                    Ventana.Dispose();
+                    Ventana = null;
+                    Registro_Guardar_Opciones();
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Picture_Minecraft_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                //if (e.Button != MouseButtons.Right)
+                {
+                    Program.Ejecutar_Ruta("https://www.minecraft.net/", ProcessWindowStyle.Normal);
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Picture_Mojang_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                //if (e.Button != MouseButtons.Right)
+                {
+                    Program.Ejecutar_Ruta("https://mojang.com", ProcessWindowStyle.Normal);
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Menú_Principal_Ayuda_Registro_Cambios_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Temporizador_Principal.Stop();
+                Registro_Restablecer_Opciones();
+                Ventana_Registro_Cambios Ventana = new Ventana_Registro_Cambios();
+                Ventana.ShowDialog(this);
+                Ventana.Dispose();
+                Ventana = null;
+                Registro_Guardar_Opciones();
+                Temporizador_Principal.Start();
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }

@@ -20,7 +20,7 @@ namespace Minecraft_Tools
         /// <summary>
         /// The Windows registry build date, used to know if the older settings should be deleted.
         /// </summary>
-        internal static readonly string Texto_Fecha = "2018_09_06_03_17_56_771";
+        internal static readonly string Texto_Fecha = "2018_09_27_17_54_34_935";
         /// <summary>
         /// The Minecraft version that most tools of this application will support.
         /// </summary>
@@ -388,6 +388,15 @@ namespace Minecraft_Tools
             return "00000000000000000";
         }
 
+        /// <summary>
+        /// Returns a full path to the user's desktop with a temporary name for the file. Very useful for quick exporting or testing of several new functions.
+        /// </summary>
+        /// <returns></returns>
+        internal static string Obtener_Ruta_Temporal_Escritorio()
+        {
+            return Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\" + Obtener_Nombre_Temporal();
+        }
+
         internal static string Traducir_Texto_Mayúsculas_Minúsculas_Automáticamente(string Nombre)
         {
             try
@@ -588,7 +597,69 @@ namespace Minecraft_Tools
             return DateTime.MinValue;
         }
 
+        /// <summary>
+        /// Translates a DateTime value into numeric notation with day, month and year.
+        /// </summary>
         internal static string Traducir_Fecha(DateTime Fecha)
+        {
+            try
+            {
+                if (Fecha != null && Fecha >= DateTime.MinValue && Fecha <= DateTime.MaxValue)
+                {
+                    string Año = Fecha.Year.ToString();
+                    string Mes = Fecha.Month.ToString();
+                    string Día = Fecha.Day.ToString();
+                    while (Año.Length < 4) Año = "0" + Año;
+                    while (Mes.Length < 2) Mes = "0" + Mes;
+                    while (Día.Length < 2) Día = "0" + Día;
+                    return Día + "-" + Mes + "-" + Año;
+                }
+            }
+            catch (Exception Excepción) { Application.OnThreadException(Excepción); }
+            return "??-??-????, ??:??:??.???";
+        }
+
+        /// <summary>
+        /// Translates a DateTime value into English localization.
+        /// </summary>
+        internal static string Traducir_Fecha_Inglés(DateTime Fecha)
+        {
+            try
+            {
+                if (Fecha != null && Fecha >= DateTime.MinValue && Fecha <= DateTime.MaxValue)
+                {
+
+                    string Día = Fecha.Day.ToString();
+                    if (Día.EndsWith("1") && Fecha.Day != 11) Día += "st";
+                    else if (Día.EndsWith("2") && Fecha.Day != 12) Día += "nd";
+                    else if (Día.EndsWith("3") && Fecha.Day != 13) Día += "rd";
+                    else Día += "th";
+
+                    string Mes = null;
+                    if (Fecha.Month == 1) Mes = "January";
+                    else if (Fecha.Month == 2) Mes = "February";
+                    else if (Fecha.Month == 3) Mes = "March";
+                    else if (Fecha.Month == 4) Mes = "April";
+                    else if (Fecha.Month == 5) Mes = "May";
+                    else if (Fecha.Month == 6) Mes = "June";
+                    else if (Fecha.Month == 7) Mes = "July";
+                    else if (Fecha.Month == 8) Mes = "August";
+                    else if (Fecha.Month == 9) Mes = "September";
+                    else if (Fecha.Month == 10) Mes = "October";
+                    else if (Fecha.Month == 11) Mes = "November";
+                    else if (Fecha.Month == 12) Mes = "December";
+
+                    string Año = Fecha.Year.ToString();
+                    while (Año.Length < 4) Año = "0" + Año;
+
+                    return Mes + ", " + Día + " of " + Año;
+                }
+            }
+            catch (Exception Excepción) { Application.OnThreadException(Excepción); }
+            return "?, ?th of ????";
+        }
+
+        internal static string Traducir_Fecha_Hora(DateTime Fecha)
         {
             try
             {

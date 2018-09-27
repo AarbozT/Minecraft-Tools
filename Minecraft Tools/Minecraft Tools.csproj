@@ -85,8 +85,6 @@
     <Compile Include="Jupisoft_Encrypting_Decrypting.cs" />
     <Compile Include="Minecraft_Biomas.cs" />
     <Compile Include="Minecraft_Splashes.cs" />
-    <Compile Include="Secret_Setting_Minecraft_18w15a_Zip.cs" />
-    <Compile Include="Secret_Setting_Minecraft_1_5_2_Zip.cs" />
     <Compile Include="Minecraft_Exporting.cs" />
     <Compile Include="Minecraft_Structures.cs" />
     <Compile Include="Multimedia_Player.cs" />
@@ -228,6 +226,12 @@
     <Compile Include="Ventana_Codificador_Descodificador_Archivos.Designer.cs">
       <DependentUpon>Ventana_Codificador_Descodificador_Archivos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventana_Registro_Cambios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventana_Registro_Cambios.Designer.cs">
+      <DependentUpon>Ventana_Registro_Cambios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventana_Salvapantallas_El_Fin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,11 +262,11 @@
     <Compile Include="Ventana_Visor_Densidades_Bloques.Designer.cs">
       <DependentUpon>Ventana_Visor_Densidades_Bloques.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventana_Descagador_Skins_Automático.cs">
+    <Compile Include="Ventana_Descargador_Skins_Automático.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventana_Descagador_Skins_Automático.Designer.cs">
-      <DependentUpon>Ventana_Descagador_Skins_Automático.cs</DependentUpon>
+    <Compile Include="Ventana_Descargador_Skins_Automático.Designer.cs">
+      <DependentUpon>Ventana_Descargador_Skins_Automático.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventana_Diseñador_Estandartes_Escudos.cs">
       <SubType>Form</SubType>
@@ -348,11 +352,11 @@
     <Compile Include="Ventana_Comparador_Versiones_JAR.Designer.cs">
       <DependentUpon>Ventana_Comparador_Versiones_JAR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventana_Depurador.cs">
+    <Compile Include="Ventana_Depurador_Excepciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventana_Depurador.designer.cs">
-      <DependentUpon>Ventana_Depurador.cs</DependentUpon>
+    <Compile Include="Ventana_Depurador_Excepciones.designer.cs">
+      <DependentUpon>Ventana_Depurador_Excepciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventana_Generador_Estructuras_Personalizadas.cs">
       <SubType>Form</SubType>
@@ -445,6 +449,9 @@
     <EmbeddedResource Include="Ventana_Codificador_Descodificador_Archivos.resx">
       <DependentUpon>Ventana_Codificador_Descodificador_Archivos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventana_Registro_Cambios.resx">
+      <DependentUpon>Ventana_Registro_Cambios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Salvapantallas_El_Fin.resx">
       <DependentUpon>Ventana_Salvapantallas_El_Fin.cs</DependentUpon>
     </EmbeddedResource>
@@ -460,8 +467,8 @@
     <EmbeddedResource Include="Ventana_Visor_Densidades_Bloques.resx">
       <DependentUpon>Ventana_Visor_Densidades_Bloques.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventana_Descagador_Skins_Automático.resx">
-      <DependentUpon>Ventana_Descagador_Skins_Automático.cs</DependentUpon>
+    <EmbeddedResource Include="Ventana_Descargador_Skins_Automático.resx">
+      <DependentUpon>Ventana_Descargador_Skins_Automático.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Diseñador_Estandartes_Escudos.resx">
       <DependentUpon>Ventana_Diseñador_Estandartes_Escudos.cs</DependentUpon>
@@ -505,8 +512,8 @@
     <EmbeddedResource Include="Ventana_Comparador_Versiones_JAR.resx">
       <DependentUpon>Ventana_Comparador_Versiones_JAR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventana_Depurador.resx">
-      <DependentUpon>Ventana_Depurador.cs</DependentUpon>
+    <EmbeddedResource Include="Ventana_Depurador_Excepciones.resx">
+      <DependentUpon>Ventana_Depurador_Excepciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Generador_Estructuras_Personalizadas.resx">
       <DependentUpon>Ventana_Generador_Estructuras_Personalizadas.cs</DependentUpon>
@@ -2524,6 +2531,86 @@
     <None Include="Resources\Thanks_Videogamer555.png" />
     <None Include="Resources\Thanks_PM_ME_YOUR_HOOMAN.png" />
     <None Include="Resources\GitHub.png" />
+    <None Include="Resources\Visor_Mundos_2D.png" />
+    <None Include="Resources\mc_char_0.png" />
+    <None Include="Resources\mc_char_1.png" />
+    <None Include="Resources\mc_char_2.png" />
+    <None Include="Resources\mc_char_3.png" />
+    <None Include="Resources\mc_char_4.png" />
+    <None Include="Resources\mc_char_5.png" />
+    <None Include="Resources\mc_char_6.png" />
+    <None Include="Resources\mc_char_7.png" />
+    <None Include="Resources\Bedrock.png" />
+    <None Include="Resources\Bookshelf.png" />
+    <None Include="Resources\Brick.png" />
+    <None Include="Resources\Chest.png" />
+    <None Include="Resources\Clay.png" />
+    <None Include="Resources\Coal_Block.png" />
+    <None Include="Resources\Coal_Ore.png" />
+    <None Include="Resources\Cobblestone.png" />
+    <None Include="Resources\Crafting_Table.png" />
+    <None Include="Resources\Diamond_Block.png" />
+    <None Include="Resources\Diamond_Ore.png" />
+    <None Include="Resources\Dirt.png" />
+    <None Include="Resources\Dirt_Podzol.png" />
+    <None Include="Resources\Dirt_Snow.png" />
+    <None Include="Resources\Emerald_Block.png" />
+    <None Include="Resources\Emerald_Ore.png" />
+    <None Include="Resources\End_Stone.png" />
+    <None Include="Resources\Farmland.png" />
+    <None Include="Resources\Furnace.png" />
+    <None Include="Resources\Furnace_On.png" />
+    <None Include="Resources\Glass.png" />
+    <None Include="Resources\Glowstone.png" />
+    <None Include="Resources\Gold_Block.png" />
+    <None Include="Resources\Gold_Ore.png" />
+    <None Include="Resources\Grass.png" />
+    <None Include="Resources\Gravel.png" />
+    <None Include="Resources\Hardened_Clay.png" />
+    <None Include="Resources\Ice_Packed.png" />
+    <None Include="Resources\Iron_Block.png" />
+    <None Include="Resources\Iron_Ore.png" />
+    <None Include="Resources\Lapis_Ore.png" />
+    <None Include="Resources\Leaves_Birch.png" />
+    <None Include="Resources\Leaves_Jungle.png" />
+    <None Include="Resources\Leaves_Oak.png" />
+    <None Include="Resources\Leaves_Spruce.png" />
+    <None Include="Resources\Log_Acacia.png" />
+    <None Include="Resources\Log_Birch.png" />
+    <None Include="Resources\Log_DarkOak.png" />
+    <None Include="Resources\Log_Jungle.png" />
+    <None Include="Resources\Log_Oak.png" />
+    <None Include="Resources\Log_Spruce.png" />
+    <None Include="Resources\Mycelium.png" />
+    <None Include="Resources\Nether_Brick.png" />
+    <None Include="Resources\Netherrack.png" />
+    <None Include="Resources\Obsidian.png" />
+    <None Include="Resources\Planks_Acacia.png" />
+    <None Include="Resources\Planks_Birch.png" />
+    <None Include="Resources\Planks_DarkOak.png" />
+    <None Include="Resources\Planks_Jungle.png" />
+    <None Include="Resources\Planks_Oak.png" />
+    <None Include="Resources\Planks_Spruce.png" />
+    <None Include="Resources\Quartz_Ore.png" />
+    <None Include="Resources\Red_Sand.png" />
+    <None Include="Resources\Red_Sandstone.png" />
+    <None Include="Resources\Redstone_Block.png" />
+    <None Include="Resources\Redstone_Ore.png" />
+    <None Include="Resources\Sand.png" />
+    <None Include="Resources\Sandstone.png" />
+    <None Include="Resources\Snow.png" />
+    <None Include="Resources\Soul_Sand.png" />
+    <None Include="Resources\Stone.png" />
+    <None Include="Resources\Stone_Andesite.png" />
+    <None Include="Resources\Stone_Diorite.png" />
+    <None Include="Resources\Stone_Granite.png" />
+    <None Include="Resources\TNT.png" />
+    <None Include="Resources\Wool.png" />
+    <None Include="Resources\bg.png" />
+    <None Include="Resources\minecraft-logo.png" />
+    <None Include="Resources\mojang-logo.png" />
+    <None Include="Resources\Jupisoft_192.png" />
+    <None Include="Resources\Registro_Cambios.png" />
     <Content Include="Zlib\LICENSE.txt" />
     <None Include="Resources\Correo.png" />
     <None Include="Resources\Paleta.png" />

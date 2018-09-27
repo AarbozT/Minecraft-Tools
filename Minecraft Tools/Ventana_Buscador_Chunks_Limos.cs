@@ -939,11 +939,11 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
         }
 
-        private void Menú_Contextual_Depurador_Interno_Click(object sender, EventArgs e)
+        private void Menú_Contextual_Depurador_Excepciones_Click(object sender, EventArgs e)
         {
             try
             {
-                Ventana_Depurador Ventana = new Ventana_Depurador();
+                Ventana_Depurador_Excepciones Ventana = new Ventana_Depurador_Excepciones();
                 Ventana.ShowDialog(this);
                 Ventana.Dispose();
                 Ventana = null;
