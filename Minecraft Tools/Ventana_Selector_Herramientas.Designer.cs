@@ -28,15 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventana_Selector_Herramientas));
+            this.Panel_Inferior = new System.Windows.Forms.Panel();
+            this.Panel_Separador = new System.Windows.Forms.Panel();
             this.Botón_Aceptar = new System.Windows.Forms.Button();
             this.Botón_Cancelar = new System.Windows.Forms.Button();
             this.Botón_Restablecer = new System.Windows.Forms.Button();
-            this.Panel_Inferior = new System.Windows.Forms.Panel();
             this.ListView_Principal = new System.Windows.Forms.ListView();
-            this.Panel_Separador = new System.Windows.Forms.Panel();
+            this.Lista_Imágenes_16 = new System.Windows.Forms.ImageList(this.components);
+            this.CheckBox_Negro = new System.Windows.Forms.CheckBox();
+            this.CheckBox_Azul = new System.Windows.Forms.CheckBox();
+            this.CheckBox_Rojo = new System.Windows.Forms.CheckBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.Panel_Inferior.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // Panel_Inferior
+            // 
+            this.Panel_Inferior.Controls.Add(this.textBox9);
+            this.Panel_Inferior.Controls.Add(this.Panel_Separador);
+            this.Panel_Inferior.Controls.Add(this.Botón_Aceptar);
+            this.Panel_Inferior.Controls.Add(this.Botón_Cancelar);
+            this.Panel_Inferior.Controls.Add(this.Botón_Restablecer);
+            this.Panel_Inferior.Controls.Add(this.CheckBox_Rojo);
+            this.Panel_Inferior.Controls.Add(this.CheckBox_Azul);
+            this.Panel_Inferior.Controls.Add(this.CheckBox_Negro);
+            this.Panel_Inferior.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Panel_Inferior.Location = new System.Drawing.Point(0, 412);
+            this.Panel_Inferior.Name = "Panel_Inferior";
+            this.Panel_Inferior.Size = new System.Drawing.Size(884, 49);
+            this.Panel_Inferior.TabIndex = 1;
+            // 
+            // Panel_Separador
+            // 
+            this.Panel_Separador.BackColor = System.Drawing.Color.Black;
+            this.Panel_Separador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panel_Separador.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Separador.Name = "Panel_Separador";
+            this.Panel_Separador.Size = new System.Drawing.Size(884, 1);
+            this.Panel_Separador.TabIndex = 6;
             // 
             // Botón_Aceptar
             // 
@@ -74,7 +105,7 @@
             this.Botón_Restablecer.Image = global::Minecraft_Tools.Properties.Resources.Restablecer;
             this.Botón_Restablecer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Botón_Restablecer.Location = new System.Drawing.Point(12, 13);
-            this.Botón_Restablecer.Margin = new System.Windows.Forms.Padding(12);
+            this.Botón_Restablecer.Margin = new System.Windows.Forms.Padding(12, 12, 3, 12);
             this.Botón_Restablecer.Name = "Botón_Restablecer";
             this.Botón_Restablecer.Size = new System.Drawing.Size(100, 24);
             this.Botón_Restablecer.TabIndex = 2;
@@ -82,37 +113,80 @@
             this.Botón_Restablecer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Botón_Restablecer.UseVisualStyleBackColor = true;
             // 
-            // Panel_Inferior
-            // 
-            this.Panel_Inferior.Controls.Add(this.Panel_Separador);
-            this.Panel_Inferior.Controls.Add(this.Botón_Aceptar);
-            this.Panel_Inferior.Controls.Add(this.Botón_Cancelar);
-            this.Panel_Inferior.Controls.Add(this.Botón_Restablecer);
-            this.Panel_Inferior.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Panel_Inferior.Location = new System.Drawing.Point(0, 412);
-            this.Panel_Inferior.Name = "Panel_Inferior";
-            this.Panel_Inferior.Size = new System.Drawing.Size(884, 49);
-            this.Panel_Inferior.TabIndex = 1;
-            // 
             // ListView_Principal
             // 
             this.ListView_Principal.BackColor = System.Drawing.Color.White;
             this.ListView_Principal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListView_Principal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListView_Principal.FullRowSelect = true;
             this.ListView_Principal.Location = new System.Drawing.Point(0, 0);
+            this.ListView_Principal.Margin = new System.Windows.Forms.Padding(0);
+            this.ListView_Principal.MultiSelect = false;
             this.ListView_Principal.Name = "ListView_Principal";
             this.ListView_Principal.Size = new System.Drawing.Size(884, 412);
             this.ListView_Principal.TabIndex = 0;
             this.ListView_Principal.UseCompatibleStateImageBehavior = false;
+            this.ListView_Principal.View = System.Windows.Forms.View.Tile;
             // 
-            // Panel_Separador
+            // Lista_Imágenes_16
             // 
-            this.Panel_Separador.BackColor = System.Drawing.Color.Black;
-            this.Panel_Separador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel_Separador.Location = new System.Drawing.Point(0, 0);
-            this.Panel_Separador.Name = "Panel_Separador";
-            this.Panel_Separador.Size = new System.Drawing.Size(884, 1);
-            this.Panel_Separador.TabIndex = 3;
+            this.Lista_Imágenes_16.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.Lista_Imágenes_16.ImageSize = new System.Drawing.Size(16, 16);
+            this.Lista_Imágenes_16.TransparentColor = System.Drawing.Color.Empty;
+            // 
+            // CheckBox_Negro
+            // 
+            this.CheckBox_Negro.AutoSize = true;
+            this.CheckBox_Negro.Checked = true;
+            this.CheckBox_Negro.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CheckBox_Negro.Location = new System.Drawing.Point(118, 17);
+            this.CheckBox_Negro.Name = "CheckBox_Negro";
+            this.CheckBox_Negro.Size = new System.Drawing.Size(98, 17);
+            this.CheckBox_Negro.TabIndex = 3;
+            this.CheckBox_Negro.Text = "Tool works fine";
+            this.CheckBox_Negro.ThreeState = true;
+            this.CheckBox_Negro.UseVisualStyleBackColor = true;
+            this.CheckBox_Negro.CheckStateChanged += new System.EventHandler(this.CheckBox_Negro_CheckStateChanged);
+            // 
+            // CheckBox_Azul
+            // 
+            this.CheckBox_Azul.AutoSize = true;
+            this.CheckBox_Azul.Checked = true;
+            this.CheckBox_Azul.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.CheckBox_Azul.ForeColor = System.Drawing.Color.Blue;
+            this.CheckBox_Azul.Location = new System.Drawing.Point(224, 17);
+            this.CheckBox_Azul.Name = "CheckBox_Azul";
+            this.CheckBox_Azul.Size = new System.Drawing.Size(101, 17);
+            this.CheckBox_Azul.TabIndex = 4;
+            this.CheckBox_Azul.Text = "Tool might work";
+            this.CheckBox_Azul.ThreeState = true;
+            this.CheckBox_Azul.UseVisualStyleBackColor = true;
+            this.CheckBox_Azul.CheckStateChanged += new System.EventHandler(this.CheckBox_Azul_CheckStateChanged);
+            // 
+            // CheckBox_Rojo
+            // 
+            this.CheckBox_Rojo.AutoSize = true;
+            this.CheckBox_Rojo.ForeColor = System.Drawing.Color.Red;
+            this.CheckBox_Rojo.Location = new System.Drawing.Point(330, 17);
+            this.CheckBox_Rojo.Name = "CheckBox_Rojo";
+            this.CheckBox_Rojo.Size = new System.Drawing.Size(101, 17);
+            this.CheckBox_Rojo.TabIndex = 5;
+            this.CheckBox_Rojo.Text = "Tool won\'t work";
+            this.CheckBox_Rojo.ThreeState = true;
+            this.CheckBox_Rojo.UseVisualStyleBackColor = true;
+            this.CheckBox_Rojo.CheckStateChanged += new System.EventHandler(this.CheckBox_Rojo_CheckStateChanged);
+            // 
+            // textBox9
+            // 
+            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox9.BackColor = System.Drawing.Color.White;
+            this.textBox9.Enabled = false;
+            this.textBox9.Location = new System.Drawing.Point(852, 15);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(20, 20);
+            this.textBox9.TabIndex = 7;
+            this.textBox9.Visible = false;
             // 
             // Ventana_Selector_Herramientas
             // 
@@ -136,6 +210,7 @@
             this.Shown += new System.EventHandler(this.Ventana_Selector_Herramientas_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_Selector_Herramientas_KeyDown);
             this.Panel_Inferior.ResumeLayout(false);
+            this.Panel_Inferior.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -148,5 +223,10 @@
         private System.Windows.Forms.Panel Panel_Inferior;
         private System.Windows.Forms.ListView ListView_Principal;
         private System.Windows.Forms.Panel Panel_Separador;
+        private System.Windows.Forms.ImageList Lista_Imágenes_16;
+        private System.Windows.Forms.CheckBox CheckBox_Negro;
+        private System.Windows.Forms.CheckBox CheckBox_Rojo;
+        private System.Windows.Forms.CheckBox CheckBox_Azul;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }

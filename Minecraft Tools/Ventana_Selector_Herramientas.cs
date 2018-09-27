@@ -41,37 +41,42 @@ namespace Minecraft_Tools
 
             internal static readonly Herramientas[] Matriz_Herramientas = new Herramientas[]
             {
-                new Herramientas(Resources.Aceptar, "None (select it manually everytime)", null, CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "About", typeof(Ventana_Acerca), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Backups manager", typeof(Ventana_Administrador_Copias_Seguridad), CheckState.Unchecked),
-                new Herramientas(Resources.Aceptar, "Note blocks tuner", typeof(Ventana_Afinador_Bloques_Nota), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Slime chunks finder", typeof(Ventana_Buscador_Chunks_Limos), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "World seeds infinite calculator", typeof(Ventana_Calculadora_Infinita_Semillas_Mundos), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Finder of differences between JAR versions", typeof(Ventana_Comparador_Versiones_JAR), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Internal debuger", typeof(Ventana_Depurador), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Automatic skin downloader", typeof(Ventana_Descagador_Skins_Automático), CheckState.Unchecked),
-                new Herramientas(Resources.Aceptar, "Banner and shield designer", typeof(Ventana_Diseñador_Estandartes_Escudos), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Redstone designer", null, CheckState.Unchecked),
-                new Herramientas(Resources.Aceptar, "Structure generator through commands", null, CheckState.Unchecked),
-                new Herramientas(Resources.Aceptar, "Painted structures exporter", typeof(Ventana_Exportador_Estructuras_Pintadas), CheckState.Indeterminate),
-                new Herramientas(Resources.Aceptar, "Custom structures generator", typeof(Ventana_Generador_Estructuras_Personalizadas), CheckState.Indeterminate),
-                new Herramientas(Resources.Aceptar, "Thumbnails and average color generator", typeof(Ventana_Generador_Miniaturas_Color_Medio), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Pixel art generator with world exporter", typeof(Ventana_Generador_Pixel_Art), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Thank you", typeof(Ventana_Gracias), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "", typeof(Ventana_Información_Bloques), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Full members information", typeof(Ventana_Información_Miembros_Hermitcraft), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Change the username", typeof(Ventana_Nombre_Usuario), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Resource structure rebuilder", typeof(Ventana_Reconstructor_Estructura_Archivos_Recursos), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Real time Minecraft clock", typeof(Ventana_Reloj_Minecraft_Tiempo_Real), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "", typeof(Ventana_Selector_Bloques), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Help viewer", typeof(Ventana_Visor_Ayuda), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Paintings viewer", typeof(Ventana_Visor_Cuadros), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Block information viewer", typeof(Ventana_Visor_Información_Bloques), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Entities information viewer", typeof(Ventana_Visor_Información_Entidades), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Realistic world viewer in 2D", typeof(Ventana_Visor_Mundos_Realista_2D), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "NBT viewer", typeof(Ventana_Visor_NBT), CheckState.Checked),
-                new Herramientas(Resources.Aceptar, "Villager tradings viewer", typeof(Ventana_Visor_Ofertas_Aldeanos), CheckState.Unchecked),
-                new Herramientas(Resources.Aceptar, "Animated 3D skin viewer", null, CheckState.Unchecked),
+                new Herramientas(Resources.Ejecutar, "None (select it manually everytime)", null, CheckState.Checked),
+                new Herramientas(Resources.Jupisoft_16, "About", typeof(Ventana_Acerca), CheckState.Checked),
+                new Herramientas(Resources.Copia_Seguridad, "Backups manager", typeof(Ventana_Administrador_Copias_Seguridad), CheckState.Unchecked),
+                new Herramientas(Resources.minecraft_note_block, "Note blocks tuner", typeof(Ventana_Afinador_Bloques_Nota), CheckState.Checked),
+                new Herramientas(Resources.minecraft_slime_block, "Slime chunks finder", typeof(Ventana_Buscador_Chunks_Limos), CheckState.Checked),
+                new Herramientas(Resources.Calculadora, "World seeds infinite calculator", typeof(Ventana_Calculadora_Infinita_Semillas_Mundos), CheckState.Checked),
+                new Herramientas(Resources.WinRAR, "Finder of differences between JAR versions", typeof(Ventana_Comparador_Versiones_JAR), CheckState.Checked),
+                new Herramientas(Resources.Excepción, "Exception debugger", typeof(Ventana_Depurador_Excepciones), CheckState.Checked),
+                new Herramientas(Resources.Ordenar, "Automatic skin downloader", typeof(Ventana_Descargador_Skins_Automático), CheckState.Unchecked),
+                new Herramientas(Resources.minecraft_red_banner, "Banner and shield designer", typeof(Ventana_Diseñador_Estandartes_Escudos), CheckState.Checked),
+                new Herramientas(Resources.minecraft_redstone_block, "Redstone designer", null, CheckState.Unchecked),
+                new Herramientas(Resources.minecraft_command_block, "Structure generator through commands", null, CheckState.Unchecked),
+                new Herramientas(Resources.Paleta, "Painted structures exporter", typeof(Ventana_Exportador_Estructuras_Pintadas), CheckState.Indeterminate),
+                new Herramientas(Resources.minecraft_structure_block, "Custom structures generator", typeof(Ventana_Generador_Estructuras_Personalizadas), CheckState.Indeterminate),
+                new Herramientas(Resources.Ojo, "Thumbnails and average color generator", typeof(Ventana_Generador_Miniaturas_Color_Medio), CheckState.Checked),
+                new Herramientas(Resources.Pixel_Art, "Pixel art generator with world exporter", typeof(Ventana_Generador_Pixel_Art), CheckState.Checked),
+                new Herramientas(Resources.Lista, "Thank you", typeof(Ventana_Gracias), CheckState.Checked),
+                new Herramientas(Resources.Controles_TextBox, "Block information", typeof(Ventana_Información_Bloques), CheckState.Checked),
+                new Herramientas(Resources.Xisumavoid, "Full members information", typeof(Ventana_Información_Miembros_Hermitcraft), CheckState.Checked),
+                new Herramientas(Resources.Usuario, "Change the username", typeof(Ventana_Nombre_Usuario), CheckState.Checked),
+                new Herramientas(Resources.Controles_TreeView, "Resource structure rebuilder", typeof(Ventana_Reconstructor_Estructura_Archivos_Recursos), CheckState.Checked),
+                new Herramientas(Resources.Sol_Luna, "Real time Minecraft clock", typeof(Ventana_Reloj_Minecraft_Tiempo_Real), CheckState.Checked),
+                new Herramientas(Resources.minecraft_stone, "Block selector", typeof(Ventana_Selector_Bloques), CheckState.Checked),
+                new Herramientas(Resources.Ayuda, "Help viewer", typeof(Ventana_Visor_Ayuda), CheckState.Checked),
+                new Herramientas(Resources.Cuadros_Pool, "Paintings viewer", typeof(Ventana_Visor_Cuadros), CheckState.Checked),
+                new Herramientas(Resources.Controles_TextBox, "Block information viewer", typeof(Ventana_Visor_Información_Bloques), CheckState.Checked),
+                new Herramientas(Resources.minecraft_player_head, "Entities information viewer", typeof(Ventana_Visor_Información_Entidades), CheckState.Checked),
+                new Herramientas(Resources.Visor_Mundos_2D, "Realistic world viewer in 2D", typeof(Ventana_Visor_Mundos_Realista_2D), CheckState.Checked),
+                new Herramientas(Resources.NBT_Byte, "NBT viewer", typeof(Ventana_Visor_NBT), CheckState.Checked),
+                new Herramientas(Resources.minecraft_emerald_block, "Villager tradings viewer", typeof(Ventana_Visor_Ofertas_Aldeanos), CheckState.Unchecked),
+                new Herramientas(Resources.Visor_Skins_3D, "Animated 3D skin viewer", null, CheckState.Unchecked),
+                new Herramientas(Resources.Subir, "Minecraft internal structures exporter", null, CheckState.Unchecked),
+                new Herramientas(Resources.Item_enchanted_book, "Enchantment names viewer", null, CheckState.Unchecked),
+                new Herramientas(Resources.minecraft_end_portal_frame, "The End screensaver (install it from the File menu)", null, CheckState.Unchecked),
+                new Herramientas(Resources.Candado, "File encoder and decoder from Minecraft worlds", null, CheckState.Unchecked),
+                new Herramientas(Resources.Aleatorio, "Start a random tool every time", null, CheckState.Unchecked),
             };
 
             internal static void Ejecutar_Herramienta(int Índice_Herramienta, bool Siempre_Visible, IWin32Window Ventana_Superior)
@@ -137,17 +142,17 @@ namespace Minecraft_Tools
                             Ventana.Dispose();
                             Ventana = null;
                         }
-                        else if (Tipo == typeof(Ventana_Depurador))
+                        else if (Tipo == typeof(Ventana_Depurador_Excepciones))
                         {
-                            Ventana_Depurador Ventana = new Ventana_Depurador();
+                            Ventana_Depurador_Excepciones Ventana = new Ventana_Depurador_Excepciones();
                             Ventana.Variable_Siempre_Visible = Siempre_Visible;
                             Ventana.ShowDialog(Ventana_Superior);
                             Ventana.Dispose();
                             Ventana = null;
                         }
-                        else if (Tipo == typeof(Ventana_Descagador_Skins_Automático))
+                        else if (Tipo == typeof(Ventana_Descargador_Skins_Automático))
                         {
-                            Ventana_Descagador_Skins_Automático Ventana = new Ventana_Descagador_Skins_Automático();
+                            Ventana_Descargador_Skins_Automático Ventana = new Ventana_Descargador_Skins_Automático();
                             Ventana.Variable_Siempre_Visible = Siempre_Visible;
                             Ventana.ShowDialog(Ventana_Superior);
                             Ventana.Dispose();
@@ -334,7 +339,16 @@ namespace Minecraft_Tools
             try
             {
                 this.Text = Texto_Título + " - [Registered tools: " + Program.Traducir_Número(Herramientas.Matriz_Herramientas.Length) + "]";
-                this.WindowState = FormWindowState.Maximized;
+                //this.WindowState = FormWindowState.Maximized;
+                for (int Índice = 0; Índice < Herramientas.Matriz_Herramientas.Length; Índice++)
+                {
+                    Lista_Imágenes_16.Images.Add(Herramientas.Matriz_Herramientas[Índice].Imagen);
+                    ListViewItem Objeto = new ListViewItem(Herramientas.Matriz_Herramientas[Índice].Texto, Índice);
+                    Objeto.ForeColor = Herramientas.Matriz_Herramientas[Índice].Estado == CheckState.Checked ? Color.Black : Herramientas.Matriz_Herramientas[Índice].Estado == CheckState.Indeterminate ? Color.Blue : Color.Red;
+                    ListView_Principal.Items.Add(Objeto);
+                }
+                ListView_Principal.SmallImageList = Lista_Imágenes_16;
+                ListView_Principal.LargeImageList = Lista_Imágenes_16;
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
@@ -391,6 +405,33 @@ namespace Minecraft_Tools
                         e.SuppressKeyPress = true;
                     }
                 }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void CheckBox_Negro_CheckStateChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CheckBox_Negro.CheckState != CheckState.Checked) CheckBox_Negro.CheckState = CheckState.Checked;
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void CheckBox_Azul_CheckStateChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CheckBox_Azul.CheckState != CheckState.Indeterminate) CheckBox_Azul.CheckState = CheckState.Indeterminate;
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void CheckBox_Rojo_CheckStateChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CheckBox_Rojo.CheckState != CheckState.Unchecked) CheckBox_Rojo.CheckState = CheckState.Unchecked;
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }

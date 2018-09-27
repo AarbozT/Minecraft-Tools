@@ -190,7 +190,7 @@ namespace Minecraft_Tools
                 {
                     float Zoom = Variable_Zoom;
                     Ayudas Ayuda = (Ayudas)ComboBox_Ayuda.SelectedIndex;
-                    string Texto_Ayuda = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 " + Barra_Estado_Etiqueta_Memoria.Font.Name + ";}{\\f1\\fnil\\fcharset0 Calibri;}}\r\n{\\*\\generator Riched20 6.3.9600}\\viewkind4\\uc1 \r\n\\pard\\f0\\fs" + (10 * 2).ToString() + " ";
+                    string Texto_Ayuda = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang3082{\\fonttbl{\\f0\\fnil\\fcharset0 " + Barra_Estado_Etiqueta_Sugerencia.Font.Name + ";}{\\f1\\fnil\\fcharset0 Calibri;}}\r\n{\\*\\generator Riched20 6.3.9600}\\viewkind4\\uc1 \r\n\\pard\\f0\\fs" + (10 * 2).ToString() + " ";
                     if (Ayuda == Ayudas.Main_window)
                     {
                         Texto_Ayuda +=
@@ -220,14 +220,14 @@ namespace Minecraft_Tools
 
                         "\\par\\ul \\b [Help menu]\\b0 \\ulnone \\par\r\n" +
                         "\\b - \"Help viewer...\":\\b0  opens the tool you're using right now to read this text.\\par\r\n" +
-                        "\\b - \"Internal debuger...\":\\b0  opens a tool that will show you any exception that happened while the application was running even from long ago, and will sort them by it's date.\\par\r\n" +
+                        "\\b - \"Exception debugger...\":\\b0  opens a tool that will show you any exception that happened while the application was running even from long ago, and will sort them by it's date.\\par\r\n" +
                         "\\b - \"Website...\":\\b0  navigates to the Jupisoft's website, currently only containing free music albums composed by Júpiter Mauro.\\par\r\n" +
                         "\\b - \"Send an e-mail...\":\\b0  sends an e-mail to Jupisoft, feel free to send any bug you've found or tell any suggestion you have.\\par\r\n" +
                         "\\b - \"Donate...\":\\b0  navigates to the donation site, to give any quantity you want to Jupisoft, so it keeps improving tools like this and developing new ones.\\par\r\n" +
                         "\\b - \"About...\":\\b0  opens the about window, that contains more detailed information about this application and some other interesting features.\\par\r\n" +
 
                         "\\par\\ul \\b [Status bar]\\b0 \\ulnone \\par\r\n" +
-                        "\\b - \"Exceptions\":\\b0  if this label is visible, that means at least one exception has been registered in the application. Click on that label to open the internal debugger and see what happened.\\par\r\n" +
+                        "\\b - \"Exceptions\":\\b0  if this label is visible, that means at least one exception has been registered in the application. Click on that label to open the exception debugger and see what happened.\\par\r\n" +
                         "\\b - \"Memory\":\\b0  this label displays the current memory use by the whole application. And by just measuring that memory use, it might decrease or increase a bit this value.\\par\r\n" +
                         "\\b - \"Tip\":\\b0  this label is designed to kindly welcome the user to the application and to suggest the start of one of it's multiple tools.\\par\r\n" +
 
@@ -260,7 +260,7 @@ namespace Minecraft_Tools
                         "\\par\\ul \\b [Context menu]\\b0 \\ulnone \\par\r\n" +
                         "\\b - \"Help viewer...\":\\b0  opens the tool you're using right now to read this text.\\par\r\n" +
                         "\\b - \"About...\":\\b0  opens the about window, that contains more detailed information about this application and some other interesting features.\\par\r\n" +
-                        "\\b - \"Internal debugger...\":\\b0  opens the internal debugger, a tool that keeps a registry of all the exceptions that have occured in the program even from long ago.\\par\r\n" +
+                        "\\b - \"Exception debugger...\":\\b0  opens the exception debugger, a tool that keeps a registry of all the exceptions that have occured in the program even from long ago.\\par\r\n" +
                         "\\b - \"Open the default save folder for the maps...\":\\b0  opens the default folder used to save the maps, located inside the My Pictures folder.\\par\r\n" +
                         "\\b - \"Refresh and redraw the full map\":\\b0  forces a redraw of the full map.\\par\r\n" +
                         "\\b - \"Clear the current dimension cache after loading any region\":\\b0  if checked, before drawing the map all the regions from the current dimension will deleted from the cache to recover memory.\\par\r\n" +
@@ -303,7 +303,7 @@ namespace Minecraft_Tools
                         "\\par\\ul \\b [Context menu]\\b0 \\ulnone \\par\r\n" +
                         "\\b - \"Help viewer...\":\\b0  opens the tool you're using right now to read this text.\\par\r\n" +
                         "\\b - \"About...\":\\b0  opens the about window, that contains more detailed information about this application and some other interesting features.\\par\r\n" +
-                        "\\b - \"Internal debugger...\":\\b0  opens the internal debugger, a tool that keeps a registry of all the exceptions that have occured in the program even from long ago.\\par\r\n" +
+                        "\\b - \"Exception debugger...\":\\b0  opens the exception debugger, a tool that keeps a registry of all the exceptions that have occured in the program even from long ago.\\par\r\n" +
                         "\\b - \"Open the default save folder for the maps...\":\\b0  opens the default folder used to save the maps, located inside the My Pictures folder.\\par\r\n" +
                         "\\b - \"Refresh\":\\b0  forces a redraw of the full map.\\par\r\n" +
                         "\\b - \"Show the rulers\":\\b0  if checked, the slime chunk map will display on it's borders some rulers for a better reading of the map.\\par\r\n" +

@@ -50,7 +50,7 @@
             this.Menú_Contextual = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Menú_Contextual_Visor_Ayuda = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Contextual_Acerca = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Contextual_Depurador_Interno = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menú_Contextual_Depurador_Excepciones = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Contextual_Abrir_Carpeta = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Contextual_Separador_1 = new System.Windows.Forms.ToolStripSeparator();
             this.Menú_Contextual_Actualizar = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,8 +71,10 @@
             this.Menú_Contextual_Contar_Densidades_Bloques_Niveles_Y = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Contextual_Mostrar_Densidades_Bloques_Niveles_Y = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Contextual_Copiar_Coordenadas_Cursor = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Contextual_Separador_5 = new System.Windows.Forms.ToolStripSeparator();
             this.Menú_Contextual_Restablecer_Ajustes = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menú_Contextual_Separador_5 = new System.Windows.Forms.ToolStripSeparator();
+            this.Menú_Contextual_Dibujar_Chunks_Limos = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menú_Contextual_Dibujar_Mundo_Completo = new System.Windows.Forms.ToolStripMenuItem();
             this.Barra_Estado = new System.Windows.Forms.ToolStrip();
             this.Barra_Estado_Botón_Excepción = new System.Windows.Forms.ToolStripButton();
             this.Barra_Estado_Separador_1 = new System.Windows.Forms.ToolStripSeparator();
@@ -106,7 +108,6 @@
             this.ComboBox_Mundos_Minecraft = new System.Windows.Forms.ComboBox();
             this.Etiqueta_Mundos_Minecraft = new System.Windows.Forms.Label();
             this.Picture = new System.Windows.Forms.PictureBox();
-            this.Menú_Contextual_Dibujar_Mundo_Completo = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel_Picture = new System.Windows.Forms.Panel();
             this.Tabla_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Numérico_Z)).BeginInit();
@@ -425,7 +426,7 @@
             this.Menú_Contextual.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menú_Contextual_Visor_Ayuda,
             this.Menú_Contextual_Acerca,
-            this.Menú_Contextual_Depurador_Interno,
+            this.Menú_Contextual_Depurador_Excepciones,
             this.Menú_Contextual_Abrir_Carpeta,
             this.Menú_Contextual_Separador_1,
             this.Menú_Contextual_Actualizar,
@@ -446,11 +447,12 @@
             this.Menú_Contextual_Contar_Densidades_Bloques_Niveles_Y,
             this.Menú_Contextual_Mostrar_Densidades_Bloques_Niveles_Y,
             this.Menú_Contextual_Copiar_Coordenadas_Cursor,
-            this.Menú_Contextual_Separador_5,
             this.Menú_Contextual_Restablecer_Ajustes,
+            this.Menú_Contextual_Separador_5,
+            this.Menú_Contextual_Dibujar_Chunks_Limos,
             this.Menú_Contextual_Dibujar_Mundo_Completo});
             this.Menú_Contextual.Name = "Menú_Contextual";
-            this.Menú_Contextual.Size = new System.Drawing.Size(418, 496);
+            this.Menú_Contextual.Size = new System.Drawing.Size(418, 540);
             // 
             // Menú_Contextual_Visor_Ayuda
             // 
@@ -470,14 +472,14 @@
             this.Menú_Contextual_Acerca.Text = "About...";
             this.Menú_Contextual_Acerca.Click += new System.EventHandler(this.Menú_Contextual_Acerca_Click);
             // 
-            // Menú_Contextual_Depurador_Interno
+            // Menú_Contextual_Depurador_Excepciones
             // 
-            this.Menú_Contextual_Depurador_Interno.Image = global::Minecraft_Tools.Properties.Resources.Excepción;
-            this.Menú_Contextual_Depurador_Interno.Name = "Menú_Contextual_Depurador_Interno";
-            this.Menú_Contextual_Depurador_Interno.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.Menú_Contextual_Depurador_Interno.Size = new System.Drawing.Size(417, 22);
-            this.Menú_Contextual_Depurador_Interno.Text = "Internal debugger...";
-            this.Menú_Contextual_Depurador_Interno.Click += new System.EventHandler(this.Menú_Contextual_Depurador_Interno_Click);
+            this.Menú_Contextual_Depurador_Excepciones.Image = global::Minecraft_Tools.Properties.Resources.Excepción;
+            this.Menú_Contextual_Depurador_Excepciones.Name = "Menú_Contextual_Depurador_Excepciones";
+            this.Menú_Contextual_Depurador_Excepciones.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.Menú_Contextual_Depurador_Excepciones.Size = new System.Drawing.Size(417, 22);
+            this.Menú_Contextual_Depurador_Excepciones.Text = "Exception debugger...";
+            this.Menú_Contextual_Depurador_Excepciones.Click += new System.EventHandler(this.Menú_Contextual_Depurador_Excepciones_Click);
             // 
             // Menú_Contextual_Abrir_Carpeta
             // 
@@ -647,11 +649,6 @@
             this.Menú_Contextual_Copiar_Coordenadas_Cursor.Text = "Copy the cursor coordinates for fast teleporting";
             this.Menú_Contextual_Copiar_Coordenadas_Cursor.Click += new System.EventHandler(this.Menú_Contextual_Copiar_Coordenadas_Cursor_Click);
             // 
-            // Menú_Contextual_Separador_5
-            // 
-            this.Menú_Contextual_Separador_5.Name = "Menú_Contextual_Separador_5";
-            this.Menú_Contextual_Separador_5.Size = new System.Drawing.Size(414, 6);
-            // 
             // Menú_Contextual_Restablecer_Ajustes
             // 
             this.Menú_Contextual_Restablecer_Ajustes.Image = global::Minecraft_Tools.Properties.Resources.Restablecer;
@@ -660,6 +657,29 @@
             this.Menú_Contextual_Restablecer_Ajustes.Size = new System.Drawing.Size(417, 22);
             this.Menú_Contextual_Restablecer_Ajustes.Text = "Restore all this settings to it\'s default values...";
             this.Menú_Contextual_Restablecer_Ajustes.Click += new System.EventHandler(this.Menú_Contextual_Restablecer_Ajustes_Click);
+            // 
+            // Menú_Contextual_Separador_5
+            // 
+            this.Menú_Contextual_Separador_5.Name = "Menú_Contextual_Separador_5";
+            this.Menú_Contextual_Separador_5.Size = new System.Drawing.Size(414, 6);
+            // 
+            // Menú_Contextual_Dibujar_Chunks_Limos
+            // 
+            this.Menú_Contextual_Dibujar_Chunks_Limos.CheckOnClick = true;
+            this.Menú_Contextual_Dibujar_Chunks_Limos.Name = "Menú_Contextual_Dibujar_Chunks_Limos";
+            this.Menú_Contextual_Dibujar_Chunks_Limos.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.Menú_Contextual_Dibujar_Chunks_Limos.Size = new System.Drawing.Size(417, 22);
+            this.Menú_Contextual_Dibujar_Chunks_Limos.Text = "Draw the slime chunks over the map (needs redrawing)";
+            this.Menú_Contextual_Dibujar_Chunks_Limos.CheckedChanged += new System.EventHandler(this.Menú_Contextual_Dibujar_Chunks_Limos_CheckedChanged);
+            // 
+            // Menú_Contextual_Dibujar_Mundo_Completo
+            // 
+            this.Menú_Contextual_Dibujar_Mundo_Completo.CheckOnClick = true;
+            this.Menú_Contextual_Dibujar_Mundo_Completo.Name = "Menú_Contextual_Dibujar_Mundo_Completo";
+            this.Menú_Contextual_Dibujar_Mundo_Completo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.Menú_Contextual_Dibujar_Mundo_Completo.Size = new System.Drawing.Size(417, 22);
+            this.Menú_Contextual_Dibujar_Mundo_Completo.Text = "Draw the full world at once (remember to save the map!)";
+            this.Menú_Contextual_Dibujar_Mundo_Completo.CheckedChanged += new System.EventHandler(this.Menú_Contextual_Dibujar_Mundo_Completo_CheckedChanged);
             // 
             // Barra_Estado
             // 
@@ -974,15 +994,6 @@
             this.Picture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Picture_MouseMove);
             this.Picture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Picture_MouseUp);
             // 
-            // Menú_Contextual_Dibujar_Mundo_Completo
-            // 
-            this.Menú_Contextual_Dibujar_Mundo_Completo.CheckOnClick = true;
-            this.Menú_Contextual_Dibujar_Mundo_Completo.Name = "Menú_Contextual_Dibujar_Mundo_Completo";
-            this.Menú_Contextual_Dibujar_Mundo_Completo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.Menú_Contextual_Dibujar_Mundo_Completo.Size = new System.Drawing.Size(417, 22);
-            this.Menú_Contextual_Dibujar_Mundo_Completo.Text = "Draw the full world at once (remember to save the map!)";
-            this.Menú_Contextual_Dibujar_Mundo_Completo.CheckedChanged += new System.EventHandler(this.Menú_Contextual_Dibujar_Mundo_Completo_CheckedChanged);
-            // 
             // Panel_Picture
             // 
             this.Panel_Picture.Controls.Add(this.Picture);
@@ -1083,7 +1094,7 @@
         private System.Windows.Forms.ToolStripLabel Barra_Estado_Etiqueta_Memoria;
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Visor_Ayuda;
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Acerca;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Depurador_Interno;
+        private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Depurador_Excepciones;
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Vaciar_Caché_Fuera_Pantalla;
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Pantalla_Completa;
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Copiar_Ventana;
@@ -1115,5 +1126,6 @@
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Mostrar_Densidades_Bloques_Niveles_Y;
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Dibujar_Mundo_Completo;
         private System.Windows.Forms.Panel Panel_Picture;
+        private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Dibujar_Chunks_Limos;
     }
 }

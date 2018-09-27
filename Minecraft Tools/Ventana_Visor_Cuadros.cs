@@ -533,11 +533,11 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Menú_Contextual_Depurador_Interno_Click(object sender, EventArgs e)
+        private void Menú_Contextual_Depurador_Excepciones_Click(object sender, EventArgs e)
         {
             try
             {
-                Ventana_Depurador Ventana = new Ventana_Depurador();
+                Ventana_Depurador_Excepciones Ventana = new Ventana_Depurador_Excepciones();
                 Ventana.ShowDialog(this);
                 Ventana.Dispose();
                 Ventana = null;
@@ -633,7 +633,7 @@ namespace Minecraft_Tools
                 Barra_Estado_Botón_Excepción.Image = Resources.Excepción_Gris;
                 Barra_Estado_Botón_Excepción.ForeColor = Color.Black;
                 Barra_Estado_Botón_Excepción.Text = "Exceptions: 0";
-                Ventana_Depurador Ventana = new Ventana_Depurador();
+                Ventana_Depurador_Excepciones Ventana = new Ventana_Depurador_Excepciones();
                 Ventana.ShowDialog(this);
                 Ventana.Dispose();
                 Ventana = null;

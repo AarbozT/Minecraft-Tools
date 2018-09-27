@@ -94,7 +94,8 @@ namespace Minecraft_Tools
         internal static bool Variable_Ventana_Maximizada = true;
         internal static Color Variable_Color_Fondo = Color.FromArgb(255, 64, 64, 64);
 
-        internal static bool Variable_Dibujar_Mundo_Completo = false;
+        internal bool Variable_Dibujar_Chunks_Limos = false;
+        internal bool Variable_Dibujar_Mundo_Completo = false;
 
         internal decimal Variable_X_Anterior = 0m;
         internal decimal Variable_Z_Anterior = 0m;
@@ -1240,11 +1241,11 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Menú_Contextual_Depurador_Interno_Click(object sender, EventArgs e)
+        private void Menú_Contextual_Depurador_Excepciones_Click(object sender, EventArgs e)
         {
             try
             {
-                Ventana_Depurador Ventana = new Ventana_Depurador();
+                Ventana_Depurador_Excepciones Ventana = new Ventana_Depurador_Excepciones();
                 Ventana.ShowDialog(this);
                 Ventana.Dispose();
                 Ventana = null;
@@ -1727,7 +1728,7 @@ namespace Minecraft_Tools
                 Barra_Estado_Botón_Excepción.Image = Resources.Excepción_Gris;
                 Barra_Estado_Botón_Excepción.ForeColor = Color.Black;
                 Barra_Estado_Botón_Excepción.Text = "Exceptions: 0";
-                Ventana_Depurador Ventana = new Ventana_Depurador();
+                Ventana_Depurador_Excepciones Ventana = new Ventana_Depurador_Excepciones();
                 Ventana.ShowDialog(this);
                 Ventana.Dispose();
                 Ventana = null;
@@ -2038,317 +2039,353 @@ namespace Minecraft_Tools
                 int Zoom = Variable_Temporal_Zoom; //(int)Math.Pow(2d, (double)ComboBox_Zoom.SelectedIndex);
                 int Zoom_16 = 16 * Variable_Temporal_Zoom;
                 int Zoom_512 = 512 * Variable_Temporal_Zoom;
-
                 int X = (Variable_Temporal_X / 16) * 16;
                 int Y = Variable_Temporal_Y;
                 int Z = (Variable_Temporal_Z / 16) * 16;
-                // La coordenada seleccionada arriba está por la mitad del área cliente del Picture...
-                int Mitad_Ancho_Cliente = (Ancho_Cliente / 2) + (Ancho_Cliente % 2 == 0 ? 0 : 1);
-                int Mitad_Alto_Cliente = (Alto_Cliente / 2) + (Alto_Cliente % 2 == 0 ? 0 : 1);
-                //if (Mitad_Ancho_Cliente * 2 < Ancho_Cliente) Mitad_Ancho_Cliente++;
-                //if (Mitad_Alto_Cliente * 2 < Alto_Cliente) Mitad_Alto_Cliente++;
-                //if (Mitad_Ancho_Cliente % Zoom_16 != 0) Mitad_Ancho_Cliente += Zoom_16 - (Mitad_Ancho_Cliente % Zoom_16);
-                //if (Mitad_Alto_Cliente % Zoom_16 != 0) Mitad_Alto_Cliente += Zoom_16 - (Mitad_Alto_Cliente % Zoom_16);
-
-                int Región_Central_X = (X / 512) * 512;
-                int Región_Central_Z = (Z / 512) * 512;
-                if (Región_Central_X > X) Región_Central_X -= 512;
-                if (Región_Central_Z > Z) Región_Central_Z -= 512;
-
-                int Mitad_Ancho_Cliente_Zoom = 0;
-                int Mitad_Alto_Cliente_Zoom = 0;
-                int Pantalla_X = Mitad_Ancho_Cliente;
-                int Pantalla_Z = Mitad_Alto_Cliente;
-                int Mitad_Ancho_Cliente_Zoom2 = 0;
-                int Mitad_Alto_Cliente_Zoom2 = 0;
-                int Pantalla_Ancho = Mitad_Ancho_Cliente;
-                int Pantalla_Alto = Mitad_Alto_Cliente;
-
-                int Inicio_Bloque_X = X;
-                int Inicio_Bloque_Z = Z;
-                int Fin_Bloque_X = X;
-                int Fin_Bloque_Z = Z;
-                while (Pantalla_X > 0)
-                {
-                    Inicio_Bloque_X--;
-                    Pantalla_X -= Zoom;
-                    Mitad_Ancho_Cliente_Zoom += Zoom;
-                }
-                while (Pantalla_Z > 0)
-                {
-                    Inicio_Bloque_Z--;
-                    Pantalla_Z -= Zoom;
-                    Mitad_Alto_Cliente_Zoom += Zoom;
-                }
-                while (Pantalla_Ancho + Zoom < Ancho_Cliente)
-                {
-                    Fin_Bloque_X++;
-                    Pantalla_Ancho += Zoom;
-                    Mitad_Ancho_Cliente_Zoom2 += Zoom;
-                }
-                while (Pantalla_Alto + Zoom < Alto_Cliente)
-                {
-                    Fin_Bloque_Z++;
-                    Pantalla_Alto += Zoom;
-                    Mitad_Alto_Cliente_Zoom2 += Zoom;
-                }
                 
-                /*int Regiones_Movidas_X = Mitad_Ancho_Cliente_Zoom / Zoom_512;
-                int Regiones_Movidas_Z = Mitad_Alto_Cliente_Zoom / Zoom_512;
-                if (Regiones_Movidas_X * Zoom_512 < Mitad_Ancho_Cliente_Zoom) Regiones_Movidas_X++;
-                if (Regiones_Movidas_Z * Zoom_512 < Mitad_Alto_Cliente_Zoom) Regiones_Movidas_Z++;*/
-
-                int Región_Inicial_X = Inicio_Bloque_X / 512;
-                int Región_Inicial_Z = Inicio_Bloque_Z / 512;
-                if (Región_Inicial_X * 512 < Inicio_Bloque_X) Región_Inicial_X++;
-                if (Región_Inicial_Z * 512 < Inicio_Bloque_Z) Región_Inicial_Z++;
-
-                int Origen_X = X - Mitad_Ancho_Cliente_Zoom; // Pantalla
-                int Origen_Z = Z - Mitad_Alto_Cliente_Zoom;
-                int Destino_X = X + Mitad_Ancho_Cliente_Zoom2;
-                int Destino_Z = Z + Mitad_Alto_Cliente_Zoom2;
-
-                int Origen_Región_X = Origen_X / Zoom_512;
-                int Origen_Región_Z = Origen_Z / Zoom_512;
-                if (Origen_Región_X * Zoom_512 > Origen_X) Origen_Región_X--;
-                if (Origen_Región_Z * Zoom_512 > Origen_Z) Origen_Región_Z--;
-                //MessageBox.Show(Origen_Región_X.ToString() + ", " + Origen_Región_Z.ToString() + "\r\n" + Región_Inicial_X.ToString() + ", " + Región_Inicial_Z.ToString() + "\r\n" + Pantalla_X.ToString() + ", " + Pantalla_Y.ToString() + "\r\n" + Mitad_Ancho_Cliente_Zoom.ToString() + ", " + Mitad_Alto_Cliente_Zoom.ToString() + "\r\n" + Rectángulo_Pantalla.ToString(), "XY Pantalla");
-
-
-                //int Chunk_X_Origen = X - Mitad_Ancho_Cliente;
-                //int Chunk_Z_Origen = Z - Mitad_Alto_Cliente;
-                //Picture.BackgroundImage = new Bitmap(Ancho_Cliente, Alto_Cliente, PixelFormat.Format32bppArgb);
-                //Graphics Pintar = Graphics.FromImage(Picture.BackgroundImage);
-                //Pintar.CompositingMode = CompositingMode.SourceCopy;
-
-                // Si XZ seleccionado es el centro de la pantalla +1...
-                // Restar la mitad de la pantalla (cliente) para obtener el inicio XZ
-                // en bloques y sumarle la pantalla para obtener el rectángulo total a dibujar.
-
-
-
                 Rectangle Rectángulo = new Rectangle(0, 0, Zoom, Zoom);
-                //Rectangle Rectángulo_Chunk = new Rectangle(0, 0, Zoom_16, Zoom_16);
-
-                int Chunks_Ancho = Ancho_Cliente / Zoom_16;
-                if (Chunks_Ancho * Zoom_16 < Ancho_Cliente) Chunks_Ancho++;
-                int Chunks_Alto = Alto_Cliente / Zoom_16;
-                if (Chunks_Alto * Zoom_16 < Alto_Cliente) Chunks_Alto++;
-
-                //MessageBox.Show(Chunks_Ancho.ToString() + ", " + Chunks_Alto.ToString());
-                //MessageBox.Show(Mitad_Ancho_Cliente.ToString(), Mitad_Alto_Cliente.ToString());
-
-                // Precalcular las regiones que se van a dibujar parcial o completamente:
-
-                //List<Minecraft.Regiones> Lista_Regiones = new List<Minecraft.Regiones>();
-                //Dictionary<int, List<Point>> Diccionario_Regiones_Índices_Chunks = new Dictionary<int, List<Point>>();
-                //Rectangle Rectángulo_Cliente = new Rectangle(X_Origen, Z_Origen, Ancho_Cliente, Alto_Cliente);
-
                 Dictionary<Point, Point> Diccionario_Posiciones_Regiones_Bloques = new Dictionary<Point, Point>();
-
-                // Nuevo sistema: empezar en el bloque de más arriba a la izquierda que se vea en la
-                // pantalla y seguir horizontalmente y luego verticalmente como la iteración de una
-                // imagen, y para cada bloque, calcular su chunk y su región, y añadirlos si aún no
-                // están en sus respectivas listas y almacenar en una lista paralela las posiciones
-                // de dibujo de cada chunk para cada región para soportar el orden aleatorio.
-
+                int Chunks_Ancho = 0;
+                int Chunks_Alto = 0;
                 List<Point> Lista_Posiciones_Regiones = new List<Point>();
                 List<List<Point>> Lista_Posiciones_Chunks = new List<List<Point>>();
                 List<List<Point>> Lista_Posiciones_Pintar = new List<List<Point>>();
 
-                //MessageBox.Show(((Fin_Bloque_X - Inicio_Bloque_X) + 1).ToString());
-                //MessageBox.Show(((Fin_Bloque_Z - Inicio_Bloque_Z) + 1).ToString());
-
-                //MessageBox.Show(Inicio_Bloque_X.ToString() + ", " + Inicio_Bloque_Z.ToString());
-                //MessageBox.Show(Pantalla_X.ToString() + ", " + Pantalla_Z.ToString());
-
-                // 2018_03_16_08_39_49_779:
-                int Rectángulo_X = Mitad_Ancho_Cliente / Zoom;
-                int Rectángulo_Z = Mitad_Alto_Cliente / Zoom;
-                if (Rectángulo_X * Zoom < Mitad_Ancho_Cliente) Rectángulo_X++;
-                if (Rectángulo_Z * Zoom < Mitad_Alto_Cliente) Rectángulo_Z++;
-
-                int Longitud_X = (Rectángulo_X * 2) + Zoom_512;
-                int Longitud_Z = (Rectángulo_Z * 2) + Zoom_512;
-
-                int Bloque_Inicio_X = X - Rectángulo_X;
-                int Bloque_Inicio_Z = Z - Rectángulo_Z;
-
-                int Región_Inicio_X = Bloque_Inicio_X / 512;
-                int Región_Inicio_Z = Bloque_Inicio_Z / 512;
-                if ((Región_Inicio_X * 512) > Bloque_Inicio_X) Región_Inicio_X--;
-                if ((Región_Inicio_Z * 512) > Bloque_Inicio_Z) Región_Inicio_Z--;
-
-                //MessageBox.Show("Pintar en pantalla desde: " + Rectángulo_X.ToString() + ", " + Rectángulo_Z.ToString());
-
-                Rectángulo_X = Mitad_Ancho_Cliente - (Rectángulo_X * Zoom);
-                Rectángulo_Z = Mitad_Alto_Cliente - (Rectángulo_Z * Zoom);
-
-                // Calcular XZ de origen de región de inicio:
-                //Rectangle Rectángulo_Pantalla = new Rectangle(Rectángulo_X, Rectángulo_Z, Longitud_X, Longitud_Z);
-                Rectangle Rectángulo_Pantalla = new Rectangle(0, 0, Ancho_Cliente, Alto_Cliente);
-                if (Rectángulo_X > Región_Inicio_X * 512) Rectángulo_X -= Rectángulo_X - (Región_Inicio_X * 512);
-                if (Rectángulo_Z > Región_Inicio_Z * 512) Rectángulo_Z -= Rectángulo_Z - (Región_Inicio_Z * 512);
-
-                int Bloque_Región_Inicio_X = Región_Inicio_X * 512;
-                int Bloque_Región_Inicio_Z = Región_Inicio_Z * 512;
-
-                /*MessageBox.Show("Pintar en pantalla desde: " + Rectángulo_X.ToString() + ", " + Rectángulo_Z.ToString() + "\r\n" +
-                    "Cargar desde el bloque: " + Bloque_Inicio_X.ToString() + ", " + Bloque_Inicio_Z.ToString() + "\r\n" +
-                    "Cargar desde la región: " + Región_Inicio_X.ToString() + ", " + Región_Inicio_Z.ToString() + "\r\n" +
-                    "Bloque de la 1ª región: " + Bloque_Región_Inicio_X.ToString() + ", " + Bloque_Región_Inicio_Z.ToString() + "\r\n" +
-                    "Longitudes: " + Longitud_X.ToString() + ", " + Longitud_Z.ToString() + "\r\n" +
-                    Rectángulo_Pantalla.ToString(),
-                    Mitad_Ancho_Cliente.ToString() + ", " + Mitad_Alto_Cliente.ToString());
-                    */
-                // ...
-
-                /*MessageBox.Show(Variable_Temporal_Zoom.ToString());
-                Variable_Temporal_Zoom = 256;
-                Zoom = 256;
-                Zoom_16 = 256 * 16;
-                Zoom_512 = 512 * 256;
-                Variable_Temporal_X = -333;
-                Variable_Temporal_Z = -222;
-                X = -333;
-                Z = -222;*/
-
-                int Ancho_Mitad = Ancho_Cliente / 2;
-                int Alto_Mitad = Alto_Cliente / 2;
-
-                int X1 = Ancho_Mitad / Variable_Zoom;
-                if (X1 * Variable_Zoom < Ancho_Mitad) X1++;
-                int XX1 = X1 * Variable_Zoom;
-                int XXX1 = Ancho_Mitad - XX1;
-                int Resto_X = Ancho_Mitad % Zoom_16;
-                if (Resto_X > 0) XXX1 -= (Zoom_16 - Resto_X);
-
-                int Z1 = Alto_Mitad / Variable_Zoom;
-                if (Z1 * Variable_Zoom < Alto_Mitad) Z1++;
-                int ZZ1 = Z1 * Variable_Zoom;
-                int ZZZ1 = Alto_Mitad - ZZ1;
-                int Resto_Z = Alto_Mitad % Zoom_16;
-                if (Resto_Z > 0) ZZZ1 -= (Zoom_16 - Resto_Z);
-
-                int XXXX1 = Variable_Temporal_X - X1;
-                int ZZZZ1 = Variable_Temporal_Z - Z1;
-
-                // Readjust the XZ coordinates to center them on the screen:
-                /*int X_Centro = (Variable_Temporal_X % 16);
-                int Z_Centro = (Variable_Temporal_Z % 16);
-                if (X_Centro > 0)
+                if (!Variable_Dibujar_Mundo_Completo)
                 {
-                    XXX1 -= X_Centro * Zoom;
-                    XXXX1 -= X_Centro;
-                }
-                if (Z_Centro > 0)
-                {
-                    ZZZ1 -= Z_Centro * Zoom;
-                    ZZZZ1 -= Z_Centro;
-                }*/
+                    // La coordenada seleccionada arriba está por la mitad del área cliente del Picture...
+                    int Mitad_Ancho_Cliente = (Ancho_Cliente / 2) + (Ancho_Cliente % 2 == 0 ? 0 : 1);
+                    int Mitad_Alto_Cliente = (Alto_Cliente / 2) + (Alto_Cliente % 2 == 0 ? 0 : 1);
+                    //if (Mitad_Ancho_Cliente * 2 < Ancho_Cliente) Mitad_Ancho_Cliente++;
+                    //if (Mitad_Alto_Cliente * 2 < Alto_Cliente) Mitad_Alto_Cliente++;
+                    //if (Mitad_Ancho_Cliente % Zoom_16 != 0) Mitad_Ancho_Cliente += Zoom_16 - (Mitad_Ancho_Cliente % Zoom_16);
+                    //if (Mitad_Alto_Cliente % Zoom_16 != 0) Mitad_Alto_Cliente += Zoom_16 - (Mitad_Alto_Cliente % Zoom_16);
 
-                if (Zoom == 1) // Finish it...
-                {
-                    XXX1 -= (Variable_Temporal_X % 16) * Zoom;
-                    ZZZ1 -= (Variable_Temporal_Z % 16) * Zoom;
-                    XXXX1 -= (Variable_Temporal_X % 16) * Zoom;
-                    ZZZZ1 -= (Variable_Temporal_Z % 16) * Zoom;
-                }
+                    int Región_Central_X = (X / 512) * 512;
+                    int Región_Central_Z = (Z / 512) * 512;
+                    if (Región_Central_X > X) Región_Central_X -= 512;
+                    if (Región_Central_Z > Z) Región_Central_Z -= 512;
 
-                /*// 2018_05_09_15_31_15_945:
-                int Ancho_2 = (int)Math.Round((double)Ancho_Cliente / 2d, MidpointRounding.AwayFromZero);
-                int Alto_2 = (int)Math.Round((double)Alto_Cliente / 2d, MidpointRounding.AwayFromZero);
+                    int Mitad_Ancho_Cliente_Zoom = 0;
+                    int Mitad_Alto_Cliente_Zoom = 0;
+                    int Pantalla_X = Mitad_Ancho_Cliente;
+                    int Pantalla_Z = Mitad_Alto_Cliente;
+                    int Mitad_Ancho_Cliente_Zoom2 = 0;
+                    int Mitad_Alto_Cliente_Zoom2 = 0;
+                    int Pantalla_Ancho = Mitad_Ancho_Cliente;
+                    int Pantalla_Alto = Mitad_Alto_Cliente;
 
-                int XX = Ancho_2 / Zoom;
-                if (XX * Zoom < Ancho_2) XX++;
-                XX = XX - (Variable_Temporal_X % 16);
-
-                int ZZ = Alto_2 / Zoom;
-                if (ZZ * Zoom < Alto_2) ZZ++;
-                ZZ = ZZ - (Variable_Temporal_Z % 16);
-
-                int XXX = Variable_Temporal_X - XX;
-                int ZZZ = Variable_Temporal_Z - ZZ;
-
-                XXXX1 = XXX / 16;
-                if (XXX < 0) XXXX1--;
-
-                ZZZZ1 = ZZZ / 16;
-                if (ZZZ < 0) ZZZZ1--;
-
-                XXX1 -= XX * Zoom;
-                ZZZ1 -= ZZ * Zoom;*/
-
-                /*int Ancho = Picture.ClientSize.Width;
-                int Alto = Picture.ClientSize.Height;
-                int X = e.X;
-                int Z = e.Y;
-                if (X < 0) X = 0;
-                else if (X >= Ancho) X = Ancho - 1;
-                if (Z < 0) Z = 0;
-                else if (Z >= Alto) Z = Alto - 1;
-                int Ancho_2 = (int)Math.Round((double)Ancho / 2d, MidpointRounding.AwayFromZero);
-                int Alto_2 = (int)Math.Round((double)Alto / 2d, MidpointRounding.AwayFromZero);
-                int Diferencia_X_Centro = Ancho_2 - X;
-                int Diferencia_Z_Centro = Alto_2 - Z;
-                X = Variable_X - (Diferencia_X_Centro / Variable_Zoom);
-                Z = Variable_Z - (Diferencia_Z_Centro / Variable_Zoom);*/
-
-                // Aire y cuevas:
-                //int Ancho_Aire_Cuevas = (Ancho_Cliente + 32) / Zoom;
-                //int Alto_Aire_Cuevas = (Alto_Cliente + 32) / Zoom;
-                //if (Ancho_Aire_Cuevas * Zoom < Ancho_Cliente + 32) Ancho_Aire_Cuevas++;
-                //if (Alto_Aire_Cuevas * Zoom < Alto_Cliente + 32) Alto_Aire_Cuevas++;
-
-                for (int Índice_Z = 0, Chunk_Z = ZZZZ1, Pintar_Z = ZZZ1; Índice_Z < Alto_Cliente * 2; Índice_Z += 1, Chunk_Z += 16, Pintar_Z += Zoom_16)
-                {
-                    for (int Índice_X = 0, Chunk_X = XXXX1, Pintar_X = XXX1; Índice_X < Ancho_Cliente * 2; Índice_X += 1, Chunk_X += 16, Pintar_X += Zoom_16)
+                    int Inicio_Bloque_X = X;
+                    int Inicio_Bloque_Z = Z;
+                    int Fin_Bloque_X = X;
+                    int Fin_Bloque_Z = Z;
+                    while (Pantalla_X > 0)
                     {
-                        if (Pendiente_Subproceso_Abortar) return;
-                        int Valor_X_Chunk = Math.Abs(Chunk_X) % 32; // De 0 a 31
-                        int Valor_X_Región = Chunk_X / 512; // Infinito
-                        if (Valor_X_Región * 512 > Chunk_X)
-                        {
-                            //Valor_X_Chunk--;
-                            Valor_X_Región--;
-                        }
-                        int Valor_Z_Chunk = Math.Abs(Chunk_Z) % 32;
-                        int Valor_Z_Región = Chunk_Z / 512;
-                        if (Valor_Z_Región * 512 > Chunk_Z)
-                        {
-                            //Valor_Z_Chunk--;
-                            Valor_Z_Región--;
-                        }
+                        Inicio_Bloque_X--;
+                        Pantalla_X -= Zoom;
+                        Mitad_Ancho_Cliente_Zoom += Zoom;
+                    }
+                    while (Pantalla_Z > 0)
+                    {
+                        Inicio_Bloque_Z--;
+                        Pantalla_Z -= Zoom;
+                        Mitad_Alto_Cliente_Zoom += Zoom;
+                    }
+                    while (Pantalla_Ancho + Zoom < Ancho_Cliente)
+                    {
+                        Fin_Bloque_X++;
+                        Pantalla_Ancho += Zoom;
+                        Mitad_Ancho_Cliente_Zoom2 += Zoom;
+                    }
+                    while (Pantalla_Alto + Zoom < Alto_Cliente)
+                    {
+                        Fin_Bloque_Z++;
+                        Pantalla_Alto += Zoom;
+                        Mitad_Alto_Cliente_Zoom2 += Zoom;
+                    }
 
-                        int Chunk_Xs = Math.Abs(((Valor_X_Región * 512) - Chunk_X)) / 16;
-                        int Chunk_Zs = Math.Abs(((Valor_Z_Región * 512) - Chunk_Z)) / 16;
+                    /*int Regiones_Movidas_X = Mitad_Ancho_Cliente_Zoom / Zoom_512;
+                    int Regiones_Movidas_Z = Mitad_Alto_Cliente_Zoom / Zoom_512;
+                    if (Regiones_Movidas_X * Zoom_512 < Mitad_Ancho_Cliente_Zoom) Regiones_Movidas_X++;
+                    if (Regiones_Movidas_Z * Zoom_512 < Mitad_Alto_Cliente_Zoom) Regiones_Movidas_Z++;*/
 
-                        Rectangle Rectángulo_Chunk = new Rectangle(Pintar_X, Pintar_Z, Zoom_16, Zoom_16);
-                        if (Rectángulo_Chunk.IntersectsWith(Rectángulo_Pantalla))
+                    int Región_Inicial_X = Inicio_Bloque_X / 512;
+                    int Región_Inicial_Z = Inicio_Bloque_Z / 512;
+                    if (Región_Inicial_X * 512 < Inicio_Bloque_X) Región_Inicial_X++;
+                    if (Región_Inicial_Z * 512 < Inicio_Bloque_Z) Región_Inicial_Z++;
+
+                    int Origen_X = X - Mitad_Ancho_Cliente_Zoom; // Pantalla
+                    int Origen_Z = Z - Mitad_Alto_Cliente_Zoom;
+                    int Destino_X = X + Mitad_Ancho_Cliente_Zoom2;
+                    int Destino_Z = Z + Mitad_Alto_Cliente_Zoom2;
+
+                    int Origen_Región_X = Origen_X / Zoom_512;
+                    int Origen_Región_Z = Origen_Z / Zoom_512;
+                    if (Origen_Región_X * Zoom_512 > Origen_X) Origen_Región_X--;
+                    if (Origen_Región_Z * Zoom_512 > Origen_Z) Origen_Región_Z--;
+                    //MessageBox.Show(Origen_Región_X.ToString() + ", " + Origen_Región_Z.ToString() + "\r\n" + Región_Inicial_X.ToString() + ", " + Región_Inicial_Z.ToString() + "\r\n" + Pantalla_X.ToString() + ", " + Pantalla_Y.ToString() + "\r\n" + Mitad_Ancho_Cliente_Zoom.ToString() + ", " + Mitad_Alto_Cliente_Zoom.ToString() + "\r\n" + Rectángulo_Pantalla.ToString(), "XY Pantalla");
+
+
+                    //int Chunk_X_Origen = X - Mitad_Ancho_Cliente;
+                    //int Chunk_Z_Origen = Z - Mitad_Alto_Cliente;
+                    //Picture.BackgroundImage = new Bitmap(Ancho_Cliente, Alto_Cliente, PixelFormat.Format32bppArgb);
+                    //Graphics Pintar = Graphics.FromImage(Picture.BackgroundImage);
+                    //Pintar.CompositingMode = CompositingMode.SourceCopy;
+
+                    // Si XZ seleccionado es el centro de la pantalla +1...
+                    // Restar la mitad de la pantalla (cliente) para obtener el inicio XZ
+                    // en bloques y sumarle la pantalla para obtener el rectángulo total a dibujar.
+
+                    //Rectangle Rectángulo_Chunk = new Rectangle(0, 0, Zoom_16, Zoom_16);
+
+                    Chunks_Ancho = Ancho_Cliente / Zoom_16;
+                    if (Chunks_Ancho * Zoom_16 < Ancho_Cliente) Chunks_Ancho++;
+                    Chunks_Alto = Alto_Cliente / Zoom_16;
+                    if (Chunks_Alto * Zoom_16 < Alto_Cliente) Chunks_Alto++;
+
+                    //MessageBox.Show(Chunks_Ancho.ToString() + ", " + Chunks_Alto.ToString());
+                    //MessageBox.Show(Mitad_Ancho_Cliente.ToString(), Mitad_Alto_Cliente.ToString());
+
+                    // Precalcular las regiones que se van a dibujar parcial o completamente:
+
+                    //List<Minecraft.Regiones> Lista_Regiones = new List<Minecraft.Regiones>();
+                    //Dictionary<int, List<Point>> Diccionario_Regiones_Índices_Chunks = new Dictionary<int, List<Point>>();
+                    //Rectangle Rectángulo_Cliente = new Rectangle(X_Origen, Z_Origen, Ancho_Cliente, Alto_Cliente);
+                    
+                    // Nuevo sistema: empezar en el bloque de más arriba a la izquierda que se vea en la
+                    // pantalla y seguir horizontalmente y luego verticalmente como la iteración de una
+                    // imagen, y para cada bloque, calcular su chunk y su región, y añadirlos si aún no
+                    // están en sus respectivas listas y almacenar en una lista paralela las posiciones
+                    // de dibujo de cada chunk para cada región para soportar el orden aleatorio.
+                    
+                    //MessageBox.Show(((Fin_Bloque_X - Inicio_Bloque_X) + 1).ToString());
+                    //MessageBox.Show(((Fin_Bloque_Z - Inicio_Bloque_Z) + 1).ToString());
+
+                    //MessageBox.Show(Inicio_Bloque_X.ToString() + ", " + Inicio_Bloque_Z.ToString());
+                    //MessageBox.Show(Pantalla_X.ToString() + ", " + Pantalla_Z.ToString());
+
+                    // 2018_03_16_08_39_49_779:
+                    int Rectángulo_X = Mitad_Ancho_Cliente / Zoom;
+                    int Rectángulo_Z = Mitad_Alto_Cliente / Zoom;
+                    if (Rectángulo_X * Zoom < Mitad_Ancho_Cliente) Rectángulo_X++;
+                    if (Rectángulo_Z * Zoom < Mitad_Alto_Cliente) Rectángulo_Z++;
+
+                    int Longitud_X = (Rectángulo_X * 2) + Zoom_512;
+                    int Longitud_Z = (Rectángulo_Z * 2) + Zoom_512;
+
+                    int Bloque_Inicio_X = X - Rectángulo_X;
+                    int Bloque_Inicio_Z = Z - Rectángulo_Z;
+
+                    int Región_Inicio_X = Bloque_Inicio_X / 512;
+                    int Región_Inicio_Z = Bloque_Inicio_Z / 512;
+                    if ((Región_Inicio_X * 512) > Bloque_Inicio_X) Región_Inicio_X--;
+                    if ((Región_Inicio_Z * 512) > Bloque_Inicio_Z) Región_Inicio_Z--;
+
+                    //MessageBox.Show("Pintar en pantalla desde: " + Rectángulo_X.ToString() + ", " + Rectángulo_Z.ToString());
+
+                    Rectángulo_X = Mitad_Ancho_Cliente - (Rectángulo_X * Zoom);
+                    Rectángulo_Z = Mitad_Alto_Cliente - (Rectángulo_Z * Zoom);
+
+                    // Calcular XZ de origen de región de inicio:
+                    //Rectangle Rectángulo_Pantalla = new Rectangle(Rectángulo_X, Rectángulo_Z, Longitud_X, Longitud_Z);
+                    Rectangle Rectángulo_Pantalla = new Rectangle(0, 0, Ancho_Cliente, Alto_Cliente);
+                    if (Rectángulo_X > Región_Inicio_X * 512) Rectángulo_X -= Rectángulo_X - (Región_Inicio_X * 512);
+                    if (Rectángulo_Z > Región_Inicio_Z * 512) Rectángulo_Z -= Rectángulo_Z - (Región_Inicio_Z * 512);
+
+                    int Bloque_Región_Inicio_X = Región_Inicio_X * 512;
+                    int Bloque_Región_Inicio_Z = Región_Inicio_Z * 512;
+
+                    /*MessageBox.Show("Pintar en pantalla desde: " + Rectángulo_X.ToString() + ", " + Rectángulo_Z.ToString() + "\r\n" +
+                        "Cargar desde el bloque: " + Bloque_Inicio_X.ToString() + ", " + Bloque_Inicio_Z.ToString() + "\r\n" +
+                        "Cargar desde la región: " + Región_Inicio_X.ToString() + ", " + Región_Inicio_Z.ToString() + "\r\n" +
+                        "Bloque de la 1ª región: " + Bloque_Región_Inicio_X.ToString() + ", " + Bloque_Región_Inicio_Z.ToString() + "\r\n" +
+                        "Longitudes: " + Longitud_X.ToString() + ", " + Longitud_Z.ToString() + "\r\n" +
+                        Rectángulo_Pantalla.ToString(),
+                        Mitad_Ancho_Cliente.ToString() + ", " + Mitad_Alto_Cliente.ToString());
+                        */
+                    // ...
+
+                    /*MessageBox.Show(Variable_Temporal_Zoom.ToString());
+                    Variable_Temporal_Zoom = 256;
+                    Zoom = 256;
+                    Zoom_16 = 256 * 16;
+                    Zoom_512 = 512 * 256;
+                    Variable_Temporal_X = -333;
+                    Variable_Temporal_Z = -222;
+                    X = -333;
+                    Z = -222;*/
+
+                    int Ancho_Mitad = Ancho_Cliente / 2;
+                    int Alto_Mitad = Alto_Cliente / 2;
+
+                    int X1 = Ancho_Mitad / Variable_Zoom;
+                    if (X1 * Variable_Zoom < Ancho_Mitad) X1++;
+                    int XX1 = X1 * Variable_Zoom;
+                    int XXX1 = Ancho_Mitad - XX1;
+                    int Resto_X = Ancho_Mitad % Zoom_16;
+                    if (Resto_X > 0) XXX1 -= (Zoom_16 - Resto_X);
+
+                    int Z1 = Alto_Mitad / Variable_Zoom;
+                    if (Z1 * Variable_Zoom < Alto_Mitad) Z1++;
+                    int ZZ1 = Z1 * Variable_Zoom;
+                    int ZZZ1 = Alto_Mitad - ZZ1;
+                    int Resto_Z = Alto_Mitad % Zoom_16;
+                    if (Resto_Z > 0) ZZZ1 -= (Zoom_16 - Resto_Z);
+
+                    int XXXX1 = Variable_Temporal_X - X1;
+                    int ZZZZ1 = Variable_Temporal_Z - Z1;
+
+                    // Readjust the XZ coordinates to center them on the screen:
+                    /*int X_Centro = (Variable_Temporal_X % 16);
+                    int Z_Centro = (Variable_Temporal_Z % 16);
+                    if (X_Centro > 0)
+                    {
+                        XXX1 -= X_Centro * Zoom;
+                        XXXX1 -= X_Centro;
+                    }
+                    if (Z_Centro > 0)
+                    {
+                        ZZZ1 -= Z_Centro * Zoom;
+                        ZZZZ1 -= Z_Centro;
+                    }*/
+
+                    if (Zoom == 1) // Finish it...
+                    {
+                        XXX1 -= (Variable_Temporal_X % 16) * Zoom;
+                        ZZZ1 -= (Variable_Temporal_Z % 16) * Zoom;
+                        XXXX1 -= (Variable_Temporal_X % 16) * Zoom;
+                        ZZZZ1 -= (Variable_Temporal_Z % 16) * Zoom;
+                    }
+
+                    /*// 2018_05_09_15_31_15_945:
+                    int Ancho_2 = (int)Math.Round((double)Ancho_Cliente / 2d, MidpointRounding.AwayFromZero);
+                    int Alto_2 = (int)Math.Round((double)Alto_Cliente / 2d, MidpointRounding.AwayFromZero);
+
+                    int XX = Ancho_2 / Zoom;
+                    if (XX * Zoom < Ancho_2) XX++;
+                    XX = XX - (Variable_Temporal_X % 16);
+
+                    int ZZ = Alto_2 / Zoom;
+                    if (ZZ * Zoom < Alto_2) ZZ++;
+                    ZZ = ZZ - (Variable_Temporal_Z % 16);
+
+                    int XXX = Variable_Temporal_X - XX;
+                    int ZZZ = Variable_Temporal_Z - ZZ;
+
+                    XXXX1 = XXX / 16;
+                    if (XXX < 0) XXXX1--;
+
+                    ZZZZ1 = ZZZ / 16;
+                    if (ZZZ < 0) ZZZZ1--;
+
+                    XXX1 -= XX * Zoom;
+                    ZZZ1 -= ZZ * Zoom;*/
+
+                    /*int Ancho = Picture.ClientSize.Width;
+                    int Alto = Picture.ClientSize.Height;
+                    int X = e.X;
+                    int Z = e.Y;
+                    if (X < 0) X = 0;
+                    else if (X >= Ancho) X = Ancho - 1;
+                    if (Z < 0) Z = 0;
+                    else if (Z >= Alto) Z = Alto - 1;
+                    int Ancho_2 = (int)Math.Round((double)Ancho / 2d, MidpointRounding.AwayFromZero);
+                    int Alto_2 = (int)Math.Round((double)Alto / 2d, MidpointRounding.AwayFromZero);
+                    int Diferencia_X_Centro = Ancho_2 - X;
+                    int Diferencia_Z_Centro = Alto_2 - Z;
+                    X = Variable_X - (Diferencia_X_Centro / Variable_Zoom);
+                    Z = Variable_Z - (Diferencia_Z_Centro / Variable_Zoom);*/
+
+                    // Aire y cuevas:
+                    //int Ancho_Aire_Cuevas = (Ancho_Cliente + 32) / Zoom;
+                    //int Alto_Aire_Cuevas = (Alto_Cliente + 32) / Zoom;
+                    //if (Ancho_Aire_Cuevas * Zoom < Ancho_Cliente + 32) Ancho_Aire_Cuevas++;
+                    //if (Alto_Aire_Cuevas * Zoom < Alto_Cliente + 32) Alto_Aire_Cuevas++;
+
+                    for (int Índice_Z = 0, Chunk_Z = ZZZZ1, Pintar_Z = ZZZ1; Índice_Z < Alto_Cliente * 2; Índice_Z += 1, Chunk_Z += 16, Pintar_Z += Zoom_16)
+                    {
+                        for (int Índice_X = 0, Chunk_X = XXXX1, Pintar_X = XXX1; Índice_X < Ancho_Cliente * 2; Índice_X += 1, Chunk_X += 16, Pintar_X += Zoom_16)
                         {
-                            Point Posición_Región = new Point(Valor_X_Región, Valor_Z_Región);
-                            if (!Lista_Posiciones_Regiones.Contains(Posición_Región))
+                            if (Pendiente_Subproceso_Abortar) return;
+                            int Valor_X_Chunk = Math.Abs(Chunk_X) % 32; // De 0 a 31
+                            int Valor_X_Región = Chunk_X / 512; // Infinito
+                            if (Valor_X_Región * 512 > Chunk_X)
                             {
-                                Lista_Posiciones_Regiones.Add(Posición_Región);
-                                Lista_Posiciones_Chunks.Add(new List<Point>());
-                                Lista_Posiciones_Pintar.Add(new List<Point>());
+                                //Valor_X_Chunk--;
+                                Valor_X_Región--;
                             }
-                            int Índice_Región = Lista_Posiciones_Regiones.IndexOf(Posición_Región);
-                            //Point Posición_Chunk = new Point(Valor_X_Chunk, Valor_Z_Chunk);
-                            Point Posición_Chunk = new Point(Chunk_Xs, Chunk_Zs);
-                            Point Posición_Pintar = new Point(Pintar_X, Pintar_Z);
-                            if (!Lista_Posiciones_Chunks[Índice_Región].Contains(Posición_Chunk))
+                            int Valor_Z_Chunk = Math.Abs(Chunk_Z) % 32;
+                            int Valor_Z_Región = Chunk_Z / 512;
+                            if (Valor_Z_Región * 512 > Chunk_Z)
                             {
-                                Lista_Posiciones_Chunks[Índice_Región].Add(Posición_Chunk);
-                                Lista_Posiciones_Pintar[Índice_Región].Add(Posición_Pintar);
+                                //Valor_Z_Chunk--;
+                                Valor_Z_Región--;
+                            }
+
+                            int Chunk_Xs = Math.Abs(((Valor_X_Región * 512) - Chunk_X)) / 16;
+                            int Chunk_Zs = Math.Abs(((Valor_Z_Región * 512) - Chunk_Z)) / 16;
+
+                            Rectangle Rectángulo_Chunk = new Rectangle(Pintar_X, Pintar_Z, Zoom_16, Zoom_16);
+                            if (Rectángulo_Chunk.IntersectsWith(Rectángulo_Pantalla))
+                            {
+                                Point Posición_Región = new Point(Valor_X_Región, Valor_Z_Región);
+                                //if (Diccionario_Dimensiones_Lista_Posiciones_Regiones[Variable_Temporal_Dimensión].Contains(Posición_Región)) // 2018_09_18_10_58_07_637
+                                {
+                                    if (!Lista_Posiciones_Regiones.Contains(Posición_Región))
+                                    {
+                                        Lista_Posiciones_Regiones.Add(Posición_Región);
+                                        Lista_Posiciones_Chunks.Add(new List<Point>());
+                                        Lista_Posiciones_Pintar.Add(new List<Point>());
+                                    }
+                                    int Índice_Región = Lista_Posiciones_Regiones.IndexOf(Posición_Región);
+                                    //Point Posición_Chunk = new Point(Valor_X_Chunk, Valor_Z_Chunk);
+                                    Point Posición_Chunk = new Point(Chunk_Xs, Chunk_Zs);
+                                    Point Posición_Pintar = new Point(Pintar_X, Pintar_Z);
+                                    if (!Lista_Posiciones_Chunks[Índice_Región].Contains(Posición_Chunk))
+                                    {
+                                        Lista_Posiciones_Chunks[Índice_Región].Add(Posición_Chunk);
+                                        Lista_Posiciones_Pintar[Índice_Región].Add(Posición_Pintar);
+                                    }
+                                }
                             }
                         }
                     }
                 }
-
-                //MessageBox.Show("0");
-
-                // ...
+                else
+                {
+                    //MessageBox.Show(Diccionario_Dimensiones_Lista_Posiciones_Regiones[Variable_Temporal_Dimensión].Count.ToString());
+                    int Mínimo_X = int.MaxValue;
+                    int Máximo_X = int.MinValue;
+                    int Mínimo_Z = int.MaxValue;
+                    int Máximo_Z = int.MinValue;
+                    foreach (Point Posición in Diccionario_Dimensiones_Lista_Posiciones_Regiones[Variable_Temporal_Dimensión])
+                    {
+                        if (Posición.X < Mínimo_X) Mínimo_X = Posición.X;
+                        if (Posición.X > Máximo_X) Máximo_X = Posición.X;
+                        if (Posición.Y < Mínimo_Z) Mínimo_Z = Posición.Y;
+                        if (Posición.Y > Máximo_Z) Máximo_Z = Posición.Y;
+                    }
+                    for (int Región_Z = Mínimo_Z, Pintar_Z = 0; Región_Z <= Máximo_Z; Región_Z++, Pintar_Z += 512, Chunks_Alto += 32)
+                    {
+                        Chunks_Ancho = 0;
+                        for (int Región_X = Mínimo_X, Pintar_X = 0; Región_X <= Máximo_X; Región_X++, Pintar_X += 512, Chunks_Ancho += 32)
+                        {
+                            Lista_Posiciones_Regiones.Add(new Point(Región_X, Región_Z));
+                            Lista_Posiciones_Chunks.Add(new List<Point>());
+                            Lista_Posiciones_Pintar.Add(new List<Point>());
+                            int Índice_Región = Lista_Posiciones_Regiones.Count - 1;
+                            for (int Chunk_Z = 0; Chunk_Z < 32; Chunk_Z++)
+                            {
+                                for (int Chunk_X = 0; Chunk_X < 32; Chunk_X++)
+                                {
+                                    Lista_Posiciones_Chunks[Índice_Región].Add(new Point(Chunk_X, Chunk_Z));
+                                    Lista_Posiciones_Pintar[Índice_Región].Add(new Point((Pintar_X + (Chunk_X * 16)) * Zoom, (Pintar_Z + (Chunk_Z * 16)) * Zoom));
+                                }
+                            }
+                        }
+                    }
+                }
+                //MessageBox.Show(Lista_Posiciones_Regiones.Count.ToString());
 
                 /*for (int Índice_Región_Z = Región_Inicio_Z, Índice_Pintar_Z = Rectángulo_Z, Índice_Z = 0; Índice_Z < Longitud_Z; Índice_Región_Z++, Índice_Pintar_Z += Zoom_512, Índice_Z += Zoom_512)
                 {
@@ -3259,6 +3296,26 @@ namespace Minecraft_Tools
                                 Picture.Invalidate();
                                 Picture.Update();
                             }*/
+                            if (Variable_Dibujar_Chunks_Limos && Variable_Temporal_Zoom == 1) // It's only 100 % accurate (X and Z well centered) with a zoom of 1x.
+                            {
+                                int Chunk_X = (Región.Posición.X * 32) + Lista_Posiciones_Chunks[Índice_Región][Índice_Chunk].X;
+                                int Chunk_Z = (Región.Posición.Y * 32) + Lista_Posiciones_Chunks[Índice_Región][Índice_Chunk].Y;
+                                bool Chunk_Limos = new Program.Random_Java((ulong)((long)Información_Nivel.RandomSeed + (long)(Chunk_X * Chunk_X * 4987142) + (long)(Chunk_X * 5947611) + (long)(Chunk_Z * Chunk_Z) * 4392871L + (long)(Chunk_Z * 389711) ^ 987234911L)).NextInt(10) == 0;
+                                if (Chunk_Limos)
+                                {
+                                    //SolidBrush Pincel = new SolidBrush(Color.FromArgb(128, 0, 255, 0));
+                                    //HatchBrush Pincel = new HatchBrush(HatchStyle.Percent50, Color.FromArgb(160, 0, 255, 0), Color.FromArgb(160, 0, 160, 0));
+                                    HatchBrush Pincel = new HatchBrush(HatchStyle.DiagonalCross, Color.FromArgb(224, 255, 0, 160), Color.FromArgb(224, 0, 0, 0));
+                                    CompositingMode Modo_Composición = Pintar.CompositingMode;
+                                    Pintar.CompositingMode = CompositingMode.SourceOver;
+                                    Pintar.FillRectangle(Pincel, new Rectangle(Lista_Posiciones_Pintar[Índice_Región][Índice_Chunk], new Size(Zoom_16, Zoom_16)));
+                                    Pintar.CompositingMode = Modo_Composición;
+                                    Pincel.Dispose();
+                                    Pincel = null;
+                                }
+                            }
+                            //Rectangle Rectángulo_Chunk = new Rectangle(Posición_Dibujar, new Size(Zoom_16, Zoom_16));
+                            //Picture.Invoke(new Invocación.Delegado_Control_Invalidate_Rectangle(Invocación.Ejecutar_Delegado_Control_Invalidate_Rectangle), new object[] { Picture, Rectángulo_Chunk });
                         }
                     }
                 }
@@ -3501,6 +3558,17 @@ namespace Minecraft_Tools
                     }
                 }
                 Registro_Guardar_Opciones();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Menú_Contextual_Dibujar_Chunks_Limos_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Variable_Dibujar_Chunks_Limos = Menú_Contextual_Dibujar_Chunks_Limos.Checked;
+                //Registro_Guardar_Opciones(); // Still does nothing with this variable.
+                Pendiente_Dibujar_Mapa = true;
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }

@@ -48,7 +48,7 @@
             this.Menú_Contextual = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Menú_Contextual_Visor_Ayuda = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Contextual_Acerca = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Contextual_Depurador_Interno = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menú_Contextual_Depurador_Excepciones = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Contextual_Abrir_Carpeta = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Contextual_Separador_1 = new System.Windows.Forms.ToolStripSeparator();
             this.Menú_Contextual_Restablecer_Tonos = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,7 +173,7 @@
             this.Menú_Contextual.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menú_Contextual_Visor_Ayuda,
             this.Menú_Contextual_Acerca,
-            this.Menú_Contextual_Depurador_Interno,
+            this.Menú_Contextual_Depurador_Excepciones,
             this.Menú_Contextual_Abrir_Carpeta,
             this.Menú_Contextual_Separador_1,
             this.Menú_Contextual_Restablecer_Tonos,
@@ -203,13 +203,13 @@
             this.Menú_Contextual_Acerca.Size = new System.Drawing.Size(284, 22);
             this.Menú_Contextual_Acerca.Text = "About...";
             // 
-            // Menú_Contextual_Depurador_Interno
+            // Menú_Contextual_Depurador_Excepciones
             // 
-            this.Menú_Contextual_Depurador_Interno.Image = global::Minecraft_Tools.Properties.Resources.Excepción;
-            this.Menú_Contextual_Depurador_Interno.Name = "Menú_Contextual_Depurador_Interno";
-            this.Menú_Contextual_Depurador_Interno.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.Menú_Contextual_Depurador_Interno.Size = new System.Drawing.Size(284, 22);
-            this.Menú_Contextual_Depurador_Interno.Text = "Internal debugger...";
+            this.Menú_Contextual_Depurador_Excepciones.Image = global::Minecraft_Tools.Properties.Resources.Excepción;
+            this.Menú_Contextual_Depurador_Excepciones.Name = "Menú_Contextual_Depurador_Excepciones";
+            this.Menú_Contextual_Depurador_Excepciones.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.Menú_Contextual_Depurador_Excepciones.Size = new System.Drawing.Size(284, 22);
+            this.Menú_Contextual_Depurador_Excepciones.Text = "Exception debugger...";
             // 
             // Menú_Contextual_Abrir_Carpeta
             // 
@@ -455,7 +455,7 @@
         private System.Windows.Forms.ContextMenuStrip Menú_Contextual;
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Visor_Ayuda;
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Acerca;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Depurador_Interno;
+        private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Depurador_Excepciones;
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Abrir_Carpeta;
         private System.Windows.Forms.ToolStripSeparator Menú_Contextual_Separador_1;
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Restablecer_Tonos;
