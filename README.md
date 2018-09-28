@@ -1,6 +1,8 @@
 # Minecraft-Tools
 Minecraft Tools for 1.13.1+ made in C#:
 
+The new change log can be started by pressing Ctrl+L on the main window. And this repository includes a precompiled executable.
+
 * EDIT: a file named "A24938DB" with 26.601 real Minecraft skins inside is missing from "Minecraft-Tools-master\Minecraft Tools\bin\Debug\Secrets\Skins\" because is over 25 MB (it's about 57 MB), so if you want to have it, now you can download it from here, but please add it manually to the path described above once you've downloaded the source code of this application and extracted it from it's zip file using the Secrets window (read the internal help for more info on how to show and enable the secret files by pressing F1):
 
 http://www.mediafire.com/file/o2genjqdcekxa65/A24938DB/file
