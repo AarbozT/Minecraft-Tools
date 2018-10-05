@@ -468,7 +468,7 @@
             this.Barra_Estado_Etiqueta_Memoria.Image = global::Minecraft_Tools.Properties.Resources.Memoria;
             this.Barra_Estado_Etiqueta_Memoria.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
             this.Barra_Estado_Etiqueta_Memoria.Name = "Barra_Estado_Etiqueta_Memoria";
-            this.Barra_Estado_Etiqueta_Memoria.Size = new System.Drawing.Size(101, 22);
+            this.Barra_Estado_Etiqueta_Memoria.Size = new System.Drawing.Size(82, 22);
             this.Barra_Estado_Etiqueta_Memoria.Text = "RAM: 0 MB";
             // 
             // Barra_Estado_Separador_1
@@ -528,7 +528,7 @@
             this.Barra_Estado_Etiqueta_Dimensiones_Pixel_Art.Image = global::Minecraft_Tools.Properties.Resources.Dimensiones;
             this.Barra_Estado_Etiqueta_Dimensiones_Pixel_Art.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
             this.Barra_Estado_Etiqueta_Dimensiones_Pixel_Art.Name = "Barra_Estado_Etiqueta_Dimensiones_Pixel_Art";
-            this.Barra_Estado_Etiqueta_Dimensiones_Pixel_Art.Size = new System.Drawing.Size(192, 16);
+            this.Barra_Estado_Etiqueta_Dimensiones_Pixel_Art.Size = new System.Drawing.Size(192, 22);
             this.Barra_Estado_Etiqueta_Dimensiones_Pixel_Art.Text = "Dimensions of the pixel art: 0 x 0";
             // 
             // Barra_Estado_Separador_6
@@ -985,7 +985,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pixel Art Generator for Xisumavoid by Jupisoft";
+            this.Text = "Pixel Art Generator by Jupisoft";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Generador_Pixel_Art_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ventana_Generador_Pixel_Art_FormClosed);
             this.Load += new System.EventHandler(this.Ventana_Generador_Pixel_Art_Load);

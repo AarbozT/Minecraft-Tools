@@ -25,6 +25,7 @@ namespace Minecraft_Tools
         {
             try
             {
+                ComboBox_Nombre_Usuario.Items.Add(Environment.UserName);
                 if (!Variable_Nuevo_Usuario)
                 {
                     this.Text = "Change the User Name for " + Program.Texto_Usuario + " by Jupisoft";

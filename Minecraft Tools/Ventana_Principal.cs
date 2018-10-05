@@ -70,6 +70,10 @@ namespace Minecraft_Tools
             Total // Don't use
         }
 
+        /// <summary>
+        /// Variable used to quickly start again the last used tool.
+        /// </summary>
+        internal static int Índice_Herramienta_Anterior = -1;
         internal static bool Variable_Alfabeto_Galáctico = false;
         internal static bool Variable_Siempre_Visible = false;
         internal static Herramientas Variable_Herramienta = Herramientas.Ninguna;
@@ -78,8 +82,10 @@ namespace Minecraft_Tools
         internal int Variable_Excepción_Total = 0;
         internal bool Variable_Memoria = false;
         internal Stopwatch Splash_Cronómetro = Stopwatch.StartNew();
-        internal long Splash_Milisegundo_Anterior = -1L;
+        internal long Splash_Milisegundo_Anterior_2000 = -1;
+        internal long Splash_Milisegundo_Anterior_100 = -1;
         internal bool Splash_Alfabeto_Galáctico_Anterior = false;
+        internal int Índice_Splash = 0;
         internal string Splash_Texto = null;
 
         internal static Bitmap[] Matriz_Imágenes_Fuente = null;
@@ -552,17 +558,162 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
+        /// <summary>
+        /// Generates a new background image to be displayed as a mosaic in the main window of the application. The idea is based on the Minecraft launcher which seems to use the stone texture repeated several times with a zoom of 16x, although the original image contains several errors in the square borders, and because of that, this new code was designed to have a technically perfect background image.
+        /// </summary>
+        internal void Crear_Imagen_Mosaico_Fondo()
+        {
+            try
+            {
+                Bitmap Imagen = Resources.minecraft_dirt; //.minecraft_stone;
+                BitmapData Bitmap_Data = Imagen.LockBits(new Rectangle(0, 0, 16, 16), ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
+                byte[] Matriz_Bytes = new byte[Math.Abs(Bitmap_Data.Stride) * 16];
+                Marshal.Copy(Bitmap_Data.Scan0, Matriz_Bytes, 0, Matriz_Bytes.Length);
+                byte Rojo, Verde, Azul;
+                double Matiz_Original, Saturación_Original, Luminosidad_Original;
+                double Matiz, Saturación, Luminosidad;
+                //List<byte> Lista_Azul = new List<byte>(new byte[] { 41, 58, 68, 74, 92, 108, 135 }); // Blue values in a dirt block texture.
+                for (int Y = 0, Índice = 0; Y < 16; Y++)
+                {
+                    for (int X = 0; X < 16; X++, Índice += 4)
+                    {
+                        /*if (!Lista_Azul.Contains(Matriz_Bytes[Índice]))
+                        {
+                            Lista_Azul.Add(Matriz_Bytes[Índice]);
+                            MessageBox.Show(Matriz_Bytes[Índice].ToString());
+                        }*/
+                        Color Color_ARGB = Color.FromArgb(255, Matriz_Bytes[Índice + 2], Matriz_Bytes[Índice + 1], Matriz_Bytes[Índice]);
+                        Program.HSL.From_RGB(Color_ARGB.R, Color_ARGB.G, Color_ARGB.B, out Matiz_Original, out Saturación_Original, out Luminosidad_Original);
+                        /*int Porcentaje = Program.Rand.Next(1, 101);
+                        if (Porcentaje <= 35)
+                        {
+                            Program.HSL.From_RGB(255, 0, 0, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        else if (Porcentaje <= 70)
+                        {
+                            Program.HSL.From_RGB(255, 0, 0, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        else if (Porcentaje <= 90)
+                        {
+                            Program.HSL.From_RGB(255, 0, 160, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        else// if (Porcentaje <= 100)
+                        {
+                            Program.HSL.From_RGB(255, 255, 0, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        /*if (Matriz_Bytes[Índice] <= 104)
+                        {
+                            Program.HSL.From_RGB(255, 0, 0, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        else if (Matriz_Bytes[Índice] <= 116)
+                        {
+                            Program.HSL.From_RGB(255, 0, 0, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        else if (Matriz_Bytes[Índice] <= 128)
+                        {
+                            Program.HSL.From_RGB(255, 0, 160, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        else// if (Matriz_Bytes[Índice] <= 143)
+                        {
+                            Program.HSL.From_RGB(255, 255, 0, out Matiz, out Saturación, out Luminosidad);
+                        }*/
+                        if (Matriz_Bytes[Índice] <= 41)
+                        {
+                            Program.HSL.From_RGB(255, 255, 0, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        else if (Matriz_Bytes[Índice] <= 58)
+                        {
+                            Program.HSL.From_RGB(255, 0, 0, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        else if (Matriz_Bytes[Índice] <= 68)
+                        {
+                            Program.HSL.From_RGB(255, 255, 0, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        else if (Matriz_Bytes[Índice] <= 74)
+                        {
+                            Program.HSL.From_RGB(255, 0, 160, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        else if (Matriz_Bytes[Índice] <= 92)
+                        {
+                            Program.HSL.From_RGB(255, 0, 0, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        else if (Matriz_Bytes[Índice] <= 108)
+                        {
+                            Program.HSL.From_RGB(255, 255, 0, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        else// if (Matriz_Bytes[Índice] <= 135)
+                        {
+                            Program.HSL.From_RGB(255, 255, 0, out Matiz, out Saturación, out Luminosidad);
+                        }
+                        Program.HSL.To_RGB(Matiz, Saturación, (Luminosidad + Luminosidad_Original) / 2, out Rojo, out Verde, out Azul);
+                        Matriz_Bytes[Índice + 3] = 192;
+                        Matriz_Bytes[Índice + 2] = Rojo;
+                        Matriz_Bytes[Índice + 1] = Verde;
+                        Matriz_Bytes[Índice] = Azul;
+                    }
+                }
+                Marshal.Copy(Matriz_Bytes, 0, Bitmap_Data.Scan0, Matriz_Bytes.Length);
+                Imagen.UnlockBits(Bitmap_Data);
+                Bitmap_Data = null;
+                Matriz_Bytes = null;
+                Imagen = Program.Obtener_Imagen_Miniatura(Imagen, 256, 256, true, false);
+                Program.Guardar_Imagen_Temporal(Imagen, "bg");
+                /*Bitmap Imagen_Mosaico = new Bitmap(512, 512, PixelFormat.Format32bppArgb);
+                Graphics Pintar = Graphics.FromImage(Imagen_Mosaico);
+                Pintar.CompositingMode = CompositingMode.SourceCopy;
+                Pintar.CompositingQuality = CompositingQuality.HighQuality;
+                Pintar.InterpolationMode = InterpolationMode.NearestNeighbor;
+                Pintar.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                Pintar.SmoothingMode = SmoothingMode.None;
+
+                Pintar.DrawImage(Imagen, new Rectangle(0, 0, 256, 256), new Rectangle(0, 0, 256, 256), GraphicsUnit.Pixel);
+
+                Imagen.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                Pintar.DrawImage(Imagen, new Rectangle(256, 0, 256, 256), new Rectangle(0, 0, 256, 256), GraphicsUnit.Pixel);
+
+                Imagen.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                Pintar.DrawImage(Imagen, new Rectangle(256, 256, 256, 256), new Rectangle(0, 0, 256, 256), GraphicsUnit.Pixel);
+
+                Imagen.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                Pintar.DrawImage(Imagen, new Rectangle(0, 256, 256, 256), new Rectangle(0, 0, 256, 256), GraphicsUnit.Pixel);
+
+                Pintar.Dispose();
+                Pintar = null;
+                Program.Guardar_Imagen_Temporal(Imagen_Mosaico, "bg");*/
+                /*Bitmap Imagen_Mosaico = new Bitmap(512, 512, PixelFormat.Format32bppArgb);
+                Graphics Pintar = Graphics.FromImage(Imagen_Mosaico);
+                Pintar.CompositingMode = CompositingMode.SourceCopy;
+                Pintar.CompositingQuality = CompositingQuality.HighQuality;
+                Pintar.InterpolationMode = InterpolationMode.NearestNeighbor;
+                Pintar.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                Pintar.SmoothingMode = SmoothingMode.None;
+                TextureBrush Pincel = new TextureBrush(Imagen, WrapMode.TileFlipXY, new Rectangle(0, 0, 256, 256));
+                Pintar.FillRectangle(Pincel, 0, 0, 512, 512);
+                Pintar.Dispose();
+                Pintar = null;
+                Program.Guardar_Imagen_Temporal(Imagen_Mosaico, "bg");*/
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
         private void Ventana_Principal_Shown(object sender, EventArgs e)
         {
             try
             {
+                //Minecraft_Splashes.Buscar_Splashes_Repetidos();
+                //Borrar_Color_Fondo_Imagen(@"C:\Users\Jupisoft\Videos\__DVDs copiados\VillagerTradeChart.png", Color.FromArgb(255, 56, 56, 56));
+                //Crear_Imagen_Mosaico_Fondo();
                 //MessageBox.Show((((byte)179 >> 4) & 0xF).ToString()); // Primeros 4 bits de un byte
                 //MessageBox.Show(((byte)179 & 0xF).ToString()); // Últimos 4 bits de un byte
                 this.Activate();
                 Temporizador_Principal.Start();
                 bool Mostrar_Herramientas = Registro_Cargar_Opciones();
-                if (!Mostrar_Herramientas) Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada.PerformClick();
-                else Menú_Principal_Herramientas.ShowDropDown(); // Show the list of tools to any new user.
+                if (!Mostrar_Herramientas) Menú_Principal_Herramientas_Abrir_Predeterminada.PerformClick();
+                else // Show the list of tools to any new user.
+                {
+                    Menú_Principal_Herramientas.ShowDropDown();
+                    Menú_Principal_Herramientas_Selector_Herramientas.Select();
+                }
                 //this.Text = Program.Texto_Título + " - [Minecraft: " + Program.Texto_Minecraft_Versión + ", Vanilla blocks known: " + Program.Traducir_Número(Minecraft.Bloques.Matriz_Bloques.Length) + "]";
 
                 //MessageBox.Show(Minecraft_Biomas.Obtener_Color_ARGB(2302743).ToString());
@@ -699,7 +850,7 @@ namespace Minecraft_Tools
                     Registro_Guardar_Opciones();
                     Program.Texto_Título = "Minecraft Tools for " + Program.Texto_Usuario + " by Jupisoft";
                     Program.Texto_Programa = "Minecraft Tools for " + Program.Texto_Usuario;
-                    Program.Texto_Título_Versión = Program.Texto_Título + " " + Program.Texto_Versión;
+                    Program.Texto_Título_Versión = "Minecraft Tools " + Program.Texto_Versión + " for " + Program.Texto_Usuario + " by Jupisoft";
                     this.Text = Program.Texto_Título + " - [Minecraft: " + Program.Texto_Minecraft_Versión + ", Vanilla blocks known: " + Program.Traducir_Número(Minecraft.Bloques.Matriz_Bloques.Length) + "]";
                     Barra_Estado_Etiqueta_Sugerencia.Text = "Welcome dear " + Program.Texto_Usuario + ", I wish you a great day.";
                 }
@@ -736,9 +887,9 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada_Click(object sender, EventArgs e)
+        private void Menú_Principal_Herramientas_Abrir_Predeterminada_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 if (Variable_Herramienta != Herramientas.Ninguna)
                 {
@@ -781,7 +932,7 @@ namespace Minecraft_Tools
                 }
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
+        */}
 
         /// <summary>
         /// Loads the saved (or default if missing) options from the Windows registry.
@@ -842,7 +993,7 @@ namespace Minecraft_Tools
                 }
                 Program.Texto_Título = "Minecraft Tools for " + Program.Texto_Usuario + " by Jupisoft";
                 Program.Texto_Programa = "Minecraft Tools for " + Program.Texto_Usuario;
-                Program.Texto_Título_Versión = Program.Texto_Título + " " + Program.Texto_Versión;
+                Program.Texto_Título_Versión = "Minecraft Tools " + Program.Texto_Versión + " for " + Program.Texto_Usuario + " by Jupisoft";
                 this.Text = Program.Texto_Título_Versión + " - [Minecraft: " + Program.Texto_Minecraft_Versión + ", Vanilla blocks known: " + Program.Traducir_Número(Minecraft.Bloques.Matriz_Bloques.Length) + "]";
                 Barra_Estado_Etiqueta_Sugerencia.Text = "Welcome dear " + Program.Texto_Usuario + ", I wish you a great day.";
                 
@@ -1153,10 +1304,12 @@ namespace Minecraft_Tools
                 File.WriteAllLines(Program.Obtener_Ruta_Temporal_Escritorio() + ".txt", Listaa.ToArray(), Encoding.Unicode);
                 Application.Exit(); // 2018_09_27_02_57_56_474*/
                 // Change the splash text randomly every 2,5 seconds.
-                long Milisegundos = Splash_Cronómetro.ElapsedMilliseconds / 2500L;
-                if (Milisegundos != Splash_Milisegundo_Anterior || Variable_Alfabeto_Galáctico != Splash_Alfabeto_Galáctico_Anterior)
+                long Milisegundos = Splash_Cronómetro.ElapsedMilliseconds;
+                long Milisegundos_2000 = Milisegundos / 2000L;
+                long Milisegundos_100 = Milisegundos / 100L;
+                if (Milisegundos_2000 != Splash_Milisegundo_Anterior_2000 || (string.Compare(Splash_Texto, "Colormatic", true) == 0 && Milisegundos_100 != Splash_Milisegundo_Anterior_100) || Variable_Alfabeto_Galáctico != Splash_Alfabeto_Galáctico_Anterior)
                 {
-                    if (Milisegundos != Splash_Milisegundo_Anterior)
+                    if (Milisegundos_2000 != Splash_Milisegundo_Anterior_2000)
                     {
                         Picture_Mineral_Izquierda.Image = Program.Obtener_Imagen_Recursos(Matriz_Nombres_Bloques_Launcher[Program.Rand.Next(0, Matriz_Nombres_Bloques_Launcher.Length)]);
                         Picture_Mineral_Derecha.Image = Program.Obtener_Imagen_Recursos(Matriz_Nombres_Bloques_Launcher[Program.Rand.Next(0, Matriz_Nombres_Bloques_Launcher.Length)]);
@@ -1185,9 +1338,11 @@ namespace Minecraft_Tools
                         Picture_Personaje_Izquierda.Image = Imagen_Izquierda;
                         Picture_Personaje_Derecha.Image = Program.Obtener_Imagen_Recursos("mc_char_" + Program.Rand.Next(0, 8).ToString());
 
-                        Splash_Texto = Minecraft_Splashes.Matriz_Líneas[Program.Rand.Next(0, Minecraft_Splashes.Matriz_Líneas.Length)];
+                        if (!string.IsNullOrEmpty(Splash_Texto)) Índice_Splash = Program.Rand.Next(0, Minecraft_Splashes.Lista_Líneas.Count);
+                        else Índice_Splash = Minecraft_Splashes.Lista_Líneas.Count - 1; // Show the splash count at first.
+                        Splash_Texto = Minecraft_Splashes.Lista_Líneas[Índice_Splash];
                         if (string.IsNullOrEmpty(Splash_Texto)) Splash_Texto = "?";
-                        if (Milisegundos % 4L == 0) // Only show every 4 splashes.
+                        if (Milisegundos_2000 % 4L == 0) // Only show every 4 splashes.
                         {
                             DateTime Fecha = DateTime.Now; // Obtain the current system date.
                             //Fecha = new DateTime(2018, 10, 31); // Used only for testing and debugging.
@@ -1195,42 +1350,98 @@ namespace Minecraft_Tools
                             else if (Fecha.Month == 1 && Fecha.Day == 1) Splash_Texto = "Happy new year!";
                             else if (Fecha.Month == 10 && Fecha.Day == 31) Splash_Texto = "OOoooOOOoooo! Spooky!";
                         }
+                        //Splash_Texto = "Colormatic"; // Debug of random rainbow colors.
+                        Splash_Milisegundo_Anterior_2000 = Milisegundos_2000;
                     }
-                    Splash_Milisegundo_Anterior = Milisegundos;
+                    Splash_Milisegundo_Anterior_100 = Milisegundos_100;
                     Splash_Alfabeto_Galáctico_Anterior = Variable_Alfabeto_Galáctico;
                     int Ancho = 0;
                     foreach (char Caracter in Splash_Texto)
                     {
                         int Valor_Caracter = (int)Caracter;
                         if (Valor_Caracter < 0 || Valor_Caracter > 255) Valor_Caracter = (int)'?';
-                        Ancho += (!Variable_Alfabeto_Galáctico ? Matriz_Ancho_Fuente[Valor_Caracter] : Matriz_Ancho_Fuente_SGA[Valor_Caracter]) + 1;
+                        Ancho += ((!Variable_Alfabeto_Galáctico ? Matriz_Ancho_Fuente[Valor_Caracter] : Matriz_Ancho_Fuente_SGA[Valor_Caracter]) + 1) + 1;
                     }
                     Ancho--;
-                    int Ancho_Cliente = Picture_Splash.ClientSize.Width - 24; // 12 pixels of margins x 2.
-                    int Alto_Cliente = Picture_Splash.ClientSize.Height - 24; // 12 pixels of margins x 2.
-                    int Autozoom = Math.Max(Math.Min(Ancho_Cliente / Ancho, Alto_Cliente / 8), 1); // Minimum of 1x.
-                    Bitmap Imagen = new Bitmap(Ancho * Autozoom, Alto_Cliente, PixelFormat.Format32bppArgb);
+                    int Ancho_Cliente = Picture_Splash.ClientSize.Width - 12; // 6 pixels of margins x 2.
+                    int Alto_Cliente = Picture_Splash.ClientSize.Height - 12; // 6 pixels of margins x 2.
+                    int Autozoom = Math.Max(Math.Min(Ancho_Cliente / Ancho, Alto_Cliente / 9), 1); // Minimum of 1x.
+                    Bitmap Imagen = new Bitmap((Ancho * Autozoom), Alto_Cliente, PixelFormat.Format32bppArgb);
                     Graphics Pintar = Graphics.FromImage(Imagen);
-                    Pintar.CompositingMode = CompositingMode.SourceCopy;
+                    Pintar.CompositingMode = CompositingMode.SourceOver;
                     Pintar.CompositingQuality = CompositingQuality.HighQuality;
                     Pintar.InterpolationMode = InterpolationMode.NearestNeighbor;
                     Pintar.PixelOffsetMode = PixelOffsetMode.HighQuality;
                     Pintar.SmoothingMode = SmoothingMode.None;
+                    //Color Color_ARGB_Fondo = Color.Maroon;
+                    Color Color_ARGB_Fondo = Color.FromArgb(128, 128, 128);
+                    Color Color_ARGB = Color.White;
+                    List<Color> Lista_Colores_Aleatorios = null;
+                    if (string.Compare(Splash_Texto, "Colormatic", true) == 0)
+                    {
+                        Lista_Colores_Aleatorios = new List<Color>(new Color[10]
+                        {
+                            //Color.FromArgb(255, 0, 0), // Avoid red color because of the background.
+                            //Color.FromArgb(255, 160, 0), // Also avoid orange color.
+                            Color.FromArgb(255, 255, 0), // 1 color for letter available.
+                            Color.FromArgb(160, 255, 0),
+                            Color.FromArgb(0, 255, 0),
+                            Color.FromArgb(0, 255, 160),
+                            Color.FromArgb(0, 255, 255),
+                            Color.FromArgb(0, 160, 255),
+                            Color.FromArgb(0, 0, 255),
+                            Color.FromArgb(160, 0, 255),
+                            Color.FromArgb(255, 0, 255),
+                            Color.FromArgb(255, 0, 160),
+                        });
+                        Lista_Colores_Aleatorios = Program.Aleatorizar_Lista(Lista_Colores_Aleatorios); // Randomize the color order each 100 milliseconds (25 times per splash).
+                    }
                     for (int Índice_Caracter = 0, Índice_X = 0; Índice_Caracter < Splash_Texto.Length; Índice_Caracter++)
                     {
-                        //int Valor_Caracter = (int)Splash_Texto[Índice_Caracter];
+                        if (string.Compare(Splash_Texto, "Colormatic", true) == 0)
+                        {
+                            Color_ARGB = Lista_Colores_Aleatorios[Índice_Caracter % Lista_Colores_Aleatorios.Count];
+                            //Color_ARGB = Program.Obtener_Color_Puro_1530(Program.Rand.Next(160, 1530 - 160)); // Get a pure color that's not red.
+                            //Color_ARGB = Color.FromArgb(Program.Rand.Next(128, 256), Program.Rand.Next(128, 256), Program.Rand.Next(128, 256));
+                            //Color_ARGB_Fondo = Color.FromArgb(Color_ARGB.R / 2, Color_ARGB.G / 2, Color_ARGB.B / 2);
+                            //Color_ARGB_Fondo = Color.FromArgb(Color_ARGB.R / 3, Color_ARGB.G / 3, Color_ARGB.B / 3);
+                            //Color_ARGB_Fondo = Color.Gray;
+                        }
+                        /*else if (Índice_Splash >= Minecraft_Splashes.Índice_Hermitcraft && Índice_Splash < Minecraft_Splashes.Índice_Monster_High)
+                        {
+                            Color_ARGB_Fondo = Color.FromArgb(128, 128, 0); // Yellow shadow.
+                        }
+                        else if (Índice_Splash >= Minecraft_Splashes.Índice_Monster_High && Índice_Splash < Minecraft_Splashes.Índice_Jupisoft)
+                        {
+                            Color_ARGB_Fondo = Color.FromArgb(128, 0, 80); // Pink shadow.
+                        }
+                        else if (Índice_Splash >= Minecraft_Splashes.Índice_Jupisoft)
+                        {
+                            Color_ARGB_Fondo = Color.FromArgb(128, 128, 128); // Gray shadow.
+                        }*/
+                        // Dark red shadow text:
                         int Valor_Caracter = "\u00c0\u00c1\u00c2\u00c8\u00ca\u00cb\u00cd\u00d3\u00d4\u00d5\u00da\u00df\u00e3\u00f5\u011f\u0130\u0131\u0152\u0153\u015e\u015f\u0174\u0175\u017e\u0207\u0000\u0000\u0000\u0000\u0000\u0000\u0000 !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\u0000\u00c7\u00fc\u00e9\u00e2\u00e4\u00e0\u00e5\u00e7\u00ea\u00eb\u00e8\u00ef\u00ee\u00ec\u00c4\u00c5\u00c9\u00e6\u00c6\u00f4\u00f6\u00f2\u00fb\u00f9\u00ff\u00d6\u00dc\u00f8\u00a3\u00d8\u00d7\u0192\u00e1\u00ed\u00f3\u00fa\u00f1\u00d1\u00aa\u00ba\u00bf\u00ae\u00ac\u00bd\u00bc\u00a1\u00ab\u00bb\u2591\u2592\u2593\u2502\u2524\u2561\u2562\u2556\u2555\u2563\u2551\u2557\u255d\u255c\u255b\u2510\u2514\u2534\u252c\u251c\u2500\u253c\u255e\u255f\u255a\u2554\u2569\u2566\u2560\u2550\u256c\u2567\u2568\u2564\u2565\u2559\u2558\u2552\u2553\u256b\u256a\u2518\u250c\u2588\u2584\u258c\u2590\u2580\u03b1\u03b2\u0393\u03c0\u03a3\u03c3\u03bc\u03c4\u03a6\u0398\u03a9\u03b4\u221e\u2205\u2208\u2229\u2261\u00b1\u2265\u2264\u2320\u2321\u00f7\u2248\u00b0\u2219\u00b7\u221a\u207f\u00b2\u25a0\u0000".IndexOf(Splash_Texto[Índice_Caracter]);
                         if (Valor_Caracter < 0 || Valor_Caracter > 255) Valor_Caracter = (int)'?';
                         if (!Variable_Alfabeto_Galáctico)
                         {
-                            if (Matriz_Imágenes_Fuente[Valor_Caracter] != null) Pintar.DrawImage(Matriz_Imágenes_Fuente[Valor_Caracter], new Rectangle(Índice_X, Alto_Cliente - (8 * Autozoom), Matriz_Ancho_Fuente[Valor_Caracter] * Autozoom, 8 * Autozoom), new Rectangle(0, 0, Matriz_Ancho_Fuente[Valor_Caracter], 8), GraphicsUnit.Pixel);
-                            Índice_X += (Matriz_Ancho_Fuente[Valor_Caracter] + 1) * Autozoom;
+                            if (Matriz_Imágenes_Fuente[Valor_Caracter] != null) Pintar.DrawImage(Program.Obtener_Imagen_Pintada(Matriz_Imágenes_Fuente[Valor_Caracter].Clone() as Bitmap, Color.Black, Color_ARGB_Fondo), new Rectangle(Índice_X + Autozoom, Alto_Cliente - (8 * Autozoom), Matriz_Ancho_Fuente[Valor_Caracter] * Autozoom, 8 * Autozoom), new Rectangle(0, 0, Matriz_Ancho_Fuente[Valor_Caracter], 8), GraphicsUnit.Pixel);
                         }
                         else
                         {
-                            if (Matriz_Imágenes_Fuente_SGA[Valor_Caracter] != null) Pintar.DrawImage(Matriz_Imágenes_Fuente_SGA[Valor_Caracter], new Rectangle(Índice_X, Alto_Cliente - (8 * Autozoom), Matriz_Ancho_Fuente_SGA[Valor_Caracter] * Autozoom, 8 * Autozoom), new Rectangle(0, 0, Matriz_Ancho_Fuente_SGA[Valor_Caracter], 8), GraphicsUnit.Pixel);
-                            Índice_X += (Matriz_Ancho_Fuente_SGA[Valor_Caracter] + 1) * Autozoom;
+                            if (Matriz_Imágenes_Fuente_SGA[Valor_Caracter] != null) Pintar.DrawImage(Program.Obtener_Imagen_Pintada(Matriz_Imágenes_Fuente_SGA[Valor_Caracter].Clone() as Bitmap, Color.Black, Color_ARGB_Fondo), new Rectangle(Índice_X + Autozoom, Alto_Cliente - (8 * Autozoom), Matriz_Ancho_Fuente_SGA[Valor_Caracter] * Autozoom, 8 * Autozoom), new Rectangle(0, 0, Matriz_Ancho_Fuente_SGA[Valor_Caracter], 8), GraphicsUnit.Pixel);
                         }
+                        // White regular text (because the original yellow text kinda looks weird with the red background):
+                        if (!Variable_Alfabeto_Galáctico)
+                        {
+                            if (Matriz_Imágenes_Fuente[Valor_Caracter] != null) Pintar.DrawImage(Program.Obtener_Imagen_Pintada(Matriz_Imágenes_Fuente[Valor_Caracter].Clone() as Bitmap, Color.Black, Color_ARGB), new Rectangle(Índice_X, Alto_Cliente - ((8 * Autozoom) + Autozoom), Matriz_Ancho_Fuente[Valor_Caracter] * Autozoom, 8 * Autozoom), new Rectangle(0, 0, Matriz_Ancho_Fuente[Valor_Caracter], 8), GraphicsUnit.Pixel);
+                        }
+                        else
+                        {
+                            if (Matriz_Imágenes_Fuente_SGA[Valor_Caracter] != null) Pintar.DrawImage(Program.Obtener_Imagen_Pintada(Matriz_Imágenes_Fuente_SGA[Valor_Caracter].Clone() as Bitmap, Color.Black, Color_ARGB), new Rectangle(Índice_X, Alto_Cliente - ((8 * Autozoom) + Autozoom), Matriz_Ancho_Fuente_SGA[Valor_Caracter] * Autozoom, 8 * Autozoom), new Rectangle(0, 0, Matriz_Ancho_Fuente_SGA[Valor_Caracter], 8), GraphicsUnit.Pixel);
+                        }
+                        // Increase the width counter:
+                        if (!Variable_Alfabeto_Galáctico) Índice_X += (Matriz_Ancho_Fuente[Valor_Caracter] + 1) * Autozoom;
+                        else Índice_X += (Matriz_Ancho_Fuente_SGA[Valor_Caracter] + 1) * Autozoom;
                     }
                     Pintar.Dispose();
                     Pintar = null;
@@ -1241,7 +1452,7 @@ namespace Minecraft_Tools
                         Rectángulo.Height = Alto_Cliente; // But center it horizontally.
                         Imagen = Imagen.Clone(Rectángulo, PixelFormat.Format32bppArgb);
                     }
-                    Imagen = Program.Obtener_Imagen_Pintada(Imagen, Color.Black, Color.White);
+                    //Imagen = Program.Obtener_Imagen_Pintada(Imagen, Color.Black, Color.White);
                     Picture_Splash.Image = Imagen;
                 }
             }
@@ -1346,334 +1557,9 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Menú_Principal_Herramientas_Visor_Mundos_Realista_2D_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Visor_Mundos_Realista_2D Ventana = new Ventana_Visor_Mundos_Realista_2D();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Buscador_Chunks_Limos_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Buscador_Chunks_Limos Ventana = new Ventana_Buscador_Chunks_Limos();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Visor_Skins_Animado_3D_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SystemSounds.Beep.Play();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Calculadora_Semillas_Mundos_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Calculadora_Infinita_Semillas_Mundos Ventana = new Ventana_Calculadora_Infinita_Semillas_Mundos();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Generador_Pixel_Art_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Generador_Pixel_Art Ventana = new Ventana_Generador_Pixel_Art();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Exportador_Estructuras_Pintadas Ventana = new Ventana_Exportador_Estructuras_Pintadas();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Generador_Estructuras_Personalizadas Ventana = new Ventana_Generador_Estructuras_Personalizadas();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Generador_Miniaturas_Color_Medio Ventana = new Ventana_Generador_Miniaturas_Color_Medio();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Visor_NBT_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Visor_NBT Ventana = new Ventana_Visor_NBT();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Comparador_Versiones_JAR Ventana = new Ventana_Comparador_Versiones_JAR();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SystemSounds.Beep.Play();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Generador_Estructuras_Comandos_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SystemSounds.Beep.Play();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Reloj_Día_Noche_Minecraft_Tiempo_Real_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Reloj_Minecraft_Tiempo_Real Ventana = new Ventana_Reloj_Minecraft_Tiempo_Real();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Visor_Información_Bloques_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Visor_Información_Bloques Ventana = new Ventana_Visor_Información_Bloques();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Administrador_Copias_Seguridad_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Administrador_Copias_Seguridad Ventana = new Ventana_Administrador_Copias_Seguridad();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Descargador_Skins_Automático_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Descargador_Skins_Automático Ventana = new Ventana_Descargador_Skins_Automático();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Visor_Cuadros_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Visor_Cuadros Ventana = new Ventana_Visor_Cuadros();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Afinador_Bloques_Nota_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Afinador_Bloques_Nota Ventana = new Ventana_Afinador_Bloques_Nota();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Diseñador_Estandartes_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Diseñador_Estandartes_Escudos Ventana = new Ventana_Diseñador_Estandartes_Escudos();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SystemSounds.Beep.Play();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Visor_Información_Entidades_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Visor_Información_Entidades Ventana = new Ventana_Visor_Información_Entidades();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
         private void Menú_Principal_Herramientas_Aleatoria_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 Herramientas Herramienta = (Herramientas)Program.Rand.Next(1, (int)Herramientas.Aleatoria);
 
@@ -1713,7 +1599,7 @@ namespace Minecraft_Tools
                 else if (Herramienta == Herramientas.Acerca) Menú_Principal_Ayuda_Acerca.PerformClick();
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
+        */}
 
         private void Menú_Principal_Ayuda_Reddit_Hermitcraft_Click(object sender, EventArgs e)
         {
@@ -1974,23 +1860,6 @@ namespace Minecraft_Tools
                 Temporizador_Principal.Stop();
                 Registro_Restablecer_Opciones();
                 Ventana_Información_Miembros_Hermitcraft Ventana = new Ventana_Información_Miembros_Hermitcraft();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Reconstructor_Estructura_Archivos_Recursos Ventana = new Ventana_Reconstructor_Estructura_Archivos_Recursos();
                 Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
                 Ventana.ShowDialog(this);
                 Ventana.Dispose();
@@ -2312,74 +2181,6 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Selector_Herramientas Ventana = new Ventana_Selector_Herramientas();
-                Ventana.Variable_Siempre_Visible = Variable_Siempre_Visible;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Exportador_Estructuras_Internas_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Exportador_Estructuras_Internas Ventana = new Ventana_Exportador_Estructuras_Internas();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Visor_Nombres_Encantamientos_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Visor_Nombres_Encantamientos Ventana = new Ventana_Visor_Nombres_Encantamientos();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Salvapantallas_El_Fin_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Salvapantallas_El_Fin Ventana = new Ventana_Salvapantallas_El_Fin();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
         private void Menú_Principal_Archivo_Instalar_Salvapantallas_El_Fin_Click(object sender, EventArgs e)
         {
             try
@@ -2413,23 +2214,6 @@ namespace Minecraft_Tools
             try
             {
                 if (Program.Eliminar_Archivo_Carpeta(Environment.GetFolderPath(Environment.SpecialFolder.Windows) + "\\Minecraft Tools by Jupisoft.scr")) SystemSounds.Asterisk.Play();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Menú_Principal_Herramientas_Codificador_Descodificador_Archivos_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Temporizador_Principal.Stop();
-                Registro_Restablecer_Opciones();
-                Ventana_Codificador_Descodificador_Archivos Ventana = new Ventana_Codificador_Descodificador_Archivos();
-                Ventana.Variable_Siempre_Visible = Menú_Principal_Ver_Siempre_Visible.Checked;
-                Ventana.ShowDialog(this);
-                Ventana.Dispose();
-                Ventana = null;
-                Registro_Guardar_Opciones();
-                Temporizador_Principal.Start();
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
@@ -2503,6 +2287,7 @@ namespace Minecraft_Tools
                     Registro_Restablecer_Opciones();
                     Ventana_Visor_Ayuda Ventana = new Ventana_Visor_Ayuda();
                     Ventana.Ayuda = Ventana_Visor_Ayuda.Ayudas.Secrets;
+                    Ventana.Variable_Siempre_Visible = Variable_Siempre_Visible;
                     Ventana.ShowDialog(this);
                     Ventana.Dispose();
                     Ventana = null;
@@ -2511,16 +2296,17 @@ namespace Minecraft_Tools
                 }
                 else
                 {
-                    //Temporizador_Principal.Stop();
-                    //Registro_Restablecer_Opciones();
+                    Temporizador_Principal.Stop();
+                    Registro_Restablecer_Opciones();
                     Barra_Estado_Botón_Secretos.Text = "Secrets: visible";
                     Ventana_Secretos Ventana = new Ventana_Secretos();
+                    Ventana.Variable_Siempre_Visible = Variable_Siempre_Visible;
                     Ventana.ShowDialog(this);
                     Ventana.Dispose();
                     Ventana = null;
                     Barra_Estado_Botón_Secretos.Text = "Secrets: hidden";
-                    //Registro_Guardar_Opciones();
-                    //Temporizador_Principal.Start();
+                    Registro_Guardar_Opciones();
+                    Temporizador_Principal.Start();
                 }
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
@@ -2575,36 +2361,13 @@ namespace Minecraft_Tools
             {
                 //if (e.Button != MouseButtons.Right)
                 {
-                    Registro_Restablecer_Opciones();
+                    Menú_Principal_Herramientas_Selector_Herramientas.PerformClick();
+                    /*Registro_Restablecer_Opciones();
                     Ventana_Acerca Ventana = new Ventana_Acerca();
                     DialogResult Resultado = Ventana.ShowDialog(this);
                     Ventana.Dispose();
                     Ventana = null;
-                    Registro_Guardar_Opciones();
-                }
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Picture_Minecraft_MouseDown(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                //if (e.Button != MouseButtons.Right)
-                {
-                    Program.Ejecutar_Ruta("https://www.minecraft.net/", ProcessWindowStyle.Normal);
-                }
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Picture_Mojang_MouseDown(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                //if (e.Button != MouseButtons.Right)
-                {
-                    Program.Ejecutar_Ruta("https://mojang.com", ProcessWindowStyle.Normal);
+                    Registro_Guardar_Opciones();*/
                 }
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
@@ -2622,6 +2385,80 @@ namespace Minecraft_Tools
                 Ventana = null;
                 Registro_Guardar_Opciones();
                 Temporizador_Principal.Start();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Menú_Principal_Herramientas_Selector_Herramientas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Temporizador_Principal.Stop();
+                Registro_Restablecer_Opciones();
+                Ventana_Selector_Herramientas Ventana = new Ventana_Selector_Herramientas();
+                Ventana.Variable_Siempre_Visible = Variable_Siempre_Visible;
+                if (Ventana.ShowDialog(this) == DialogResult.OK && Ventana.Índice_Herramienta > -1)
+                {
+                    Índice_Herramienta_Anterior = Ventana.Índice_Herramienta;
+                    Ventana.Dispose();
+                    Ventana = null;
+                    Ventana_Selector_Herramientas.Herramientas.Ejecutar_Herramienta(Índice_Herramienta_Anterior, Variable_Siempre_Visible, this);
+                    Registro_Guardar_Opciones();
+                    Temporizador_Principal.Start();
+                }
+                else
+                {
+                    Ventana.Dispose();
+                    Ventana = null;
+                    Registro_Guardar_Opciones();
+                    Temporizador_Principal.Start();
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Picture_Minecraft_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                //if (e.Button != MouseButtons.Right)
+                {
+                    Program.Ejecutar_Ruta("https://www.minecraft.net/", ProcessWindowStyle.Normal);
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Picture_Mojang_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                //if (e.Button != MouseButtons.Right)
+                {
+                    Program.Ejecutar_Ruta("https://mojang.com", ProcessWindowStyle.Normal);
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Barra_Estado_Botón_Secretos_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (e.Button == MouseButtons.Middle)
+                {
+                    Temporizador_Principal.Stop();
+                    Registro_Restablecer_Opciones();
+                    Barra_Estado_Botón_Secretos.Text = "Secrets: visible";
+                    Ventana_Secretos Ventana = new Ventana_Secretos();
+                    Ventana.Variable_Siempre_Visible = Variable_Siempre_Visible;
+                    Ventana.ShowDialog(this);
+                    Ventana.Dispose();
+                    Ventana = null;
+                    Barra_Estado_Botón_Secretos.Text = "Secrets: hidden";
+                    Registro_Guardar_Opciones();
+                    Temporizador_Principal.Start();
+                }
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }

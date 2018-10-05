@@ -309,7 +309,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Worlds Seeds Infinite Calculator for Xisumavoid by Jupisoft";
+            this.Text = "Worlds Seeds Infinite Calculator by Jupisoft";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Calculadora_Infinita_Semillas_Mundos_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ventana_Calculadora_Infinita_Semillas_Mundos_FormClosed);
             this.Load += new System.EventHandler(this.Ventana_Calculadora_Infinita_Semillas_Mundos_Load);

@@ -384,6 +384,7 @@
             this.Etiqueta_Nombres.Size = new System.Drawing.Size(43, 13);
             this.Etiqueta_Nombres.TabIndex = 4;
             this.Etiqueta_Nombres.Text = "Names:";
+            this.Etiqueta_Nombres.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // TextBox_Nombres
             // 
@@ -417,6 +418,7 @@
             this.Etiqueta_Nombre_Real.Size = new System.Drawing.Size(61, 13);
             this.Etiqueta_Nombre_Real.TabIndex = 6;
             this.Etiqueta_Nombre_Real.Text = "Real name:";
+            this.Etiqueta_Nombre_Real.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // TextBox_Fecha_Nacimiento
             // 
@@ -436,6 +438,7 @@
             this.Etiqueta_Fecha_Nacimiento.Size = new System.Drawing.Size(55, 13);
             this.Etiqueta_Fecha_Nacimiento.TabIndex = 8;
             this.Etiqueta_Fecha_Nacimiento.Text = "Birth date:";
+            this.Etiqueta_Fecha_Nacimiento.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // TextBox_País
             // 
@@ -457,6 +460,7 @@
             this.Etiqueta_País.Size = new System.Drawing.Size(46, 13);
             this.Etiqueta_País.TabIndex = 13;
             this.Etiqueta_País.Text = "Country:";
+            this.Etiqueta_País.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // Etiqueta_Perfiles_Minecraft
             // 
@@ -466,6 +470,7 @@
             this.Etiqueta_Perfiles_Minecraft.Size = new System.Drawing.Size(90, 13);
             this.Etiqueta_Perfiles_Minecraft.TabIndex = 2;
             this.Etiqueta_Perfiles_Minecraft.Text = "Minecraft profiles:";
+            this.Etiqueta_Perfiles_Minecraft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // Etiqueta_Youtube
             // 
@@ -475,6 +480,7 @@
             this.Etiqueta_Youtube.Size = new System.Drawing.Size(50, 13);
             this.Etiqueta_Youtube.TabIndex = 15;
             this.Etiqueta_Youtube.Text = "Youtube:";
+            this.Etiqueta_Youtube.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // ComboBox_Perfiles_Minecraft
             // 
@@ -530,6 +536,7 @@
             this.Etiqueta_Twitch.Size = new System.Drawing.Size(42, 13);
             this.Etiqueta_Twitch.TabIndex = 18;
             this.Etiqueta_Twitch.Text = "Twitch:";
+            this.Etiqueta_Twitch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // ComboBox_Twitter
             // 
@@ -554,6 +561,7 @@
             this.Etiqueta_Twitter.Size = new System.Drawing.Size(42, 13);
             this.Etiqueta_Twitter.TabIndex = 21;
             this.Etiqueta_Twitter.Text = "Twitter:";
+            this.Etiqueta_Twitter.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // ComboBox_Discord
             // 
@@ -578,6 +586,7 @@
             this.Etiqueta_Discord.Size = new System.Drawing.Size(46, 13);
             this.Etiqueta_Discord.TabIndex = 24;
             this.Etiqueta_Discord.Text = "Discord:";
+            this.Etiqueta_Discord.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // ComboBox_Patreon
             // 
@@ -602,6 +611,7 @@
             this.Etiqueta_Patreon.Size = new System.Drawing.Size(47, 13);
             this.Etiqueta_Patreon.TabIndex = 27;
             this.Etiqueta_Patreon.Text = "Patreon:";
+            this.Etiqueta_Patreon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // ComboBox_Mixer
             // 
@@ -626,6 +636,7 @@
             this.Etiqueta_Mixer.Size = new System.Drawing.Size(35, 13);
             this.Etiqueta_Mixer.TabIndex = 30;
             this.Etiqueta_Mixer.Text = "Mixer:";
+            this.Etiqueta_Mixer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // ComboBox_Sitio_Web
             // 
@@ -650,6 +661,7 @@
             this.Etiqueta_Sitio_Web.Size = new System.Drawing.Size(49, 13);
             this.Etiqueta_Sitio_Web.TabIndex = 39;
             this.Etiqueta_Sitio_Web.Text = "Website:";
+            this.Etiqueta_Sitio_Web.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // ComboBox_Correo
             // 
@@ -674,6 +686,7 @@
             this.Etiqueta_Correo.Size = new System.Drawing.Size(29, 13);
             this.Etiqueta_Correo.TabIndex = 42;
             this.Etiqueta_Correo.Text = "Mail:";
+            this.Etiqueta_Correo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // ComboBox_Facebook
             // 
@@ -698,6 +711,7 @@
             this.Etiqueta_Facebook.Size = new System.Drawing.Size(58, 13);
             this.Etiqueta_Facebook.TabIndex = 33;
             this.Etiqueta_Facebook.Text = "Facebook:";
+            this.Etiqueta_Facebook.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // ComboBox_Instagram
             // 
@@ -722,6 +736,7 @@
             this.Etiqueta_Instagram.Size = new System.Drawing.Size(56, 13);
             this.Etiqueta_Instagram.TabIndex = 36;
             this.Etiqueta_Instagram.Text = "Instagram:";
+            this.Etiqueta_Instagram.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // ComboBox_Reddit
             // 
@@ -746,6 +761,7 @@
             this.Etiqueta_Reddit.Size = new System.Drawing.Size(41, 13);
             this.Etiqueta_Reddit.TabIndex = 45;
             this.Etiqueta_Reddit.Text = "Reddit:";
+            this.Etiqueta_Reddit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // ComboBox_Hermit
             // 
@@ -771,6 +787,7 @@
             this.Etiqueta_Hermit.Size = new System.Drawing.Size(40, 13);
             this.Etiqueta_Hermit.TabIndex = 0;
             this.Etiqueta_Hermit.Text = "Hermit:";
+            this.Etiqueta_Hermit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // textBox18
             // 
@@ -993,6 +1010,7 @@
             this.Etiqueta_Edad.Size = new System.Drawing.Size(29, 13);
             this.Etiqueta_Edad.TabIndex = 10;
             this.Etiqueta_Edad.Text = "Age:";
+            this.Etiqueta_Edad.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // Numérico_Edad
             // 
@@ -1153,6 +1171,7 @@
             this.Etiqueta_Otros.Size = new System.Drawing.Size(41, 13);
             this.Etiqueta_Otros.TabIndex = 48;
             this.Etiqueta_Otros.Text = "Others:";
+            this.Etiqueta_Otros.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             // 
             // ComboBox_Otros
             // 
@@ -1681,6 +1700,7 @@
             this.Shown += new System.EventHandler(this.Ventana_Hermitcraft_Información_Miembros_Shown);
             this.SizeChanged += new System.EventHandler(this.Ventana_Hermitcraft_Información_Miembros_SizeChanged);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_Hermitcraft_Información_Miembros_KeyDown);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ventana_Información_Miembros_Hermitcraft_MouseDown);
             this.Menú_Contextual.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Numérico_Edad)).EndInit();
             this.Barra_Estado.ResumeLayout(false);

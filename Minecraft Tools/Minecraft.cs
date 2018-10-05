@@ -3257,7 +3257,7 @@ namespace Minecraft_Tools
                                                                     else */
 
                                                                     Bits_Bloque = Math.Max(Lista_Bits.Count / 4096, 4); // Minimum of 4 bits.
-
+                                                                      
                                                                     // Thanks to PM_ME_YOUR_HOOMAN for this code (although I finally used the above one).
                                                                     //Bits_Bloque = Lista_Bits.Count / (64 * 64) + ((Lista_Bits.Count % (64 * 64) == 0) ? 1 : 0);
 

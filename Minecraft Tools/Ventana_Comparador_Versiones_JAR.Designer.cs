@@ -468,7 +468,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "JAR Versions Comparer for Xisumavoid by Jupisoft";
+            this.Text = "JAR Versions Comparer by Jupisoft";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Comparador_Versiones_JAR_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ventana_Comparador_Versiones_JAR_FormClosed);
             this.Load += new System.EventHandler(this.Ventana_Comparador_Versiones_JAR_Load);

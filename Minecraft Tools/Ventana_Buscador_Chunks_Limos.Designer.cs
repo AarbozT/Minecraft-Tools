@@ -618,7 +618,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Slime Chunks Finder for Xisumavoid by Jupisoft";
+            this.Text = "Slime Chunks Finder by Jupisoft";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Buscador_Chunks_Limos_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ventana_Buscador_Chunks_Limos_FormClosed);
             this.Load += new System.EventHandler(this.Ventana_Buscador_Chunks_Limos_Load);

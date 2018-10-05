@@ -42,7 +42,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Block Information for Xisumavoid by Jupisoft";
+            this.Text = "Block Information by Jupisoft";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Información_Bloques_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ventana_Información_Bloques_FormClosed);
             this.Load += new System.EventHandler(this.Ventana_Información_Bloques_Load);

@@ -101,7 +101,7 @@
             this.Menú_Principal_Ver_Descargar_26601_Skins = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Ver_Descargar_Packs_Recursos_Edición_Consola = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Herramientas = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menú_Principal_Herramientas_Selector_Herramientas = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Ninguna = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Separador_1 = new System.Windows.Forms.ToolStripSeparator();
@@ -139,44 +139,10 @@
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Excepciones = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Cambiar_Nombre_Usuario = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Acerca = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menú_Principal_Herramientas_Abrir_Predeterminada = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menú_Principal_Herramientas_Abrir_Última = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Herramientas_Separador_1 = new System.Windows.Forms.ToolStripSeparator();
-            this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Buscador_Chunks_Limos = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Visor_Skins_Animado_3D = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Separador_2 = new System.Windows.Forms.ToolStripSeparator();
-            this.Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Separador_3 = new System.Windows.Forms.ToolStripSeparator();
-            this.Menú_Principal_Herramientas_Visor_NBT = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Comandos = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Separador_4 = new System.Windows.Forms.ToolStripSeparator();
-            this.Menú_Principal_Herramientas_Reloj_Minecraft_Tiempo_Real = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Visor_Información_Bloques = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Administrador_Copias_Seguridad = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Descargador_Skins_Automático = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Separador_5 = new System.Windows.Forms.ToolStripSeparator();
-            this.Menú_Principal_Herramientas_Visor_Cuadros = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Afinador_Bloques_Nota = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Diseñador_Estandartes_Escudos = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Separador_6 = new System.Windows.Forms.ToolStripSeparator();
-            this.Menú_Principal_Herramientas_Visor_Información_Entidades = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Internas = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Visor_Nombres_Encantamientos = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Separador_7 = new System.Windows.Forms.ToolStripSeparator();
-            this.Menú_Principal_Herramientas_Salvapantallas_El_Fin = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Codificador_Descodificador_Archivos = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramientas_Separador_8 = new System.Windows.Forms.ToolStripSeparator();
             this.Menú_Principal_Herramientas_Aleatoria = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramienta_Predeterminada = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menú_Principal_Herramienta_Predeterminada_Separador_1 = new System.Windows.Forms.ToolStripSeparator();
             this.Menú_Principal_Ayuda = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Ayuda_Visor_Ayuda = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal_Ayuda_Depurador_Excepciones = new System.Windows.Forms.ToolStripMenuItem();
@@ -255,7 +221,6 @@
             this.Menú_Principal_Hermitcraft,
             this.Menú_Principal_Ver,
             this.Menú_Principal_Herramientas,
-            this.Menú_Principal_Herramienta_Predeterminada,
             this.Menú_Principal_Ayuda});
             this.Menú_Principal.Location = new System.Drawing.Point(0, 0);
             this.Menú_Principal.Name = "Menú_Principal";
@@ -706,7 +671,7 @@
             // 
             this.Menú_Principal_Ver_Abrir_Carpeta_Twitch.Image = global::Minecraft_Tools.Properties.Resources.Twitch;
             this.Menú_Principal_Ver_Abrir_Carpeta_Twitch.Name = "Menú_Principal_Ver_Abrir_Carpeta_Twitch";
-            this.Menú_Principal_Ver_Abrir_Carpeta_Twitch.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.Menú_Principal_Ver_Abrir_Carpeta_Twitch.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.Menú_Principal_Ver_Abrir_Carpeta_Twitch.Size = new System.Drawing.Size(412, 22);
             this.Menú_Principal_Ver_Abrir_Carpeta_Twitch.Text = "Open the Twitch (Curse) default folder...";
             this.Menú_Principal_Ver_Abrir_Carpeta_Twitch.Click += new System.EventHandler(this.Menú_Principal_Ver_Abrir_Carpeta_Twitch_Click);
@@ -860,56 +825,24 @@
             // Menú_Principal_Herramientas
             // 
             this.Menú_Principal_Herramientas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada,
+            this.Menú_Principal_Herramientas_Selector_Herramientas,
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada,
+            this.Menú_Principal_Herramientas_Abrir_Predeterminada,
+            this.Menú_Principal_Herramientas_Abrir_Última,
             this.Menú_Principal_Herramientas_Separador_1,
-            this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D,
-            this.Menú_Principal_Herramientas_Buscador_Chunks_Limos,
-            this.Menú_Principal_Herramientas_Visor_Skins_Animado_3D,
-            this.Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos,
-            this.Menú_Principal_Herramientas_Separador_2,
-            this.Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos,
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas,
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas,
-            this.Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio,
-            this.Menú_Principal_Herramientas_Separador_3,
-            this.Menú_Principal_Herramientas_Visor_NBT,
-            this.Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR,
-            this.Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza,
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Comandos,
-            this.Menú_Principal_Herramientas_Separador_4,
-            this.Menú_Principal_Herramientas_Reloj_Minecraft_Tiempo_Real,
-            this.Menú_Principal_Herramientas_Visor_Información_Bloques,
-            this.Menú_Principal_Herramientas_Administrador_Copias_Seguridad,
-            this.Menú_Principal_Herramientas_Descargador_Skins_Automático,
-            this.Menú_Principal_Herramientas_Separador_5,
-            this.Menú_Principal_Herramientas_Visor_Cuadros,
-            this.Menú_Principal_Herramientas_Afinador_Bloques_Nota,
-            this.Menú_Principal_Herramientas_Diseñador_Estandartes_Escudos,
-            this.Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos,
-            this.Menú_Principal_Herramientas_Separador_6,
-            this.Menú_Principal_Herramientas_Visor_Información_Entidades,
-            this.Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos,
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Internas,
-            this.Menú_Principal_Herramientas_Visor_Nombres_Encantamientos,
-            this.Menú_Principal_Herramientas_Separador_7,
-            this.Menú_Principal_Herramientas_Salvapantallas_El_Fin,
-            this.Menú_Principal_Herramientas_Codificador_Descodificador_Archivos,
-            this.Menú_Principal_Herramientas_Separador_8,
             this.Menú_Principal_Herramientas_Aleatoria});
             this.Menú_Principal_Herramientas.Name = "Menú_Principal_Herramientas";
             this.Menú_Principal_Herramientas.Size = new System.Drawing.Size(48, 20);
             this.Menú_Principal_Herramientas.Text = "Tools";
             // 
-            // Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada
+            // Menú_Principal_Herramientas_Selector_Herramientas
             // 
-            this.Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada.Image = global::Minecraft_Tools.Properties.Resources.Ejecutar;
-            this.Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada.Name = "Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada";
-            this.Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada.Text = "Open the default tool now...";
-            this.Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada_Click);
+            this.Menú_Principal_Herramientas_Selector_Herramientas.Image = global::Minecraft_Tools.Properties.Resources.Ventana;
+            this.Menú_Principal_Herramientas_Selector_Herramientas.Name = "Menú_Principal_Herramientas_Selector_Herramientas";
+            this.Menú_Principal_Herramientas_Selector_Herramientas.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.Menú_Principal_Herramientas_Selector_Herramientas.Size = new System.Drawing.Size(363, 22);
+            this.Menú_Principal_Herramientas_Selector_Herramientas.Text = "Start a tool from the selector...";
+            this.Menú_Principal_Herramientas_Selector_Herramientas.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Selector_Herramientas_Click);
             // 
             // Menú_Principal_Herramientas_Herramienta_Predeterminada
             // 
@@ -951,10 +884,11 @@
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Cambiar_Nombre_Usuario,
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Acerca});
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Herramienta_Predeterminada.Image = global::Minecraft_Tools.Properties.Resources.Ventana;
+            this.Menú_Principal_Herramientas_Herramienta_Predeterminada.Image = global::Minecraft_Tools.Properties.Resources.Controles_Cursor;
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada.Name = "Menú_Principal_Herramientas_Herramienta_Predeterminada";
-            this.Menú_Principal_Herramientas_Herramienta_Predeterminada.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Herramienta_Predeterminada.Text = "Default tool every time the program loads";
+            this.Menú_Principal_Herramientas_Herramienta_Predeterminada.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.Menú_Principal_Herramientas_Herramienta_Predeterminada.Size = new System.Drawing.Size(363, 22);
+            this.Menú_Principal_Herramientas_Herramienta_Predeterminada.Text = "Select the default tool when the program starts";
             // 
             // Menú_Principal_Herramientas_Herramienta_Predeterminada_Ninguna
             // 
@@ -1242,304 +1176,27 @@
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Acerca.Text = "About";
             this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Acerca.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Herramienta_Predeterminada_Click);
             // 
+            // Menú_Principal_Herramientas_Abrir_Predeterminada
+            // 
+            this.Menú_Principal_Herramientas_Abrir_Predeterminada.ForeColor = System.Drawing.Color.Black;
+            this.Menú_Principal_Herramientas_Abrir_Predeterminada.Image = global::Minecraft_Tools.Properties.Resources.Ejecutar;
+            this.Menú_Principal_Herramientas_Abrir_Predeterminada.Name = "Menú_Principal_Herramientas_Abrir_Predeterminada";
+            this.Menú_Principal_Herramientas_Abrir_Predeterminada.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.Menú_Principal_Herramientas_Abrir_Predeterminada.Size = new System.Drawing.Size(363, 22);
+            this.Menú_Principal_Herramientas_Abrir_Predeterminada.Text = "Open the default tool...";
+            this.Menú_Principal_Herramientas_Abrir_Predeterminada.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Abrir_Predeterminada_Click);
+            // 
+            // Menú_Principal_Herramientas_Abrir_Última
+            // 
+            this.Menú_Principal_Herramientas_Abrir_Última.Image = global::Minecraft_Tools.Properties.Resources.Restablecer;
+            this.Menú_Principal_Herramientas_Abrir_Última.Name = "Menú_Principal_Herramientas_Abrir_Última";
+            this.Menú_Principal_Herramientas_Abrir_Última.Size = new System.Drawing.Size(363, 22);
+            this.Menú_Principal_Herramientas_Abrir_Última.Text = "Open the last tool...";
+            // 
             // Menú_Principal_Herramientas_Separador_1
             // 
             this.Menú_Principal_Herramientas_Separador_1.Name = "Menú_Principal_Herramientas_Separador_1";
-            this.Menú_Principal_Herramientas_Separador_1.Size = new System.Drawing.Size(394, 6);
-            // 
-            // Menú_Principal_Herramientas_Visor_Mundos_Realista_2D
-            // 
-            this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.Image = global::Minecraft_Tools.Properties.Resources.Visor_Mundos_2D;
-            this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.Name = "Menú_Principal_Herramientas_Visor_Mundos_Realista_2D";
-            this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.Text = "Realistic world viewer in 2D...";
-            this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Visor_Mundos_Realista_2D_Click);
-            // 
-            // Menú_Principal_Herramientas_Buscador_Chunks_Limos
-            // 
-            this.Menú_Principal_Herramientas_Buscador_Chunks_Limos.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Buscador_Chunks_Limos.Image = global::Minecraft_Tools.Properties.Resources.minecraft_slime_block;
-            this.Menú_Principal_Herramientas_Buscador_Chunks_Limos.Name = "Menú_Principal_Herramientas_Buscador_Chunks_Limos";
-            this.Menú_Principal_Herramientas_Buscador_Chunks_Limos.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.Menú_Principal_Herramientas_Buscador_Chunks_Limos.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Buscador_Chunks_Limos.Text = "Slime chunks finder...";
-            this.Menú_Principal_Herramientas_Buscador_Chunks_Limos.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Buscador_Chunks_Limos_Click);
-            // 
-            // Menú_Principal_Herramientas_Visor_Skins_Animado_3D
-            // 
-            this.Menú_Principal_Herramientas_Visor_Skins_Animado_3D.ForeColor = System.Drawing.Color.Red;
-            this.Menú_Principal_Herramientas_Visor_Skins_Animado_3D.Image = global::Minecraft_Tools.Properties.Resources.Visor_Skins_3D;
-            this.Menú_Principal_Herramientas_Visor_Skins_Animado_3D.Name = "Menú_Principal_Herramientas_Visor_Skins_Animado_3D";
-            this.Menú_Principal_Herramientas_Visor_Skins_Animado_3D.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.Menú_Principal_Herramientas_Visor_Skins_Animado_3D.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Visor_Skins_Animado_3D.Text = "Animated 3D skin viewer (soon)...";
-            this.Menú_Principal_Herramientas_Visor_Skins_Animado_3D.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Visor_Skins_Animado_3D_Click);
-            // 
-            // Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos
-            // 
-            this.Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos.Image = global::Minecraft_Tools.Properties.Resources.Calculadora;
-            this.Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos.Name = "Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos";
-            this.Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos.ShortcutKeys = System.Windows.Forms.Keys.F8;
-            this.Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos.Text = "World seeds infinite calculator...";
-            this.Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Calculadora_Semillas_Mundos_Click);
-            // 
-            // Menú_Principal_Herramientas_Separador_2
-            // 
-            this.Menú_Principal_Herramientas_Separador_2.Name = "Menú_Principal_Herramientas_Separador_2";
-            this.Menú_Principal_Herramientas_Separador_2.Size = new System.Drawing.Size(394, 6);
-            // 
-            // Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos
-            // 
-            this.Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos.Image = global::Minecraft_Tools.Properties.Resources.Pixel_Art;
-            this.Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos.Name = "Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos";
-            this.Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos.ShortcutKeys = System.Windows.Forms.Keys.F9;
-            this.Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos.Text = "Pixel art generator with world exporter...";
-            this.Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Generador_Pixel_Art_Click);
-            // 
-            // Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas
-            // 
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas.ForeColor = System.Drawing.Color.Blue;
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas.Image = global::Minecraft_Tools.Properties.Resources.Paleta;
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas.Name = "Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas";
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas.ShortcutKeys = System.Windows.Forms.Keys.F10;
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas.Text = "Painted structures exporter (WIP)...";
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas_Click);
-            // 
-            // Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas
-            // 
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas.ForeColor = System.Drawing.Color.Blue;
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas.Image = global::Minecraft_Tools.Properties.Resources.minecraft_structure_block;
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas.Name = "Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas";
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas.ShortcutKeys = System.Windows.Forms.Keys.F11;
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas.Text = "Custom structures generator (WIP)...";
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas_Click);
-            // 
-            // Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio
-            // 
-            this.Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio.Image = global::Minecraft_Tools.Properties.Resources.Ojo;
-            this.Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio.Name = "Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio";
-            this.Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio.Text = "Thumbnails and average color generator...";
-            this.Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio_Click);
-            // 
-            // Menú_Principal_Herramientas_Separador_3
-            // 
-            this.Menú_Principal_Herramientas_Separador_3.Name = "Menú_Principal_Herramientas_Separador_3";
-            this.Menú_Principal_Herramientas_Separador_3.Size = new System.Drawing.Size(394, 6);
-            // 
-            // Menú_Principal_Herramientas_Visor_NBT
-            // 
-            this.Menú_Principal_Herramientas_Visor_NBT.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Visor_NBT.Image = global::Minecraft_Tools.Properties.Resources.NBT_Byte;
-            this.Menú_Principal_Herramientas_Visor_NBT.Name = "Menú_Principal_Herramientas_Visor_NBT";
-            this.Menú_Principal_Herramientas_Visor_NBT.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
-            this.Menú_Principal_Herramientas_Visor_NBT.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Visor_NBT.Text = "NBT viewer...";
-            this.Menú_Principal_Herramientas_Visor_NBT.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Visor_NBT_Click);
-            // 
-            // Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR
-            // 
-            this.Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR.Image = global::Minecraft_Tools.Properties.Resources.WinRAR;
-            this.Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR.Name = "Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR";
-            this.Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
-            this.Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR.Text = "Finder of differences between JAR versions...";
-            this.Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR_Click);
-            // 
-            // Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza
-            // 
-            this.Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza.ForeColor = System.Drawing.Color.Red;
-            this.Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza.Image = global::Minecraft_Tools.Properties.Resources.minecraft_redstone_block;
-            this.Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza.Name = "Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza";
-            this.Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F3)));
-            this.Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza.Text = "Redstone designer (soon)...";
-            this.Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza_Click);
-            // 
-            // Menú_Principal_Herramientas_Generador_Estructuras_Comandos
-            // 
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Comandos.ForeColor = System.Drawing.Color.Red;
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Comandos.Image = global::Minecraft_Tools.Properties.Resources.minecraft_command_block;
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Comandos.Name = "Menú_Principal_Herramientas_Generador_Estructuras_Comandos";
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Comandos.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Comandos.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Comandos.Text = "Structure generator through commands (soon)...";
-            this.Menú_Principal_Herramientas_Generador_Estructuras_Comandos.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Generador_Estructuras_Comandos_Click);
-            // 
-            // Menú_Principal_Herramientas_Separador_4
-            // 
-            this.Menú_Principal_Herramientas_Separador_4.Name = "Menú_Principal_Herramientas_Separador_4";
-            this.Menú_Principal_Herramientas_Separador_4.Size = new System.Drawing.Size(394, 6);
-            // 
-            // Menú_Principal_Herramientas_Reloj_Minecraft_Tiempo_Real
-            // 
-            this.Menú_Principal_Herramientas_Reloj_Minecraft_Tiempo_Real.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Reloj_Minecraft_Tiempo_Real.Image = global::Minecraft_Tools.Properties.Resources.Sol_Luna;
-            this.Menú_Principal_Herramientas_Reloj_Minecraft_Tiempo_Real.Name = "Menú_Principal_Herramientas_Reloj_Minecraft_Tiempo_Real";
-            this.Menú_Principal_Herramientas_Reloj_Minecraft_Tiempo_Real.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F5)));
-            this.Menú_Principal_Herramientas_Reloj_Minecraft_Tiempo_Real.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Reloj_Minecraft_Tiempo_Real.Text = "Real time Minecraft clock...";
-            this.Menú_Principal_Herramientas_Reloj_Minecraft_Tiempo_Real.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Reloj_Día_Noche_Minecraft_Tiempo_Real_Click);
-            // 
-            // Menú_Principal_Herramientas_Visor_Información_Bloques
-            // 
-            this.Menú_Principal_Herramientas_Visor_Información_Bloques.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Visor_Información_Bloques.Image = global::Minecraft_Tools.Properties.Resources.Controles_TextBox;
-            this.Menú_Principal_Herramientas_Visor_Información_Bloques.Name = "Menú_Principal_Herramientas_Visor_Información_Bloques";
-            this.Menú_Principal_Herramientas_Visor_Información_Bloques.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F6)));
-            this.Menú_Principal_Herramientas_Visor_Información_Bloques.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Visor_Información_Bloques.Text = "Block information viewer...";
-            this.Menú_Principal_Herramientas_Visor_Información_Bloques.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Visor_Información_Bloques_Click);
-            // 
-            // Menú_Principal_Herramientas_Administrador_Copias_Seguridad
-            // 
-            this.Menú_Principal_Herramientas_Administrador_Copias_Seguridad.ForeColor = System.Drawing.Color.Blue;
-            this.Menú_Principal_Herramientas_Administrador_Copias_Seguridad.Image = global::Minecraft_Tools.Properties.Resources.Copia_Seguridad;
-            this.Menú_Principal_Herramientas_Administrador_Copias_Seguridad.Name = "Menú_Principal_Herramientas_Administrador_Copias_Seguridad";
-            this.Menú_Principal_Herramientas_Administrador_Copias_Seguridad.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F7)));
-            this.Menú_Principal_Herramientas_Administrador_Copias_Seguridad.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Administrador_Copias_Seguridad.Text = "Backups manager...";
-            this.Menú_Principal_Herramientas_Administrador_Copias_Seguridad.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Administrador_Copias_Seguridad_Click);
-            // 
-            // Menú_Principal_Herramientas_Descargador_Skins_Automático
-            // 
-            this.Menú_Principal_Herramientas_Descargador_Skins_Automático.ForeColor = System.Drawing.Color.Red;
-            this.Menú_Principal_Herramientas_Descargador_Skins_Automático.Image = global::Minecraft_Tools.Properties.Resources.Ordenar;
-            this.Menú_Principal_Herramientas_Descargador_Skins_Automático.Name = "Menú_Principal_Herramientas_Descargador_Skins_Automático";
-            this.Menú_Principal_Herramientas_Descargador_Skins_Automático.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F8)));
-            this.Menú_Principal_Herramientas_Descargador_Skins_Automático.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Descargador_Skins_Automático.Text = "Automatic skin downloader (soon)...";
-            this.Menú_Principal_Herramientas_Descargador_Skins_Automático.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Descargador_Skins_Automático_Click);
-            // 
-            // Menú_Principal_Herramientas_Separador_5
-            // 
-            this.Menú_Principal_Herramientas_Separador_5.Name = "Menú_Principal_Herramientas_Separador_5";
-            this.Menú_Principal_Herramientas_Separador_5.Size = new System.Drawing.Size(394, 6);
-            // 
-            // Menú_Principal_Herramientas_Visor_Cuadros
-            // 
-            this.Menú_Principal_Herramientas_Visor_Cuadros.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Visor_Cuadros.Image = global::Minecraft_Tools.Properties.Resources.Cuadros_Pool;
-            this.Menú_Principal_Herramientas_Visor_Cuadros.Name = "Menú_Principal_Herramientas_Visor_Cuadros";
-            this.Menú_Principal_Herramientas_Visor_Cuadros.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F9)));
-            this.Menú_Principal_Herramientas_Visor_Cuadros.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Visor_Cuadros.Text = "Paintings viewer...";
-            this.Menú_Principal_Herramientas_Visor_Cuadros.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Visor_Cuadros_Click);
-            // 
-            // Menú_Principal_Herramientas_Afinador_Bloques_Nota
-            // 
-            this.Menú_Principal_Herramientas_Afinador_Bloques_Nota.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Afinador_Bloques_Nota.Image = global::Minecraft_Tools.Properties.Resources.minecraft_note_block;
-            this.Menú_Principal_Herramientas_Afinador_Bloques_Nota.Name = "Menú_Principal_Herramientas_Afinador_Bloques_Nota";
-            this.Menú_Principal_Herramientas_Afinador_Bloques_Nota.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F10)));
-            this.Menú_Principal_Herramientas_Afinador_Bloques_Nota.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Afinador_Bloques_Nota.Text = "Note blocks tuner...";
-            this.Menú_Principal_Herramientas_Afinador_Bloques_Nota.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Afinador_Bloques_Nota_Click);
-            // 
-            // Menú_Principal_Herramientas_Diseñador_Estandartes_Escudos
-            // 
-            this.Menú_Principal_Herramientas_Diseñador_Estandartes_Escudos.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Diseñador_Estandartes_Escudos.Image = global::Minecraft_Tools.Properties.Resources.minecraft_red_banner;
-            this.Menú_Principal_Herramientas_Diseñador_Estandartes_Escudos.Name = "Menú_Principal_Herramientas_Diseñador_Estandartes_Escudos";
-            this.Menú_Principal_Herramientas_Diseñador_Estandartes_Escudos.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F11)));
-            this.Menú_Principal_Herramientas_Diseñador_Estandartes_Escudos.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Diseñador_Estandartes_Escudos.Text = "Banner and shield designer...";
-            this.Menú_Principal_Herramientas_Diseñador_Estandartes_Escudos.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Diseñador_Estandartes_Click);
-            // 
-            // Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos
-            // 
-            this.Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos.ForeColor = System.Drawing.Color.Red;
-            this.Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos.Image = global::Minecraft_Tools.Properties.Resources.minecraft_emerald_block;
-            this.Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos.Name = "Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos";
-            this.Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F12)));
-            this.Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos.Text = "Villager tradings viewer (soon)...";
-            this.Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos_Click);
-            // 
-            // Menú_Principal_Herramientas_Separador_6
-            // 
-            this.Menú_Principal_Herramientas_Separador_6.Name = "Menú_Principal_Herramientas_Separador_6";
-            this.Menú_Principal_Herramientas_Separador_6.Size = new System.Drawing.Size(394, 6);
-            // 
-            // Menú_Principal_Herramientas_Visor_Información_Entidades
-            // 
-            this.Menú_Principal_Herramientas_Visor_Información_Entidades.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Visor_Información_Entidades.Image = global::Minecraft_Tools.Properties.Resources.minecraft_player_head;
-            this.Menú_Principal_Herramientas_Visor_Información_Entidades.Name = "Menú_Principal_Herramientas_Visor_Información_Entidades";
-            this.Menú_Principal_Herramientas_Visor_Información_Entidades.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F1)));
-            this.Menú_Principal_Herramientas_Visor_Información_Entidades.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Visor_Información_Entidades.Text = "Entities information viewer...";
-            this.Menú_Principal_Herramientas_Visor_Información_Entidades.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Visor_Información_Entidades_Click);
-            // 
-            // Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos
-            // 
-            this.Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos.ForeColor = System.Drawing.Color.Black;
-            this.Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos.Image = global::Minecraft_Tools.Properties.Resources.Controles_TreeView;
-            this.Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos.Name = "Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos";
-            this.Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F2)));
-            this.Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos.Text = "Resource files structure rebuilder...";
-            this.Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos_Click);
-            // 
-            // Menú_Principal_Herramientas_Exportador_Estructuras_Internas
-            // 
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Internas.ForeColor = System.Drawing.Color.Blue;
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Internas.Image = global::Minecraft_Tools.Properties.Resources.Subir;
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Internas.Name = "Menú_Principal_Herramientas_Exportador_Estructuras_Internas";
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Internas.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F3)));
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Internas.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Internas.Text = "Minecraft internal structures exporter...";
-            this.Menú_Principal_Herramientas_Exportador_Estructuras_Internas.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Exportador_Estructuras_Internas_Click);
-            // 
-            // Menú_Principal_Herramientas_Visor_Nombres_Encantamientos
-            // 
-            this.Menú_Principal_Herramientas_Visor_Nombres_Encantamientos.Image = global::Minecraft_Tools.Properties.Resources.Item_enchanted_book;
-            this.Menú_Principal_Herramientas_Visor_Nombres_Encantamientos.Name = "Menú_Principal_Herramientas_Visor_Nombres_Encantamientos";
-            this.Menú_Principal_Herramientas_Visor_Nombres_Encantamientos.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F4)));
-            this.Menú_Principal_Herramientas_Visor_Nombres_Encantamientos.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Visor_Nombres_Encantamientos.Text = "Enchantment names viewer...";
-            this.Menú_Principal_Herramientas_Visor_Nombres_Encantamientos.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Visor_Nombres_Encantamientos_Click);
-            // 
-            // Menú_Principal_Herramientas_Separador_7
-            // 
-            this.Menú_Principal_Herramientas_Separador_7.Name = "Menú_Principal_Herramientas_Separador_7";
-            this.Menú_Principal_Herramientas_Separador_7.Size = new System.Drawing.Size(394, 6);
-            // 
-            // Menú_Principal_Herramientas_Salvapantallas_El_Fin
-            // 
-            this.Menú_Principal_Herramientas_Salvapantallas_El_Fin.ForeColor = System.Drawing.Color.Blue;
-            this.Menú_Principal_Herramientas_Salvapantallas_El_Fin.Image = global::Minecraft_Tools.Properties.Resources.minecraft_end_portal_frame;
-            this.Menú_Principal_Herramientas_Salvapantallas_El_Fin.Name = "Menú_Principal_Herramientas_Salvapantallas_El_Fin";
-            this.Menú_Principal_Herramientas_Salvapantallas_El_Fin.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F5)));
-            this.Menú_Principal_Herramientas_Salvapantallas_El_Fin.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Salvapantallas_El_Fin.Text = "The End screensaver (install it from the File menu)...";
-            this.Menú_Principal_Herramientas_Salvapantallas_El_Fin.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Salvapantallas_El_Fin_Click);
-            // 
-            // Menú_Principal_Herramientas_Codificador_Descodificador_Archivos
-            // 
-            this.Menú_Principal_Herramientas_Codificador_Descodificador_Archivos.ForeColor = System.Drawing.Color.Red;
-            this.Menú_Principal_Herramientas_Codificador_Descodificador_Archivos.Image = global::Minecraft_Tools.Properties.Resources.Candado;
-            this.Menú_Principal_Herramientas_Codificador_Descodificador_Archivos.Name = "Menú_Principal_Herramientas_Codificador_Descodificador_Archivos";
-            this.Menú_Principal_Herramientas_Codificador_Descodificador_Archivos.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F6)));
-            this.Menú_Principal_Herramientas_Codificador_Descodificador_Archivos.Size = new System.Drawing.Size(397, 22);
-            this.Menú_Principal_Herramientas_Codificador_Descodificador_Archivos.Text = "File encoder and decoder from Minecraft worlds...";
-            this.Menú_Principal_Herramientas_Codificador_Descodificador_Archivos.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Codificador_Descodificador_Archivos_Click);
-            // 
-            // Menú_Principal_Herramientas_Separador_8
-            // 
-            this.Menú_Principal_Herramientas_Separador_8.Name = "Menú_Principal_Herramientas_Separador_8";
-            this.Menú_Principal_Herramientas_Separador_8.Size = new System.Drawing.Size(394, 6);
+            this.Menú_Principal_Herramientas_Separador_1.Size = new System.Drawing.Size(360, 6);
             // 
             // Menú_Principal_Herramientas_Aleatoria
             // 
@@ -1547,32 +1204,9 @@
             this.Menú_Principal_Herramientas_Aleatoria.Image = global::Minecraft_Tools.Properties.Resources.Aleatorio;
             this.Menú_Principal_Herramientas_Aleatoria.Name = "Menú_Principal_Herramientas_Aleatoria";
             this.Menú_Principal_Herramientas_Aleatoria.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.Menú_Principal_Herramientas_Aleatoria.Size = new System.Drawing.Size(397, 22);
+            this.Menú_Principal_Herramientas_Aleatoria.Size = new System.Drawing.Size(363, 22);
             this.Menú_Principal_Herramientas_Aleatoria.Text = "Start a random tool every time...";
             this.Menú_Principal_Herramientas_Aleatoria.Click += new System.EventHandler(this.Menú_Principal_Herramientas_Aleatoria_Click);
-            // 
-            // Menú_Principal_Herramienta_Predeterminada
-            // 
-            this.Menú_Principal_Herramienta_Predeterminada.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas,
-            this.Menú_Principal_Herramienta_Predeterminada_Separador_1});
-            this.Menú_Principal_Herramienta_Predeterminada.Name = "Menú_Principal_Herramienta_Predeterminada";
-            this.Menú_Principal_Herramienta_Predeterminada.Size = new System.Drawing.Size(81, 20);
-            this.Menú_Principal_Herramienta_Predeterminada.Text = "Default tool";
-            // 
-            // Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas
-            // 
-            this.Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas.ForeColor = System.Drawing.Color.Blue;
-            this.Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas.Image = global::Minecraft_Tools.Properties.Resources.Ventana;
-            this.Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas.Name = "Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas";
-            this.Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas.Size = new System.Drawing.Size(183, 22);
-            this.Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas.Text = "Tool selector (WIP)...";
-            this.Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas.Click += new System.EventHandler(this.Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas_Click);
-            // 
-            // Menú_Principal_Herramienta_Predeterminada_Separador_1
-            // 
-            this.Menú_Principal_Herramienta_Predeterminada_Separador_1.Name = "Menú_Principal_Herramienta_Predeterminada_Separador_1";
-            this.Menú_Principal_Herramienta_Predeterminada_Separador_1.Size = new System.Drawing.Size(180, 6);
             // 
             // Menú_Principal_Ayuda
             // 
@@ -1607,7 +1241,7 @@
             this.Menú_Principal_Ayuda_Visor_Ayuda.Image = global::Minecraft_Tools.Properties.Resources.Ayuda;
             this.Menú_Principal_Ayuda_Visor_Ayuda.Name = "Menú_Principal_Ayuda_Visor_Ayuda";
             this.Menú_Principal_Ayuda_Visor_Ayuda.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.Menú_Principal_Ayuda_Visor_Ayuda.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Visor_Ayuda.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Visor_Ayuda.Text = "Help viewer...";
             this.Menú_Principal_Ayuda_Visor_Ayuda.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Visor_Ayuda_Click);
             // 
@@ -1616,7 +1250,7 @@
             this.Menú_Principal_Ayuda_Depurador_Excepciones.Image = global::Minecraft_Tools.Properties.Resources.Excepción;
             this.Menú_Principal_Ayuda_Depurador_Excepciones.Name = "Menú_Principal_Ayuda_Depurador_Excepciones";
             this.Menú_Principal_Ayuda_Depurador_Excepciones.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.Menú_Principal_Ayuda_Depurador_Excepciones.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Depurador_Excepciones.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Depurador_Excepciones.Text = "Exception debugger...";
             this.Menú_Principal_Ayuda_Depurador_Excepciones.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Depurador_Excepciones_Click);
             // 
@@ -1625,7 +1259,7 @@
             this.Menú_Principal_Ayuda_Registro_Cambios.Image = global::Minecraft_Tools.Properties.Resources.Registro_Cambios;
             this.Menú_Principal_Ayuda_Registro_Cambios.Name = "Menú_Principal_Ayuda_Registro_Cambios";
             this.Menú_Principal_Ayuda_Registro_Cambios.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.Menú_Principal_Ayuda_Registro_Cambios.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Registro_Cambios.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Registro_Cambios.Text = "Change log...";
             this.Menú_Principal_Ayuda_Registro_Cambios.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Registro_Cambios_Click);
             // 
@@ -1634,21 +1268,21 @@
             this.Menú_Principal_Ayuda_Cambiar_Nombre_Usuario.Image = global::Minecraft_Tools.Properties.Resources.Usuario;
             this.Menú_Principal_Ayuda_Cambiar_Nombre_Usuario.Name = "Menú_Principal_Ayuda_Cambiar_Nombre_Usuario";
             this.Menú_Principal_Ayuda_Cambiar_Nombre_Usuario.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.Menú_Principal_Ayuda_Cambiar_Nombre_Usuario.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Cambiar_Nombre_Usuario.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Cambiar_Nombre_Usuario.Text = "Change the username...";
             this.Menú_Principal_Ayuda_Cambiar_Nombre_Usuario.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Cambiar_Nombre_Usuario_Click);
             // 
             // Menú_Principal_Ayuda_Separador_1
             // 
             this.Menú_Principal_Ayuda_Separador_1.Name = "Menú_Principal_Ayuda_Separador_1";
-            this.Menú_Principal_Ayuda_Separador_1.Size = new System.Drawing.Size(454, 6);
+            this.Menú_Principal_Ayuda_Separador_1.Size = new System.Drawing.Size(487, 6);
             // 
             // Menú_Principal_Ayuda_Reddit_Hermitcraft
             // 
             this.Menú_Principal_Ayuda_Reddit_Hermitcraft.Image = global::Minecraft_Tools.Properties.Resources.Reddit;
             this.Menú_Principal_Ayuda_Reddit_Hermitcraft.Name = "Menú_Principal_Ayuda_Reddit_Hermitcraft";
             this.Menú_Principal_Ayuda_Reddit_Hermitcraft.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.Menú_Principal_Ayuda_Reddit_Hermitcraft.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Reddit_Hermitcraft.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Reddit_Hermitcraft.Text = "Hermitcraft reddit...";
             this.Menú_Principal_Ayuda_Reddit_Hermitcraft.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Reddit_Hermitcraft_Click);
             // 
@@ -1657,7 +1291,7 @@
             this.Menú_Principal_Ayuda_Sitio_Hermitcraft.Image = global::Minecraft_Tools.Properties.Resources.Hermitcraft;
             this.Menú_Principal_Ayuda_Sitio_Hermitcraft.Name = "Menú_Principal_Ayuda_Sitio_Hermitcraft";
             this.Menú_Principal_Ayuda_Sitio_Hermitcraft.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.Menú_Principal_Ayuda_Sitio_Hermitcraft.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Sitio_Hermitcraft.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Sitio_Hermitcraft.Text = "Hermitcraft site...";
             this.Menú_Principal_Ayuda_Sitio_Hermitcraft.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Sitio_Hermitcraft_Click);
             // 
@@ -1666,21 +1300,21 @@
             this.Menú_Principal_Ayuda_Sitio_Xisumavoid.Image = global::Minecraft_Tools.Properties.Resources.Xisumavoid;
             this.Menú_Principal_Ayuda_Sitio_Xisumavoid.Name = "Menú_Principal_Ayuda_Sitio_Xisumavoid";
             this.Menú_Principal_Ayuda_Sitio_Xisumavoid.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.Menú_Principal_Ayuda_Sitio_Xisumavoid.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Sitio_Xisumavoid.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Sitio_Xisumavoid.Text = "Xisumavoid site...";
             this.Menú_Principal_Ayuda_Sitio_Xisumavoid.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Sitio_Xisumavoid_Click);
             // 
             // Menú_Principal_Ayuda_Separador_2
             // 
             this.Menú_Principal_Ayuda_Separador_2.Name = "Menú_Principal_Ayuda_Separador_2";
-            this.Menú_Principal_Ayuda_Separador_2.Size = new System.Drawing.Size(454, 6);
+            this.Menú_Principal_Ayuda_Separador_2.Size = new System.Drawing.Size(487, 6);
             // 
             // Menú_Principal_Ayuda_Descargar_Minecraft
             // 
             this.Menú_Principal_Ayuda_Descargar_Minecraft.Image = global::Minecraft_Tools.Properties.Resources.Minecraft;
             this.Menú_Principal_Ayuda_Descargar_Minecraft.Name = "Menú_Principal_Ayuda_Descargar_Minecraft";
             this.Menú_Principal_Ayuda_Descargar_Minecraft.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
-            this.Menú_Principal_Ayuda_Descargar_Minecraft.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Descargar_Minecraft.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Descargar_Minecraft.Text = "Download Minecraft from it\'s official site...";
             this.Menú_Principal_Ayuda_Descargar_Minecraft.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Descargar_Minecraft_Click);
             // 
@@ -1689,7 +1323,7 @@
             this.Menú_Principal_Ayuda_Minecraft_Forum_Jupisoft.Image = global::Minecraft_Tools.Properties.Resources.Thanks_Minecraft_Forum;
             this.Menú_Principal_Ayuda_Minecraft_Forum_Jupisoft.Name = "Menú_Principal_Ayuda_Minecraft_Forum_Jupisoft";
             this.Menú_Principal_Ayuda_Minecraft_Forum_Jupisoft.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.Menú_Principal_Ayuda_Minecraft_Forum_Jupisoft.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Minecraft_Forum_Jupisoft.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Minecraft_Forum_Jupisoft.Text = "Minecraft forum post with the latest versions of this application...";
             this.Menú_Principal_Ayuda_Minecraft_Forum_Jupisoft.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Minecraft_Forum_Jupisoft_Click);
             // 
@@ -1697,21 +1331,21 @@
             // 
             this.Menú_Principal_Ayuda_Reddit_Xisumavoid.Image = global::Minecraft_Tools.Properties.Resources.Reddit;
             this.Menú_Principal_Ayuda_Reddit_Xisumavoid.Name = "Menú_Principal_Ayuda_Reddit_Xisumavoid";
-            this.Menú_Principal_Ayuda_Reddit_Xisumavoid.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Reddit_Xisumavoid.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Reddit_Xisumavoid.Text = "Reddit post by Xisumavoid about this application...";
             this.Menú_Principal_Ayuda_Reddit_Xisumavoid.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Reddit_Xisumavoid_Click);
             // 
             // Menú_Principal_Ayuda_Separador_3
             // 
             this.Menú_Principal_Ayuda_Separador_3.Name = "Menú_Principal_Ayuda_Separador_3";
-            this.Menú_Principal_Ayuda_Separador_3.Size = new System.Drawing.Size(454, 6);
+            this.Menú_Principal_Ayuda_Separador_3.Size = new System.Drawing.Size(487, 6);
             // 
             // Menú_Principal_Ayuda_Sitio_Jupisoft
             // 
             this.Menú_Principal_Ayuda_Sitio_Jupisoft.Image = global::Minecraft_Tools.Properties.Resources.Jupisoft_16;
             this.Menú_Principal_Ayuda_Sitio_Jupisoft.Name = "Menú_Principal_Ayuda_Sitio_Jupisoft";
             this.Menú_Principal_Ayuda_Sitio_Jupisoft.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.Menú_Principal_Ayuda_Sitio_Jupisoft.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Sitio_Jupisoft.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Sitio_Jupisoft.Text = "Jupisoft site...";
             this.Menú_Principal_Ayuda_Sitio_Jupisoft.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Sitio_Jupisoft_Click);
             // 
@@ -1720,7 +1354,7 @@
             this.Menú_Principal_Ayuda_Enviar_Correo.Image = global::Minecraft_Tools.Properties.Resources.Correo;
             this.Menú_Principal_Ayuda_Enviar_Correo.Name = "Menú_Principal_Ayuda_Enviar_Correo";
             this.Menú_Principal_Ayuda_Enviar_Correo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.Menú_Principal_Ayuda_Enviar_Correo.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Enviar_Correo.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Enviar_Correo.Text = "Send an e-mail...";
             this.Menú_Principal_Ayuda_Enviar_Correo.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Enviar_Correo_Click);
             // 
@@ -1728,29 +1362,30 @@
             // 
             this.Menú_Principal_Ayuda_Donar.Image = global::Minecraft_Tools.Properties.Resources.Donar;
             this.Menú_Principal_Ayuda_Donar.Name = "Menú_Principal_Ayuda_Donar";
-            this.Menú_Principal_Ayuda_Donar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.Menú_Principal_Ayuda_Donar.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Donar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.Menú_Principal_Ayuda_Donar.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Donar.Text = "Donate...";
             this.Menú_Principal_Ayuda_Donar.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Donar_Click);
             // 
             // Menú_Principal_Ayuda_Separador_4
             // 
             this.Menú_Principal_Ayuda_Separador_4.Name = "Menú_Principal_Ayuda_Separador_4";
-            this.Menú_Principal_Ayuda_Separador_4.Size = new System.Drawing.Size(454, 6);
+            this.Menú_Principal_Ayuda_Separador_4.Size = new System.Drawing.Size(487, 6);
             // 
             // Menú_Principal_Ayuda_GitHub
             // 
             this.Menú_Principal_Ayuda_GitHub.Image = global::Minecraft_Tools.Properties.Resources.GitHub;
             this.Menú_Principal_Ayuda_GitHub.Name = "Menú_Principal_Ayuda_GitHub";
-            this.Menú_Principal_Ayuda_GitHub.Size = new System.Drawing.Size(457, 22);
-            this.Menú_Principal_Ayuda_GitHub.Text = "Collaborate or get the latest source code from GitHub...";
+            this.Menú_Principal_Ayuda_GitHub.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
+            this.Menú_Principal_Ayuda_GitHub.Size = new System.Drawing.Size(490, 22);
+            this.Menú_Principal_Ayuda_GitHub.Text = "Collaborate or get the latest source code and executable from GitHub...";
             this.Menú_Principal_Ayuda_GitHub.Click += new System.EventHandler(this.Menú_Principal_Ayuda_GitHub_Click);
             // 
             // Menú_Principal_Ayuda_Licencia
             // 
             this.Menú_Principal_Ayuda_Licencia.Image = global::Minecraft_Tools.Properties.Resources.Llave;
             this.Menú_Principal_Ayuda_Licencia.Name = "Menú_Principal_Ayuda_Licencia";
-            this.Menú_Principal_Ayuda_Licencia.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Licencia.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Licencia.Text = "Released under the GNU General Public License v3.0...";
             this.Menú_Principal_Ayuda_Licencia.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Licencia_Click);
             // 
@@ -1758,7 +1393,7 @@
             // 
             this.Menú_Principal_Ayuda_Gracias.Image = global::Minecraft_Tools.Properties.Resources.Lista;
             this.Menú_Principal_Ayuda_Gracias.Name = "Menú_Principal_Ayuda_Gracias";
-            this.Menú_Principal_Ayuda_Gracias.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Gracias.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Gracias.Text = "Thank you...";
             this.Menú_Principal_Ayuda_Gracias.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Gracias_Click);
             // 
@@ -1767,7 +1402,7 @@
             this.Menú_Principal_Ayuda_Acerca.Image = global::Minecraft_Tools.Properties.Resources.Jupisoft_16;
             this.Menú_Principal_Ayuda_Acerca.Name = "Menú_Principal_Ayuda_Acerca";
             this.Menú_Principal_Ayuda_Acerca.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.Menú_Principal_Ayuda_Acerca.Size = new System.Drawing.Size(457, 22);
+            this.Menú_Principal_Ayuda_Acerca.Size = new System.Drawing.Size(490, 22);
             this.Menú_Principal_Ayuda_Acerca.Text = "About...";
             this.Menú_Principal_Ayuda_Acerca.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Acerca_Click);
             // 
@@ -1849,6 +1484,7 @@
             this.Barra_Estado_Botón_Secretos.Size = new System.Drawing.Size(107, 22);
             this.Barra_Estado_Botón_Secretos.Text = "Secrets: hidden";
             this.Barra_Estado_Botón_Secretos.Click += new System.EventHandler(this.Barra_Estado_Botón_Secretos_Click);
+            this.Barra_Estado_Botón_Secretos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Barra_Estado_Botón_Secretos_MouseDown);
             // 
             // Barra_Estado_Separador_3
             // 
@@ -1915,7 +1551,7 @@
             // Picture_Hermitcraft
             // 
             this.Picture_Hermitcraft.BackColor = System.Drawing.Color.Transparent;
-            this.Picture_Hermitcraft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Picture_Hermitcraft.Cursor = System.Windows.Forms.Cursors.Help;
             this.Picture_Hermitcraft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Picture_Hermitcraft.Image = global::Minecraft_Tools.Properties.Resources.Hermitcraft;
             this.Picture_Hermitcraft.InitialImage = null;
@@ -2002,7 +1638,7 @@
             this.Picture_Minecraft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Picture_Minecraft.TabIndex = 39;
             this.Picture_Minecraft.TabStop = false;
-            this.Picture_Minecraft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Picture_Minecraft_MouseDown);
+            this.Picture_Minecraft.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Picture_Minecraft_MouseDoubleClick);
             // 
             // Picture_Mojang
             // 
@@ -2018,12 +1654,12 @@
             this.Picture_Mojang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Picture_Mojang.TabIndex = 40;
             this.Picture_Mojang.TabStop = false;
-            this.Picture_Mojang.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Picture_Mojang_MouseDown);
+            this.Picture_Mojang.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Picture_Mojang_MouseDoubleClick);
             // 
             // Picture_Jupisoft
             // 
             this.Picture_Jupisoft.BackColor = System.Drawing.Color.Transparent;
-            this.Picture_Jupisoft.Cursor = System.Windows.Forms.Cursors.Help;
+            this.Picture_Jupisoft.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Picture_Jupisoft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Picture_Jupisoft.Image = global::Minecraft_Tools.Properties.Resources.Jupisoft_192;
             this.Picture_Jupisoft.InitialImage = null;
@@ -2120,7 +1756,7 @@
             this.Name = "Ventana_Principal";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Minecraft Tools by Jupisoft 1.0.0.0";
+            this.Text = "Minecraft Tools 1.0.0.0 by Jupisoft";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Principal_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ventana_Principal_FormClosed);
             this.Load += new System.EventHandler(this.Ventana_Principal_Load);
@@ -2153,25 +1789,15 @@
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Archivo;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Archivo_Salir;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Visor_Skins_Animado_3D;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Buscador_Chunks_Limos;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Buscador_Diferencias_Versiones_JAR;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Visor_Ayuda;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Acerca;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Generador_Estructuras_Comandos;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Generador_Pixel_Art_Exportador_Mundos;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Calculadora_Infinita_Semillas_Mundos;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Diseñador_Piedra_Rojiza;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Depurador_Excepciones;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Ayuda_Separador_1;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Ayuda_Separador_2;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ver;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ver_Siempre_Visible;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Generador_Miniaturas_Color_Medio;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Visor_Mundos_Realista_2D;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Separador_1;
-        private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Separador_2;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Ninguna;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Herramienta_Predeterminada_Separador_1;
@@ -2186,26 +1812,20 @@
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Generador_Estructuras_Comandos;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Herramienta_Predeterminada_Separador_3;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Generador_Miniaturas_Color_Medio;
-        private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Separador_3;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Abrir_Herramienta_Predeterminada;
+        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Abrir_Predeterminada;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Enviar_Correo;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Sitio_Jupisoft;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Donar;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Ayuda_Separador_3;
-        private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Separador_4;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Archivo_Borrar_Opciones_Registro;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Archivo_Separador_1;
-        private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Separador_5;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Generador_Estructuras_Personalizadas;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Generador_Estructuras_Personalizadas;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Herramienta_Predeterminada_Separador_4;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Visor_Ayuda;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Acerca;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Depurador_Excepciones;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Visor_NBT;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Visor_NBT;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Exportador_Estructuras_Pintadas;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Exportador_Estructuras_Pintadas;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Cambiar_Nombre_Usuario;
         private System.Windows.Forms.ToolStrip Barra_Estado;
         private System.Windows.Forms.ToolStripButton Barra_Estado_Botón_Excepción;
@@ -2219,17 +1839,7 @@
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Ver_Separador_2;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ver_Abrir_Carpeta_Minecraft;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ver_Abrir_Carpeta_Twitch;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Administrador_Copias_Seguridad;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Visor_Información_Bloques;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Descargador_Skins_Automático;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Reloj_Minecraft_Tiempo_Real;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Archivo_Separador_2;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Visor_Cuadros;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Afinador_Bloques_Nota;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Diseñador_Estandartes_Escudos;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Visor_Ofertas_Aldeanos;
-        private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Separador_6;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Visor_Información_Entidades;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Herramienta_Predeterminada_Separador_5;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Herramienta_Predeterminada_Separador_6;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Herramienta_Predeterminada_Separador_7;
@@ -2243,7 +1853,6 @@
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Visor_Ofertas_Aldeanos;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Visor_Información_Entidades;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Aleatoria;
-        private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Separador_7;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Aleatoria;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Herramienta_Predeterminada_Separador_8;
         private System.Windows.Forms.ToolStripSeparator Barra_Estado_Separador_4;
@@ -2290,7 +1899,6 @@
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Hermitcraft_Separador_1;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Hermitcraft_Información_Completa_Miembros;
         private System.Windows.Forms.ToolStripSeparator Barra_Estado_Separador_8;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Reconstructor_Estructura_Archivos_Recursos;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Herramienta_Predeterminada_Reconstructor_Estructura_Recursos;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ver_Amidst;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ver_MC_Edit;
@@ -2319,16 +1927,8 @@
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Ver_Separador_3;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ver_Descargar_26601_Skins;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ver_Descargar_Packs_Recursos_Edición_Consola;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramienta_Predeterminada;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramienta_Predeterminada_Selector_Herramientas;
-        private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramienta_Predeterminada_Separador_1;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Exportador_Estructuras_Internas;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Visor_Nombres_Encantamientos;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Archivo_Instalar_Salvapantallas_El_Fin;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Archivo_Desinstalar_Salvapantallas_El_Fin;
-        private System.Windows.Forms.ToolStripSeparator Menú_Principal_Herramientas_Separador_8;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Salvapantallas_El_Fin;
-        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Codificador_Descodificador_Archivos;
         private System.Windows.Forms.ToolStripButton Barra_Estado_Botón_Secretos;
         private System.Windows.Forms.PictureBox Picture_Splash;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Ayuda_Separador_4;
@@ -2348,6 +1948,8 @@
         private System.Windows.Forms.PictureBox Picture_Mineral_Derecha;
         private System.Windows.Forms.PictureBox Picture_Mineral_Izquierda;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Registro_Cambios;
+        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Selector_Herramientas;
+        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Abrir_Última;
     }
 }
 

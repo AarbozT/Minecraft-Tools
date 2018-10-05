@@ -959,5 +959,17 @@ namespace Minecraft_Tools
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
+
+        private void Ventana_Información_Miembros_Hermitcraft_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (e.Button == MouseButtons.Middle)
+                {
+                    this.Close(); // Since it can be accidentally started from the main window, allow for a fast closing without using the keyboard.
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
     }
 }

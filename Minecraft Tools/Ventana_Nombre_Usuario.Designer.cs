@@ -127,17 +127,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBox_Nombre_Usuario.BackColor = System.Drawing.Color.White;
             this.ComboBox_Nombre_Usuario.FormattingEnabled = true;
-            this.ComboBox_Nombre_Usuario.Items.AddRange(new object[] {
-            "BigBadLoser",
-            "False Symmetry",
-            "Iskall85",
-            "Jupisoft",
-            "MrLesk",
-            "MSpaceDev",
-            "Mumbo Jumbo",
-            "Stressmonster101",
-            "Xisumavoid",
-            "Zombie Cleo"});
             this.ComboBox_Nombre_Usuario.Location = new System.Drawing.Point(79, 11);
             this.ComboBox_Nombre_Usuario.Name = "ComboBox_Nombre_Usuario";
             this.ComboBox_Nombre_Usuario.Size = new System.Drawing.Size(393, 21);
@@ -170,7 +159,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Change the User Name for Xisumavoid by Jupisoft";
+            this.Text = "Change the User Name by Jupisoft";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Nombre_Usuario_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ventana_Nombre_Usuario_FormClosed);
             this.Load += new System.EventHandler(this.Ventana_Nombre_Usuario_Load);

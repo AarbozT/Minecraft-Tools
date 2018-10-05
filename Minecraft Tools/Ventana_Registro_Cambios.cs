@@ -93,6 +93,18 @@ namespace Minecraft_Tools
                     "",
                     ""
                 }),*/
+                new Cambios(new DateTime(), "1.0.0.0", new string[]
+                {
+                    "Deleted the old background image based on a Minecraft launcher file called \"bg.png\", which has inconsistency errors on the oversized pixel borders.",
+                    "Added a new function called \"Crear_Imagen_Mosaico_Fondo()\" which generated a new background image to be displayed as a mosaic, based on the dirt block texture.",
+                    "The new background image should be better mixed with the red background now and show colors nearer to red on most displays (before it was too orange).",
+                    "Started a new resource pack converter tool, which will convert resource packs (or the old texture packs) from any Minecraft version to another.",
+                    "Deleted all the tools from it's menu on the main window, now they'll be started from the new tool selector, which has been mostly finished.",
+                    "Deleted about 300 png images from the resources containing ASCII characters, because they were repeated after the previous update.",
+                    "Added a new function to delete a certain color of any image, used for making transparent the villager trade chart from the Minecraft wiki.",
+                    "Finished (for now) the tool Villager tradings viewer, which has an enhanced version of the image from the Minecraft wiki, now with multiple background colors.",
+                    "",
+                }),
                 new Cambios(new DateTime(2018, 9, 27), "1.0.0.0", new string[]
                 {
                     "The application will only be updated through GitHub from now on, although the Minecraft Forum will be updated with the new changes as well.",
@@ -157,7 +169,10 @@ namespace Minecraft_Tools
                         {
                             foreach (string Línea in Cambios.Matriz_Cambios[Índice].Matriz_Líneas)
                             {
-                                Texto_Cambios += " - " + Línea + "\\par";
+                                if (!string.IsNullOrEmpty(Línea))
+                                {
+                                    Texto_Cambios += " - " + Línea + "\\par";
+                                }
                             }
                             if (Índice < Cambios.Matriz_Cambios.Length - 1) Texto_Cambios += "\\par";
                             Total_Cambios += Cambios.Matriz_Cambios[Índice].Matriz_Líneas.Length;

@@ -115,7 +115,7 @@
             this.Tabla_Principal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33037F));
             this.Tabla_Principal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
             this.Tabla_Principal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.32926F));
-            this.Tabla_Principal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.Tabla_Principal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.Tabla_Principal.Controls.Add(this.CheckBox_Estructura_Forzar_Simetría, 5, 0);
             this.Tabla_Principal.Controls.Add(this.ComboBox_Bloque_Interior, 13, 0);
             this.Tabla_Principal.Controls.Add(this.CheckBox_Estructura_Rellenar, 2, 0);
@@ -143,7 +143,7 @@
             this.CheckBox_Estructura_Forzar_Simetría.Checked = true;
             this.CheckBox_Estructura_Forzar_Simetría.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBox_Estructura_Forzar_Simetría.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CheckBox_Estructura_Forzar_Simetría.Location = new System.Drawing.Point(274, 2);
+            this.CheckBox_Estructura_Forzar_Simetría.Location = new System.Drawing.Point(273, 2);
             this.CheckBox_Estructura_Forzar_Simetría.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.CheckBox_Estructura_Forzar_Simetría.Name = "CheckBox_Estructura_Forzar_Simetría";
             this.CheckBox_Estructura_Forzar_Simetría.Size = new System.Drawing.Size(71, 18);
@@ -160,7 +160,7 @@
             this.ComboBox_Bloque_Interior.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ComboBox_Bloque_Interior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_Bloque_Interior.FormattingEnabled = true;
-            this.ComboBox_Bloque_Interior.Location = new System.Drawing.Point(749, 0);
+            this.ComboBox_Bloque_Interior.Location = new System.Drawing.Point(748, 0);
             this.ComboBox_Bloque_Interior.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.ComboBox_Bloque_Interior.Name = "ComboBox_Bloque_Interior";
             this.ComboBox_Bloque_Interior.Size = new System.Drawing.Size(45, 21);
@@ -174,7 +174,7 @@
             this.CheckBox_Estructura_Rellenar.Checked = true;
             this.CheckBox_Estructura_Rellenar.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBox_Estructura_Rellenar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CheckBox_Estructura_Rellenar.Location = new System.Drawing.Point(142, 2);
+            this.CheckBox_Estructura_Rellenar.Location = new System.Drawing.Point(141, 2);
             this.CheckBox_Estructura_Rellenar.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.CheckBox_Estructura_Rellenar.Name = "CheckBox_Estructura_Rellenar";
             this.CheckBox_Estructura_Rellenar.Size = new System.Drawing.Size(38, 18);
@@ -188,7 +188,7 @@
             // 
             this.Numérico_Diámetro.BackColor = System.Drawing.Color.White;
             this.Numérico_Diámetro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Numérico_Diámetro.Location = new System.Drawing.Point(403, 0);
+            this.Numérico_Diámetro.Location = new System.Drawing.Point(402, 0);
             this.Numérico_Diámetro.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.Numérico_Diámetro.Maximum = new decimal(new int[] {
             4096,
@@ -219,7 +219,7 @@
             this.ComboBox_Bloque.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ComboBox_Bloque.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_Bloque.FormattingEnabled = true;
-            this.ComboBox_Bloque.Location = new System.Drawing.Point(616, 0);
+            this.ComboBox_Bloque.Location = new System.Drawing.Point(615, 0);
             this.ComboBox_Bloque.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.ComboBox_Bloque.Name = "ComboBox_Bloque";
             this.ComboBox_Bloque.Size = new System.Drawing.Size(45, 21);
@@ -231,7 +231,7 @@
             // 
             this.Numérico_Rotación.BackColor = System.Drawing.Color.White;
             this.Numérico_Rotación.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Numérico_Rotación.Location = new System.Drawing.Point(521, 0);
+            this.Numérico_Rotación.Location = new System.Drawing.Point(520, 0);
             this.Numérico_Rotación.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.Numérico_Rotación.Maximum = new decimal(new int[] {
             360,
@@ -250,7 +250,7 @@
             // 
             this.Etiqueta_Bloque.AutoSize = true;
             this.Etiqueta_Bloque.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Etiqueta_Bloque.Location = new System.Drawing.Point(576, 3);
+            this.Etiqueta_Bloque.Location = new System.Drawing.Point(575, 3);
             this.Etiqueta_Bloque.Margin = new System.Windows.Forms.Padding(3, 3, 0, 0);
             this.Etiqueta_Bloque.Name = "Etiqueta_Bloque";
             this.Etiqueta_Bloque.Size = new System.Drawing.Size(37, 17);
@@ -261,7 +261,7 @@
             // 
             this.Etiqueta_Rotación.AutoSize = true;
             this.Etiqueta_Rotación.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Etiqueta_Rotación.Location = new System.Drawing.Point(468, 3);
+            this.Etiqueta_Rotación.Location = new System.Drawing.Point(467, 3);
             this.Etiqueta_Rotación.Margin = new System.Windows.Forms.Padding(3, 3, 0, 0);
             this.Etiqueta_Rotación.Name = "Etiqueta_Rotación";
             this.Etiqueta_Rotación.Size = new System.Drawing.Size(50, 17);
@@ -272,7 +272,7 @@
             // 
             this.Etiqueta_Diámetro.AutoSize = true;
             this.Etiqueta_Diámetro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Etiqueta_Diámetro.Location = new System.Drawing.Point(348, 3);
+            this.Etiqueta_Diámetro.Location = new System.Drawing.Point(347, 3);
             this.Etiqueta_Diámetro.Margin = new System.Windows.Forms.Padding(3, 3, 0, 0);
             this.Etiqueta_Diámetro.Name = "Etiqueta_Diámetro";
             this.Etiqueta_Diámetro.Size = new System.Drawing.Size(52, 17);
@@ -283,7 +283,7 @@
             // 
             this.Numérico_Lados.BackColor = System.Drawing.Color.White;
             this.Numérico_Lados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Numérico_Lados.Location = new System.Drawing.Point(222, 0);
+            this.Numérico_Lados.Location = new System.Drawing.Point(221, 0);
             this.Numérico_Lados.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.Numérico_Lados.Maximum = new decimal(new int[] {
             360,
@@ -312,7 +312,7 @@
             // 
             this.Etiqueta_Lados.AutoSize = true;
             this.Etiqueta_Lados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Etiqueta_Lados.Location = new System.Drawing.Point(183, 3);
+            this.Etiqueta_Lados.Location = new System.Drawing.Point(182, 3);
             this.Etiqueta_Lados.Margin = new System.Windows.Forms.Padding(3, 3, 0, 0);
             this.Etiqueta_Lados.Name = "Etiqueta_Lados";
             this.Etiqueta_Lados.Size = new System.Drawing.Size(36, 17);
@@ -343,7 +343,7 @@
             this.ComboBox_Estructura.Location = new System.Drawing.Point(93, 0);
             this.ComboBox_Estructura.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.ComboBox_Estructura.Name = "ComboBox_Estructura";
-            this.ComboBox_Estructura.Size = new System.Drawing.Size(46, 21);
+            this.ComboBox_Estructura.Size = new System.Drawing.Size(45, 21);
             this.ComboBox_Estructura.TabIndex = 0;
             this.ComboBox_Estructura.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Estructura_SelectedIndexChanged);
             this.ComboBox_Estructura.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_Generador_Estructuras_Masivas_KeyDown);
@@ -810,7 +810,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Massive Structure Generator for Xisumavoid by Jupisoft";
+            this.Text = "Massive Structure Generator by Jupisoft";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Generador_Estructuras_Masivas_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ventana_Generador_Estructuras_Masivas_FormClosed);
             this.Load += new System.EventHandler(this.Ventana_Generador_Estructuras_Masivas_Load);

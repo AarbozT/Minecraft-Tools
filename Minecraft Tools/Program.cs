@@ -20,7 +20,7 @@ namespace Minecraft_Tools
         /// <summary>
         /// The Windows registry build date, used to know if the older settings should be deleted.
         /// </summary>
-        internal static readonly string Texto_Fecha = "2018_09_27_17_54_34_935";
+        internal static readonly string Texto_Fecha = "2018_10_05_01_59_59_517";
         /// <summary>
         /// The Minecraft version that most tools of this application will support.
         /// </summary>
@@ -33,7 +33,7 @@ namespace Minecraft_Tools
         internal static string Texto_Título = "Minecraft Tools by Jupisoft";
         internal static string Texto_Programa = "Minecraft Tools";
         internal static readonly string Texto_Versión = "1.0.0.0";
-        internal static readonly string Texto_Versión_Fecha = Texto_Versión + " (" + Texto_Fecha.Replace("_", null) + ")";
+        internal static readonly string Texto_Versión_Fecha = Texto_Versión + " (" + Texto_Fecha/*.Replace("_", null)*/ + ")";
         internal static string Texto_Título_Versión = Texto_Título + " " + Texto_Versión;
 
         internal static readonly string Ruta_Minecraft = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft";
@@ -57,6 +57,7 @@ namespace Minecraft_Tools
         internal static readonly string Ruta_Guardado_Imágenes_Visor_Cuadros = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "\\Jupisoft\\Minecraft Tools\\Paintings Viewer";
         internal static readonly string Ruta_Guardado_Imágenes_Visor_NBT = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "\\Jupisoft\\Minecraft Tools\\NBT Viewer";
         internal static readonly string Ruta_Guardado_Imágenes_Visor_Nombres_Encantamientos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "\\Jupisoft\\Minecraft Tools\\Enchantment Names Viewer";
+        internal static readonly string Ruta_Guardado_Imágenes_Visor_Ofertas_Aldeanos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "\\Jupisoft\\Minecraft Tools\\Villager Tradings Viewer";
 
         internal static Random Rand = new Random();
         internal static List<char> Lista_Caracteres_Prohibidos = new List<char>();
@@ -336,6 +337,38 @@ namespace Minecraft_Tools
             }
             //else if (Índice == 1530) return Color.FromArgb(255, 0, 1);
             return Color.FromArgb(255, 255, 255);
+        }
+
+        /// <summary>
+        /// Calculates the CRC 32 of any file in the same way as WinRAR or 7-Zip. Very useful to see if 2 files are identical or contain differences between them.
+        /// </summary>
+        /// <param name="Ruta">Any valid and existing file path.</param>
+        /// <returns>A positive number of 32 bits based on the bytes contained in the file.</returns>
+        internal static uint Obtener_CRC_32(string Ruta)
+        {
+            uint CRC_32 = 0xFFFFFFFF; // Start with the bits inverted.
+            try
+            {
+                if (!string.IsNullOrEmpty(Ruta) && File.Exists(Ruta))
+                {
+                    FileStream Lector = new FileStream(Ruta, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                    byte[] Matriz_Bytes = new byte[4096]; // Use a 4 KB matrix for reading.
+                    for (long Índice_Bloque = 0L; Índice_Bloque < Lector.Length; Índice_Bloque += 4096L)
+                    {
+                        int Longitud = Lector.Read(Matriz_Bytes, 0, 4096); // Read in blocks of 4 KB.
+                        for (int Índice_Byte = 0; Índice_Byte < Longitud; Índice_Byte++)
+                        {
+                            CRC_32 = Matriz_CRC_32[(byte)(CRC_32 ^ Matriz_Bytes[Índice_Byte])] ^ (CRC_32 >> 8); // Add the new value to the previous CRC 32.
+                        }
+                    }
+                    Matriz_Bytes = null;
+                    Lector.Close();
+                    Lector.Dispose();
+                    Lector = null;
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
+            return ~CRC_32; // Return the calculated bits inverted (if it's 0xFFFFFFFF will return 0).
         }
 
         internal static string Obtener_Nombre_Temporal()
@@ -837,7 +870,7 @@ namespace Minecraft_Tools
             return "? Bytes";
         }
 
-        internal static readonly uint[] Matriz_CRC32 = new uint[256]
+        internal static readonly uint[] Matriz_CRC_32 = new uint[256]
         {
             0x00000000, 0x77073096, 0xEE0E612C, 0x990951BA, 0x076DC419,
             0x706AF48F, 0xE963A535, 0x9E6495A3, 0x0EDB8832, 0x79DCB8A4,
@@ -896,52 +929,52 @@ namespace Minecraft_Tools
         /// <summary>
         /// Calcula el CRC de 32 bits de la matriz de bytes indicada.
         /// </summary>
-        internal static uint Calcular_CRC32(Byte[] Matriz_Bytes)
+        internal static uint Calcular_CRC32(byte[] Matriz_Bytes)
         {
             if (Matriz_Bytes == null) return 0;
             uint CRC_32_Bits = 0xFFFFFFFF;
-            for (int Índice = 0; Índice < Matriz_Bytes.Length; Índice++) CRC_32_Bits = Matriz_CRC32[(Byte)(CRC_32_Bits ^ Matriz_Bytes[Índice])] ^ (CRC_32_Bits >> 8);
+            for (int Índice = 0; Índice < Matriz_Bytes.Length; Índice++) CRC_32_Bits = Matriz_CRC_32[(Byte)(CRC_32_Bits ^ Matriz_Bytes[Índice])] ^ (CRC_32_Bits >> 8);
             return ~CRC_32_Bits;
         }
 
         /// <summary>
         /// Calcula el CRC de 32 bits de la matriz de bytes indicada.
         /// </summary>
-        internal static uint Calcular_CRC32(Byte[] Matriz_Bytes, int Longitud)
+        internal static uint Calcular_CRC32(byte[] Matriz_Bytes, int Longitud)
         {
             if (Matriz_Bytes == null || Matriz_Bytes.Length <= 0) return 0;
             else if (Longitud <= 0) Longitud = Matriz_Bytes.Length;
             uint Valor_CRC32 = 0xFFFFFFFF;
-            for (int Índice = 0; Índice < Longitud; Índice++) Valor_CRC32 = Matriz_CRC32[(Byte)(Valor_CRC32 ^ Matriz_Bytes[Índice])] ^ (Valor_CRC32 >> 8);
+            for (int Índice = 0; Índice < Longitud; Índice++) Valor_CRC32 = Matriz_CRC_32[(Byte)(Valor_CRC32 ^ Matriz_Bytes[Índice])] ^ (Valor_CRC32 >> 8);
             return ~Valor_CRC32;
         }
 
         /// <summary>
         /// Calcula el CRC de 32 bits de la matriz de bytes indicada, continuando desde un valor anterior que debe iniciarse por primera vez en cero.
         /// </summary>
-        internal static uint Calcular_CRC32(Byte[] Matriz_Bytes, int Longitud, uint Valor_CRC32)
+        internal static uint Calcular_CRC32(byte[] Matriz_Bytes, int Longitud, uint Valor_CRC32)
         {
             if (Matriz_Bytes == null || Matriz_Bytes.Length <= 0) return 0;
             else if (Longitud <= 0) Longitud = Matriz_Bytes.Length;
             Valor_CRC32 = ~Valor_CRC32;
-            for (int Índice = 0; Índice < Longitud; Índice++) Valor_CRC32 = Matriz_CRC32[(Byte)(Valor_CRC32 ^ Matriz_Bytes[Índice])] ^ (Valor_CRC32 >> 8);
+            for (int Índice = 0; Índice < Longitud; Índice++) Valor_CRC32 = Matriz_CRC_32[(Byte)(Valor_CRC32 ^ Matriz_Bytes[Índice])] ^ (Valor_CRC32 >> 8);
             return ~Valor_CRC32;
         }
 
         /// <summary>
         /// Calcula el CRC de 32 bits del archivo indicado, excluyendo el propio CRC 32 ya almacenado.
         /// </summary>
-        internal static uint Calcular_CRC32_Sin_CRC_32(String Ruta)
+        internal static uint Calcular_CRC32_Sin_CRC_32(string Ruta)
         {
             uint Valor_CRC32 = 0xFFFFFFFF;
             FileStream Lector = new FileStream(Ruta, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             if (Lector.Length > 4L)
             {
-                Byte[] Matriz_Bytes = new Byte[4096];
+                byte[] Matriz_Bytes = new byte[4096];
                 for (long Índice = 0L; Índice < Lector.Length; Índice += 4096L)
                 {
                     int Longitud = Lector.Read(Matriz_Bytes, 0, 4096);
-                    for (int Subíndice = 0; Subíndice < Longitud; Subíndice++) if (Índice + Subíndice < Lector.Length - 4) Valor_CRC32 = Matriz_CRC32[(Byte)(Valor_CRC32 ^ Matriz_Bytes[Subíndice])] ^ (Valor_CRC32 >> 8);
+                    for (int Subíndice = 0; Subíndice < Longitud; Subíndice++) if (Índice + Subíndice < Lector.Length - 4) Valor_CRC32 = Matriz_CRC_32[(Byte)(Valor_CRC32 ^ Matriz_Bytes[Subíndice])] ^ (Valor_CRC32 >> 8);
                 }
                 Matriz_Bytes = null;
             }
@@ -953,20 +986,117 @@ namespace Minecraft_Tools
         /// <summary>
         /// Calcula el CRC de 32 bits del archivo indicado.
         /// </summary>
-        internal static uint Calcular_CRC32(String Ruta)
+        internal static uint Calcular_CRC32(string Ruta)
         {
             uint Valor_CRC32 = 0xFFFFFFFF;
             FileStream Lector = new FileStream(Ruta, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            Byte[] Matriz_Bytes = new Byte[4096];
+            byte[] Matriz_Bytes = new byte[4096];
             for (long Índice = 0L; Índice < Lector.Length; Índice += 4096L)
             {
                 int Longitud = Lector.Read(Matriz_Bytes, 0, 4096);
-                for (int Subíndice = 0; Subíndice < Longitud; Subíndice++) Valor_CRC32 = Matriz_CRC32[(Byte)(Valor_CRC32 ^ Matriz_Bytes[Subíndice])] ^ (Valor_CRC32 >> 8);
+                for (int Subíndice = 0; Subíndice < Longitud; Subíndice++) Valor_CRC32 = Matriz_CRC_32[(Byte)(Valor_CRC32 ^ Matriz_Bytes[Subíndice])] ^ (Valor_CRC32 >> 8);
             }
             Matriz_Bytes = null;
             Lector.Close();
             Lector.Dispose();
             return ~Valor_CRC32;
+        }
+
+        internal static List<Color> Aleatorizar_Lista(List<Color> Lista)
+        {
+            List<Color> Lista_Temporal = Lista.GetRange(0, Lista.Count);
+            Lista.Clear();
+            for (int Índice = Lista_Temporal.Count - 1; Índice >= 0; Índice--)
+            {
+                int Índice_Aleatorio = Program.Rand.Next(0, Lista_Temporal.Count);
+                Lista.Add(Lista_Temporal[Índice_Aleatorio]);
+                Lista_Temporal.RemoveAt(Índice_Aleatorio);
+            }
+            Lista_Temporal = null;
+            return Lista;
+        }
+
+        /// <summary>
+        /// Deletes the background dark color from the Villager Trading Chart from the Minecraft wiki, allowing for further editing later. It may have other custom uses.
+        /// </summary>
+        /// <param name="Color_ARGB">Any valid ARGB color that will be deleted from the image.</param>
+        internal static void Borrar_Color_Fondo_Imagen(string Ruta, Color Color_ARGB)
+        {
+            try
+            {
+                Bitmap Imagen = Cargar_Imagen_Ruta(Ruta, CheckState.Checked); // Force loading with alpha.
+                if (Imagen != null)
+                {
+                    int Ancho = Imagen.Width;
+                    int Alto = Imagen.Height;
+                    BitmapData Bitmap_Data = Imagen.LockBits(new Rectangle(0, 0, Ancho, Alto), ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
+                    byte[] Matriz_Bytes = new byte[Math.Abs(Bitmap_Data.Stride) * Alto];
+                    Marshal.Copy(Bitmap_Data.Scan0, Matriz_Bytes, 0, Matriz_Bytes.Length);
+                    for (int Y = 0, Índice = 0; Y < Alto; Y++)
+                    {
+                        for (int X = 0; X < Ancho; X++, Índice += 4)
+                        {
+                            if (Matriz_Bytes[Índice + 3] == Color_ARGB.A && Matriz_Bytes[Índice + 2] == Color_ARGB.R && Matriz_Bytes[Índice + 1] == Color_ARGB.G && Matriz_Bytes[Índice] == Color_ARGB.B)
+                            {
+                                Matriz_Bytes[Índice + 3] = 0;
+                                Matriz_Bytes[Índice + 2] = 0;
+                                Matriz_Bytes[Índice + 1] = 0;
+                                Matriz_Bytes[Índice] = 0;
+                            }
+                        }
+                    }
+                    Marshal.Copy(Matriz_Bytes, 0, Bitmap_Data.Scan0, Matriz_Bytes.Length);
+                    Imagen.UnlockBits(Bitmap_Data);
+                    Bitmap_Data = null;
+                    Matriz_Bytes = null;
+                    Guardar_Imagen_Temporal(Imagen, Program.Obtener_Nombre_Temporal());
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
+        }
+
+        /// <summary>
+        /// Loads any image from disk into memory and redraws it in one of the supported pixel formats, so it will never give any error (in theory).
+        /// </summary>
+        /// <param name="Ruta">Any valid file path that contains an image inside.</param>
+        /// <param name="Alfa">If it's Indeterminate the returned image will contain alpha (transparency) only it if had it before. If it's Checked the returned image will always have alpha. Otherwise it will never have alpha.</param>
+        /// <returns>The redrawed image in one of the supported pixel formats.</returns>
+        internal static Bitmap Cargar_Imagen_Ruta(string Ruta, CheckState Alfa)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(Ruta) && File.Exists(Ruta))
+                {
+                    Image Imagen_Original = null;
+                    FileStream Lector = new FileStream(Ruta, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                    try { Imagen_Original = Image.FromStream(Lector); }
+                    catch { Imagen_Original = null; }
+                    if (Imagen_Original != null)
+                    {
+                        int Ancho = Imagen_Original.Width;
+                        int Alto = Imagen_Original.Height;
+                        Bitmap Imagen = new Bitmap(Ancho, Alto, Alfa == CheckState.Indeterminate ? (Image.IsAlphaPixelFormat(Imagen_Original.PixelFormat) ? PixelFormat.Format32bppArgb : PixelFormat.Format24bppRgb) : Alfa == CheckState.Checked ? PixelFormat.Format32bppArgb : PixelFormat.Format24bppRgb);
+                        Graphics Pintar = Graphics.FromImage(Imagen);
+                        Pintar.CompositingMode = CompositingMode.SourceCopy;
+                        Pintar.CompositingQuality = CompositingQuality.HighQuality;
+                        Pintar.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        Pintar.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                        Pintar.SmoothingMode = SmoothingMode.None;
+                        Pintar.DrawImage(Imagen_Original, new Rectangle(0, 0, Ancho, Alto), new Rectangle(0, 0, Ancho, Alto), GraphicsUnit.Pixel);
+                        Pintar.Dispose();
+                        Pintar = null;
+                        Lector.Close();
+                        Lector.Dispose();
+                        Lector = null;
+                        return Imagen;
+                    }
+                    Lector.Close();
+                    Lector.Dispose();
+                    Lector = null;
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
+            return null;
         }
 
         /// <summary>
@@ -1888,6 +2018,7 @@ namespace Minecraft_Tools
                         return;
                     }
                 }
+                Minecraft_Splashes.Lista_Líneas.Add("Now with " + Program.Traducir_Número(Minecraft_Splashes.Lista_Líneas.Count + 1) + " splashes!"); // Add an extra splash that tells how many there are (counting itself).
                 Copias_Seguridad.Iniciar_Copias_Seguridad();
                 Lista_Caracteres_Prohibidos.AddRange(Path.GetInvalidPathChars());
                 Lista_Caracteres_Prohibidos.AddRange(Path.GetInvalidFileNameChars());
@@ -1923,7 +2054,7 @@ namespace Minecraft_Tools
                     string Texto_Fecha_Anterior = null;
                     try { Texto_Fecha_Anterior = Clave.GetValue("Version", null) as string; }
                     catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Texto_Fecha_Anterior = null; }
-                    if (!string.IsNullOrEmpty(Texto_Fecha_Anterior) && string.Compare(Texto_Fecha.Replace("_", null), Texto_Fecha_Anterior, true) != 0)
+                    if (!string.IsNullOrEmpty(Texto_Fecha_Anterior) && string.Compare(Texto_Fecha/*.Replace("_", null)*/, Texto_Fecha_Anterior, true) != 0)
                     {
                         string[] Matriz_Nombres = null;
                         try
@@ -1957,9 +2088,9 @@ namespace Minecraft_Tools
                             Matriz_Nombres = null;
                         }
                         catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
-                        MessageBox.Show("The program's settings were saved from a different version.\r\nTo ensure compatibility, all have been restored to their default values.\r\n\r\nSaved version: " + Texto_Fecha_Anterior + ".\r\nCurrent version: " + Texto_Fecha.Replace("_", null) + ".", Texto_Título_Versión, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("The program's settings were saved from a different version.\r\nTo ensure compatibility, all have been restored to their default values.\r\n\r\nSaved version: " + Texto_Fecha_Anterior + ".\r\nCurrent version: " + Texto_Fecha/*.Replace("_", null)*/ + ".", Texto_Título_Versión, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    try { Clave.SetValue("Version", Texto_Fecha.Replace("_", null), RegistryValueKind.String); }
+                    try { Clave.SetValue("Version", Texto_Fecha/*.Replace("_", null)*/, RegistryValueKind.String); }
                     catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
                     Clave.Close();
                     Clave = null;

@@ -143,7 +143,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Change log for Xisumavoid by Jupisoft";
+            this.Text = "Change log by Jupisoft";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Registro_Cambios_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ventana_Registro_Cambios_FormClosed);
             this.Load += new System.EventHandler(this.Ventana_Registro_Cambios_Load);

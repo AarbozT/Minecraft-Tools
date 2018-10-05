@@ -352,6 +352,7 @@
             this.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Picture.TabIndex = 5;
             this.Picture.TabStop = false;
+            this.Picture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Picture_MouseDown);
             // 
             // Ventana_Salvapantallas_El_Fin
             // 
