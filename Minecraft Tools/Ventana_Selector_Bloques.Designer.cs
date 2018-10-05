@@ -33,15 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventana_Selector_Bloques));
             this.DataGridView_Principal = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.Botón_Importar = new System.Windows.Forms.Button();
-            this.Botón_Exportar = new System.Windows.Forms.Button();
-            this.ComboBox_Paleta = new System.Windows.Forms.ComboBox();
-            this.Etiqueta_Paleta = new System.Windows.Forms.Label();
-            this.Botón_Aceptar = new System.Windows.Forms.Button();
-            this.Botón_Cancelar = new System.Windows.Forms.Button();
-            this.Botón_Restablecer = new System.Windows.Forms.Button();
             this.Columna_Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Columna_Icono = new System.Windows.Forms.DataGridViewImageColumn();
             this.Columna_Bloque = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +51,15 @@
             this.Columna_Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna_CRC_32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.Botón_Importar = new System.Windows.Forms.Button();
+            this.Botón_Exportar = new System.Windows.Forms.Button();
+            this.ComboBox_Paleta = new System.Windows.Forms.ComboBox();
+            this.Etiqueta_Paleta = new System.Windows.Forms.Label();
+            this.Botón_Aceptar = new System.Windows.Forms.Button();
+            this.Botón_Cancelar = new System.Windows.Forms.Button();
+            this.Botón_Restablecer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Principal)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +119,117 @@
             this.DataGridView_Principal.Size = new System.Drawing.Size(959, 544);
             this.DataGridView_Principal.TabIndex = 14;
             this.DataGridView_Principal.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.DataGridView_Principal_DataError);
+            // 
+            // Columna_Seleccionar
+            // 
+            this.Columna_Seleccionar.HeaderText = "";
+            this.Columna_Seleccionar.Name = "Columna_Seleccionar";
+            this.Columna_Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Columna_Icono
+            // 
+            this.Columna_Icono.HeaderText = "";
+            this.Columna_Icono.Name = "Columna_Icono";
+            this.Columna_Icono.ReadOnly = true;
+            this.Columna_Icono.Width = 16;
+            // 
+            // Columna_Bloque
+            // 
+            this.Columna_Bloque.HeaderText = "Block name";
+            this.Columna_Bloque.Name = "Columna_Bloque";
+            this.Columna_Bloque.ReadOnly = true;
+            // 
+            // Columna_Icono_Invertido
+            // 
+            this.Columna_Icono_Invertido.HeaderText = "";
+            this.Columna_Icono_Invertido.Name = "Columna_Icono_Invertido";
+            this.Columna_Icono_Invertido.ReadOnly = true;
+            // 
+            // Columna_Bloque_Invertido
+            // 
+            this.Columna_Bloque_Invertido.HeaderText = "Inverted block name";
+            this.Columna_Bloque_Invertido.Name = "Columna_Bloque_Invertido";
+            this.Columna_Bloque_Invertido.ReadOnly = true;
+            // 
+            // Columna_Imagen_Alfa
+            // 
+            this.Columna_Imagen_Alfa.HeaderText = "";
+            this.Columna_Imagen_Alfa.Name = "Columna_Imagen_Alfa";
+            this.Columna_Imagen_Alfa.ReadOnly = true;
+            // 
+            // Columna_Alfa
+            // 
+            this.Columna_Alfa.HeaderText = "Alpha";
+            this.Columna_Alfa.Name = "Columna_Alfa";
+            this.Columna_Alfa.ReadOnly = true;
+            // 
+            // Columna_Imagen_Rojo
+            // 
+            this.Columna_Imagen_Rojo.HeaderText = "";
+            this.Columna_Imagen_Rojo.Name = "Columna_Imagen_Rojo";
+            this.Columna_Imagen_Rojo.ReadOnly = true;
+            // 
+            // Columna_Rojo
+            // 
+            this.Columna_Rojo.HeaderText = "Red";
+            this.Columna_Rojo.Name = "Columna_Rojo";
+            this.Columna_Rojo.ReadOnly = true;
+            // 
+            // Columna_Imagen_Verde
+            // 
+            this.Columna_Imagen_Verde.HeaderText = "";
+            this.Columna_Imagen_Verde.Name = "Columna_Imagen_Verde";
+            this.Columna_Imagen_Verde.ReadOnly = true;
+            // 
+            // Columna_Verde
+            // 
+            this.Columna_Verde.HeaderText = "Green";
+            this.Columna_Verde.Name = "Columna_Verde";
+            this.Columna_Verde.ReadOnly = true;
+            // 
+            // Columna_Imagen_Azul
+            // 
+            this.Columna_Imagen_Azul.HeaderText = "";
+            this.Columna_Imagen_Azul.Name = "Columna_Imagen_Azul";
+            this.Columna_Imagen_Azul.ReadOnly = true;
+            // 
+            // Columna_Azul
+            // 
+            this.Columna_Azul.HeaderText = "Blue";
+            this.Columna_Azul.Name = "Columna_Azul";
+            this.Columna_Azul.ReadOnly = true;
+            // 
+            // Columna_Imagen_Código_Hash
+            // 
+            this.Columna_Imagen_Código_Hash.HeaderText = "";
+            this.Columna_Imagen_Código_Hash.Name = "Columna_Imagen_Código_Hash";
+            this.Columna_Imagen_Código_Hash.ReadOnly = true;
+            // 
+            // Columna_Códgo_Hash
+            // 
+            this.Columna_Códgo_Hash.HeaderText = "Hash code";
+            this.Columna_Códgo_Hash.Name = "Columna_Códgo_Hash";
+            this.Columna_Códgo_Hash.ReadOnly = true;
+            // 
+            // Columna_Tipo
+            // 
+            this.Columna_Tipo.HeaderText = "Type";
+            this.Columna_Tipo.Name = "Columna_Tipo";
+            this.Columna_Tipo.ReadOnly = true;
+            // 
+            // Columna_Nombre
+            // 
+            this.Columna_Nombre.HeaderText = "Name";
+            this.Columna_Nombre.Name = "Columna_Nombre";
+            this.Columna_Nombre.ReadOnly = true;
+            this.Columna_Nombre.Visible = false;
+            // 
+            // Columna_CRC_32
+            // 
+            this.Columna_CRC_32.HeaderText = "CRC 32";
+            this.Columna_CRC_32.Name = "Columna_CRC_32";
+            this.Columna_CRC_32.ReadOnly = true;
+            this.Columna_CRC_32.Visible = false;
             // 
             // panel1
             // 
@@ -254,117 +365,6 @@
             this.Botón_Restablecer.Click += new System.EventHandler(this.Botón_Restablecer_Click);
             this.Botón_Restablecer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_Selector_Bloques_KeyDown);
             // 
-            // Columna_Seleccionar
-            // 
-            this.Columna_Seleccionar.HeaderText = "";
-            this.Columna_Seleccionar.Name = "Columna_Seleccionar";
-            this.Columna_Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Columna_Icono
-            // 
-            this.Columna_Icono.HeaderText = "";
-            this.Columna_Icono.Name = "Columna_Icono";
-            this.Columna_Icono.ReadOnly = true;
-            this.Columna_Icono.Width = 16;
-            // 
-            // Columna_Bloque
-            // 
-            this.Columna_Bloque.HeaderText = "Block name";
-            this.Columna_Bloque.Name = "Columna_Bloque";
-            this.Columna_Bloque.ReadOnly = true;
-            // 
-            // Columna_Icono_Invertido
-            // 
-            this.Columna_Icono_Invertido.HeaderText = "";
-            this.Columna_Icono_Invertido.Name = "Columna_Icono_Invertido";
-            this.Columna_Icono_Invertido.ReadOnly = true;
-            // 
-            // Columna_Bloque_Invertido
-            // 
-            this.Columna_Bloque_Invertido.HeaderText = "Inverted block name";
-            this.Columna_Bloque_Invertido.Name = "Columna_Bloque_Invertido";
-            this.Columna_Bloque_Invertido.ReadOnly = true;
-            // 
-            // Columna_Imagen_Alfa
-            // 
-            this.Columna_Imagen_Alfa.HeaderText = "";
-            this.Columna_Imagen_Alfa.Name = "Columna_Imagen_Alfa";
-            this.Columna_Imagen_Alfa.ReadOnly = true;
-            // 
-            // Columna_Alfa
-            // 
-            this.Columna_Alfa.HeaderText = "Alpha";
-            this.Columna_Alfa.Name = "Columna_Alfa";
-            this.Columna_Alfa.ReadOnly = true;
-            // 
-            // Columna_Imagen_Rojo
-            // 
-            this.Columna_Imagen_Rojo.HeaderText = "";
-            this.Columna_Imagen_Rojo.Name = "Columna_Imagen_Rojo";
-            this.Columna_Imagen_Rojo.ReadOnly = true;
-            // 
-            // Columna_Rojo
-            // 
-            this.Columna_Rojo.HeaderText = "Red";
-            this.Columna_Rojo.Name = "Columna_Rojo";
-            this.Columna_Rojo.ReadOnly = true;
-            // 
-            // Columna_Imagen_Verde
-            // 
-            this.Columna_Imagen_Verde.HeaderText = "";
-            this.Columna_Imagen_Verde.Name = "Columna_Imagen_Verde";
-            this.Columna_Imagen_Verde.ReadOnly = true;
-            // 
-            // Columna_Verde
-            // 
-            this.Columna_Verde.HeaderText = "Green";
-            this.Columna_Verde.Name = "Columna_Verde";
-            this.Columna_Verde.ReadOnly = true;
-            // 
-            // Columna_Imagen_Azul
-            // 
-            this.Columna_Imagen_Azul.HeaderText = "";
-            this.Columna_Imagen_Azul.Name = "Columna_Imagen_Azul";
-            this.Columna_Imagen_Azul.ReadOnly = true;
-            // 
-            // Columna_Azul
-            // 
-            this.Columna_Azul.HeaderText = "Blue";
-            this.Columna_Azul.Name = "Columna_Azul";
-            this.Columna_Azul.ReadOnly = true;
-            // 
-            // Columna_Imagen_Código_Hash
-            // 
-            this.Columna_Imagen_Código_Hash.HeaderText = "";
-            this.Columna_Imagen_Código_Hash.Name = "Columna_Imagen_Código_Hash";
-            this.Columna_Imagen_Código_Hash.ReadOnly = true;
-            // 
-            // Columna_Códgo_Hash
-            // 
-            this.Columna_Códgo_Hash.HeaderText = "Hash code";
-            this.Columna_Códgo_Hash.Name = "Columna_Códgo_Hash";
-            this.Columna_Códgo_Hash.ReadOnly = true;
-            // 
-            // Columna_Tipo
-            // 
-            this.Columna_Tipo.HeaderText = "Type";
-            this.Columna_Tipo.Name = "Columna_Tipo";
-            this.Columna_Tipo.ReadOnly = true;
-            // 
-            // Columna_Nombre
-            // 
-            this.Columna_Nombre.HeaderText = "Name";
-            this.Columna_Nombre.Name = "Columna_Nombre";
-            this.Columna_Nombre.ReadOnly = true;
-            this.Columna_Nombre.Visible = false;
-            // 
-            // Columna_CRC_32
-            // 
-            this.Columna_CRC_32.HeaderText = "CRC 32";
-            this.Columna_CRC_32.Name = "Columna_CRC_32";
-            this.Columna_CRC_32.ReadOnly = true;
-            this.Columna_CRC_32.Visible = false;
-            // 
             // Ventana_Selector_Bloques
             // 
             this.AllowDrop = true;
@@ -379,7 +379,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Block Selector for Xisumavoid by Jupisoft";
+            this.Text = "Block Selector by Jupisoft";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Selector_Bloques_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ventana_Selector_Bloques_FormClosed);
             this.Load += new System.EventHandler(this.Ventana_Selector_Bloques_Load);

@@ -37,7 +37,9 @@ namespace Minecraft_Tools
         {
             try
             {
-                this.Text = Texto_Título;
+                this.Text = Texto_Título + " - [Follow the instructions below if you want to enable all the secret files]";
+                Botón_Minecraft_Versión_April_Fools_Red.Image = Program.Obtener_Imagen_Color(Color.FromArgb(255, 0, 0));
+                Botón_Minecraft_Versión_April_Fools_Purple.Image = Program.Obtener_Imagen_Color(Color.FromArgb(255, 0, 160));
                 //this.WindowState = FormWindowState.Maximized;
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
@@ -86,6 +88,23 @@ namespace Minecraft_Tools
             {
                 if (!e.Alt && !e.Control && !e.Shift)
                 {
+                    if (e.KeyCode == Keys.Escape || e.KeyCode == Keys.Delete)
+                    {
+                        e.Handled = true;
+                        e.SuppressKeyPress = true;
+                        this.Close();
+                    }
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void TextBox_Nombre_Usuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (!e.Alt && !e.Control && !e.Shift)
+                {
                     if (e.KeyCode == Keys.Escape)
                     {
                         e.Handled = true;
@@ -117,6 +136,19 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
+        private void CheckBox_Nombre_Usuario_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (e.Button == MouseButtons.Middle)
+                {
+                    CheckBox_Nombre_Usuario.Checked = true;
+                    SystemSounds.Asterisk.Play();
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
         private void TextBox_Nombre_Usuario_MouseDown(object sender, MouseEventArgs e)
         {
             try
@@ -130,6 +162,18 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
+        private void Botón_Mostrar_Secretos_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (e.Button == MouseButtons.Middle)
+                {
+                    Botón_Mostrar_Secretos.PerformClick();
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
         private void Botón_Mostrar_Secretos_Click(object sender, EventArgs e)
         {
             try
@@ -137,37 +181,19 @@ namespace Minecraft_Tools
                 CheckBox_Nombre_Usuario.Enabled = false;
                 TextBox_Nombre_Usuario.Enabled = false;
                 Botón_Mostrar_Secretos.Enabled = false;
-                Etiqueta_Advertencia.ForeColor = Color.Red;
-                Etiqueta_Advertencia.Text = "Please use the new buttons below to decrypt and export the secret files, but use them ONLY for learning purposes and never distribute them or do anything illegal with them. YOU'VE BEEN WARNED!";
+                CheckBox_Nombre_Usuario.Visible = false;
+                Etiqueta_Advertencia.Visible = true;
 
-                // Enable the sectret buttons:
-                Botón_Packs_Recursos_Adventure_Time.Enabled = true;
-                Botón_Packs_Recursos_Candy.Enabled = true;
-                Botón_Packs_Recursos_Cartoon.Enabled = true;
-                Botón_Packs_Recursos_Chinese_Mythology.Enabled = true;
-                Botón_Packs_Recursos_City.Enabled = true;
-                Botón_Packs_Recursos_Fallout.Enabled = true;
-                Botón_Packs_Recursos_Fantasy.Enabled = true;
-                Botón_Packs_Recursos_Festive.Enabled = true;
-                Botón_Packs_Recursos_Greek_Mythology.Enabled = true;
-                Botón_Packs_Recursos_Halloween.Enabled = true;
-                Botón_Packs_Recursos_Halloween_2015.Enabled = true;
-                Botón_Packs_Recursos_Halo.Enabled = true;
-                Botón_Packs_Recursos_Mass_Effect.Enabled = true;
-                Botón_Packs_Recursos_Natural.Enabled = true;
-                Botón_Packs_Recursos_Pattern.Enabled = true;
-                Botón_Packs_Recursos_Plastic.Enabled = true;
-                Botón_Packs_Recursos_Skyrim.Enabled = true;
-                Botón_Packs_Recursos_Steampunk.Enabled = true;
+                // Enable the secret files buttons:
 
-                Botón_Packs_Skins_2nd_Birthday.Enabled = true;
+                Botón_Packs_Skins_1st_Birthday_Skin_Pack.Enabled = true;
+                Botón_Packs_Skins_2nd_Birthday_Skin_Pack.Enabled = true;
                 Botón_Packs_Skins_3rd_Birthday_Skin_Pack.Enabled = true;
                 Botón_Packs_Skins_4th_Birthday_Skin_Pack.Enabled = true;
                 Botón_Packs_Skins_Adventure_Time.Enabled = true;
                 Botón_Packs_Skins_Battle_Beasts.Enabled = true;
                 Botón_Packs_Skins_Battle_Beasts_2.Enabled = true;
                 Botón_Packs_Skins_Biome_Settlers_Pack_1.Enabled = true;
-                Botón_Packs_Skins_Birthday_Skin_Pack.Enabled = true;
                 Botón_Packs_Skins_Campfire_Tales_Skin_Pack.Enabled = true;
                 Botón_Packs_Skins_Chinese_Mythology.Enabled = true;
                 Botón_Packs_Skins_Doctor_Who_Skins_Volume_I.Enabled = true;
@@ -203,20 +229,71 @@ namespace Minecraft_Tools
                 Botón_Packs_Skins_The_Simpsons.Enabled = true;
                 Botón_Packs_Skins_Villains_Skin_Pack.Enabled = true;
 
-                Botón_Minecraft_JAR_1_0_0.Enabled = true;
-                Botón_Minecraft_JAR_1_1_0.Enabled = true;
-                Botón_Minecraft_JAR_1_2_5.Enabled = true;
-                Botón_Minecraft_JAR_1_3_2.Enabled = true;
-                Botón_Minecraft_JAR_1_4_7.Enabled = true;
-                Botón_Minecraft_JAR_1_5_2.Enabled = true;
-                Botón_Minecraft_JAR_1_6_4.Enabled = true;
-                Botón_Minecraft_JAR_1_7_10.Enabled = true;
-                Botón_Minecraft_JAR_1_8_8.Enabled = true;
-                Botón_Minecraft_JAR_1_9_4.Enabled = true;
-                Botón_Minecraft_JAR_1_10.Enabled = true;
-                Botón_Minecraft_JAR_1_11_2.Enabled = true;
-                Botón_Minecraft_JAR_1_12.Enabled = true;
-                Botón_Minecraft_JAR_1_13_1.Enabled = true;
+                Botón_Packs_Recursos_Adventure_Time.Enabled = true;
+                Botón_Packs_Recursos_Candy.Enabled = true;
+                Botón_Packs_Recursos_Cartoon.Enabled = true;
+                Botón_Packs_Recursos_Chinese_Mythology.Enabled = true;
+                Botón_Packs_Recursos_City.Enabled = true;
+                Botón_Packs_Recursos_Fallout.Enabled = true;
+                Botón_Packs_Recursos_Fantasy.Enabled = true;
+                Botón_Packs_Recursos_Festive.Enabled = true;
+                Botón_Packs_Recursos_Greek_Mythology.Enabled = true;
+                Botón_Packs_Recursos_Halloween.Enabled = true;
+                Botón_Packs_Recursos_Halloween_2015.Enabled = true;
+                Botón_Packs_Recursos_Halo.Enabled = true;
+                Botón_Packs_Recursos_Mass_Effect.Enabled = true;
+                Botón_Packs_Recursos_Natural.Enabled = true;
+                Botón_Packs_Recursos_Pattern.Enabled = true;
+                Botón_Packs_Recursos_Plastic.Enabled = true;
+                Botón_Packs_Recursos_Skyrim.Enabled = true;
+                Botón_Packs_Recursos_Steampunk.Enabled = true;
+
+                Botón_Packs_Recursos_Faithful.Enabled = true;
+                Botón_Packs_Recursos_X_Ray.Enabled = true;
+
+                Botón_Minecraft_Cliente_1_0_0.Enabled = true;
+                Botón_Minecraft_Cliente_1_1_0.Enabled = true;
+                Botón_Minecraft_Cliente_1_2_5.Enabled = true;
+                Botón_Minecraft_Cliente_1_3_2.Enabled = true;
+                Botón_Minecraft_Cliente_1_4_7.Enabled = true;
+                Botón_Minecraft_Cliente_1_5_2.Enabled = true;
+                Botón_Minecraft_Cliente_1_6_4.Enabled = true;
+                Botón_Minecraft_Cliente_1_7_10.Enabled = true;
+                Botón_Minecraft_Cliente_1_8_8.Enabled = true;
+                Botón_Minecraft_Cliente_1_9_4.Enabled = true;
+                Botón_Minecraft_Cliente_1_10.Enabled = true;
+                Botón_Minecraft_Cliente_1_11_2.Enabled = true;
+                Botón_Minecraft_Cliente_1_12.Enabled = true;
+                Botón_Minecraft_Cliente_1_13_1.Enabled = true;
+                //Botón_Minecraft_Cliente_1_14.Enabled = true;
+                //Botón_Minecraft_Cliente_1_15.Enabled = true;
+                //Botón_Minecraft_Cliente_1_16.Enabled = true;
+                //Botón_Minecraft_Cliente_1_17.Enabled = true;
+                //Botón_Minecraft_Cliente_1_18.Enabled = true;
+                //Botón_Minecraft_Cliente_1_19.Enabled = true;
+                //Botón_Minecraft_Cliente_1_20.Enabled = true;
+
+                //Botón_Minecraft_Servidor_1_0_0.Enabled = true;
+                //Botón_Minecraft_Servidor_1_1_0.Enabled = true;
+                Botón_Minecraft_Servidor_1_2_5.Enabled = true;
+                Botón_Minecraft_Servidor_1_3_2.Enabled = true;
+                Botón_Minecraft_Servidor_1_4_7.Enabled = true;
+                Botón_Minecraft_Servidor_1_5_2.Enabled = true;
+                Botón_Minecraft_Servidor_1_6_4.Enabled = true;
+                Botón_Minecraft_Servidor_1_7_10.Enabled = true;
+                Botón_Minecraft_Servidor_1_8_8.Enabled = true;
+                Botón_Minecraft_Servidor_1_9_4.Enabled = true;
+                Botón_Minecraft_Servidor_1_10.Enabled = true;
+                Botón_Minecraft_Servidor_1_11_2.Enabled = true;
+                Botón_Minecraft_Servidor_1_12.Enabled = true;
+                //Botón_Minecraft_Servidor_1_13_1.Enabled = true;
+                //Botón_Minecraft_Servidor_1_14.Enabled = true;
+                //Botón_Minecraft_Servidor_1_15.Enabled = true;
+                //Botón_Minecraft_Servidor_1_16.Enabled = true;
+                //Botón_Minecraft_Servidor_1_17.Enabled = true;
+                //Botón_Minecraft_Servidor_1_18.Enabled = true;
+                //Botón_Minecraft_Servidor_1_19.Enabled = true;
+                //Botón_Minecraft_Servidor_1_20.Enabled = true;
 
                 Botón_Minecraft_1_0_0.Enabled = true;
                 Botón_Minecraft_1_1_0.Enabled = true;
@@ -231,320 +308,30 @@ namespace Minecraft_Tools
                 Botón_Minecraft_1_10.Enabled = true;
                 Botón_Minecraft_1_11_2.Enabled = true;
                 Botón_Minecraft_1_12.Enabled = true;
-                //Botón_Minecraft_1_13.Enabled = true;
+                //Botón_Minecraft_1_13_1.Enabled = true;
+                //Botón_Minecraft_1_14.Enabled = true;
+                //Botón_Minecraft_1_15.Enabled = true;
+                //Botón_Minecraft_1_16.Enabled = true;
+                //Botón_Minecraft_1_17.Enabled = true;
+                //Botón_Minecraft_1_18.Enabled = true;
+                //Botón_Minecraft_1_19.Enabled = true;
+                //Botón_Minecraft_1_20.Enabled = true;
 
-                Botón_26601_Skins.Enabled = true;
-                Botón_Fuente_Alfabeto_Galáctico.Enabled = true;
+                Botón_Minecraft_Versión_Indev_InfDev.Enabled = true;
+                Botón_Minecraft_Versión_April_Fools_Red.Enabled = true;
+                Botón_Minecraft_Versión_April_Fools_Purple.Enabled = true;
 
-                Botón_Packs_Recursos_Adventure_Time.Select();
-                Botón_Packs_Recursos_Adventure_Time.Focus();
+                Botón_Extras_26601_Skins.Enabled = true;
+                Botón_Extras_Fuente_Alfabeto_Galáctico.Enabled = true;
+                Botón_Extras_URL_26601_Skins.Enabled = true;
+                //Botón_Extras_Eclipse.Enabled = true;
+                //Botón_Extras_Java_SDK.Enabled = true;
+                //Botón_Extras_MCP.Enabled = true;
+                //Botón_Extras_Xbox_360_Tutoriales.Enabled = true;
+
+                Botón_Packs_Skins_1st_Birthday_Skin_Pack.Select();
+                Botón_Packs_Skins_1st_Birthday_Skin_Pack.Focus();
                 SystemSounds.Asterisk.Play();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_0_0_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\EC22248B", "Minecraft 1.0.0 source code", ".zip"); // Couldn't find the Minecraft 1.0.0 server jar file.
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_1_0_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\810486E4", "Minecraft 1.1.0 source code", ".zip"); // Couldn't find the Minecraft 1.1.0 server jar file.
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_2_5_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\98F3C532", "Minecraft 1.2.5 source code", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_3_2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\ED9DE6E4", "Minecraft 1.3.2 source code", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_4_7_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\9B053B77", "Minecraft 1.4.7 source code", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_5_2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\62B6F330", "Minecraft 1.5.2 source code", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_6_4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\7B7F95E6", "Minecraft 1.6.4 source code", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_7_10_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\54BD5A59", "Minecraft 1.7.10 source code", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_8_8_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\72B08AC6", "Minecraft 1.8.8 source code", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_9_4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\7CCDACF0", "Minecraft 1.9.4 source code", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_10_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\D058CD75", "Minecraft 1.10 source code", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_11_2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\526FA4DF", "Minecraft 1.11.2 source code", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_12_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\7C6FC8D9", "Minecraft 1.12 source code", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Minecraft_1_13_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\00000000", "Minecraft 1.13 source code", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_0_0_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.mediafire.com/?s7dyeugk867no9j", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_1_0_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.mediafire.com/?wu9gfhy73m4k6a4", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_2_5_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.mediafire.com/?c6liau295225253", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_3_2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.mediafire.com/?38vjh7hrpprrw1b", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_4_7_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.mediafire.com/?07d59w314ewjfth", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_5_2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.mediafire.com/?95vlzp1a4n4wjqw", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_6_4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.mediafire.com/?96mrmeo57cdf6zv", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_7_10_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.modcoderpack.com/files/mcp908.zip", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_8_8_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.modcoderpack.com/files/mcp918.zip", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_9_4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.modcoderpack.com/files/mcp928.zip", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_10_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.modcoderpack.com/files/mcp931.zip", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_11_2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.modcoderpack.com/files/mcp937.zip", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_12_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.modcoderpack.com/files/mcp940.zip", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Minecraft_1_13_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SystemSounds.Beep.Play();
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_26601_Skins_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Skins\\A24938DB", "26601 Minecraft Skins", ".rar");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Fuente_Alfabeto_Galáctico_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Others\\DD08ECF8", "Standard Galactic Alphabet font", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_26601_Skins_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://www.mediafire.com/file/rhbf9vd9e002170/26601+Minecraft+Skins.rar", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Fuente_Alfabeto_Galáctico_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("http://legacy.3drealms.com/stuff/sga_ttf.zip", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Wikipedia_Alfabeto_Galáctico_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("https://www.minecraftforum.net/forums/minecraft-java-edition/discussion/157963-the-standard-galactic-alphabet", ProcessWindowStyle.Normal);
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Descargar_Xbox_360_Tutoriales_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Program.Ejecutar_Ruta("https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/maps/maps-discussion/1557054-xbox-360-edition-tutorial-world-maps-for-pc", ProcessWindowStyle.Normal);
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
@@ -554,13 +341,14 @@ namespace Minecraft_Tools
         /// WARNING: using any part of this code to decrypt any of the "secret" files
         /// on your own will be like if you gave your consent to all of the
         /// requirements needed in order to be able to export the files
-        /// using regularly the application, so again... YOU'VE BEEN WARNED!
+        /// using regularly the application, so again... YOU'VE BEEN WARNED!!!
         /// </summary>
         /// <param name="Ruta_Secreto">Any valid and existing file path.</param>
         internal void Desencriptar_Exportar_Archivo_Secreto(string Ruta_Secreto, string Nombre_Secreto, string Extensión)
         {
             try
             {
+                this.Cursor = Cursors.WaitCursor;
                 if (!string.IsNullOrEmpty(Ruta_Secreto) && !string.IsNullOrEmpty(Nombre_Secreto) && File.Exists(Ruta_Secreto))
                 {
                     if (string.IsNullOrEmpty(Extensión)) Extensión = ".zip";
@@ -614,175 +402,23 @@ namespace Minecraft_Tools
                 else MessageBox.Show(this, "The desired encrypted secret file couldn't be found.\r\nMake sure you have downloaded the \"full version\" of this application (the one which includes all the optional files, including the secret ones).", Program.Texto_Título_Versión, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+            finally { this.Cursor = Cursors.Default; }
         }
 
-        private void Botón_Packs_Recursos_Adventure_Time_Click(object sender, EventArgs e)
+        private void Botón_Packs_Skins_1st_Birthday_Skin_Pack_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\269BB7A4", "Console Adventure Time", ".zip");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Skins\\B12FE96A", "1st Birthday Skin Pack", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Packs_Recursos_Candy_Click(object sender, EventArgs e)
+        private void Botón_Packs_Skins_2nd_Birthday_Skin_Pack_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\89483C6D", "Console Candy", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Cartoon_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\CF7FB669", "Console Cartoon", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Chinese_Mythology_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\C57D709B", "Console Chinese Mythology", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_City_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\34C2F8A8", "Console City", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Fallout_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\F512D9CB", "Console Fallout", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Fantasy_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\42E12AC6", "Console Fantasy", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Festive_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\E86DD8D1", "Console Festive", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Greek_Mythology_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\D5F7FC0B", "Console Greek Mythology", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Halloween_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\E9D6C865", "Console Halloween", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Halloween_2015_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\FF4896C0", "Console Halloween 2015", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Halo_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\EB1255D9", "Console Halo", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Mass_Effect_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\72D44EAC", "Console Mass Effect", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Natural_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\118FA1D5", "Console Natural", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Pattern_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\75955242", "Console Pattern", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Plastic_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\47D86650", "Console Plastic", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Skyrim_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\680A9114", "Console Skyrim", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Recursos_Steampunk_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\CBA3979D", "Console Steampunk", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Skins_2nd_Birthday_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Skins\\6CFC63B7", "2nd Birthday", ".zip");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Skins\\6CFC63B7", "2nd Birthday Skin Pack", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
@@ -837,15 +473,6 @@ namespace Minecraft_Tools
             try
             {
                 Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Skins\\2BB7998E", "Biome Settlers Pack 1", ".zip");
-            }
-            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
-        }
-
-        private void Botón_Packs_Skins_Birthday_Skin_Pack_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Skins\\B12FE96A", "Birthday Skin Pack", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
@@ -1156,128 +783,980 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_0_0_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Adventure_Time_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\C560F3F7", "1.0", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\269BB7A4", "Console Adventure Time", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_1_0_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Candy_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\85DE36A1", "1.1", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\89483C6D", "Console Candy", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_2_5_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Cartoon_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\E09534B2", "1.2.5", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\CF7FB669", "Console Cartoon", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_3_2_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Chinese_Mythology_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\FC727F44", "1.3.2", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\C57D709B", "Console Chinese Mythology", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_4_7_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_City_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\555EDD3B", "1.4.7", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\34C2F8A8", "Console City", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_5_2_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Fallout_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\25642598", "1.5.2", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\F512D9CB", "Console Fallout", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_6_4_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Fantasy_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\46477526", "1.6.4", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\42E12AC6", "Console Fantasy", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_7_10_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Festive_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\6BBD3EA2", "1.7.10", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\E86DD8D1", "Console Festive", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_8_8_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Greek_Mythology_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\CCD6E5FA", "1.8.8", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\D5F7FC0B", "Console Greek Mythology", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_9_4_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Halloween_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\65EAB3B8", "1.9.4", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\E9D6C865", "Console Halloween", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_10_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Halloween_2015_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\76949A07", "1.10", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\FF4896C0", "Console Halloween 2015", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_11_2_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Halo_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\C3242F08", "1.11.2", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\EB1255D9", "Console Halo", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_12_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Mass_Effect_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\FF9D499D", "1.12", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\72D44EAC", "Console Mass Effect", ".zip");
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
-        private void Botón_Minecraft_JAR_1_13_1_Click(object sender, EventArgs e)
+        private void Botón_Packs_Recursos_Natural_Click(object sender, EventArgs e)
         {
             try
             {
-                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\EBC7ECA1", "1.13.1", ".jar");
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\118FA1D5", "Console Natural", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Packs_Recursos_Pattern_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\75955242", "Console Pattern", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Packs_Recursos_Plastic_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\47D86650", "Console Plastic", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Packs_Recursos_Skyrim_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\680A9114", "Console Skyrim", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Packs_Recursos_Steampunk_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Resources\\CBA3979D", "Console Steampunk", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Packs_Recursos_Faithful_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("https://minecraft.curseforge.com/projects/faithful-32x", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Packs_Recursos_X_Ray_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("https://minecraft.curseforge.com/projects/xray-ultimate-1-11-compatible", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_0_0_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\C560F3F7", "1.0", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_1_0_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\85DE36A1", "1.1", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_2_5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\E09534B2", "1.2.5", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_3_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\FC727F44", "1.3.2", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_4_7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\555EDD3B", "1.4.7", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_5_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\25642598", "1.5.2", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_6_4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\46477526", "1.6.4", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_7_10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\6BBD3EA2", "1.7.10", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_8_8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\CCD6E5FA", "1.8.8", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_9_4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\65EAB3B8", "1.9.4", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\76949A07", "1.10", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_11_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\C3242F08", "1.11.2", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_12_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\FF9D499D", "1.12", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_13_1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Clients\\EBC7ECA1", "1.13.1", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_14_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "1.14", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_15_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "1.15", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_16_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "1.16", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_17_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "1.17", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_18_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "1.18", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_19_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "1.19", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Cliente_1_20_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "1.20", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_0_0_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "minecraft_server.1.0.0", ".jar"); // Couldn't find anywhere the official 1.0.0 server jar.
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_1_0_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "minecraft_server.1.1.0", ".jar"); // Couldn't find anywhere the official 1.1.0 server jar.
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_2_5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\DA957474", "minecraft_server.1.2.5", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_3_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\E3B2CBC9", "minecraft_server.1.3.2", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_4_7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\97090A20", "minecraft_server.1.4.7", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_5_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\72B6E195", "minecraft_server.1.5.2", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_6_4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\A7C604EC", "minecraft_server.1.6.4", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_7_10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\734E9050", "minecraft_server.1.7.10", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_8_8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\12AD1E23", "minecraft_server.1.8.8", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_9_4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\32A8A5E0", "minecraft_server.1.9.4", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\E91FE11B", "minecraft_server.1.10", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_11_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\D6E7D9B7", "minecraft_server.1.11.2", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_12_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\AE3062D5", "minecraft_server.1.12", ".jar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_13_1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\80B7E210", "minecraft_server.1.13.1", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_14_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "minecraft_server.1.14", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_15_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "minecraft_server.1.15", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_16_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "minecraft_server.1.16", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_17_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "minecraft_server.1.17", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_18_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "minecraft_server.1.18", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_19_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "minecraft_server.1.19", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Servidor_1_20_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Servers\\00000000", "minecraft_server.1.20", ".jar");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_0_0_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\EC22248B", "Minecraft 1.0.0 source code", ".zip"); // Couldn't find the Minecraft 1.0.0 server jar file.
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_1_0_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\810486E4", "Minecraft 1.1.0 source code", ".zip"); // Couldn't find the Minecraft 1.1.0 server jar file.
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_2_5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\98F3C532", "Minecraft 1.2.5 source code", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_3_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\ED9DE6E4", "Minecraft 1.3.2 source code", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_4_7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\9B053B77", "Minecraft 1.4.7 source code", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_5_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\62B6F330", "Minecraft 1.5.2 source code", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_6_4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\7B7F95E6", "Minecraft 1.6.4 source code", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_7_10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\54BD5A59", "Minecraft 1.7.10 source code", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_8_8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\72B08AC6", "Minecraft 1.8.8 source code", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_9_4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\7CCDACF0", "Minecraft 1.9.4 source code", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\D058CD75", "Minecraft 1.10 source code", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_11_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\526FA4DF", "Minecraft 1.11.2 source code", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_12_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\7C6FC8D9", "Minecraft 1.12 source code", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_13_1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\00000000", "Minecraft 1.13 source code", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_14_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\00000000", "Minecraft 1.14 source code", ".zip");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_15_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\00000000", "Minecraft 1.15 source code", ".zip");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_16_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\00000000", "Minecraft 1.16 source code", ".zip");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_17_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\00000000", "Minecraft 1.17 source code", ".zip");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_18_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\00000000", "Minecraft 1.18 source code", ".zip");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_19_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\00000000", "Minecraft 1.19 source code", ".zip");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_1_20_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Sources\\00000000", "Minecraft 1.20 source code", ".zip");
+                SystemSounds.Beep.Play();
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Versión_Indev_InfDev_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\9227EF64", "Minecraft Indev (please open Matts ReadMe.txt!)", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Versión_April_Fools_Red_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\B65219A5", "minecraft_2point0_red", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Minecraft_Versión_April_Fools_Purple_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Versions\\E7ABB0B0", "minecraft_2point0_purple", ".zip");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_0_0_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.mediafire.com/?s7dyeugk867no9j", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_1_0_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.mediafire.com/?wu9gfhy73m4k6a4", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_2_5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.mediafire.com/?c6liau295225253", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_3_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.mediafire.com/?38vjh7hrpprrw1b", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_4_7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.mediafire.com/?07d59w314ewjfth", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_5_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.mediafire.com/?95vlzp1a4n4wjqw", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_6_4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.mediafire.com/?96mrmeo57cdf6zv", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_7_10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.modcoderpack.com/files/mcp908.zip", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_8_8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.modcoderpack.com/files/mcp918.zip", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_9_4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.modcoderpack.com/files/mcp928.zip", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.modcoderpack.com/files/mcp931.zip", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_11_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.modcoderpack.com/files/mcp937.zip", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Descargar_Minecraft_1_12_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.modcoderpack.com/files/mcp940.zip", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Extras_26601_Skins_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Skins\\A24938DB", "26601 Minecraft Skins", ".rar");
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Extras_Fuente_Alfabeto_Galáctico_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Desencriptar_Exportar_Archivo_Secreto(Application.StartupPath + "\\Secrets\\Others\\DD08ECF8", "Standard Galactic Alphabet font", ".zip");
+                // Program.Ejecutar_Ruta("http://legacy.3drealms.com/stuff/sga_ttf.zip", ProcessWindowStyle.Normal);
+                // Program.Ejecutar_Ruta("https://www.minecraftforum.net/forums/minecraft-java-edition/discussion/157963-the-standard-galactic-alphabet", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Extras_URL_26601_Skins_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.mediafire.com/file/rhbf9vd9e002170/26601+Minecraft+Skins.rar", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Extras_Eclipse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.eclipse.org/downloads/", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Extras_Java_SDK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.oracle.com/technetwork/java/javase/downloads/index.html", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Extras_MCP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("http://www.modcoderpack.com/website/releases", ProcessWindowStyle.Normal);
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Botón_Extras_Xbox_360_Tutoriales_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Ejecutar_Ruta("https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/maps/maps-discussion/1557054-xbox-360-edition-tutorial-world-maps-for-pc", ProcessWindowStyle.Normal);
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }

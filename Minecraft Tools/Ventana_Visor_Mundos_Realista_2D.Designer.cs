@@ -452,7 +452,7 @@
             this.Menú_Contextual_Dibujar_Chunks_Limos,
             this.Menú_Contextual_Dibujar_Mundo_Completo});
             this.Menú_Contextual.Name = "Menú_Contextual";
-            this.Menú_Contextual.Size = new System.Drawing.Size(418, 540);
+            this.Menú_Contextual.Size = new System.Drawing.Size(418, 518);
             // 
             // Menú_Contextual_Visor_Ayuda
             // 
@@ -1020,7 +1020,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Realistic World Viewer in 2D for Xisumavoid by Jupisoft";
+            this.Text = "Realistic World Viewer in 2D by Jupisoft";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Visor_Mundos_Tiempo_Real_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ventana_Visor_Mundos_Tiempo_Real_FormClosed);
             this.Load += new System.EventHandler(this.Ventana_Visor_Mundos_Tiempo_Real_Load);

@@ -462,8 +462,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NBT Viewer for Xisumavoid by Jupisoft - [Drag and drop any NBT file to open it as" +
-    " read-only...]";
+            this.Text = "NBT Viewer by Jupisoft - [Drag and drop any NBT file to open it as read-only...]";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventana_Visor_NBT_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ventana_Visor_NBT_FormClosed);
             this.Load += new System.EventHandler(this.Ventana_Visor_NBT_Load);
