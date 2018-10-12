@@ -1338,8 +1338,8 @@ namespace Minecraft_Tools
                         Picture_Personaje_Izquierda.Image = Imagen_Izquierda;
                         Picture_Personaje_Derecha.Image = Program.Obtener_Imagen_Recursos("mc_char_" + Program.Rand.Next(0, 8).ToString());
 
-                        if (!string.IsNullOrEmpty(Splash_Texto)) Índice_Splash = Program.Rand.Next(0, Minecraft_Splashes.Lista_Líneas.Count);
-                        else Índice_Splash = Minecraft_Splashes.Lista_Líneas.Count - 1; // Show the splash count at first.
+                        if (!string.IsNullOrEmpty(Splash_Texto)) Índice_Splash = Program.Rand.Next(1, Minecraft_Splashes.Lista_Líneas.Count); // Ignore the first splash, that tells how many there are (without itself).
+                        else Índice_Splash = 0; // Always show the splash count at the beginning.
                         Splash_Texto = Minecraft_Splashes.Lista_Líneas[Índice_Splash];
                         if (string.IsNullOrEmpty(Splash_Texto)) Splash_Texto = "?";
                         if (Milisegundos_2000 % 4L == 0) // Only show every 4 splashes.
@@ -2458,6 +2458,18 @@ namespace Minecraft_Tools
                     Barra_Estado_Botón_Secretos.Text = "Secrets: hidden";
                     Registro_Guardar_Opciones();
                     Temporizador_Principal.Start();
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void Menú_Principal_Ayuda_Donaciones_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show(this, "Sorry, but no one has ever donated to Jupisoft yet...\r\nDo you want to be the first to help with any quantity?", Program.Texto_Título_Versión, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Program.Ejecutar_Ruta("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KSMZ3XNG2R9P6", ProcessWindowStyle.Normal);
                 }
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }

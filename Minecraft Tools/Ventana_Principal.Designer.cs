@@ -195,6 +195,7 @@
             this.Tabla_Superior = new System.Windows.Forms.TableLayoutPanel();
             this.Picture_Mineral_Derecha = new System.Windows.Forms.PictureBox();
             this.Picture_Mineral_Izquierda = new System.Windows.Forms.PictureBox();
+            this.Menú_Principal_Ayuda_Donaciones = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Principal.SuspendLayout();
             this.Barra_Estado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Hermitcraft)).BeginInit();
@@ -1231,6 +1232,7 @@
             this.Menú_Principal_Ayuda_GitHub,
             this.Menú_Principal_Ayuda_Licencia,
             this.Menú_Principal_Ayuda_Gracias,
+            this.Menú_Principal_Ayuda_Donaciones,
             this.Menú_Principal_Ayuda_Acerca});
             this.Menú_Principal_Ayuda.Name = "Menú_Principal_Ayuda";
             this.Menú_Principal_Ayuda.Size = new System.Drawing.Size(44, 20);
@@ -1738,6 +1740,14 @@
             this.Picture_Mineral_Izquierda.TabIndex = 39;
             this.Picture_Mineral_Izquierda.TabStop = false;
             // 
+            // Menú_Principal_Ayuda_Donaciones
+            // 
+            this.Menú_Principal_Ayuda_Donaciones.Image = global::Minecraft_Tools.Properties.Resources.Subir;
+            this.Menú_Principal_Ayuda_Donaciones.Name = "Menú_Principal_Ayuda_Donaciones";
+            this.Menú_Principal_Ayuda_Donaciones.Size = new System.Drawing.Size(490, 22);
+            this.Menú_Principal_Ayuda_Donaciones.Text = "Donations...";
+            this.Menú_Principal_Ayuda_Donaciones.Click += new System.EventHandler(this.Menú_Principal_Ayuda_Donaciones_Click);
+            // 
             // Ventana_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1950,6 +1960,7 @@
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Registro_Cambios;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Selector_Herramientas;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Herramientas_Abrir_Última;
+        private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Donaciones;
     }
 }
 

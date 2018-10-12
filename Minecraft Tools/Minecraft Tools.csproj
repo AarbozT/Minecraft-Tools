@@ -214,6 +214,12 @@
     <Compile Include="Ventana_Afinador_Bloques_Nota.Designer.cs">
       <DependentUpon>Ventana_Afinador_Bloques_Nota.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventana_Conversor_Mundos_1_13_a_1_12_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventana_Conversor_Mundos_1_13_a_1_12_2.designer.cs">
+      <DependentUpon>Ventana_Conversor_Mundos_1_13_a_1_12_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventana_Conversor_Packs_Recursos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -448,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Afinador_Bloques_Nota.resx">
       <DependentUpon>Ventana_Afinador_Bloques_Nota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventana_Conversor_Mundos_1_13_a_1_12_2.resx">
+      <DependentUpon>Ventana_Conversor_Mundos_1_13_a_1_12_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Conversor_Packs_Recursos.resx">
       <DependentUpon>Ventana_Conversor_Packs_Recursos.cs</DependentUpon>
@@ -2330,6 +2339,43 @@
     <None Include="Resources\Horizon.png" />
     <None Include="Resources\Mundo.png" />
     <None Include="Resources\Rana.png" />
+    <None Include="Resources\minecraft_dead_brain_coral.png" />
+    <None Include="Resources\minecraft_dead_brain_coral_fan.png" />
+    <None Include="Resources\minecraft_dead_brain_coral_wall_fan.png" />
+    <None Include="Resources\minecraft_dead_bubble_coral.png" />
+    <None Include="Resources\minecraft_dead_bubble_coral_fan.png" />
+    <None Include="Resources\minecraft_dead_bubble_coral_wall_fan.png" />
+    <None Include="Resources\minecraft_dead_fire_coral.png" />
+    <None Include="Resources\minecraft_dead_fire_coral_fan.png" />
+    <None Include="Resources\minecraft_dead_fire_coral_wall_fan.png" />
+    <None Include="Resources\minecraft_dead_horn_coral.png" />
+    <None Include="Resources\minecraft_dead_horn_coral_fan.png" />
+    <None Include="Resources\minecraft_dead_horn_coral_wall_fan.png" />
+    <None Include="Resources\minecraft_dead_tube_coral.png" />
+    <None Include="Resources\minecraft_dead_tube_coral_fan.png" />
+    <None Include="Resources\minecraft_dead_tube_coral_wall_fan.png" />
+    <None Include="Resources\minecraft_kelp_plant.png" />
+    <None Include="Resources\minecraft_brain_coral_wall_fan.png" />
+    <None Include="Resources\minecraft_bubble_coral_wall_fan.png" />
+    <None Include="Resources\minecraft_fire_coral_wall_fan.png" />
+    <None Include="Resources\minecraft_horn_coral_wall_fan.png" />
+    <None Include="Resources\minecraft_tube_coral_wall_fan.png" />
+    <None Include="Resources\minecraft_acacia_wood.png" />
+    <None Include="Resources\minecraft_birch_wood.png" />
+    <None Include="Resources\minecraft_dark_oak_wood.png" />
+    <None Include="Resources\minecraft_jungle_wood.png" />
+    <None Include="Resources\minecraft_melon.png" />
+    <None Include="Resources\minecraft_nether_portal.png" />
+    <None Include="Resources\minecraft_oak_wood.png" />
+    <None Include="Resources\minecraft_prismarine_brick_slab.png" />
+    <None Include="Resources\minecraft_prismarine_brick_stairs.png" />
+    <None Include="Resources\minecraft_spruce_wood.png" />
+    <None Include="Resources\minecraft_stripped_acacia_wood.png" />
+    <None Include="Resources\minecraft_stripped_birch_wood.png" />
+    <None Include="Resources\minecraft_stripped_dark_oak_wood.png" />
+    <None Include="Resources\minecraft_stripped_jungle_wood.png" />
+    <None Include="Resources\minecraft_stripped_oak_wood.png" />
+    <None Include="Resources\minecraft_stripped_spruce_wood.png" />
     <Content Include="Zlib\LICENSE.txt" />
     <None Include="Resources\Correo.png" />
     <None Include="Resources\Paleta.png" />

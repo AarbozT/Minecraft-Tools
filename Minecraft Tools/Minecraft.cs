@@ -60,6 +60,26 @@ namespace Minecraft_Tools
         }
 
         /// <summary>
+        /// Enumeration that contains all the category tabs from the creative inventory.
+        /// </summary>
+        internal enum Categorías : int
+        {
+            Building_blocks = 0,
+            Decoration_blocks,
+            Redstone,
+            Transportation,
+            Miscellaneous,
+            Foodstuffs,
+            Tools,
+            Combat,
+            Brewing,
+            //Saved_toolbars,
+            //Search_items,
+            //Survival_inventory,
+            Unknown
+        }
+
+        /// <summary>
         /// Structure that holds up all the information about any Minecraft block.
         /// </summary>
         [StructLayout(LayoutKind.Sequential)]
@@ -93,6 +113,10 @@ namespace Minecraft_Tools
             /// The Minecraft 1.12.2- default ID and Data combined values.
             /// </summary>
             internal short ID_Data;
+            /// <summary>
+            /// The category of a Minecraft block inside the creative inventory tabs.
+            /// </summary>
+            internal Categorías Categoría;
             /// <summary>
             /// The average ARGB color of a Minecraft texture, useful when drawing maps or doing pixel art where 1 pixel equals 1 block.
             /// </summary>
@@ -128,12 +152,29 @@ namespace Minecraft_Tools
             /// <param name="Nombre_1_13">The Minecraft 1.13+ name of a block.</param>
             /// <param name="Lista_ID">The Minecraft 1.12.2- ID of a block.</param>
             /// <param name="Lista_Data">The Minecraft 1.12.2- Data of a block inside a list.</param>
+            /// <param name="Categoría">The category tab from Minecraft creative inventory.</param>
             /// <param name="Color_ARGB">The average ARGB color of a Minecraft texture.</param>
             /// <param name="Altura_Diferente">The identifier of blocks with a real size different than 1.</param>
             /// <param name="Obtención">The identifier of the legit way to obtain a block.</param>
             internal Bloques(string Nombre_1_13, List<byte> Lista_ID, List<byte> Lista_Data, Color Color_ARGB, bool Altura_Diferente, Obtenciones Obtención)
             {
-                this = new Bloques(Nombre_1_13, null, Lista_ID, Lista_Data, Color_ARGB, Altura_Diferente, Obtención, false);
+                this = new Bloques(Nombre_1_13, null, Lista_ID, Lista_Data, Categorías.Unknown, Color_ARGB, Altura_Diferente, Obtención, false);
+            }
+
+            /// <summary>
+            /// Generates a new structure with the specified block settings.
+            /// </summary>
+            /// <param name="Nombre_1_13">The Minecraft 1.13+ name of a block.</param>
+            /// <param name="Lista_ID">The Minecraft 1.12.2- ID of a block.</param>
+            /// <param name="Lista_Data">The Minecraft 1.12.2- Data of a block inside a list.</param>
+            /// <param name="Categoría">The category tab from Minecraft creative inventory.</param>
+            /// <param name="Color_ARGB">The average ARGB color of a Minecraft texture.</param>
+            /// <param name="Altura_Diferente">The identifier of blocks with a real size different than 1.</param>
+            /// <param name="Obtención">The identifier of the legit way to obtain a block.</param>
+            /// <param name="Obsoleto">The identifier of no longer existing blocks.</param>
+            internal Bloques(string Nombre_1_13, List<byte> Lista_ID, List<byte> Lista_Data, Color Color_ARGB, bool Altura_Diferente, Obtenciones Obtención, bool Obsoleto)
+            {
+                this = new Bloques(Nombre_1_13, null, Lista_ID, Lista_Data, Categorías.Unknown, Color_ARGB, Altura_Diferente, Obtención, Obsoleto);
             }
 
             /// <summary>
@@ -146,9 +187,38 @@ namespace Minecraft_Tools
             /// <param name="Altura_Diferente">The identifier of blocks with a real size different than 1.</param>
             /// <param name="Obtención">The identifier of the legit way to obtain a block.</param>
             /// <param name="Obsoleto">The identifier of no longer existing blocks.</param>
-            internal Bloques(string Nombre_1_13, List<byte> Lista_ID, List<byte> Lista_Data, Color Color_ARGB, bool Altura_Diferente, Obtenciones Obtención, bool Obsoleto)
+            internal Bloques(string Nombre_1_13, string Recurso, List<byte> Lista_ID, List<byte> Lista_Data, Color Color_ARGB, bool Altura_Diferente, Obtenciones Obtención, bool Obsoleto)
             {
-                this = new Bloques(Nombre_1_13, null, Lista_ID, Lista_Data, Color_ARGB, Altura_Diferente, Obtención, Obsoleto);
+                this = new Bloques(Nombre_1_13, Recurso, Lista_ID, Lista_Data, Categorías.Unknown, Color_ARGB, Altura_Diferente, Obtención, Obsoleto);
+            }
+
+            /// <summary>
+            /// Generates a new structure with the specified block settings.
+            /// </summary>
+            /// <param name="Nombre_1_13">The Minecraft 1.13+ name of a block.</param>
+            /// <param name="Lista_ID">The Minecraft 1.12.2- ID of a block.</param>
+            /// <param name="Lista_Data">The Minecraft 1.12.2- Data of a block inside a list.</param>
+            /// <param name="Color_ARGB">The average ARGB color of a Minecraft texture.</param>
+            /// <param name="Altura_Diferente">The identifier of blocks with a real size different than 1.</param>
+            /// <param name="Obtención">The identifier of the legit way to obtain a block.</param>
+            internal Bloques(string Nombre_1_13, List<byte> Lista_ID, List<byte> Lista_Data, Categorías Categoría, Color Color_ARGB, bool Altura_Diferente, Obtenciones Obtención)
+            {
+                this = new Bloques(Nombre_1_13, null, Lista_ID, Lista_Data, Categoría, Color_ARGB, Altura_Diferente, Obtención, false);
+            }
+
+            /// <summary>
+            /// Generates a new structure with the specified block settings.
+            /// </summary>
+            /// <param name="Nombre_1_13">The Minecraft 1.13+ name of a block.</param>
+            /// <param name="Lista_ID">The Minecraft 1.12.2- ID of a block.</param>
+            /// <param name="Lista_Data">The Minecraft 1.12.2- Data of a block inside a list.</param>
+            /// <param name="Color_ARGB">The average ARGB color of a Minecraft texture.</param>
+            /// <param name="Altura_Diferente">The identifier of blocks with a real size different than 1.</param>
+            /// <param name="Obtención">The identifier of the legit way to obtain a block.</param>
+            /// <param name="Obsoleto">The identifier of no longer existing blocks.</param>
+            internal Bloques(string Nombre_1_13, List<byte> Lista_ID, List<byte> Lista_Data, Categorías Categoría, Color Color_ARGB, bool Altura_Diferente, Obtenciones Obtención, bool Obsoleto)
+            {
+                this = new Bloques(Nombre_1_13, null, Lista_ID, Lista_Data, Categoría, Color_ARGB, Altura_Diferente, Obtención, Obsoleto);
             }
 
             /// <summary>
@@ -158,11 +228,12 @@ namespace Minecraft_Tools
             /// <param name="Recurso">The resource name for the texture of this block. A "null" value will set it automatically based on the block name.</param>
             /// <param name="Lista_ID">The Minecraft 1.12.2- ID of a block.</param>
             /// <param name="Lista_Data">The Minecraft 1.12.2- Data of a block inside a list.</param>
+            /// <param name="Categoría">The category tab from Minecraft creative inventory.</param>
             /// <param name="Color_ARGB">The average ARGB color of a Minecraft texture.</param>
             /// <param name="Altura_Diferente">The identifier of blocks with a real size different than 1.</param>
             /// <param name="Obtención">The identifier of the legit way to obtain a block.</param>
             /// <param name="Obsoleto">The identifier of no longer existing blocks.</param>
-            internal Bloques(string Nombre_1_13, string Recurso, List<byte> Lista_ID, List<byte> Lista_Data, Color Color_ARGB, bool Altura_Diferente, Obtenciones Obtención, bool Obsoleto)
+            internal Bloques(string Nombre_1_13, string Recurso, List<byte> Lista_ID, List<byte> Lista_Data, Categorías Categoría, Color Color_ARGB, bool Altura_Diferente, Obtenciones Obtención, bool Obsoleto)
             {
                 this.Índice = Total_Bloques;
                 this.Nombre = Nombre_1_13.Replace(' ', '_').Replace('~', '_').Replace('=', '_').Replace('+', '_').Replace('-', '_').Replace('\\', '_').Replace('/', '_').Replace(':', '_').Replace('*', '_').Replace('?', '_').Replace('\"', '_').Replace('<', '_').Replace('>', '_').Replace('|', '_').Replace('.', '_').ToLowerInvariant().Replace("minecraft_", null).Replace('_', ' ');
@@ -173,6 +244,7 @@ namespace Minecraft_Tools
                 this.Lista_ID = Lista_ID;
                 this.Lista_Data = Lista_Data;
                 this.ID_Data = Obtener_Valor_ID_Data(Lista_ID != null && Lista_ID.Count > 0 ? Lista_ID[0] : (byte)0, Lista_Data != null && Lista_Data.Count > 0 ? Lista_Data[0] : (byte)0);
+                this.Categoría = Categoría;
                 this.Color_ARGB = Color_ARGB;
                 this.Código_Hash_Color = Color_ARGB.GetHashCode(); // Ignore the alpha value here?: "Color.FromArgb(255, Color_ARGB.R, Color_ARGB.G, Color_ARGB.B).GetHashCode();".
                 this.Altura_Diferente = Altura_Diferente;
@@ -320,19 +392,19 @@ namespace Minecraft_Tools
             /// </summary>
             internal static readonly Bloques[] Matriz_Bloques = new Bloques[]
             {
-                new Bloques("minecraft:acacia_bark", null, null, Color.FromArgb(255, 104, 99, 89), false, Obtenciones.Survival),
                 new Bloques("minecraft:acacia_button", null, null, Color.FromArgb(255, 168, 91, 50), true, Obtenciones.Survival),
                 new Bloques("minecraft:acacia_door", new List<byte>(new byte[] { 196 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 161, 93, 58), true, Obtenciones.Survival),
                 new Bloques("minecraft:acacia_fence", new List<byte>(new byte[] { 192 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 167, 90, 50), true, Obtenciones.Survival),
                 new Bloques("minecraft:acacia_fence_gate", new List<byte>(new byte[] { 187 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 169, 91, 51), true, Obtenciones.Survival),
                 new Bloques("minecraft:acacia_leaves", new List<byte>(new byte[] { 161 }), new List<byte>(new byte[] { 0, 2, 4, 6, 8, 10, 12, 14 }), Color.FromArgb(255, 169, 103, 76), true, Obtenciones.Survival),
-                new Bloques("minecraft:acacia_log", new List<byte>(new byte[] { 162 }), new List<byte>(new byte[] { 0, 2, 4, 6, 8, 10, 12, 14 }), Color.FromArgb(255, 105, 99, 89), false, Obtenciones.Survival),
+                new Bloques("minecraft:acacia_log", new List<byte>(new byte[] { 162 }), new List<byte>(new byte[] { 0, 2, 4, 6, 8, 10, 12, 14 }), Color.FromArgb(255, 105, 99, 88), false, Obtenciones.Survival),
                 new Bloques("minecraft:acacia_planks", new List<byte>(new byte[] { 5 }), new List<byte>(new byte[] { 4 }), Color.FromArgb(255, 169, 92, 51), false, Obtenciones.Survival),
                 new Bloques("minecraft:acacia_pressure_plate", null, null, Color.FromArgb(255, 171, 92, 51), true, Obtenciones.Survival),
                 new Bloques("minecraft:acacia_sapling", new List<byte>(new byte[] { 6 }), new List<byte>(new byte[] { 4, 12 }), Color.FromArgb(255, 115, 115, 20), true, Obtenciones.Survival),
                 new Bloques("minecraft:acacia_slab", new List<byte>(new byte[] { 126 }), new List<byte>(new byte[] { 4, 12 }), Color.FromArgb(255, 168, 92, 51), true, Obtenciones.Survival),
                 new Bloques("minecraft:acacia_stairs", new List<byte>(new byte[] { 163 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 170, 92, 51), true, Obtenciones.Survival),
                 new Bloques("minecraft:acacia_trapdoor", null, null, Color.FromArgb(255, 157, 87, 51), true, Obtenciones.Survival),
+                new Bloques("minecraft:acacia_wood", null, null, Color.FromArgb(255, 105, 99, 89), false, Obtenciones.Survival),
                 new Bloques("minecraft:activator_rail", new List<byte>(new byte[] { 157 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 104, 83, 71), true, Obtenciones.Survival),
                 new Bloques("minecraft:air", new List<byte>(new byte[] { 0 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(0, 0, 0, 0), true, Obtenciones.Survival),
                 new Bloques("minecraft:allium", new List<byte>(new byte[] { 38 }), new List<byte>(new byte[] { 2 }), Color.FromArgb(255, 197, 129, 251)/*Color.FromArgb(255, 178, 141, 211)*/, true, Obtenciones.Survival),
@@ -347,19 +419,19 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:bed", null, null, Color.FromArgb(255, 177, 122, 122), true, Obtenciones.Survival),
                 new Bloques("minecraft:bedrock", new List<byte>(new byte[] { 7 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 84, 84, 84), false, Obtenciones.Creative),
                 new Bloques("minecraft:beetroots", new List<byte>(new byte[] { 207 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 176, 115, 111)/*Color.FromArgb(255, 81, 113, 54)*/, true, Obtenciones.Survival),
-                new Bloques("minecraft:birch_bark", null, null, Color.FromArgb(255, 206, 206, 201), false, Obtenciones.Survival),
                 new Bloques("minecraft:birch_button", null, null, Color.FromArgb(255, 194, 177, 122), true, Obtenciones.Survival),
                 new Bloques("minecraft:birch_door", new List<byte>(new byte[] { 194 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 218, 210, 176), true, Obtenciones.Survival),
                 new Bloques("minecraft:birch_fence", new List<byte>(new byte[] { 189 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 193, 176, 121), true, Obtenciones.Survival),
                 new Bloques("minecraft:birch_fence_gate", new List<byte>(new byte[] { 184 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 195, 179, 123), true, Obtenciones.Survival),
                 new Bloques("minecraft:birch_leaves", new List<byte>(new byte[] { 18 }), new List<byte>(new byte[] { 2, 6, 10, 14 }), Color.FromArgb(255, 132, 166, 95), true, Obtenciones.Survival),
-                new Bloques("minecraft:birch_log", new List<byte>(new byte[] { 17 }), new List<byte>(new byte[] { 2, 6, 10, 14 }), Color.FromArgb(255, 207, 206, 201), false, Obtenciones.Survival),
+                new Bloques("minecraft:birch_log", new List<byte>(new byte[] { 17 }), new List<byte>(new byte[] { 2, 6, 10, 14 }), Color.FromArgb(255, 207, 206, 200), false, Obtenciones.Survival),
                 new Bloques("minecraft:birch_planks", new List<byte>(new byte[] { 5 }), new List<byte>(new byte[] { 2 }), Color.FromArgb(255, 196, 179, 123), false, Obtenciones.Survival),
                 new Bloques("minecraft:birch_pressure_plate", null, null, Color.FromArgb(255, 197, 181, 124), true, Obtenciones.Survival),
                 new Bloques("minecraft:birch_sapling", new List<byte>(new byte[] { 6 }), new List<byte>(new byte[] { 2, 10 }), Color.FromArgb(255, 119, 151, 85), true, Obtenciones.Survival),
                 new Bloques("minecraft:birch_slab", new List<byte>(new byte[] { 126 }), new List<byte>(new byte[] { 2, 10 }), Color.FromArgb(255, 196, 180, 124), true, Obtenciones.Survival),
                 new Bloques("minecraft:birch_stairs", new List<byte>(new byte[] { 135 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 196, 180, 123), true, Obtenciones.Survival),
                 new Bloques("minecraft:birch_trapdoor", null, null, Color.FromArgb(255, 207, 194, 157), true, Obtenciones.Survival),
+                new Bloques("minecraft:birch_wood", null, null, Color.FromArgb(255, 207, 206, 201), false, Obtenciones.Survival),
                 new Bloques("minecraft:black_banner", new List<byte>(new byte[] { 176 }), new List<byte>(new byte[] { 15 }), Color.FromArgb(255, 8, 10, 14), true, Obtenciones.Survival),
                 new Bloques("minecraft:black_bed", null, null, Color.FromArgb(255, 118, 118, 121), true, Obtenciones.Survival),
                 new Bloques("minecraft:black_carpet", new List<byte>(new byte[] { 171 }), new List<byte>(new byte[] { 15 }), Color.FromArgb(255, 20, 21, 25), true, Obtenciones.Survival),
@@ -395,6 +467,7 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:brain_coral", null, null, Color.FromArgb(255, 198, 85, 152), false, Obtenciones.Survival),
                 new Bloques("minecraft:brain_coral_block", null, null, Color.FromArgb(255, 207, 91, 159), false, Obtenciones.Survival),
                 new Bloques("minecraft:brain_coral_fan", null, null, Color.FromArgb(255, 203, 84, 154), false, Obtenciones.Survival),
+                new Bloques("minecraft:brain_coral_wall_fan", null, null, Color.FromArgb(255, 203, 84, 153), false, Obtenciones.Survival),
                 new Bloques("minecraft:brewing_stand", new List<byte>(new byte[] { 117 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 125, 103, 82), true, Obtenciones.Survival),
                 new Bloques("minecraft:brick_slab", new List<byte>(new byte[] { 44 }), new List<byte>(new byte[] { 4, 12 }), Color.FromArgb(255, 146, 99, 87), true, Obtenciones.Survival),
                 new Bloques("minecraft:brick_stairs", new List<byte>(new byte[] { 108 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 146, 100, 87), true, Obtenciones.Survival),
@@ -411,12 +484,13 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:brown_stained_glass", new List<byte>(new byte[] { 95 }), new List<byte>(new byte[] { 12 }), Color.FromArgb(194, 101, 76, 50), true, Obtenciones.Survival),
                 new Bloques("minecraft:brown_stained_glass_pane", new List<byte>(new byte[] { 160 }), new List<byte>(new byte[] { 12 }), Color.FromArgb(163, 101, 76, 51), true, Obtenciones.Survival),
                 new Bloques("minecraft:brown_terracotta", new List<byte>(new byte[] { 159 }), new List<byte>(new byte[] { 12 }), Color.FromArgb(255, 77, 51, 36), false, Obtenciones.Survival),
-                new Bloques("minecraft:brown_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 12 }), Color.FromArgb(255, 96, 60, 32), true, Obtenciones.Survival),
+                new Bloques("minecraft:brown_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 12 }), Color.FromArgb(255, 96, 60, 31), true, Obtenciones.Survival),
                 new Bloques("minecraft:brown_wool", new List<byte>(new byte[] { 35 }), new List<byte>(new byte[] { 12 }), Color.FromArgb(255, 114, 72, 41), false, Obtenciones.Survival),
                 new Bloques("minecraft:bubble_column", null, null, Color.FromArgb(206, 49, 72, 243), true, Obtenciones.Survival),
                 new Bloques("minecraft:bubble_coral", null, null, Color.FromArgb(255, 161, 24, 160), false, Obtenciones.Survival),
                 new Bloques("minecraft:bubble_coral_block", null, null, Color.FromArgb(255, 165, 26, 162), false, Obtenciones.Survival),
                 new Bloques("minecraft:bubble_coral_fan", null, null, Color.FromArgb(255, 160, 33, 159), false, Obtenciones.Survival),
+                new Bloques("minecraft:bubble_coral_wall_fan", null, null, Color.FromArgb(255, 160, 33, 158), false, Obtenciones.Survival),
                 new Bloques("minecraft:cactus", new List<byte>(new byte[] { 81 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 14, 102, 25), true, Obtenciones.Survival),
                 new Bloques("minecraft:cake", new List<byte>(new byte[] { 92 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 229, 206, 207), true, Obtenciones.Survival),
                 new Bloques("minecraft:carrots", new List<byte>(new byte[] { 141 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 213, 148, 9)/*Color.FromArgb(255, 21, 128, 2)*/, true, Obtenciones.Survival),
@@ -465,35 +539,50 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:cyan_wool", new List<byte>(new byte[] { 35 }), new List<byte>(new byte[] { 9 }), Color.FromArgb(255, 21, 138, 145), false, Obtenciones.Survival),
                 new Bloques("minecraft:damaged_anvil", new List<byte>(new byte[] { 145 }), new List<byte>(new byte[] { 2 }), Color.FromArgb(255, 63, 61, 61), true, Obtenciones.Survival),
                 new Bloques("minecraft:dandelion", new List<byte>(new byte[] { 37 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 203, 210, 1)/*Color.FromArgb(255, 108, 162, 1)*/, true, Obtenciones.Survival),
-                new Bloques("minecraft:dark_oak_bark", null, null, Color.FromArgb(255, 51, 41, 23), false, Obtenciones.Survival),
                 new Bloques("minecraft:dark_oak_button", null, null, Color.FromArgb(255, 59, 39, 18), true, Obtenciones.Survival),
                 new Bloques("minecraft:dark_oak_door", new List<byte>(new byte[] { 197 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 70, 48, 25), true, Obtenciones.Survival),
                 new Bloques("minecraft:dark_oak_fence", new List<byte>(new byte[] { 191 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 60, 39, 18), true, Obtenciones.Survival),
                 new Bloques("minecraft:dark_oak_fence_gate", new List<byte>(new byte[] { 186 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 61, 39, 18), true, Obtenciones.Survival),
                 new Bloques("minecraft:dark_oak_leaves", new List<byte>(new byte[] { 161 }), new List<byte>(new byte[] { 1, 3, 5, 7, 9, 11, 13, 15 }), Color.FromArgb(255, 85, 168, 48), true, Obtenciones.Survival),
-                new Bloques("minecraft:dark_oak_log", new List<byte>(new byte[] { 162 }), new List<byte>(new byte[] { 1, 3, 5, 7, 9, 11, 13, 15 }), Color.FromArgb(255, 52, 41, 23), false, Obtenciones.Survival),
+                new Bloques("minecraft:dark_oak_log", new List<byte>(new byte[] { 162 }), new List<byte>(new byte[] { 1, 3, 5, 7, 9, 11, 13, 15 }), Color.FromArgb(255, 52, 41, 22), false, Obtenciones.Survival),
                 new Bloques("minecraft:dark_oak_planks", new List<byte>(new byte[] { 5 }), new List<byte>(new byte[] { 5 }), Color.FromArgb(255, 61, 40, 18), false, Obtenciones.Survival),
                 new Bloques("minecraft:dark_oak_pressure_plate", null, null, Color.FromArgb(255, 62, 40, 19), true, Obtenciones.Survival),
                 new Bloques("minecraft:dark_oak_sapling", new List<byte>(new byte[] { 6 }), new List<byte>(new byte[] { 5, 13 }), Color.FromArgb(255, 57, 86, 28), true, Obtenciones.Survival),
                 new Bloques("minecraft:dark_oak_slab", new List<byte>(new byte[] { 126 }), new List<byte>(new byte[] { 5, 13 }), Color.FromArgb(255, 60, 40, 17), true, Obtenciones.Survival),
                 new Bloques("minecraft:dark_oak_stairs", new List<byte>(new byte[] { 164 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 60, 40, 18), true, Obtenciones.Survival),
                 new Bloques("minecraft:dark_oak_trapdoor", null, null, Color.FromArgb(255, 75, 50, 23), true, Obtenciones.Survival),
+                new Bloques("minecraft:dark_oak_wood", null, null, Color.FromArgb(255, 52, 41, 23), false, Obtenciones.Survival),
                 new Bloques("minecraft:dark_prismarine", new List<byte>(new byte[] { 168 }), new List<byte>(new byte[] { 1 }), Color.FromArgb(255, 60, 88, 75), false, Obtenciones.Survival),
                 new Bloques("minecraft:dark_prismarine_slab", null, null, Color.FromArgb(255, 60, 88, 76), true, Obtenciones.Survival),
                 new Bloques("minecraft:dark_prismarine_stairs", null, null, Color.FromArgb(255, 60, 87, 75), true, Obtenciones.Survival),
                 new Bloques("minecraft:daylight_detector", new List<byte>(new byte[] { 151, 178 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 131, 116, 95), true, Obtenciones.Survival),
+                new Bloques("minecraft:dead_brain_coral", null, null, Color.FromArgb(255, 134, 125, 121), false, Obtenciones.Survival),
                 new Bloques("minecraft:dead_brain_coral_block", null, null, Color.FromArgb(255, 124, 118, 114), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_brain_coral_fan", null, null, Color.FromArgb(255, 133, 125, 121), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_brain_coral_wall_fan", null, null, Color.FromArgb(255, 133, 125, 120), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_bubble_coral", null, null, Color.FromArgb(255, 133, 125, 119), false, Obtenciones.Survival),
                 new Bloques("minecraft:dead_bubble_coral_block", null, null, Color.FromArgb(255, 132, 124, 119), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_bubble_coral_fan", null, null, Color.FromArgb(255, 141, 135, 130), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_bubble_coral_wall_fan", null, null, Color.FromArgb(255, 141, 135, 129), false, Obtenciones.Survival),
                 new Bloques("minecraft:dead_bush", new List<byte>(new byte[] { 32 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 124, 80, 25), true, Obtenciones.Survival),
+                new Bloques("minecraft:dead_fire_coral", null, null, Color.FromArgb(255, 137, 128, 124), false, Obtenciones.Survival),
                 new Bloques("minecraft:dead_fire_coral_block", null, null, Color.FromArgb(255, 132, 124, 120), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_fire_coral_fan", null, null, Color.FromArgb(255, 125, 118, 115), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_fire_coral_wall_fan", null, null, Color.FromArgb(255, 125, 118, 114), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_horn_coral", null, null, Color.FromArgb(255, 143, 135, 130), false, Obtenciones.Survival),
                 new Bloques("minecraft:dead_horn_coral_block", null, null, Color.FromArgb(255, 134, 126, 122), false, Obtenciones.Survival),
-                new Bloques("minecraft:dead_tube_coral_block", null, null, Color.FromArgb(255, 130, 123, 120), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_horn_coral_fan", null, null, Color.FromArgb(255, 134, 126, 121), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_horn_coral_wall_fan", null, null, Color.FromArgb(255, 134, 126, 120), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_tube_coral", null, null, Color.FromArgb(255, 118, 111, 108), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_tube_coral_block", null, null, Color.FromArgb(255, 130, 123, 119), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_tube_coral_fan", null, null, Color.FromArgb(255, 128, 122, 118), false, Obtenciones.Survival),
+                new Bloques("minecraft:dead_tube_coral_wall_fan", null, null, Color.FromArgb(255, 128, 122, 117), false, Obtenciones.Survival),
                 new Bloques("minecraft:detector_rail", new List<byte>(new byte[] { 28 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 120, 101, 89), true, Obtenciones.Survival),
                 new Bloques("minecraft:diamond_block", new List<byte>(new byte[] { 57 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 98, 219, 214), false, Obtenciones.Survival),
                 new Bloques("minecraft:diamond_ore", new List<byte>(new byte[] { 56 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }),  Color.FromArgb(255, 97, 219, 214)/*Color.FromArgb(255, 129, 140, 143)*/, false, Obtenciones.Survival),
                 new Bloques("minecraft:diorite", new List<byte>(new byte[] { 1 }), new List<byte>(new byte[] { 3 }), Color.FromArgb(255, 180, 180, 183), false, Obtenciones.Survival),
                 new Bloques("minecraft:dirt", new List<byte>(new byte[] { 3 }), new List<byte>(new byte[] { 0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 134, 96, 67), false, Obtenciones.Survival),
-                new Bloques("minecraft:dispenser", new List<byte>(new byte[] { 23 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 117, 117, 117), false, Obtenciones.Survival),
+                new Bloques("minecraft:dispenser", new List<byte>(new byte[] { 23 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Categorías.Redstone, Color.FromArgb(255, 117, 117, 117), false, Obtenciones.Survival),
                 new Bloques("minecraft:dragon_egg", new List<byte>(new byte[] { 122 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 13, 9, 16), true, Obtenciones.Survival),
                 new Bloques("minecraft:dragon_head", new List<byte>(new byte[] { 144 }), new List<byte>(new byte[] { 5 }), Color.FromArgb(255, 53, 33, 57), true, Obtenciones.Survival),
                 new Bloques("minecraft:dragon_wall_head", null, null, Color.FromArgb(255, 53, 33, 56), true, Obtenciones.Creative),
@@ -515,6 +604,7 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:fire_coral", null, null, Color.FromArgb(255, 167, 38, 47), false, Obtenciones.Survival),
                 new Bloques("minecraft:fire_coral_block", null, null, Color.FromArgb(255, 164, 35, 47), false, Obtenciones.Survival),
                 new Bloques("minecraft:fire_coral_fan", null, null, Color.FromArgb(255, 159, 35, 46), false, Obtenciones.Survival),
+                new Bloques("minecraft:fire_coral_wall_fan", null, null, Color.FromArgb(255, 159, 35, 45), false, Obtenciones.Survival),
                 new Bloques("minecraft:flower_pot", new List<byte>(new byte[] { 140 }), new List<byte>(new byte[] { 0, 14, 15 }), Color.FromArgb(255, 119, 66, 51), true, Obtenciones.Survival),
                 new Bloques("minecraft:flowing_lava", new List<byte>(new byte[] { 10 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 207, 92, 21), true, Obtenciones.Creative),
                 new Bloques("minecraft:flowing_water", new List<byte>(new byte[] { 8 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(206, 49, 72, 244), true, Obtenciones.Creative),
@@ -527,7 +617,7 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:gold_block", new List<byte>(new byte[] { 41 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 249, 236, 79), false, Obtenciones.Survival),
                 new Bloques("minecraft:gold_ore", new List<byte>(new byte[] { 14 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 248, 236, 79)/*Color.FromArgb(255, 143, 140, 125)*/, false, Obtenciones.Survival),
                 new Bloques("minecraft:granite", new List<byte>(new byte[] { 1 }), new List<byte>(new byte[] { 1 }), Color.FromArgb(255, 153, 114, 99), false, Obtenciones.Survival),
-                new Bloques("minecraft:grass", new List<byte>(new byte[] { 31 }), new List<byte>(new byte[] { 0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 84, 209, 29), true, Obtenciones.Survival),
+                new Bloques("minecraft:grass", new List<byte>(new byte[] { 31 }), new List<byte>(new byte[] { 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 84, 209, 29), true, Obtenciones.Survival),
                 new Bloques("minecraft:grass_block", new List<byte>(new byte[] { 2 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 112, 179, 79), false, Obtenciones.Survival),
                 new Bloques("minecraft:grass_path", new List<byte>(new byte[] { 208 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 150, 125, 71), true, Obtenciones.Creative),
                 new Bloques("minecraft:gravel", new List<byte>(new byte[] { 13 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 127, 124, 123), false, Obtenciones.Survival),
@@ -561,6 +651,7 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:horn_coral", null, null, Color.FromArgb(255, 209, 186, 63), false, Obtenciones.Survival),
                 new Bloques("minecraft:horn_coral_block", null, null, Color.FromArgb(255, 216, 200, 66), false, Obtenciones.Survival),
                 new Bloques("minecraft:horn_coral_fan", null, null, Color.FromArgb(255, 206, 183, 61), false, Obtenciones.Survival),
+                new Bloques("minecraft:horn_coral_wall_fan", null, null, Color.FromArgb(255, 206, 183, 60), false, Obtenciones.Survival),
                 new Bloques("minecraft:ice", new List<byte>(new byte[] { 79 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(159, 125, 172, 254), true, Obtenciones.Survival),
                 new Bloques("minecraft:infested_chiseled_stone_bricks", new List<byte>(new byte[] { 97 }), new List<byte>(new byte[] { 5 }), Color.FromArgb(255, 119, 119, 118), true, Obtenciones.Creative),
                 new Bloques("minecraft:infested_cobblestone", new List<byte>(new byte[] { 97 }), new List<byte>(new byte[] { 1 }), Color.FromArgb(255, 123, 123, 122), true, Obtenciones.Creative),
@@ -576,21 +667,21 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:item_frame", null, null, Color.FromArgb(255, 118, 68, 45), true, Obtenciones.Survival),
                 new Bloques("minecraft:jack_o_lantern", new List<byte>(new byte[] { 91 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 185, 133, 28), false, Obtenciones.Survival),
                 new Bloques("minecraft:jukebox", new List<byte>(new byte[] { 84 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 107, 73, 55), false, Obtenciones.Survival),
-                new Bloques("minecraft:jungle_bark", null, null, Color.FromArgb(255, 86, 68, 27), false, Obtenciones.Survival),
                 new Bloques("minecraft:jungle_button", null, null, Color.FromArgb(255, 149, 107, 74), true, Obtenciones.Survival),
                 new Bloques("minecraft:jungle_door", new List<byte>(new byte[] { 195 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 157, 115, 85), true, Obtenciones.Survival),
                 new Bloques("minecraft:jungle_fence", new List<byte>(new byte[] { 190 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 150, 107, 74), true, Obtenciones.Survival),
                 new Bloques("minecraft:jungle_fence_gate", new List<byte>(new byte[] { 185 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 153, 110, 76), true, Obtenciones.Survival),
                 new Bloques("minecraft:jungle_leaves", new List<byte>(new byte[] { 18 }), new List<byte>(new byte[] { 3, 7, 11, 15 }), Color.FromArgb(255, 84, 169, 79), true, Obtenciones.Survival),
-                new Bloques("minecraft:jungle_log", new List<byte>(new byte[] { 17 }), new List<byte>(new byte[] { 3, 7, 11, 15 }), Color.FromArgb(255, 87, 68, 27), false, Obtenciones.Survival),
+                new Bloques("minecraft:jungle_log", new List<byte>(new byte[] { 17 }), new List<byte>(new byte[] { 3, 7, 11, 15 }), Color.FromArgb(255, 87, 68, 26), false, Obtenciones.Survival),
                 new Bloques("minecraft:jungle_planks", new List<byte>(new byte[] { 5 }), new List<byte>(new byte[] { 3 }), Color.FromArgb(255, 154, 110, 77), false, Obtenciones.Survival),
                 new Bloques("minecraft:jungle_pressure_plate", null, null, Color.FromArgb(255, 156, 112, 78), true, Obtenciones.Survival),
                 new Bloques("minecraft:jungle_sapling", new List<byte>(new byte[] { 6 }), new List<byte>(new byte[] { 3, 11 }), Color.FromArgb(255, 49, 86, 19), true, Obtenciones.Survival),
                 new Bloques("minecraft:jungle_slab", new List<byte>(new byte[] { 126 }), new List<byte>(new byte[] { 3, 11 }), Color.FromArgb(255, 155, 111, 78), true, Obtenciones.Survival),
                 new Bloques("minecraft:jungle_stairs", new List<byte>(new byte[] { 136 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 154, 111, 77), true, Obtenciones.Survival),
                 new Bloques("minecraft:jungle_trapdoor", null, null, Color.FromArgb(255, 153, 110, 77), true, Obtenciones.Survival),
-                new Bloques("minecraft:kelp", null, null, Color.FromArgb(255, 87, 131, 43), true, Obtenciones.Creative),
-                new Bloques("minecraft:kelp_top", null, null, Color.FromArgb(255, 88, 142, 45), true, Obtenciones.Creative),
+                new Bloques("minecraft:jungle_wood", null, null, Color.FromArgb(255, 87, 68, 27), false, Obtenciones.Survival),
+                new Bloques("minecraft:kelp", null, null, Color.FromArgb(255, 88, 142, 45), true, Obtenciones.Survival),
+                new Bloques("minecraft:kelp_plant", null, null, Color.FromArgb(255, 87, 131, 43), true, Obtenciones.Survival),
                 new Bloques("minecraft:ladder", new List<byte>(new byte[] { 65 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 121, 95, 53), true, Obtenciones.Survival),
                 new Bloques("minecraft:lapis_block", new List<byte>(new byte[] { 22 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 39, 67, 138), false, Obtenciones.Survival),
                 new Bloques("minecraft:lapis_ore", new List<byte>(new byte[] { 21 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 38, 67, 138)/*Color.FromArgb(255, 102, 112, 135)*/, false, Obtenciones.Survival),
@@ -619,7 +710,7 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:light_gray_stained_glass", new List<byte>(new byte[] { 95 }), new List<byte>(new byte[] { 8 }), Color.FromArgb(194, 152, 152, 152), true, Obtenciones.Survival),
                 new Bloques("minecraft:light_gray_stained_glass_pane", new List<byte>(new byte[] { 160 }), new List<byte>(new byte[] { 8 }), Color.FromArgb(163, 153, 153, 153), true, Obtenciones.Survival),
                 new Bloques("minecraft:light_gray_terracotta", new List<byte>(new byte[] { 159 }), new List<byte>(new byte[] { 8 }), Color.FromArgb(255, 135, 107, 97), false, Obtenciones.Survival),
-                new Bloques("minecraft:light_gray_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 8 }), Color.FromArgb(255, 125, 125, 115), true, Obtenciones.Survival),
+                new Bloques("minecraft:light_gray_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 8 }), Color.FromArgb(255, 125, 125, 114), true, Obtenciones.Survival),
                 new Bloques("minecraft:light_gray_wool", new List<byte>(new byte[] { 35 }), new List<byte>(new byte[] { 8 }), Color.FromArgb(255, 142, 142, 135), false, Obtenciones.Survival),
                 new Bloques("minecraft:light_weighted_pressure_plate", new List<byte>(new byte[] { 147 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 254, 246, 85), true, Obtenciones.Survival),
                 new Bloques("minecraft:lilac", new List<byte>(new byte[] { 175 }), new List<byte>(new byte[] { 1, 9 }), Color.FromArgb(255, 171, 147, 172)/*Color.FromArgb(255, 148, 148, 140)*/, true, Obtenciones.Survival),
@@ -646,10 +737,10 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:magenta_stained_glass", new List<byte>(new byte[] { 95 }), new List<byte>(new byte[] { 2 }), Color.FromArgb(194, 178, 76, 215), true, Obtenciones.Survival),
                 new Bloques("minecraft:magenta_stained_glass_pane", new List<byte>(new byte[] { 160 }), new List<byte>(new byte[] { 2 }), Color.FromArgb(163, 178, 76, 215), true, Obtenciones.Survival),
                 new Bloques("minecraft:magenta_terracotta", new List<byte>(new byte[] { 159 }), new List<byte>(new byte[] { 2 }), Color.FromArgb(255, 150, 88, 109), false, Obtenciones.Survival),
-                new Bloques("minecraft:magenta_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 2 }), Color.FromArgb(255, 169, 48, 159), true, Obtenciones.Survival),
+                new Bloques("minecraft:magenta_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 2 }), Color.FromArgb(255, 169, 48, 158), true, Obtenciones.Survival),
                 new Bloques("minecraft:magenta_wool", new List<byte>(new byte[] { 35 }), new List<byte>(new byte[] { 2 }), Color.FromArgb(255, 190, 69, 180), false, Obtenciones.Survival),
                 new Bloques("minecraft:magma_block", new List<byte>(new byte[] { 213 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 135, 65, 25), false, Obtenciones.Survival),
-                new Bloques("minecraft:melon_block", new List<byte>(new byte[] { 103 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 141, 146, 36), false, Obtenciones.Survival),
+                new Bloques("minecraft:melon", new List<byte>(new byte[] { 103 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 141, 146, 36), false, Obtenciones.Survival),
                 new Bloques("minecraft:melon_stem", new List<byte>(new byte[] { 105 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 154, 154, 154), true, Obtenciones.Survival),
                 new Bloques("minecraft:mob_spawner", null, null, Color.FromArgb(255, 160, 1, 255)/*Color.FromArgb(255, 26, 40, 49)*/, true, Obtenciones.Creative),
                 new Bloques("minecraft:mossy_cobblestone", new List<byte>(new byte[] { 48 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 104, 121, 104), false, Obtenciones.Survival),
@@ -662,24 +753,25 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:nether_brick_slab", new List<byte>(new byte[] { 44 }), new List<byte>(new byte[] { 6, 14 }), Color.FromArgb(255, 43, 22, 26), true, Obtenciones.Survival),
                 new Bloques("minecraft:nether_brick_stairs", new List<byte>(new byte[] { 114 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 44, 22, 26), true, Obtenciones.Survival),
                 new Bloques("minecraft:nether_bricks", new List<byte>(new byte[] { 112 }), new List<byte>(new byte[] { 7, 0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 45, 23, 27), false, Obtenciones.Survival),
+                new Bloques("minecraft:nether_portal", new List<byte>(new byte[] { 90 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(229, 91, 13, 193), true, Obtenciones.Creative),
                 new Bloques("minecraft:nether_quartz_ore", new List<byte>(new byte[] { 153 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 235, 233, 226)/*Color.FromArgb(255, 125, 85, 80)*/, true, Obtenciones.Survival),
                 new Bloques("minecraft:nether_wart", new List<byte>(new byte[] { 115 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 112, 19, 17), true, Obtenciones.Survival),
                 new Bloques("minecraft:nether_wart_block", new List<byte>(new byte[] { 214 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 117, 6, 7), false, Obtenciones.Survival),
                 new Bloques("minecraft:netherrack", new List<byte>(new byte[] { 87 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 111, 54, 53), false, Obtenciones.Survival),
-                new Bloques("minecraft:note_block", new List<byte>(new byte[] { 25 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 101, 68, 51), false, Obtenciones.Survival),
-                new Bloques("minecraft:oak_bark", null, null, Color.FromArgb(255, 101, 81, 50), false, Obtenciones.Survival),
+                new Bloques("minecraft:note_block", new List<byte>(new byte[] { 25 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Categorías.Redstone, Color.FromArgb(255, 101, 68, 51), false, Obtenciones.Survival),
                 new Bloques("minecraft:oak_button", new List<byte>(new byte[] { 143 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 153, 124, 76), true, Obtenciones.Survival),
                 new Bloques("minecraft:oak_door", new List<byte>(new byte[] { 64 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 135, 103, 52), true, Obtenciones.Survival),
                 new Bloques("minecraft:oak_fence", new List<byte>(new byte[] { 85 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 153, 125, 77), true, Obtenciones.Survival),
                 new Bloques("minecraft:oak_fence_gate", new List<byte>(new byte[] { 107 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 156, 127, 78), true, Obtenciones.Survival),
                 new Bloques("minecraft:oak_leaves", new List<byte>(new byte[] { 18 }), new List<byte>(new byte[] { 0, 4, 8, 12 }), Color.FromArgb(255, 85, 204, 33), true, Obtenciones.Survival),
-                new Bloques("minecraft:oak_log", new List<byte>(new byte[] { 17 }), new List<byte>(new byte[] { 0, 4, 8, 12 }), Color.FromArgb(255, 102, 81, 50), false, Obtenciones.Survival),
+                new Bloques("minecraft:oak_log", new List<byte>(new byte[] { 17 }), new List<byte>(new byte[] { 0, 4, 8, 12 }), Color.FromArgb(255, 102, 81, 49), false, Obtenciones.Survival),
                 new Bloques("minecraft:oak_planks", new List<byte>(new byte[] { 5 }), new List<byte>(new byte[] { 0, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 157, 128, 79), false, Obtenciones.Survival),
                 new Bloques("minecraft:oak_pressure_plate", new List<byte>(new byte[] { 72 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 158, 129, 79), true, Obtenciones.Survival),
                 new Bloques("minecraft:oak_sapling", new List<byte>(new byte[] { 6 }), new List<byte>(new byte[] { 0, 8, 6, 7, 14, 15 }), Color.FromArgb(255, 72, 102, 38), true, Obtenciones.Survival),
                 new Bloques("minecraft:oak_slab", new List<byte>(new byte[] { 126 }), new List<byte>(new byte[] { 0, 8, 6, 7, 14, 15 }), Color.FromArgb(255, 156, 127, 79), true, Obtenciones.Survival),
                 new Bloques("minecraft:oak_stairs", new List<byte>(new byte[] { 53 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 156, 128, 79), true, Obtenciones.Survival),
                 new Bloques("minecraft:oak_trapdoor", new List<byte>(new byte[] { 96 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 127, 93, 46), true, Obtenciones.Survival),
+                new Bloques("minecraft:oak_wood", null, null, Color.FromArgb(255, 102, 81, 50), false, Obtenciones.Survival),
                 new Bloques("minecraft:observer", new List<byte>(new byte[] { 218 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 102, 102, 102), false, Obtenciones.Survival),
                 new Bloques("minecraft:obsidian", new List<byte>(new byte[] { 49 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 20, 18, 30), false, Obtenciones.Survival),
                 new Bloques("minecraft:orange_banner", new List<byte>(new byte[] { 176 }), new List<byte>(new byte[] { 1 }), Color.FromArgb(255, 223, 97, 1), true, Obtenciones.Survival),
@@ -693,7 +785,7 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:orange_stained_glass_pane", new List<byte>(new byte[] { 160 }), new List<byte>(new byte[] { 1 }), Color.FromArgb(163, 215, 126, 51), true, Obtenciones.Survival),
                 new Bloques("minecraft:orange_terracotta", new List<byte>(new byte[] { 159 }), new List<byte>(new byte[] { 1 }), Color.FromArgb(255, 162, 84, 38), false, Obtenciones.Survival),
                 new Bloques("minecraft:orange_tulip", new List<byte>(new byte[] { 38 }), new List<byte>(new byte[] { 5 }), Color.FromArgb(255, 216, 106, 25)/*Color.FromArgb(255, 96, 134, 32)*/, true, Obtenciones.Survival),
-                new Bloques("minecraft:orange_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 1 }), Color.FromArgb(255, 224, 97, 1), true, Obtenciones.Survival),
+                new Bloques("minecraft:orange_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 1 }), Color.FromArgb(255, 224, 97, 0), true, Obtenciones.Survival),
                 new Bloques("minecraft:orange_wool", new List<byte>(new byte[] { 35 }), new List<byte>(new byte[] { 1 }), Color.FromArgb(255, 241, 118, 20), false, Obtenciones.Survival),
                 new Bloques("minecraft:oxeye_daisy", new List<byte>(new byte[] { 38 }), new List<byte>(new byte[] { 8 }), Color.FromArgb(255, 233, 230, 193)/*Color.FromArgb(255, 176, 198, 139)*/, true, Obtenciones.Survival),
                 new Bloques("minecraft:packed_ice", new List<byte>(new byte[] { 174 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 165, 195, 245), false, Obtenciones.Survival),
@@ -704,17 +796,17 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:pink_carpet", new List<byte>(new byte[] { 171 }), new List<byte>(new byte[] { 6 }), Color.FromArgb(255, 238, 142, 173), true, Obtenciones.Survival),
                 new Bloques("minecraft:pink_concrete", new List<byte>(new byte[] { 251 }), new List<byte>(new byte[] { 6 }), Color.FromArgb(255, 214, 101, 143), false, Obtenciones.Survival),
                 new Bloques("minecraft:pink_concrete_powder", new List<byte>(new byte[] { 252 }), new List<byte>(new byte[] { 6 }), Color.FromArgb(255, 229, 153, 181), false, Obtenciones.Survival),
-                new Bloques("minecraft:pink_coral", null, null, Color.FromArgb(255, 207, 91, 159), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:pink_coral", null, null, Color.FromArgb(255, 207, 91, 158), false, Obtenciones.Survival, true),
                 new Bloques("minecraft:pink_coral_fan", null, null, Color.FromArgb(255, 182, 64, 137), true, Obtenciones.Survival, true),
-                new Bloques("minecraft:pink_coral_plant", null, null, Color.FromArgb(255, 198, 85, 152), true, Obtenciones.Survival, true),
-                new Bloques("minecraft:pink_dead_coral", null, null, Color.FromArgb(255, 124, 118, 114), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:pink_coral_plant", null, null, Color.FromArgb(255, 198, 85, 151), true, Obtenciones.Survival, true),
+                new Bloques("minecraft:pink_dead_coral", null, null, Color.FromArgb(255, 124, 118, 113), false, Obtenciones.Survival, true),
                 new Bloques("minecraft:pink_glazed_terracotta", new List<byte>(new byte[] { 241 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 235, 155, 182), false, Obtenciones.Survival),
                 new Bloques("minecraft:pink_shulker_box", new List<byte>(new byte[] { 225 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 230, 122, 158), false, Obtenciones.Survival),
                 new Bloques("minecraft:pink_stained_glass", new List<byte>(new byte[] { 95 }), new List<byte>(new byte[] { 6 }), Color.FromArgb(194, 242, 127, 164), true, Obtenciones.Survival),
                 new Bloques("minecraft:pink_stained_glass_pane", new List<byte>(new byte[] { 160 }), new List<byte>(new byte[] { 6 }), Color.FromArgb(163, 242, 126, 164), true, Obtenciones.Survival),
                 new Bloques("minecraft:pink_terracotta", new List<byte>(new byte[] { 159 }), new List<byte>(new byte[] { 6 }), Color.FromArgb(255, 162, 78, 79), false, Obtenciones.Survival),
                 new Bloques("minecraft:pink_tulip", new List<byte>(new byte[] { 38 }), new List<byte>(new byte[] { 7 }), Color.FromArgb(255, 232, 190, 232)/*Color.FromArgb(255, 101, 150, 73)*/, true, Obtenciones.Survival),
-                new Bloques("minecraft:pink_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 6 }), Color.FromArgb(255, 214, 101, 143), true, Obtenciones.Survival),
+                new Bloques("minecraft:pink_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 6 }), Color.FromArgb(255, 214, 101, 142), true, Obtenciones.Survival),
                 new Bloques("minecraft:pink_wool", new List<byte>(new byte[] { 35 }), new List<byte>(new byte[] { 6 }), Color.FromArgb(255, 238, 141, 172), false, Obtenciones.Survival),
                 new Bloques("minecraft:piston", new List<byte>(new byte[] { 33 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 154, 129, 90), false, Obtenciones.Survival),
                 new Bloques("minecraft:piston_head", new List<byte>(new byte[] { 34 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 148, 130, 101), true, Obtenciones.Creative),
@@ -725,7 +817,6 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:polished_diorite", new List<byte>(new byte[] { 1 }), new List<byte>(new byte[] { 4 }), Color.FromArgb(255, 183, 183, 186), false, Obtenciones.Survival),
                 new Bloques("minecraft:polished_granite", new List<byte>(new byte[] { 1 }), new List<byte>(new byte[] { 2 }), Color.FromArgb(255, 159, 115, 98), false, Obtenciones.Survival),
                 new Bloques("minecraft:poppy", new List<byte>(new byte[] { 38 }), new List<byte>(new byte[] { 0, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 155, 14, 7)/*Color.FromArgb(255, 101, 58, 4)*/, true, Obtenciones.Survival),
-                new Bloques("minecraft:portal", new List<byte>(new byte[] { 90 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(229, 91, 13, 193), true, Obtenciones.Creative),
                 new Bloques("minecraft:potatoes", new List<byte>(new byte[] { 142 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 79, 163, 43)/*Color.FromArgb(255, 35, 171, 36)*/, true, Obtenciones.Survival),
                 new Bloques("minecraft:potted_acacia_sapling", new List<byte>(new byte[] { 140 }), new List<byte>(new byte[] { 12 }), Color.FromArgb(255, 117, 100, 32), true, Obtenciones.Survival),
                 new Bloques("minecraft:potted_allium", new List<byte>(new byte[] { 140 }), null, Color.FromArgb(255, 150, 102, 132), true, Obtenciones.Survival),
@@ -750,9 +841,9 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:potted_white_tulip", new List<byte>(new byte[] { 140 }), null, Color.FromArgb(255, 110, 114, 63), true, Obtenciones.Survival),
                 new Bloques("minecraft:powered_rail", new List<byte>(new byte[] { 27 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 132, 108, 72), true, Obtenciones.Survival),
                 new Bloques("minecraft:prismarine", new List<byte>(new byte[] { 168 }), new List<byte>(new byte[] { 0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 107, 170, 151), false, Obtenciones.Survival),
+                new Bloques("minecraft:prismarine_brick_slab", null, null, Color.FromArgb(255, 98, 158, 141), true, Obtenciones.Survival),
+                new Bloques("minecraft:prismarine_brick_stairs", null, null, Color.FromArgb(255, 99, 159, 142), true, Obtenciones.Survival),
                 new Bloques("minecraft:prismarine_bricks", new List<byte>(new byte[] { 168 }), new List<byte>(new byte[] { 2 }), Color.FromArgb(255, 100, 160, 143), false, Obtenciones.Survival),
-                new Bloques("minecraft:prismarine_bricks_slab", null, null, Color.FromArgb(255, 98, 158, 141), true, Obtenciones.Survival),
-                new Bloques("minecraft:prismarine_bricks_stairs", null, null, Color.FromArgb(255, 99, 159, 142), true, Obtenciones.Survival),
                 new Bloques("minecraft:prismarine_slab", null, null, Color.FromArgb(255, 107, 170, 152), true, Obtenciones.Survival),
                 new Bloques("minecraft:prismarine_stairs", null, null, Color.FromArgb(255, 107, 171, 152), true, Obtenciones.Survival),
                 new Bloques("minecraft:pumpkin", null, null, Color.FromArgb(255, 197, 121, 24), false, Obtenciones.Survival),
@@ -762,10 +853,10 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:purple_carpet", new List<byte>(new byte[] { 171 }), new List<byte>(new byte[] { 10 }), Color.FromArgb(255, 121, 41, 171), true, Obtenciones.Survival),
                 new Bloques("minecraft:purple_concrete", new List<byte>(new byte[] { 251 }), new List<byte>(new byte[] { 10 }), Color.FromArgb(255, 100, 32, 156), false, Obtenciones.Survival),
                 new Bloques("minecraft:purple_concrete_powder", new List<byte>(new byte[] { 252 }), new List<byte>(new byte[] { 10 }), Color.FromArgb(255, 132, 56, 178), false, Obtenciones.Survival),
-                new Bloques("minecraft:purple_coral", null, null, Color.FromArgb(255, 165, 26, 162), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:purple_coral", null, null, Color.FromArgb(255, 165, 26, 161), false, Obtenciones.Survival, true),
                 new Bloques("minecraft:purple_coral_fan", null, null, Color.FromArgb(255, 140, 22, 143), true, Obtenciones.Survival, true),
-                new Bloques("minecraft:purple_coral_plant", null, null, Color.FromArgb(255, 161, 24, 160), true, Obtenciones.Survival, true),
-                new Bloques("minecraft:purple_dead_coral", null, null, Color.FromArgb(255, 132, 124, 119), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:purple_coral_plant", null, null, Color.FromArgb(255, 161, 24, 159), true, Obtenciones.Survival, true),
+                new Bloques("minecraft:purple_dead_coral", null, null, Color.FromArgb(255, 132, 124, 118), false, Obtenciones.Survival, true),
                 new Bloques("minecraft:purple_glazed_terracotta", new List<byte>(new byte[] { 245 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 110, 48, 152), false, Obtenciones.Survival),
                 new Bloques("minecraft:purple_shulker_box", new List<byte>(new byte[] { 229 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 103, 32, 156), false, Obtenciones.Survival),
                 new Bloques("minecraft:purple_stained_glass", new List<byte>(new byte[] { 95 }), new List<byte>(new byte[] { 10 }), Color.FromArgb(194, 127, 62, 178), true, Obtenciones.Survival),
@@ -787,10 +878,10 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:red_carpet", new List<byte>(new byte[] { 171 }), new List<byte>(new byte[] { 14 }), Color.FromArgb(255, 160, 39, 34), true, Obtenciones.Survival),
                 new Bloques("minecraft:red_concrete", new List<byte>(new byte[] { 251 }), new List<byte>(new byte[] { 14 }), Color.FromArgb(255, 142, 33, 33), false, Obtenciones.Survival),
                 new Bloques("minecraft:red_concrete_powder", new List<byte>(new byte[] { 252 }), new List<byte>(new byte[] { 14 }), Color.FromArgb(255, 168, 54, 51), false, Obtenciones.Survival),
-                new Bloques("minecraft:red_coral", null, null, Color.FromArgb(255, 164, 35, 47), false, Obtenciones.Survival, true),
-                new Bloques("minecraft:red_coral_fan", null, null, Color.FromArgb(255, 159, 35, 46), true, Obtenciones.Survival, true),
-                new Bloques("minecraft:red_coral_plant", null, null, Color.FromArgb(255, 167, 38, 47), true, Obtenciones.Survival, true),
-                new Bloques("minecraft:red_dead_coral", null, null, Color.FromArgb(255, 132, 124, 120), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:red_coral", null, null, Color.FromArgb(255, 164, 35, 46), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:red_coral_fan", null, null, Color.FromArgb(255, 159, 35, 44), true, Obtenciones.Survival, true),
+                new Bloques("minecraft:red_coral_plant", null, null, Color.FromArgb(255, 167, 38, 46), true, Obtenciones.Survival, true),
+                new Bloques("minecraft:red_dead_coral", null, null, Color.FromArgb(255, 132, 124, 117), false, Obtenciones.Survival, true),
                 new Bloques("minecraft:red_glazed_terracotta", new List<byte>(new byte[] { 249 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 182, 60, 53), false, Obtenciones.Survival),
                 new Bloques("minecraft:red_mushroom", new List<byte>(new byte[] { 40 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 195, 54, 56), true, Obtenciones.Survival),
                 new Bloques("minecraft:red_mushroom_block", new List<byte>(new byte[] { 100 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 183, 38, 36), false, Obtenciones.Survival),
@@ -804,7 +895,7 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:red_stained_glass_pane", new List<byte>(new byte[] { 160 }), new List<byte>(new byte[] { 14 }), Color.FromArgb(163, 153, 51, 51), true, Obtenciones.Survival),
                 new Bloques("minecraft:red_terracotta", new List<byte>(new byte[] { 159 }), new List<byte>(new byte[] { 14 }), Color.FromArgb(255, 143, 61, 47), false, Obtenciones.Survival),
                 new Bloques("minecraft:red_tulip", new List<byte>(new byte[] { 38 }), new List<byte>(new byte[] { 4 }), Color.FromArgb(255, 202, 48, 12)/*Color.FromArgb(255, 103, 135, 39)*/, true, Obtenciones.Survival),
-                new Bloques("minecraft:red_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 14 }), Color.FromArgb(255, 142, 33, 33), true, Obtenciones.Survival),
+                new Bloques("minecraft:red_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 14 }), Color.FromArgb(255, 142, 33, 32), true, Obtenciones.Survival),
                 new Bloques("minecraft:red_wool", new List<byte>(new byte[] { 35 }), new List<byte>(new byte[] { 14 }), Color.FromArgb(255, 161, 39, 35), false, Obtenciones.Survival),
                 new Bloques("minecraft:redstone_block", new List<byte>(new byte[] { 152 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 171, 28, 9), false, Obtenciones.Survival),
                 new Bloques("minecraft:redstone_lamp", new List<byte>(new byte[] { 123, 124 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 70, 43, 27), false, Obtenciones.Survival),
@@ -822,13 +913,13 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:sea_grass", null, null, Color.FromArgb(255, 51, 126, 9), true, Obtenciones.Survival, true),
                 new Bloques("minecraft:sea_lantern", new List<byte>(new byte[] { 169 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 172, 200, 191), false, Obtenciones.Survival),
                 new Bloques("minecraft:sea_pickle", null, null, Color.FromArgb(255, 105, 114, 52)/*Color.FromArgb(255, 90, 97, 40)*/, true, Obtenciones.Survival),
-                new Bloques("minecraft:seagrass", null, null, Color.FromArgb(255, 51, 126, 9), true, Obtenciones.Survival),
+                new Bloques("minecraft:seagrass", null, null, Color.FromArgb(255, 51, 126, 8), true, Obtenciones.Survival),
                 new Bloques("minecraft:shulker_box", null, null, Color.FromArgb(255, 139, 97, 139), false, Obtenciones.Survival),
                 new Bloques("minecraft:sign", new List<byte>(new byte[] { 63, 68 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 153, 125, 75), true, Obtenciones.Survival),
                 new Bloques("minecraft:skeleton_skull", new List<byte>(new byte[] { 144 }), new List<byte>(new byte[] { 0, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 153, 153, 153), true, Obtenciones.Survival),
                 new Bloques("minecraft:skeleton_wall_skull", null, null, Color.FromArgb(255, 152, 153, 153), true, Obtenciones.Survival),
                 new Bloques("minecraft:slime_block", new List<byte>(new byte[] { 165 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(188, 120, 200, 101), true, Obtenciones.Survival),
-                new Bloques("minecraft:smooth_quartz", new List<byte>(new byte[] { 43 }), new List<byte>(new byte[] { 14 }), Color.FromArgb(255, 235, 233, 226), false, Obtenciones.Survival),
+                new Bloques("minecraft:smooth_quartz", new List<byte>(new byte[] { 43 }), new List<byte>(new byte[] { 14 }), Color.FromArgb(255, 235, 233, 225), false, Obtenciones.Survival),
                 new Bloques("minecraft:smooth_red_sandstone", new List<byte>(new byte[] { 181 }), new List<byte>(new byte[] { 8 }), Color.FromArgb(255, 167, 85, 30), false, Obtenciones.Survival),
                 new Bloques("minecraft:smooth_sandstone", new List<byte>(new byte[] { 43 }), new List<byte>(new byte[] { 9 }), Color.FromArgb(255, 218, 210, 159), false, Obtenciones.Survival),
                 new Bloques("minecraft:smooth_stone", new List<byte>(new byte[] { 43 }), new List<byte>(new byte[] { 8 }), Color.FromArgb(255, 159, 159, 159), false, Obtenciones.Survival),
@@ -837,19 +928,19 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:soul_sand", new List<byte>(new byte[] { 88 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 85, 64, 52), true, Obtenciones.Survival),
                 new Bloques("minecraft:spawner", new List<byte>(new byte[] { 52 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 160, 0, 255)/*Color.FromArgb(255, 26, 40, 49)*/, true, Obtenciones.Creative),
                 new Bloques("minecraft:sponge", new List<byte>(new byte[] { 19 }), new List<byte>(new byte[] { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 195, 196, 85), false, Obtenciones.Survival),
-                new Bloques("minecraft:spruce_bark", null, null, Color.FromArgb(255, 45, 29, 12), false, Obtenciones.Survival),
                 new Bloques("minecraft:spruce_button", null, null, Color.FromArgb(255, 100, 76, 46), true, Obtenciones.Survival),
                 new Bloques("minecraft:spruce_door", new List<byte>(new byte[] { 193 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 96, 75, 49), true, Obtenciones.Survival),
                 new Bloques("minecraft:spruce_fence", new List<byte>(new byte[] { 188 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 101, 76, 46), true, Obtenciones.Survival),
                 new Bloques("minecraft:spruce_fence_gate", new List<byte>(new byte[] { 183 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 103, 78, 47), true, Obtenciones.Survival),
                 new Bloques("minecraft:spruce_leaves", new List<byte>(new byte[] { 18 }), new List<byte>(new byte[] { 1, 5, 9, 13 }), Color.FromArgb(255, 96, 145, 96), true, Obtenciones.Survival),
-                new Bloques("minecraft:spruce_log", new List<byte>(new byte[] { 17 }), new List<byte>(new byte[] { 1, 5, 9, 13 }), Color.FromArgb(255, 46, 29, 12), false, Obtenciones.Survival),
+                new Bloques("minecraft:spruce_log", new List<byte>(new byte[] { 17 }), new List<byte>(new byte[] { 1, 5, 9, 13 }), Color.FromArgb(255, 46, 29, 11), false, Obtenciones.Survival),
                 new Bloques("minecraft:spruce_planks", new List<byte>(new byte[] { 5 }), new List<byte>(new byte[] { 1 }), Color.FromArgb(255, 104, 78, 47), false, Obtenciones.Survival),
                 new Bloques("minecraft:spruce_pressure_plate", null, null, Color.FromArgb(255, 105, 79, 47), true, Obtenciones.Survival),
                 new Bloques("minecraft:spruce_sapling", new List<byte>(new byte[] { 6 }), new List<byte>(new byte[] { 1, 9 }), Color.FromArgb(255, 51, 58, 34), true, Obtenciones.Survival),
                 new Bloques("minecraft:spruce_slab", new List<byte>(new byte[] { 126 }), new List<byte>(new byte[] { 1, 9 }), Color.FromArgb(255, 103, 77, 46), true, Obtenciones.Survival),
                 new Bloques("minecraft:spruce_stairs", new List<byte>(new byte[] { 134 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 103, 77, 47), true, Obtenciones.Survival),
                 new Bloques("minecraft:spruce_trapdoor", null, null, Color.FromArgb(255, 100, 76, 49), true, Obtenciones.Survival),
+                new Bloques("minecraft:spruce_wood", null, null, Color.FromArgb(255, 46, 29, 12), false, Obtenciones.Survival),
                 new Bloques("minecraft:sticky_piston", new List<byte>(new byte[] { 29 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 142, 146, 100), false, Obtenciones.Survival),
                 new Bloques("minecraft:stone", new List<byte>(new byte[] { 1 }), new List<byte>(new byte[] { 0, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 125, 125, 125), false, Obtenciones.Survival),
                 new Bloques("minecraft:stone_brick_slab", new List<byte>(new byte[] { 44 }), new List<byte>(new byte[] { 5, 13 }), Color.FromArgb(255, 121, 122, 122), true, Obtenciones.Survival),
@@ -858,19 +949,25 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:stone_button", new List<byte>(new byte[] { 77 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 124, 124, 124), true, Obtenciones.Survival),
                 new Bloques("minecraft:stone_pressure_plate", new List<byte>(new byte[] { 70 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 126, 126, 126), true, Obtenciones.Survival),
                 new Bloques("minecraft:stone_slab", new List<byte>(new byte[] { 44 }), new List<byte>(new byte[] { 0, 8 }), Color.FromArgb(255, 167, 167, 167), true, Obtenciones.Survival),
-                new Bloques("minecraft:stripped_acacia_log", null, null, Color.FromArgb(255, 175, 93, 60), false, Obtenciones.Survival),
-                new Bloques("minecraft:stripped_birch_log", null, null, Color.FromArgb(255, 197, 176, 118), false, Obtenciones.Survival),
-                new Bloques("minecraft:stripped_dark_oak_log", null, null, Color.FromArgb(255, 97, 76, 50), false, Obtenciones.Survival),
-                new Bloques("minecraft:stripped_jungle_log", null, null, Color.FromArgb(255, 170, 132, 83), false, Obtenciones.Survival),
-                new Bloques("minecraft:stripped_oak_log", null, null, Color.FromArgb(255, 177, 144, 86), false, Obtenciones.Survival),
-                new Bloques("minecraft:stripped_spruce_log", null, null, Color.FromArgb(255, 116, 90, 52), false, Obtenciones.Survival),
+                new Bloques("minecraft:stripped_acacia_log", null, null, Color.FromArgb(255, 175, 93, 59), false, Obtenciones.Survival),
+                new Bloques("minecraft:stripped_acacia_wood", null, null, Color.FromArgb(255, 175, 93, 60), false, Obtenciones.Survival),
+                new Bloques("minecraft:stripped_birch_log", null, null, Color.FromArgb(255, 197, 176, 117), false, Obtenciones.Survival),
+                new Bloques("minecraft:stripped_birch_wood", null, null, Color.FromArgb(255, 197, 176, 118), false, Obtenciones.Survival),
+                new Bloques("minecraft:stripped_dark_oak_log", null, null, Color.FromArgb(255, 97, 76, 49), false, Obtenciones.Survival),
+                new Bloques("minecraft:stripped_dark_oak_wood", null, null, Color.FromArgb(255, 97, 76, 50), false, Obtenciones.Survival),
+                new Bloques("minecraft:stripped_jungle_log", null, null, Color.FromArgb(255, 170, 132, 82), false, Obtenciones.Survival),
+                new Bloques("minecraft:stripped_jungle_wood", null, null, Color.FromArgb(255, 171, 133, 85), false, Obtenciones.Survival),
+                new Bloques("minecraft:stripped_oak_log", null, null, Color.FromArgb(255, 177, 144, 85), false, Obtenciones.Survival),
+                new Bloques("minecraft:stripped_oak_wood", null, null, Color.FromArgb(255, 177, 144, 86), false, Obtenciones.Survival),
+                new Bloques("minecraft:stripped_spruce_log", null, null, Color.FromArgb(255, 116, 90, 51), false, Obtenciones.Survival),
+                new Bloques("minecraft:stripped_spruce_wood", null, null, Color.FromArgb(255, 116, 90, 52), false, Obtenciones.Survival),
                 new Bloques("minecraft:structure_block", new List<byte>(new byte[] { 255 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 89, 74, 90), true, Obtenciones.Survival),
                 new Bloques("minecraft:structure_void", new List<byte>(new byte[] { 217 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 31, 91, 96), true, Obtenciones.Survival),
                 new Bloques("minecraft:sugar_cane", new List<byte>(new byte[] { 83 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 149, 193, 101), true, Obtenciones.Survival),
                 new Bloques("minecraft:sunflower", new List<byte>(new byte[] { 175 }), new List<byte>(new byte[] { 0, 8, 6, 7, 14, 15 }), Color.FromArgb(255, 234, 198, 34)/*Color.FromArgb(255, 201, 181, 36)*/, true, Obtenciones.Survival),
                 new Bloques("minecraft:tall_grass", new List<byte>(new byte[] { 175 }), new List<byte>(new byte[] { 2, 10 }), Color.FromArgb(255, 90, 214, 35), true, Obtenciones.Survival),
                 new Bloques("minecraft:tall_sea_grass", null, null, Color.FromArgb(255, 46, 118, 4), true, Obtenciones.Survival, true),
-                new Bloques("minecraft:tall_seagrass", null, null, Color.FromArgb(255, 46, 118, 4), true, Obtenciones.Survival),
+                new Bloques("minecraft:tall_seagrass", null, null, Color.FromArgb(255, 46, 118, 3), true, Obtenciones.Survival),
                 new Bloques("minecraft:terracotta", new List<byte>(new byte[] { 172 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 151, 93, 67), false, Obtenciones.Survival),
                 new Bloques("minecraft:three_turtle_eggs", null, null, Color.FromArgb(255, 226, 225, 189), true, Obtenciones.Survival),
                 new Bloques("minecraft:tnt", new List<byte>(new byte[] { 46 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 170, 93, 71), true, Obtenciones.Survival),
@@ -878,15 +975,16 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:trapped_chest", new List<byte>(new byte[] { 146 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 119, 88, 42), true, Obtenciones.Survival),
                 new Bloques("minecraft:tripwire", new List<byte>(new byte[] { 132 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(226, 129, 129, 129), true, Obtenciones.Survival),
                 new Bloques("minecraft:tripwire_hook", new List<byte>(new byte[] { 131 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 139, 129, 114), true, Obtenciones.Survival),
-                new Bloques("minecraft:tube_coral", null, null, Color.FromArgb(255, 48, 83, 197), false, Obtenciones.Survival),
-                new Bloques("minecraft:tube_coral_block", null, null, Color.FromArgb(255, 49, 87, 207), false, Obtenciones.Survival),
+                new Bloques("minecraft:tube_coral", null, null, Color.FromArgb(255, 48, 83, 196), false, Obtenciones.Survival),
+                new Bloques("minecraft:tube_coral_block", null, null, Color.FromArgb(255, 49, 87, 206), false, Obtenciones.Survival),
                 new Bloques("minecraft:tube_coral_fan", null, null, Color.FromArgb(255, 51, 92, 209), false, Obtenciones.Survival),
+                new Bloques("minecraft:tube_coral_wall_fan", null, null, Color.FromArgb(255, 51, 92, 208), false, Obtenciones.Survival),
                 new Bloques("minecraft:turtle_egg", null, null, Color.FromArgb(255, 227, 225, 185), true, Obtenciones.Survival),
                 new Bloques("minecraft:two_turtle_eggs", null, null, Color.FromArgb(255, 225, 226, 190), true, Obtenciones.Survival),
                 new Bloques("minecraft:vine", new List<byte>(new byte[] { 106 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 58, 136, 65), true, Obtenciones.Survival),
                 new Bloques("minecraft:void_air", null, null, Color.FromArgb(0, 1, 1, 1), true, Obtenciones.Survival),
                 new Bloques("minecraft:wall_banner", null, null, Color.FromArgb(255, 236, 235, 236), true, Obtenciones.Survival),
-                new Bloques("minecraft:wall_sign", null, null, Color.FromArgb(255, 158, 130, 78), true, Obtenciones.Survival),
+                new Bloques("minecraft:wall_sign", new List<byte>(new byte[] { 68 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 158, 130, 78), true, Obtenciones.Survival),
                 new Bloques("minecraft:wall_torch", null, null, Color.FromArgb(255, 129, 106, 58), true, Obtenciones.Survival),
                 new Bloques("minecraft:water", new List<byte>(new byte[] { 9 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(223, 47, 67, 244), true, Obtenciones.Survival),
                 new Bloques("minecraft:wet_sponge", new List<byte>(new byte[] { 19 }), new List<byte>(new byte[] { 1 }), Color.FromArgb(255, 160, 159, 63), false, Obtenciones.Survival),
@@ -911,25 +1009,35 @@ namespace Minecraft_Tools
                 new Bloques("minecraft:yellow_carpet", new List<byte>(new byte[] { 171 }), new List<byte>(new byte[] { 4 }), Color.FromArgb(255, 248, 198, 40), true, Obtenciones.Survival),
                 new Bloques("minecraft:yellow_concrete", new List<byte>(new byte[] { 251 }), new List<byte>(new byte[] { 4 }), Color.FromArgb(255, 241, 175, 21), false, Obtenciones.Survival),
                 new Bloques("minecraft:yellow_concrete_powder", new List<byte>(new byte[] { 252 }), new List<byte>(new byte[] { 4 }), Color.FromArgb(255, 233, 199, 55), false, Obtenciones.Survival),
-                new Bloques("minecraft:yellow_coral", null, null, Color.FromArgb(255, 216, 200, 66), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:yellow_coral", null, null, Color.FromArgb(255, 216, 200, 65), false, Obtenciones.Survival, true),
                 new Bloques("minecraft:yellow_coral_fan", null, null, Color.FromArgb(255, 201, 171, 58), true, Obtenciones.Survival, true),
-                new Bloques("minecraft:yellow_coral_plant", null, null, Color.FromArgb(255, 209, 186, 63), true, Obtenciones.Survival, true),
-                new Bloques("minecraft:yellow_dead_coral", null, null, Color.FromArgb(255, 134, 126, 122), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:yellow_coral_plant", null, null, Color.FromArgb(255, 209, 186, 62), true, Obtenciones.Survival, true),
+                new Bloques("minecraft:yellow_dead_coral", null, null, Color.FromArgb(255, 134, 126, 119), false, Obtenciones.Survival, true),
                 new Bloques("minecraft:yellow_glazed_terracotta", new List<byte>(new byte[] { 239 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 234, 192, 89), false, Obtenciones.Survival),
                 new Bloques("minecraft:yellow_shulker_box", new List<byte>(new byte[] { 223 }), new List<byte>(new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }), Color.FromArgb(255, 248, 189, 29), false, Obtenciones.Survival),
                 new Bloques("minecraft:yellow_stained_glass", new List<byte>(new byte[] { 95 }), new List<byte>(new byte[] { 4 }), Color.FromArgb(194, 229, 229, 50), true, Obtenciones.Survival),
                 new Bloques("minecraft:yellow_stained_glass_pane", new List<byte>(new byte[] { 160 }), new List<byte>(new byte[] { 4 }), Color.FromArgb(163, 228, 228, 51), true, Obtenciones.Survival),
                 new Bloques("minecraft:yellow_terracotta", new List<byte>(new byte[] { 159 }), new List<byte>(new byte[] { 4 }), Color.FromArgb(255, 186, 133, 35), false, Obtenciones.Survival),
-                new Bloques("minecraft:yellow_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 4 }), Color.FromArgb(255, 241, 175, 21), true, Obtenciones.Survival),
+                new Bloques("minecraft:yellow_wall_banner", new List<byte>(new byte[] { 177 }), new List<byte>(new byte[] { 4 }), Color.FromArgb(255, 241, 175, 20), true, Obtenciones.Survival),
                 new Bloques("minecraft:yellow_wool", new List<byte>(new byte[] { 35 }), new List<byte>(new byte[] { 4 }), Color.FromArgb(255, 249, 198, 40), false, Obtenciones.Survival),
                 new Bloques("minecraft:zombie_head", new List<byte>(new byte[] { 144 }), new List<byte>(new byte[] { 2 }), Color.FromArgb(255, 76, 112, 58), true, Obtenciones.Survival),
-                new Bloques("minecraft:zombie_wall_head", null, null, Color.FromArgb(255, 76, 111, 58), true, Obtenciones.Survival)
+                new Bloques("minecraft:zombie_wall_head", null, null, Color.FromArgb(255, 76, 111, 58), true, Obtenciones.Survival),
 
-                // TODO: move here the obsolete blocks for compatibility.
+                // TODO: move here the rest of the old obsolete blocks for backwards compatibility.
+                
+                new Bloques("minecraft:acacia_bark", null, null, null, Color.FromArgb(255, 104, 99, 89), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:birch_bark", null, null, null, Color.FromArgb(255, 206, 206, 201), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:dark_oak_bark", null, null, null, Color.FromArgb(255, 51, 41, 23), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:jungle_bark", null, null, null, Color.FromArgb(255, 86, 68, 27), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:kelp_top", null, null, null, Color.FromArgb(255, 88, 142, 44), true, Obtenciones.Survival, true),
+                new Bloques("minecraft:melon_block", null, null, null, Color.FromArgb(255, 141, 146, 35), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:oak_bark", null, null, null, Color.FromArgb(255, 101, 81, 50), false, Obtenciones.Survival, true),
+                new Bloques("minecraft:portal", null, null, null, Color.FromArgb(229, 91, 13, 192), true, Obtenciones.Creative, true),
+                new Bloques("minecraft:prismarine_bricks_slab", null, null, null, Color.FromArgb(255, 98, 158, 140), true, Obtenciones.Survival, true),
+                new Bloques("minecraft:prismarine_bricks_stairs", null, null, null, Color.FromArgb(255, 99, 159, 141), true, Obtenciones.Survival, true),
+                new Bloques("minecraft:spruce_bark", null, null, null, Color.FromArgb(255, 45, 29, 12), false, Obtenciones.Survival, true),
 
-                // ...
-
-
+                // TODO: update the textures, since some have changed and also it's average color.
             };
 
             /// <summary>
@@ -1020,6 +1128,18 @@ namespace Minecraft_Tools
                                 Diccionario_Índice_Nombre.Add(Bloque.Índice, Bloque.Nombre_1_13);
                             }
                             else MessageBox.Show(Bloque.Nombre_1_13, "Repeated block index");
+                            if (!Diccionario_Color_ARGB_Índice.ContainsKey(Bloque.Color_ARGB))
+                            {
+                                Diccionario_Color_ARGB_Índice.Add(Bloque.Color_ARGB, Bloque.Índice);
+                                Diccionario_Índice_Color_ARGB.Add(Bloque.Índice, Bloque.Color_ARGB);
+                            } // 2018_10_10_18_17_07_660 Update.
+                            else MessageBox.Show(Bloque.Nombre_1_13, "Repeated block color");
+                            if (!Diccionario_Código_Hash_Color_Índice.ContainsKey(Bloque.Código_Hash_Color))
+                            {
+                                Diccionario_Código_Hash_Color_Índice.Add(Bloque.Código_Hash_Color, Bloque.Índice);
+                                Diccionario_Índice_Código_Hash_Color.Add(Bloque.Índice, Bloque.Código_Hash_Color);
+                            } // 2018_10_10_18_00_11_276 Update.
+                            else MessageBox.Show(Bloque.Nombre_1_13, "Repeated block hash color");
                             Diccionario_Bloques_Índices_Colores.Add(Bloque.Índice, Bloque.Color_ARGB);
                             if (Bloque.Lista_ID != null && Bloque.Lista_ID.Count > 0 && Bloque.Lista_Data != null && Bloque.Lista_Data.Count > 0)
                             {
@@ -1769,6 +1889,11 @@ namespace Minecraft_Tools
                 return Información_Nivel;
             }
 
+            /// <summary>
+            /// Loads the most relevant level information inside a new structure.
+            /// </summary>
+            /// <param name="Ruta">Any valid path to a Minecraft world or it's level file.</param>
+            /// <returns>Returns a new structure filled with information about the loaded level.</returns>
             internal static Información_Niveles Obtener_Información_Nivel(string Ruta)
             {
                 try
@@ -1963,15 +2088,37 @@ namespace Minecraft_Tools
         [StructLayout(LayoutKind.Sequential)]
         internal struct Posiciones_Jugadores
         {
+            /// <summary>
+            /// The X position of a player.
+            /// </summary>
             internal double X;
+            /// <summary>
+            /// The Y position of a player.
+            /// </summary>
             internal double Y;
+            /// <summary>
+            /// The Z position of a player.
+            /// </summary>
             internal double Z;
+            /// <summary>
+            /// The dimension a player is in. 0 = Overworld, -1 = Nether, +1 = The End.
+            /// </summary>
+            internal int Dimesión;
 
             internal Posiciones_Jugadores(double X, double Y, double Z)
             {
                 this.X = X;
                 this.Y = Y;
                 this.Z = Z;
+                this.Dimesión = 0; // Default is Overworld.
+            }
+
+            internal Posiciones_Jugadores(double X, double Y, double Z, int Dimesión)
+            {
+                this.X = X;
+                this.Y = Y;
+                this.Z = Z;
+                this.Dimesión = Dimesión; // Set this to don't send a player to a wrong dimension.
             }
 
             internal static Posiciones_Jugadores Default()
@@ -1980,11 +2127,12 @@ namespace Minecraft_Tools
                 Posición_Jugador.X = 0d;
                 Posición_Jugador.Y = 0d;
                 Posición_Jugador.Z = 0d;
+                Posición_Jugador.Dimesión = 0;
                 return Posición_Jugador;
             }
 
             /// <summary>
-            /// Extracts the current positions of all the players registered with the current world.
+            /// Extracts the current positions of all the players registered within the current world.
             /// </summary>
             /// <param name="Ruta">A valid Minecraft world path, or to it's "players" subfolder.</param>
             /// <returns>Returns a dictionary with the current positions of all the players in a Minecraft world. Returns null on any error.</returns>
@@ -2063,20 +2211,29 @@ namespace Minecraft_Tools
                                             }
                                             if (Árbol != null && Árbol.Root != null && Árbol.Root.Keys != null && Árbol.Root.Keys.Count > 0)
                                             {
+                                                Posiciones_Jugadores Posición_Jugador = new Posiciones_Jugadores();
+                                                string Nombre = Path.GetFileNameWithoutExtension(Ruta_Jugador);
+                                                while (Diccionario_Posiciones_Jugadores.ContainsKey(Nombre)) Nombre += "_";
                                                 foreach (string Clave in Árbol.Root.Keys)
                                                 {
                                                     if (string.Compare(Clave, "Pos", true) == 0)
                                                     {
-                                                        TagNodeList Nodo_Lista = Árbol.Root[Clave] as TagNodeList;
+                                                        TagNodeList Nodo_Lista = Árbol.Root[Clave].ToTagList();
                                                         if (Nodo_Lista != null && Nodo_Lista != null && Nodo_Lista.Count >= 3)
                                                         {
-                                                            string Nombre = Path.GetFileNameWithoutExtension(Ruta_Jugador);
-                                                            while (Diccionario_Posiciones_Jugadores.ContainsKey(Nombre)) Nombre += "_";
-                                                            Diccionario_Posiciones_Jugadores.Add(Nombre, new Posiciones_Jugadores((double)Nodo_Lista[0].ToTagDouble(), (double)Nodo_Lista[1].ToTagDouble(), (double)Nodo_Lista[2].ToTagDouble()));
-                                                            break;
+                                                            Posición_Jugador.X = (double)Nodo_Lista[0].ToTagDouble();
+                                                            Posición_Jugador.Y = (double)Nodo_Lista[1].ToTagDouble();
+                                                            Posición_Jugador.Z = (double)Nodo_Lista[2].ToTagDouble();
+                                                            Nodo_Lista = null;
                                                         }
                                                     }
+                                                    if (string.Compare(Clave, "Dimension", true) == 0)
+                                                    {
+                                                        Posición_Jugador.Dimesión = Árbol.Root[Clave].ToTagInt();
+                                                    }
                                                 }
+                                                Diccionario_Posiciones_Jugadores.Add(Nombre, Posición_Jugador);
+                                                Árbol = null;
                                             }
                                             Lector.Close();
                                             Lector.Dispose();
@@ -2250,6 +2407,12 @@ namespace Minecraft_Tools
             return new Dictionary<string, string>();
         }
 
+        /// <summary>
+        /// Obtains the positions of the available regions from the specified dimension. This should never return a null list.
+        /// </summary>
+        /// <param name="Ruta_Regiones">A valid directory path that contains region files.</param>
+        /// <param name="Rectángulo_Límites">The maximum square dimensions of that dimension.</param>
+        /// <returns>Returns a list with the positions of all the found region files. This list should never be null, although it might be empty.</returns>
         internal static List<Point> Obtener_Rutas_Regiones(string Ruta_Regiones, out Rectangle Rectángulo_Límites)
         {
             Rectángulo_Límites = new Rectangle(int.MaxValue, int.MaxValue, int.MinValue, int.MinValue);

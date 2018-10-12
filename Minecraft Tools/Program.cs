@@ -10,6 +10,7 @@ using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,7 +21,7 @@ namespace Minecraft_Tools
         /// <summary>
         /// The Windows registry build date, used to know if the older settings should be deleted.
         /// </summary>
-        internal static readonly string Texto_Fecha = "2018_10_05_01_59_59_517";
+        internal static readonly string Texto_Fecha = "2018_10_11_21_05_57_350";
         /// <summary>
         /// The Minecraft version that most tools of this application will support.
         /// </summary>
@@ -371,6 +372,29 @@ namespace Minecraft_Tools
             return ~CRC_32; // Return the calculated bits inverted (if it's 0xFFFFFFFF will return 0).
         }
 
+        /// <summary>
+        /// Reverses the order of the words in any string, and turns the first letter to uppercase.
+        /// </summary>
+        /// <param name="Nombre">Any valid string with some words.</param>
+        /// <returns>The string with it's words in inverted order. Returns null on any error.</returns>
+        internal static string Obtener_Nombre_Invertido(string Nombre)
+        {
+            try
+            {
+                string Nombre_Invertido = null;
+                string[] Matriz_Palabras = Nombre.ToLowerInvariant().Replace(' ', '_').Split(new string[] { "_" }, StringSplitOptions.RemoveEmptyEntries);
+                for (int Índice_Palabra = Matriz_Palabras.Length - 1; Índice_Palabra >= 0; Índice_Palabra--)
+                {
+                    Nombre_Invertido += Matriz_Palabras[Índice_Palabra] + (Índice_Palabra > 0 ? "_" : null);
+                }
+                Nombre = Nombre.Substring(0, 1).ToUpperInvariant() + Nombre.Substring(1).Replace('_', ' ');
+                Nombre_Invertido = Nombre_Invertido.Substring(0, 1).ToUpperInvariant() + Nombre_Invertido.Substring(1).Replace('_', ' ');
+                return Nombre_Invertido;
+            }
+            catch { }
+            return null;
+        }
+
         internal static string Obtener_Nombre_Temporal()
         {
             try
@@ -465,6 +489,61 @@ namespace Minecraft_Tools
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
             return Nombre;
+        }
+        
+        /// <summary>
+        /// Checks if all the image resources of a folder are in 32 bits with alpha format. Note: windows might say some images are of 8 bits with palette and .NET say they are 32 bits with alpha, so I'm not sure which one should be trusted in this.
+        /// </summary>
+        /// <param name="Ruta">Any valid directory path that contains valid images.</param>
+        internal static void Verificar_Texturas_32_Bits_Alfa(string Ruta)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(Ruta) && Directory.Exists(Ruta))
+                {
+                    string[] Matriz_Rutas = Directory.GetFiles(Ruta, "*", SearchOption.TopDirectoryOnly);
+                    if (Matriz_Rutas != null && Matriz_Rutas.Length > 0)
+                    {
+                        List<string> Lista_Rutas = new List<string>();
+                        foreach (string Ruta_Imagen in Matriz_Rutas)
+                        {
+                            try
+                            {
+                                FileStream Lector = new FileStream(Ruta_Imagen, FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite);
+                                Image Imagen_Original = null;
+                                try { Imagen_Original = Image.FromStream(Lector, false, false); }
+                                catch { Imagen_Original = null; }
+                                if (Imagen_Original != null)
+                                {
+                                    if (Imagen_Original.PixelFormat != System.Drawing.Imaging.PixelFormat.Format32bppArgb)
+                                    {
+                                        Lista_Rutas.Add(Ruta_Imagen);
+                                    }
+                                    Imagen_Original.Dispose();
+                                    Imagen_Original = null;
+                                }
+                                else Lista_Rutas.Add(Ruta_Imagen);
+                                Lector.Close();
+                                Lector.Dispose();
+                                Lector = null;
+                            }
+                            catch (Exception Excepción)
+                            {
+                                Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null);
+                                MessageBox.Show(Ruta_Imagen, "Error");
+                                continue;
+                            }
+                        }
+                        if (Lista_Rutas.Count > 0)
+                        {
+                            if (Lista_Rutas.Count > 1) Lista_Rutas.Sort();
+                            File.WriteAllLines(Program.Obtener_Ruta_Temporal_Escritorio() + ".txt", Lista_Rutas.ToArray(), Encoding.Unicode);
+                        }
+                        MessageBox.Show(Lista_Rutas.Count.ToString(), "Done");
+                    }
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
         }
 
         /// <summary>
@@ -717,6 +796,24 @@ namespace Minecraft_Tools
             }
             catch (Exception Excepción) { Application.OnThreadException(Excepción); }
             return "??-??-????, ??:??:??.???";
+        }
+
+        internal static string Traducir_Intervalo_Horas_Minutos_Segundos(TimeSpan Intervalo)
+        {
+            try
+            {
+                string Horas = Intervalo.Hours.ToString();
+                string Minutos = Intervalo.Minutes.ToString();
+                string Segundos = Intervalo.Seconds.ToString();
+                string Milisegundos = Intervalo.Milliseconds.ToString();
+                while (Horas.Length < 2) Horas = "0" + Horas;
+                while (Minutos.Length < 2) Minutos = "0" + Minutos;
+                while (Segundos.Length < 2) Segundos = "0" + Segundos;
+                while (Milisegundos.Length < 3) Milisegundos = "0" + Milisegundos;
+                return Horas + ":" + Minutos + ":" + Segundos + "." + Milisegundos;
+            }
+            catch (Exception Excepción) { Application.OnThreadException(Excepción); }
+            return "00:00:00.000";
         }
 
         internal static string Traducir_Intervalo_Minutos_Segundos(TimeSpan Intervalo)
@@ -2018,7 +2115,7 @@ namespace Minecraft_Tools
                         return;
                     }
                 }
-                Minecraft_Splashes.Lista_Líneas.Add("Now with " + Program.Traducir_Número(Minecraft_Splashes.Lista_Líneas.Count + 1) + " splashes!"); // Add an extra splash that tells how many there are (counting itself).
+                Minecraft_Splashes.Lista_Líneas.Insert(0, "Now with " + Program.Traducir_Número(Minecraft_Splashes.Lista_Líneas.Count) + " splashes!"); // Add an extra splash that tells how many there are.
                 Copias_Seguridad.Iniciar_Copias_Seguridad();
                 Lista_Caracteres_Prohibidos.AddRange(Path.GetInvalidPathChars());
                 Lista_Caracteres_Prohibidos.AddRange(Path.GetInvalidFileNameChars());

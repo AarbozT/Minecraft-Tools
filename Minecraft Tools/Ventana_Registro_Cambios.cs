@@ -93,7 +93,31 @@ namespace Minecraft_Tools
                     "",
                     ""
                 }),*/
-                new Cambios(new DateTime(), "1.0.0.0", new string[]
+                new Cambios(new DateTime(2018, 10, 11), "1.0.0.0", new string[]
+                {
+                    "Added a lot of the old Minecraft splashes, even from it's other versions.",
+                    "Added more than 500 custom splashes, making the Minecraft original ones to be hidden for now.",
+                    "Added a new color and shadow to the splash texts.",
+                    "Added a new tool for converting 1.13+ worlds to 1.12.2-, meaning some blocks won't be there yet, but might be very useful for several purposes.",
+                    "Improved the block information viewer, now middle clicking will copy it's 1.13+ name and now it can sort the blocks with it's names inverted, also the ID now works.",
+                    "Recolored the texture \"minecraft_melon_stem.png\" because by mistake it was on grayscale.",
+                    "Now pressing a letter between A and Z will go to the first block starting with that letter on the block information viewer.",
+                    "Added a lot of new functions to help in the conversion from 1.13+ to 1.12.2-. Also done the first successful conversion.",
+                    "Added for each block it's Minecraft category tag from the creative inventory, so now they will be able to be sorted in the same groups like Minecraft.",
+                    "Added a new window to see all the donations to Jupisoft, but at least for now no one has ever donated yet, so the new window is empty.",
+                    "Added a list with all the possible NBT properties of all the Minecraft 1.13.1 blocks, very useful for the new 1.12.2- conversor or just for learning them.",
+                    "Improved even more the block information viewer, now when pressing a letter it will navigate on the first or last block starting with it, but from the selected column.",
+                    "Added full support for the 37 new blocks from Minecraft 1.13.1, including it's new textures and average colors, meaning the Realistic 2D world viewer will support them.",
+                    "Found a few hundreds of images in the resources that weren't 32 bits with alpha, so now all have been reconverted properly into the specified format.",
+                    "Finished a working version of the 1.13+ to 1.12.2- world converter, and is better than expected, even signs save it's messages.",
+                    "Fixed dozens of incorrect block metadata (Data values), like orientation, state, etc. But it might be more blocks with incorrect conversion yet.",
+                    "Added 4 test options to delete the original world water, lava, stones and dirt, which might be very interesting and dangerous because of the falling chain reactions.",
+                    "The source code of the last tool could be used to port back levels from 1.13+ to Java edition, but also to other platforms with a bit of recoding and adapting.",
+                    "Now the splash count text (without counting itself) will only show once at the start of the application instead of also randomly.",
+                    "Added full support for the Nether and The End dimensions in the 1.12.2- converter and also a lot of awesome and cool test options, so check them out.",
+                    "Added special world types like wool, concrete or ores for the 1.13+ to 1.12.2- converter, which finally is fully functional.",
+                }),
+                new Cambios(new DateTime(2018, 10, 4), "1.0.0.0", new string[]
                 {
                     "Deleted the old background image based on a Minecraft launcher file called \"bg.png\", which has inconsistency errors on the oversized pixel borders.",
                     "Added a new function called \"Crear_Imagen_Mosaico_Fondo()\" which generated a new background image to be displayed as a mosaic, based on the dirt block texture.",
@@ -103,7 +127,6 @@ namespace Minecraft_Tools
                     "Deleted about 300 png images from the resources containing ASCII characters, because they were repeated after the previous update.",
                     "Added a new function to delete a certain color of any image, used for making transparent the villager trade chart from the Minecraft wiki.",
                     "Finished (for now) the tool Villager tradings viewer, which has an enhanced version of the image from the Minecraft wiki, now with multiple background colors.",
-                    "",
                 }),
                 new Cambios(new DateTime(2018, 9, 27), "1.0.0.0", new string[]
                 {
