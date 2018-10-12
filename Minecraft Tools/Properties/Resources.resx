@@ -211,9 +211,6 @@
   <data name="minecraft_oak_slab" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_oak_slab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Item_compass_28" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_compass_28.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -232,6 +229,9 @@
   <data name="Item_beetroot_seeds" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_beetroot_seeds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_fire_coral_wall_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_fire_coral_wall_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Item_cocoa_beans" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_cocoa_beans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -249,9 +249,6 @@
   </data>
   <data name="Item_golden_apple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_golden_apple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Visor_Skins_3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Visor_Skins_3D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_clock_57" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_clock_57.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -541,6 +538,9 @@
   <data name="minecraft_gray_concrete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_gray_concrete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_dead_bubble_coral_wall_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_bubble_coral_wall_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="minecraft_dark_oak_log" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_dark_oak_log.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -676,8 +676,8 @@
   <data name="minecraft_granite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_granite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_light_gray_shulker_box" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_light_gray_shulker_box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="David_Maeso_Green_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\David_Maeso_Green_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_polished_granite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_polished_granite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -711,6 +711,9 @@
   </data>
   <data name="minecraft_yellow_coral" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_yellow_coral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_dead_horn_coral_wall_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_horn_coral_wall_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Excepción_Gris" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Excepción_Gris.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -829,6 +832,9 @@
   <data name="Item_leather_boots_overlay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_leather_boots_overlay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_dead_bubble_coral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_bubble_coral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Item_chicken" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_chicken.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -895,6 +901,9 @@
   <data name="Item_elytra" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_elytra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Animación_Agua_Fluyendo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Animación_Agua_Fluyendo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Item_empty_armor_slot_boots" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_empty_armor_slot_boots.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -928,8 +937,14 @@
   <data name="minecraft_light_gray_bed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_light_gray_bed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_crafting_table" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_crafting_table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Hermitcraft_Skin_GoodTimeWithScar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hermitcraft_Skin_GoodTimeWithScar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Controles_TextBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Controles_TextBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_leather_helmet_overlay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_leather_helmet_overlay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1045,8 +1060,8 @@
   <data name="mc_char_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mc_char_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Controles_TextBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Controles_TextBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Item_iron_boots" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_iron_boots.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="David_Maeso_Alchemy_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\David_Maeso_Alchemy_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1093,8 +1108,8 @@
   <data name="minecraft_chorus_flower" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_chorus_flower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_stone_brick_slab" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_stone_brick_slab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minecraft_dead_tube_coral_wall_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_tube_coral_wall_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_compass_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_compass_13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1120,6 +1135,9 @@
   <data name="Item_firework_star" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_firework_star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_pink_wall_banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_pink_wall_banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Item_map_filled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_map_filled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1128,6 +1146,9 @@
   </data>
   <data name="Thanks_Monster_High" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thanks_Monster_High.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_attached_melon_stem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_attached_melon_stem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_comparator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_comparator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1186,6 +1207,9 @@
   <data name="minecraft_purpur_slab" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_purpur_slab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_compass_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_compass_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Item_enchanted_book" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_enchanted_book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1209,6 +1233,9 @@
   </data>
   <data name="minecraft_acacia_trapdoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_acacia_trapdoor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_dead_brain_coral_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_brain_coral_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_orange_terracotta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_orange_terracotta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1237,8 +1264,8 @@
   <data name="Jupisoft_Satellites_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Jupisoft_Satellites_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_compass_31" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_compass_31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minecraft_light_gray_stained_glass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_light_gray_stained_glass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_compass_12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_compass_12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1248,9 +1275,6 @@
   </data>
   <data name="minecraft_tube_coral_block" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_tube_coral_block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minecraft_nether_bricks" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_nether_bricks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_spruce_fence_gate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_spruce_fence_gate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1294,14 +1318,11 @@
   <data name="Jupisoft_Goddess_Hathor_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Jupisoft_Goddess_Hathor_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_petrified_oak_slab" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_petrified_oak_slab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Item_compass_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_compass_11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Shield_skull" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shield_skull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minecraft_green_concrete_powder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_green_concrete_powder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_tube_coral" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_tube_coral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1477,9 +1498,6 @@
   <data name="minecraft_polished_diorite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_polished_diorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Shield_square_top_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Shield_square_top_right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Fratelli_Stellari_Arrival_Prophecy_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fratelli_Stellari_Arrival_Prophecy_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1509,6 +1527,9 @@
   </data>
   <data name="minecraft_yellow_banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_yellow_banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_petrified_oak_slab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_petrified_oak_slab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_ladder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_ladder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1579,6 +1600,9 @@
   <data name="Item_book" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_kelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_kelp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="minecraft_brown_mushroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_brown_mushroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1620,9 +1644,6 @@
   </data>
   <data name="minecraft_compass_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_compass_11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hermitcraft_Skin_ZombieCleo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hermitcraft_Skin_ZombieCleo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Memoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Memoria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1690,8 +1711,8 @@
   <data name="minecraft_birch_fence_gate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_birch_fence_gate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Animación_Agua_Fluyendo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Animación_Agua_Fluyendo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Note_Blocks_Note_19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Note_Blocks_Note_19.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_stone_sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_stone_sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1786,6 +1807,9 @@
   <data name="Thanks_MrLesk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thanks_MrLesk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_tube_coral_wall_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_tube_coral_wall_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Skin_Pack_Story_Mode_Skin_Pack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Skin_Pack_Story_Mode_Skin_Pack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1816,8 +1840,8 @@
   <data name="Item_slime_ball" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_slime_ball.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_kelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_kelp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Rana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Banner_flower" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Banner_flower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1927,9 +1951,6 @@
   <data name="Item_clock_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_clock_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Item_clock_45" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_clock_45.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Fratelli_Stellari_Aglien_Discomix_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fratelli_Stellari_Aglien_Discomix_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2038,6 +2059,9 @@
   <data name="Item_snowball" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_snowball.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_dead_horn_coral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_horn_coral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Nieve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Nieve.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2065,8 +2089,8 @@
   <data name="Item_shears" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_shears.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Item_mushroom_stew" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_mushroom_stew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minecraft_kelp_plant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_kelp_plant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_zombie_wall_head" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_zombie_wall_head.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -2122,17 +2146,14 @@
   <data name="Cuadrícula_Creación_Resultado_Estandarte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cuadrícula_Creación_Resultado_Estandarte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_azure_bluet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_azure_bluet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Visor_Skins_3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Visor_Skins_3D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_clock_31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_clock_31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_clock_12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_clock_12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Item_iron_boots" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_iron_boots.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_clock_61" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_clock_61.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -2247,6 +2268,9 @@
   </data>
   <data name="Hermitcraft_falsesymmetry" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hermitcraft_falsesymmetry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_gray_wool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_gray_wool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_dirt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_dirt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -2485,6 +2509,9 @@
   <data name="TNT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TNT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_dead_brain_coral_wall_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_brain_coral_wall_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Name_MC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Name_MC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2514,6 +2541,9 @@
   </data>
   <data name="minecraft_jungle_trapdoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_jungle_trapdoor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MCP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MCP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_knowledge_book" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_knowledge_book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -2559,9 +2589,6 @@
   </data>
   <data name="minecraft_magenta_carpet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_magenta_carpet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Item_clock_34" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_clock_34.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cobblestone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cobblestone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -2686,6 +2713,9 @@
   <data name="Banner_square_top_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Banner_square_top_left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_azure_bluet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_azure_bluet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="minecraft_potted_blue_orchid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_potted_blue_orchid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2754,9 +2784,6 @@
   </data>
   <data name="Resource_Pack_Steampunk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Resource_Pack_Steampunk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mc_char_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mc_char_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Jupisoft_Satellites_3_0_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Jupisoft_Satellites_3_0_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -2851,6 +2878,9 @@
   <data name="minecraft_clock_47" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_clock_47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_stone_brick_slab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_stone_brick_slab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Item_ruby" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_ruby.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2941,6 +2971,9 @@
   <data name="Item_golden_carrot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_golden_carrot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_brain_coral_wall_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_brain_coral_wall_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Netherrack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Netherrack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -3015,6 +3048,9 @@
   </data>
   <data name="Skin_Pack_Minecon_2015_Skin_Pack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Skin_Pack_Minecon_2015_Skin_Pack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_dead_horn_coral_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_horn_coral_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Animación_Agua" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Animación_Agua.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -3193,9 +3229,6 @@
   <data name="Item_empty_armor_slot_shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_empty_armor_slot_shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Mundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="minecraft_mossy_stone_bricks" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_mossy_stone_bricks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -3253,17 +3286,14 @@
   <data name="Procesador" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Procesador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="David_Maeso_Green_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\David_Maeso_Green_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="David_Maeso_Project_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\David_Maeso_Project_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_red_wool" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_red_wool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tinte_Negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tinte_Negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minecraft_dead_fire_coral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_fire_coral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_diorite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_diorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -3318,6 +3348,9 @@
   </data>
   <data name="Fratelli_Stellari_Le_Sciantose_Aliene_Djonemesis_Lilly_Remix_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fratelli_Stellari_Le_Sciantose_Aliene_Djonemesis_Lilly_Remix_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_compass_31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_compass_31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NBT_Byte_Array" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NBT_Byte_Array.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -3439,17 +3472,14 @@
   <data name="Skin_Pack_Halloween_Charity_Skin_Pack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Skin_Pack_Halloween_Charity_Skin_Pack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_clock_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_clock_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="minecraft_quartz_stairs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_quartz_stairs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Banner_half_horizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Banner_half_horizontal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Skin_Pack_Festive_Skin_Pack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Skin_Pack_Festive_Skin_Pack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Shield_square_top_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shield_square_top_right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_dark_prismarine_stairs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_dark_prismarine_stairs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -3574,11 +3604,11 @@
   <data name="minecraft_red_wall_banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_red_wall_banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_bubble_coral_wall_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_bubble_coral_wall_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="minecraft_iron_bars" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_iron_bars.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Item_compass_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_compass_11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_yellow_glazed_terracotta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_yellow_glazed_terracotta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -3586,8 +3616,8 @@
   <data name="Item_emerald" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_emerald.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Internet_Explorer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Internet_Explorer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mc_char_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mc_char_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_diamond_horse_armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_diamond_horse_armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -3643,8 +3673,8 @@
   <data name="minecraft_stripped_dark_oak_log" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_stripped_dark_oak_log.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Note_Blocks_Note_19" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Note_Blocks_Note_19.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Skin_Pack_Festive_Skin_Pack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skin_Pack_Festive_Skin_Pack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_dark_prismarine_slab" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_dark_prismarine_slab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -3739,6 +3769,9 @@
   <data name="Jupisoft_Knowledge_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Jupisoft_Knowledge_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_dead_tube_coral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_tube_coral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Corazón" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Corazón.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -3748,8 +3781,8 @@
   <data name="minecraft_stripped_oak_log" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_stripped_oak_log.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_attached_melon_stem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_attached_melon_stem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Item_clock_45" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_clock_45.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_clock_35" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_clock_35.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -3886,6 +3919,9 @@
   <data name="David_Maeso_Sonicscape_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\David_Maeso_Sonicscape_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_dead_brain_coral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_brain_coral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="X_Ray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\X_Ray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -3979,6 +4015,9 @@
   <data name="Item_chainmail_boots" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_chainmail_boots.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_light_gray_shulker_box" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_light_gray_shulker_box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="minecraft_green_concrete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_green_concrete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -4041,6 +4080,9 @@
   </data>
   <data name="minecraft_light_blue_wool" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_light_blue_wool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Candado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Candado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_sugar_cane" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_sugar_cane.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4120,8 +4162,8 @@
   <data name="Item_clock_53" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_clock_53.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MCP" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MCP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Item_clock_34" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_clock_34.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_clock_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_clock_15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4137,6 +4179,9 @@
   </data>
   <data name="minecraft_light_blue_terracotta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_light_blue_terracotta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Item_mushroom_stew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_mushroom_stew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Banner_stripe_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Banner_stripe_left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4249,8 +4294,8 @@
   <data name="Shield_stripe_center" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shield_stripe_center.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_crafting_table" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_crafting_table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minecraft_nether_bricks" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_nether_bricks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_potatoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_potatoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4279,8 +4324,8 @@
   <data name="minecraft_oak_sapling" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_oak_sapling.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_compass_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_compass_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_purpur_block" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_purpur_block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4302,6 +4347,9 @@
   </data>
   <data name="Item_phantom_membrane" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_phantom_membrane.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ordenar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ordenar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_horn_coral_block" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_horn_coral_block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4342,8 +4390,8 @@
   <data name="Item_clock_18" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_clock_18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_smooth_red_sandstone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_smooth_red_sandstone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Hermitcraft_Skin_ZombieCleo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hermitcraft_Skin_ZombieCleo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Thanks_The_FLipside_Forum" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thanks_The_FLipside_Forum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4483,8 +4531,8 @@
   <data name="minecraft_iron_trapdoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_iron_trapdoor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ordenar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ordenar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Item_leather_chestplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_leather_chestplate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_ink_sac" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_ink_sac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4542,6 +4590,9 @@
   </data>
   <data name="minecraft_sticky_piston" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_sticky_piston.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_dead_tube_coral_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_tube_coral_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_clock_22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_clock_22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4609,8 +4660,8 @@
   <data name="minecraft_sand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_sand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Item_leather_chestplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_leather_chestplate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Internet_Explorer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Internet_Explorer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Hermitcraft_Skin_falsesymmetry" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hermitcraft_Skin_falsesymmetry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4623,6 +4674,9 @@
   </data>
   <data name="minecraft_orange_stained_glass_pane" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_orange_stained_glass_pane.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_horn_coral_wall_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_horn_coral_wall_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_lime_terracotta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_lime_terracotta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4705,8 +4759,8 @@
   <data name="minecraft_red_stained_glass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_red_stained_glass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_pink_wall_banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_pink_wall_banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minecraft_clock_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_clock_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_leather" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_leather.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4783,8 +4837,8 @@
   <data name="Gold_Block" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gold_Block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_light_gray_stained_glass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_light_gray_stained_glass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Jupisoft_Lights_And_Shadows_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jupisoft_Lights_And_Shadows_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_compass_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_compass_30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -4951,8 +5005,8 @@
   <data name="Entity_Cat_siamese" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Entity_Cat_siamese.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Candado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Candado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minecraft_smooth_red_sandstone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_smooth_red_sandstone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Shield_circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shield_circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -5119,8 +5173,8 @@
   <data name="minecraft_brown_terracotta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_brown_terracotta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minecraft_gray_wool" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraft_gray_wool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Item_compass_28" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_compass_28.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_purple_coral_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_purple_coral_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -5137,11 +5191,14 @@
   <data name="Banner_mojang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Banner_mojang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Jupisoft_Lights_And_Shadows_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Jupisoft_Lights_And_Shadows_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minecraft_green_concrete_powder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_green_concrete_powder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_compass_18" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_compass_18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_dead_bubble_coral_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_bubble_coral_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minecraft_stone_slab" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_stone_slab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -5275,6 +5332,9 @@
   <data name="Item_rabbit_stew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_rabbit_stew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minecraft_dead_fire_coral_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_fire_coral_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="minecraft_diamond_ore" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_diamond_ore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -5289,6 +5349,9 @@
   </data>
   <data name="minecraft_oak_fence" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_oak_fence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_dead_fire_coral_wall_fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dead_fire_coral_wall_fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -5338,6 +5401,9 @@
   <data name="Item_jungle_door" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_jungle_door.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Tinte_Negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tinte_Negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="minecraft_black_glazed_terracotta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minecraft_black_glazed_terracotta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -5374,7 +5440,52 @@
   <data name="Hermitcraft_Skin_xBCrafted" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hermitcraft_Skin_xBCrafted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Rana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minecraft_acacia_wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_acacia_wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_birch_wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_birch_wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_dark_oak_wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_dark_oak_wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_jungle_wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_jungle_wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_melon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_melon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_nether_portal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_nether_portal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_oak_wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_oak_wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_prismarine_brick_slab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_prismarine_brick_slab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_prismarine_brick_stairs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_prismarine_brick_stairs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_spruce_wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_spruce_wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_stripped_acacia_wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_stripped_acacia_wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_stripped_birch_wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_stripped_birch_wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_stripped_dark_oak_wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_stripped_dark_oak_wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_stripped_jungle_wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_stripped_jungle_wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_stripped_oak_wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_stripped_oak_wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft_stripped_spruce_wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft_stripped_spruce_wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
