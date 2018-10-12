@@ -39,7 +39,7 @@ namespace Minecraft_Tools
             {
                 this.Text = Texto_Título + " - [Follow the instructions below if you want to enable all the secret files]";
                 Botón_Minecraft_Versión_April_Fools_Red.Image = Program.Obtener_Imagen_Color(Color.FromArgb(255, 0, 0));
-                Botón_Minecraft_Versión_April_Fools_Purple.Image = Program.Obtener_Imagen_Color(Color.FromArgb(255, 0, 160));
+                Botón_Minecraft_Versión_April_Fools_Purple.Image = Program.Obtener_Imagen_Color(Color.FromArgb(160, 0, 255));
                 //this.WindowState = FormWindowState.Maximized;
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }

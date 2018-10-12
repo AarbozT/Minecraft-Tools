@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,8 +48,10 @@ namespace Minecraft_Tools
                         {
                             Program.Obtener_Imagen_Miniatura(Program.Obtener_Imagen_Recursos(Minecraft.Bloques.Matriz_Bloques[Índice_Bloque].Recurso), 32, 32, true, false),
                             Minecraft.Bloques.Matriz_Bloques[Índice_Bloque].Nombre,
+                            Program.Obtener_Nombre_Invertido(Minecraft.Bloques.Matriz_Bloques[Índice_Bloque].Nombre),
                             Minecraft.Bloques.Matriz_Bloques[Índice_Bloque].Nombre_1_13,
-                            Minecraft.Bloques.Matriz_Bloques[Índice_Bloque].Lista_ID,
+                            //Program.Traducir_Lista_Variables(Minecraft.Bloques.Matriz_Bloques[Índice_Bloque].Lista_ID),
+                            Minecraft.Bloques.Matriz_Bloques[Índice_Bloque].Lista_ID != null && Minecraft.Bloques.Matriz_Bloques[Índice_Bloque].Lista_ID.Count > 0 ? (int)Minecraft.Bloques.Matriz_Bloques[Índice_Bloque].Lista_ID[0] : -1,
                             Program.Traducir_Lista_Variables(Minecraft.Bloques.Matriz_Bloques[Índice_Bloque].Lista_Data),
                             Minecraft.Bloques.Matriz_Bloques[Índice_Bloque].Color_ARGB,
                             Minecraft.Bloques.Matriz_Bloques[Índice_Bloque].Código_Hash_Color,
@@ -64,12 +67,26 @@ namespace Minecraft_Tools
                     if (DataGridView_Principal.Rows.Count > 0)
                     {
                         this.Text = Texto_Título + " - [Minecraft blocks known: " + Program.Traducir_Número(DataGridView_Principal.Rows.Count) + "]";
-                        DataGridView_Principal.CurrentCell = DataGridView_Principal[0, 0];
+                        DataGridView_Principal.CurrentCell = DataGridView_Principal[Columna_Nombre.Index, 0];
                     }
                 }
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
+
+        /*new Bloques[]
+        {
+            
+            
+                                                                    
+
+
+
+
+
+
+
+        };*/
 
         private void Ventana_Visor_Información_Entidades_Shown(object sender, EventArgs e)
         {
@@ -111,10 +128,54 @@ namespace Minecraft_Tools
                         e.SuppressKeyPress = true;
                         this.Close();
                     }
+                    else if ((e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z) || (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) || (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9))
+                    {
+                        e.Handled = true;
+                        e.SuppressKeyPress = true;
+                        string Tecla = e.KeyCode.ToString();
+                        string Letra = Tecla[Tecla.Length - 1].ToString().ToUpperInvariant();
+                        int Índice_Columna_Actual = DataGridView_Principal.CurrentCell != null ? DataGridView_Principal.CurrentCell.ColumnIndex : Columna_Nombre.Index;
+                        int Índice_Fila_Actual = DataGridView_Principal.CurrentCell != null ? DataGridView_Principal.CurrentCell.RowIndex : -1;
+                        for (int Índice_Fila = 0; Índice_Fila < DataGridView_Principal.Rows.Count; Índice_Fila++)
+                        {
+                            string Nombre = null;
+                            try { Nombre = DataGridView_Principal[Índice_Columna_Actual, Índice_Fila].Value.ToString(); }
+                            catch { Nombre = null; }
+                            if (!string.IsNullOrEmpty(Nombre) && Nombre.StartsWith(Letra))
+                            {
+                                if (Índice_Fila != Índice_Fila_Actual)
+                                {
+                                    DataGridView_Principal.CurrentCell = DataGridView_Principal[Índice_Columna_Actual, Índice_Fila];
+                                    return;
+                                }
+                                else
+                                {
+                                    Índice_Fila_Actual = int.MaxValue;
+                                    break;
+                                }
+                            }
+                        }
+                        if (Índice_Fila_Actual >= int.MaxValue) // Do an inverted search.
+                        {
+                            for (int Índice_Fila = DataGridView_Principal.Rows.Count - 1; Índice_Fila >= 0; Índice_Fila--)
+                            {
+                                string Nombre = null;
+                                try { Nombre = DataGridView_Principal[Índice_Columna_Actual, Índice_Fila].Value.ToString(); }
+                                catch { Nombre = null; }
+                                if (!string.IsNullOrEmpty(Nombre) && Nombre.StartsWith(Letra))
+                                {
+                                    DataGridView_Principal.CurrentCell = DataGridView_Principal[Índice_Columna_Actual, Índice_Fila];
+                                    return;
+                                }
+                            }
+                        }
+                        SystemSounds.Beep.Play(); // Nothing found starting with the pressed letter.
+                    }
                 }
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
+
         private void Barra_Estado_Botón_Excepción_Click(object sender, EventArgs e)
         {
             try
@@ -237,6 +298,27 @@ namespace Minecraft_Tools
             {
                 Depurador.Escribir_Excepción(e.Exception != null ? e.Exception.ToString() : null);
                 e.ThrowException = false;
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
+        private void DataGridView_Principal_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (e.Button == MouseButtons.Middle)
+                {
+                    if (e.ColumnIndex > -1 && e.ColumnIndex < DataGridView_Principal.Columns.Count && e.RowIndex > -1 && e.RowIndex < DataGridView_Principal.Rows.Count)
+                    {
+                        string Nombre = DataGridView_Principal[e.ColumnIndex, e.RowIndex].Value.ToString();
+                        if (!string.IsNullOrEmpty(Nombre))
+                        {
+                            Clipboard.SetText(Nombre);
+                            DataGridView_Principal.CurrentCell = DataGridView_Principal[Columna_Nombre_1_13.Index, e.RowIndex];
+                            SystemSounds.Asterisk.Play();
+                        }
+                    }
+                }
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }

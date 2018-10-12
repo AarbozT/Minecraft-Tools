@@ -63,6 +63,7 @@
             this.DataGridView_Principal = new System.Windows.Forms.DataGridView();
             this.Columna_Icono = new System.Windows.Forms.DataGridViewImageColumn();
             this.Columna_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Columna_Nombre_Invertido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna_Nombre_1_13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna_Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -159,9 +160,9 @@
             this.Barra_Estado_Etiqueta_Sugerencia.Image = global::Minecraft_Tools.Properties.Resources.Ayuda;
             this.Barra_Estado_Etiqueta_Sugerencia.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
             this.Barra_Estado_Etiqueta_Sugerencia.Name = "Barra_Estado_Etiqueta_Sugerencia";
-            this.Barra_Estado_Etiqueta_Sugerencia.Size = new System.Drawing.Size(561, 22);
-            this.Barra_Estado_Etiqueta_Sugerencia.Text = "Tip: soon the information of all the blocks will be complete, so please keep an e" +
-    "ye for any new update.";
+            this.Barra_Estado_Etiqueta_Sugerencia.Size = new System.Drawing.Size(688, 16);
+            this.Barra_Estado_Etiqueta_Sugerencia.Text = "Tip: middle click copies any value and soon all the information of the blocks wil" +
+    "l be complete, so keep an eye for new updates.";
             // 
             // Barra_Estado_Separador_5
             // 
@@ -307,6 +308,7 @@
             this.DataGridView_Principal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Columna_Icono,
             this.Columna_Nombre,
+            this.Columna_Nombre_Invertido,
             this.Columna_Nombre_1_13,
             this.Columna_ID,
             this.Columna_Data,
@@ -336,6 +338,7 @@
             this.DataGridView_Principal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_Principal.Size = new System.Drawing.Size(884, 436);
             this.DataGridView_Principal.TabIndex = 0;
+            this.DataGridView_Principal.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView_Principal_CellMouseDown);
             this.DataGridView_Principal.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.DataGridView_Principal_DataError);
             this.DataGridView_Principal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventana_Visor_Información_Entidades_KeyDown);
             // 
@@ -348,6 +351,7 @@
             this.Columna_Icono.HeaderText = "";
             this.Columna_Icono.Name = "Columna_Icono";
             this.Columna_Icono.ReadOnly = true;
+            this.Columna_Icono.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Columna_Icono.Width = 16;
             // 
             // Columna_Nombre
@@ -355,6 +359,12 @@
             this.Columna_Nombre.HeaderText = "Name";
             this.Columna_Nombre.Name = "Columna_Nombre";
             this.Columna_Nombre.ReadOnly = true;
+            // 
+            // Columna_Nombre_Invertido
+            // 
+            this.Columna_Nombre_Invertido.HeaderText = "Inverted name";
+            this.Columna_Nombre_Invertido.Name = "Columna_Nombre_Invertido";
+            this.Columna_Nombre_Invertido.ReadOnly = true;
             // 
             // Columna_Nombre_1_13
             // 
@@ -364,13 +374,13 @@
             // 
             // Columna_ID
             // 
-            this.Columna_ID.HeaderText = "1.12- ID";
+            this.Columna_ID.HeaderText = "1.12.2- ID";
             this.Columna_ID.Name = "Columna_ID";
             this.Columna_ID.ReadOnly = true;
             // 
             // Columna_Data
             // 
-            this.Columna_Data.HeaderText = "1.12- Data";
+            this.Columna_Data.HeaderText = "1.12.2- Data";
             this.Columna_Data.Name = "Columna_Data";
             this.Columna_Data.ReadOnly = true;
             // 
@@ -470,6 +480,7 @@
         private System.Windows.Forms.DataGridView DataGridView_Principal;
         private System.Windows.Forms.DataGridViewImageColumn Columna_Icono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Columna_Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Columna_Nombre_Invertido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Columna_Nombre_1_13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Columna_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Columna_Data;

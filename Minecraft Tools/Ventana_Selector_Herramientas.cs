@@ -47,7 +47,7 @@ namespace Minecraft_Tools
                 new Herramientas("Automatic skin downloader", Resources.Ordenar, typeof(Ventana_Descargador_Skins_Automático), CheckState.Unchecked),
                 new Herramientas("Backups manager", Resources.Copia_Seguridad, typeof(Ventana_Administrador_Copias_Seguridad), CheckState.Unchecked),
                 new Herramientas("Banner and shield designer", Resources.minecraft_red_banner, typeof(Ventana_Diseñador_Estandartes_Escudos), CheckState.Checked),
-                new Herramientas("Block information", Resources.Controles_TextBox, typeof(Ventana_Información_Bloques), CheckState.Checked),
+                //new Herramientas("Block information", Resources.Controles_TextBox, typeof(Ventana_Información_Bloques), CheckState.Checked),
                 new Herramientas("Block information viewer", Resources.Controles_TextBox, typeof(Ventana_Visor_Información_Bloques), CheckState.Checked),
                 new Herramientas("Block selector", Resources.minecraft_stone, typeof(Ventana_Selector_Bloques), CheckState.Checked),
                 new Herramientas("Change the username", Resources.Usuario, typeof(Ventana_Nombre_Usuario), CheckState.Checked),
@@ -60,6 +60,7 @@ namespace Minecraft_Tools
                 new Herramientas("Full members information", Resources.Xisumavoid, typeof(Ventana_Información_Miembros_Hermitcraft), CheckState.Checked),
                 new Herramientas("Help viewer", Resources.Ayuda, typeof(Ventana_Visor_Ayuda), CheckState.Checked),
                 new Herramientas("Minecraft internal structures exporter", Resources.Subir, typeof(Ventana_Exportador_Estructuras_Internas), CheckState.Unchecked),
+                new Herramientas("Minecraft 1.13+ to 1.12.2- world converter", Resources.Mundo, typeof(Ventana_Conversor_Mundos_1_13_a_1_12_2), CheckState.Checked),
                 new Herramientas("NBT viewer", Resources.NBT_Byte, typeof(Ventana_Visor_NBT), CheckState.Checked),
                 new Herramientas("Note blocks tuner", Resources.minecraft_note_block, typeof(Ventana_Afinador_Bloques_Nota), CheckState.Checked),
                 new Herramientas("Painted structures exporter", Resources.Paleta, typeof(Ventana_Exportador_Estructuras_Pintadas), CheckState.Indeterminate),
@@ -178,6 +179,14 @@ namespace Minecraft_Tools
                         else if (Tipo == typeof(Ventana_Exportador_Estructuras_Internas))
                         {
                             Ventana_Exportador_Estructuras_Internas Ventana = new Ventana_Exportador_Estructuras_Internas();
+                            Ventana.Variable_Siempre_Visible = Siempre_Visible;
+                            Ventana.ShowDialog(Ventana_Superior);
+                            Ventana.Dispose();
+                            Ventana = null;
+                        }
+                        else if (Tipo == typeof(Ventana_Conversor_Mundos_1_13_a_1_12_2))
+                        {
+                            Ventana_Conversor_Mundos_1_13_a_1_12_2 Ventana = new Ventana_Conversor_Mundos_1_13_a_1_12_2();
                             Ventana.Variable_Siempre_Visible = Siempre_Visible;
                             Ventana.ShowDialog(Ventana_Superior);
                             Ventana.Dispose();

@@ -152,7 +152,7 @@ namespace Minecraft_Tools
         internal List<string> Lista_Rutas_Mundos_Minecraft = new List<string>();
         internal List<string> Lista_Rutas_Mundos_Twitch = new List<string>();
 
-        internal static readonly byte[] Matriz_Bytes_DataMappings = new byte[2112]
+        /*internal static readonly byte[] Matriz_Bytes_DataMappings = new byte[2112]
         {
             224, 0, 12, 23, 141, 14, 105, 134, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -251,7 +251,7 @@ namespace Minecraft_Tools
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0
-        };
+        };*/
 
         // Function to decode Minecraft maps based on it's "colors" array, designed for
         // decoded Xbox 360 worlds and generates maps using rainbow colors (for now).
