@@ -103,6 +103,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Agregar {
+            get {
+                object obj = ResourceManager.GetObject("Agregar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Aleatorio {
             get {
                 object obj = ResourceManager.GetObject("Aleatorio", resourceCulture);
@@ -593,6 +603,66 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bloques_concrete {
+            get {
+                object obj = ResourceManager.GetObject("Bloques_concrete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bloques_concrete_powder {
+            get {
+                object obj = ResourceManager.GetObject("Bloques_concrete_powder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bloques_glazed_terracotta {
+            get {
+                object obj = ResourceManager.GetObject("Bloques_glazed_terracotta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bloques_stained_glass {
+            get {
+                object obj = ResourceManager.GetObject("Bloques_stained_glass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bloques_terracotta {
+            get {
+                object obj = ResourceManager.GetObject("Bloques_terracotta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bloques_wool {
+            get {
+                object obj = ResourceManager.GetObject("Bloques_wool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bookshelf {
             get {
                 object obj = ResourceManager.GetObject("Bookshelf", resourceCulture);
@@ -793,6 +863,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CPU {
+            get {
+                object obj = ResourceManager.GetObject("CPU", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Crafting_Table {
             get {
                 object obj = ResourceManager.GetObject("Crafting_Table", resourceCulture);
@@ -843,109 +923,9 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Alban {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Alban", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Aztec {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Aztec", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Aztec2 {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Aztec2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Bomb {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Bomb", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_BurningSkull {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_BurningSkull", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Bust {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Bust", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Courbet {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Courbet", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_DonkeyKong {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_DonkeyKong", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Cuadros_Faithful {
             get {
                 object obj = ResourceManager.GetObject("Cuadros_Faithful", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Fighters {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Fighters", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Graham {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Graham", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -963,149 +943,9 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Kebab {
+        internal static System.Drawing.Bitmap Cuadros_Madera {
             get {
-                object obj = ResourceManager.GetObject("Cuadros_Kebab", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Match {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Match", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Pigscene {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Pigscene", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Plant {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Plant", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Pointer {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Pointer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Pool {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Pool", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Sea {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Sea", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Skeleton {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Skeleton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_SkullAndRoses {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_SkullAndRoses", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Stage {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Stage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Sunset {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Sunset", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Void {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Void", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Wanderer {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Wanderer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Wasteland {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Wasteland", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cuadros_Wither {
-            get {
-                object obj = ResourceManager.GetObject("Cuadros_Wither", resourceCulture);
+                object obj = ResourceManager.GetObject("Cuadros_Madera", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1923,6 +1763,246 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Aldea {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Aldea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Alex {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Alex", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Barco {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Barco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Barco_Mapa {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Barco_Mapa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Barco_Tesoro {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Barco_Tesoro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Cabaña {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Cabaña", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Ciudad {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Ciudad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Ciudad_Elytra {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Ciudad_Elytra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Desconocida {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Desconocida", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Fin {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Fin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Fortaleza {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Fortaleza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Iglú {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Iglú", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Iglú_Sótano {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Iglú_Sótano", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Mansión {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Mansión", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Mina {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Mina", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Monumento {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Monumento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Pirámide {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Pirámide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Ruinas {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Ruinas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Ruinas_Terracotta {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Ruinas_Terracotta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Spawn {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Spawn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Steve {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Steve", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Templo {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Templo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Tesoro {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Tesoro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Tesoro_Vacío {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Tesoro_Vacío", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Excepción {
             get {
                 object obj = ResourceManager.GetObject("Excepción", resourceCulture);
@@ -2313,6 +2393,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GPU {
+            get {
+                object obj = ResourceManager.GetObject("GPU", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Grass {
             get {
                 object obj = ResourceManager.GetObject("Grass", resourceCulture);
@@ -2506,146 +2596,6 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap Hermitcraft_Mumbo {
             get {
                 object obj = ResourceManager.GetObject("Hermitcraft_Mumbo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_BdoubleO100 {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_BdoubleO100", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_falsesymmetry {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_falsesymmetry", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_Hermitcraft_Skin_VintageBeef {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_Hermitcraft_Skin_VintageBeef", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_hypnotizd {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_hypnotizd", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_iJevin {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_iJevin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_impulseSV {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_impulseSV", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_iskall85 {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_iskall85", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_Jessassin {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_Jessassin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_joehillssays {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_joehillssays", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_Keralis1 {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_Keralis1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_Mumbo {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_Mumbo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_Stressmonster101 {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_Stressmonster101", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_Tango {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_Tango", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hermitcraft_Picture_Tinfoilchef {
-            get {
-                object obj = ResourceManager.GetObject("Hermitcraft_Picture_Tinfoilchef", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6743,6 +6693,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Jupisoft {
+            get {
+                object obj = ResourceManager.GetObject("Jupisoft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Jupisoft_16 {
             get {
                 object obj = ResourceManager.GetObject("Jupisoft_16", resourceCulture);
@@ -7613,6 +7573,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Menú_Contextual {
+            get {
+                object obj = ResourceManager.GetObject("Menú_Contextual", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Minecraft {
             get {
                 object obj = ResourceManager.GetObject("Minecraft", resourceCulture);
@@ -7723,6 +7693,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_acacia_sign {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_acacia_sign", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_acacia_slab {
             get {
                 object obj = ResourceManager.GetObject("minecraft_acacia_slab", resourceCulture);
@@ -7746,6 +7726,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_acacia_trapdoor {
             get {
                 object obj = ResourceManager.GetObject("minecraft_acacia_trapdoor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_acacia_wall_sign {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_acacia_wall_sign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7803,6 +7793,36 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_andesite_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_andesite_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_andesite_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_andesite_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_andesite_wall {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_andesite_wall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_anvil {
             get {
                 object obj = ResourceManager.GetObject("minecraft_anvil", resourceCulture);
@@ -7843,9 +7863,39 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_bamboo {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_bamboo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_bamboo_sapling {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_bamboo_sapling", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_banner {
             get {
                 object obj = ResourceManager.GetObject("minecraft_banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_barrel {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_barrel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7896,6 +7946,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_beetroots {
             get {
                 object obj = ResourceManager.GetObject("minecraft_beetroots", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_bell {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_bell", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8003,6 +8063,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_birch_sign {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_birch_sign", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_birch_slab {
             get {
                 object obj = ResourceManager.GetObject("minecraft_birch_slab", resourceCulture);
@@ -8026,6 +8096,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_birch_trapdoor {
             get {
                 object obj = ResourceManager.GetObject("minecraft_birch_trapdoor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_birch_wall_sign {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_birch_wall_sign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8156,6 +8236,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_black_wool {
             get {
                 object obj = ResourceManager.GetObject("minecraft_black_wool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_blast_furnace {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_blast_furnace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8443,6 +8533,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_brick_wall {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_brick_wall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_bricks {
             get {
                 object obj = ResourceManager.GetObject("minecraft_bricks", resourceCulture);
@@ -8676,6 +8776,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_carrots {
             get {
                 object obj = ResourceManager.GetObject("minecraft_carrots", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_cartography_table {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_cartography_table", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -9903,6 +10013,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_cornflower {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_cornflower", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_cracked_stone_bricks {
             get {
                 object obj = ResourceManager.GetObject("minecraft_cracked_stone_bricks", resourceCulture);
@@ -10223,6 +10343,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_dark_oak_sign {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_dark_oak_sign", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_dark_oak_slab {
             get {
                 object obj = ResourceManager.GetObject("minecraft_dark_oak_slab", resourceCulture);
@@ -10246,6 +10376,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_dark_oak_trapdoor {
             get {
                 object obj = ResourceManager.GetObject("minecraft_dark_oak_trapdoor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_dark_oak_wall_sign {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_dark_oak_wall_sign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -10563,6 +10703,36 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_diorite_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_diorite_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_diorite_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_diorite_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_diorite_wall {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_diorite_wall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_dirt {
             get {
                 object obj = ResourceManager.GetObject("minecraft_dirt", resourceCulture);
@@ -10713,6 +10883,36 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_end_stone_brick_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_end_stone_brick_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_end_stone_brick_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_end_stone_brick_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_end_stone_brick_wall {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_end_stone_brick_wall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_end_stone_bricks {
             get {
                 object obj = ResourceManager.GetObject("minecraft_end_stone_bricks", resourceCulture);
@@ -10796,6 +10996,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_fire_coral_wall_fan {
             get {
                 object obj = ResourceManager.GetObject("minecraft_fire_coral_wall_fan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_fletching_table {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_fletching_table", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -10926,6 +11136,36 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_granite {
             get {
                 object obj = ResourceManager.GetObject("minecraft_granite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_granite_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_granite_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_granite_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_granite_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_granite_wall {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_granite_wall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -11223,6 +11463,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_grindstone {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_grindstone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_hay_block {
             get {
                 object obj = ResourceManager.GetObject("minecraft_hay_block", resourceCulture);
@@ -11443,6 +11693,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_jigsaw {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_jigsaw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_jukebox {
             get {
                 object obj = ResourceManager.GetObject("minecraft_jukebox", resourceCulture);
@@ -11553,6 +11813,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_jungle_sign {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_jungle_sign", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_jungle_slab {
             get {
                 object obj = ResourceManager.GetObject("minecraft_jungle_slab", resourceCulture);
@@ -11576,6 +11846,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_jungle_trapdoor {
             get {
                 object obj = ResourceManager.GetObject("minecraft_jungle_trapdoor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_jungle_wall_sign {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_jungle_wall_sign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -11633,6 +11913,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_lantern {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_lantern", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_lapis_block {
             get {
                 object obj = ResourceManager.GetObject("minecraft_lapis_block", resourceCulture);
@@ -11676,6 +11966,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_lava {
             get {
                 object obj = ResourceManager.GetObject("minecraft_lava", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_lectern {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_lectern", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -11973,6 +12273,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_lily_of_the_valley {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_lily_of_the_valley", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_lily_pad {
             get {
                 object obj = ResourceManager.GetObject("minecraft_lily_pad", resourceCulture);
@@ -12116,6 +12426,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_logo {
             get {
                 object obj = ResourceManager.GetObject("minecraft-logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_loom {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_loom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -12313,9 +12633,59 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_mossy_cobblestone_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_mossy_cobblestone_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_mossy_cobblestone_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_mossy_cobblestone_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_mossy_cobblestone_wall {
             get {
                 object obj = ResourceManager.GetObject("minecraft_mossy_cobblestone_wall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_mossy_stone_brick_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_mossy_stone_brick_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_mossy_stone_brick_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_mossy_stone_brick_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_mossy_stone_brick_wall {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_mossy_stone_brick_wall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -12386,6 +12756,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_nether_brick_stairs {
             get {
                 object obj = ResourceManager.GetObject("minecraft_nether_brick_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_nether_brick_wall {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_nether_brick_wall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -12563,6 +12943,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_oak_sign {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_oak_sign", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_oak_slab {
             get {
                 object obj = ResourceManager.GetObject("minecraft_oak_slab", resourceCulture);
@@ -12586,6 +12976,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_oak_trapdoor {
             get {
                 object obj = ResourceManager.GetObject("minecraft_oak_trapdoor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_oak_wall_sign {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_oak_wall_sign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -13043,6 +13443,26 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_polished_andesite_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_polished_andesite_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_polished_andesite_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_polished_andesite_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_polished_diorite {
             get {
                 object obj = ResourceManager.GetObject("minecraft_polished_diorite", resourceCulture);
@@ -13053,9 +13473,49 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_polished_diorite_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_polished_diorite_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_polished_diorite_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_polished_diorite_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_polished_granite {
             get {
                 object obj = ResourceManager.GetObject("minecraft_polished_granite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_polished_granite_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_polished_granite_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_polished_granite_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_polished_granite_stairs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -13123,6 +13583,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_potted_bamboo {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_potted_bamboo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_potted_birch_sapling {
             get {
                 object obj = ResourceManager.GetObject("minecraft_potted_birch_sapling", resourceCulture);
@@ -13156,6 +13626,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_potted_cactus {
             get {
                 object obj = ResourceManager.GetObject("minecraft_potted_cactus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_potted_cornflower {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_potted_cornflower", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -13206,6 +13686,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_potted_jungle_sapling {
             get {
                 object obj = ResourceManager.GetObject("minecraft_potted_jungle_sapling", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_potted_lily_of_the_valley {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_potted_lily_of_the_valley", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -13303,6 +13793,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_potted_wither_rose {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_potted_wither_rose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_powered_rail {
             get {
                 object obj = ResourceManager.GetObject("minecraft_powered_rail", resourceCulture);
@@ -13386,6 +13886,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_prismarine_stairs {
             get {
                 object obj = ResourceManager.GetObject("minecraft_prismarine_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_prismarine_wall {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_prismarine_wall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -13793,6 +14303,36 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_red_nether_brick_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_red_nether_brick_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_red_nether_brick_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_red_nether_brick_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_red_nether_brick_wall {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_red_nether_brick_wall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_red_nether_bricks {
             get {
                 object obj = ResourceManager.GetObject("minecraft_red_nether_bricks", resourceCulture);
@@ -13836,6 +14376,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_red_sandstone_stairs {
             get {
                 object obj = ResourceManager.GetObject("minecraft_red_sandstone_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_red_sandstone_wall {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_red_sandstone_wall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -14053,6 +14603,26 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_sandstone_wall {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_sandstone_wall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_scaffolding {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_scaffolding", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_sea_grass {
             get {
                 object obj = ResourceManager.GetObject("minecraft_sea_grass", resourceCulture);
@@ -14143,9 +14713,49 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_smithing_table {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_smithing_table", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_smoker {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_smoker", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_smooth_quartz {
             get {
                 object obj = ResourceManager.GetObject("minecraft_smooth_quartz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_smooth_quartz_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_smooth_quartz_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_smooth_quartz_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_smooth_quartz_stairs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -14163,6 +14773,26 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_smooth_red_sandstone_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_smooth_red_sandstone_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_smooth_red_sandstone_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_smooth_red_sandstone_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_smooth_sandstone {
             get {
                 object obj = ResourceManager.GetObject("minecraft_smooth_sandstone", resourceCulture);
@@ -14173,9 +14803,39 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_smooth_sandstone_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_smooth_sandstone_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_smooth_sandstone_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_smooth_sandstone_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_smooth_stone {
             get {
                 object obj = ResourceManager.GetObject("minecraft_smooth_stone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_smooth_stone_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_smooth_stone_slab", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -14333,6 +14993,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_spruce_sign {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_spruce_sign", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_spruce_slab {
             get {
                 object obj = ResourceManager.GetObject("minecraft_spruce_slab", resourceCulture);
@@ -14356,6 +15026,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_spruce_trapdoor {
             get {
                 object obj = ResourceManager.GetObject("minecraft_spruce_trapdoor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_spruce_wall_sign {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_spruce_wall_sign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -14423,6 +15103,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_stone_brick_wall {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_stone_brick_wall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_stone_bricks {
             get {
                 object obj = ResourceManager.GetObject("minecraft_stone_bricks", resourceCulture);
@@ -14456,6 +15146,26 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_stone_slab {
             get {
                 object obj = ResourceManager.GetObject("minecraft_stone_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_stone_stairs {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_stone_stairs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_stonecutter {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_stonecutter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -14616,6 +15326,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap minecraft_sunflower {
             get {
                 object obj = ResourceManager.GetObject("minecraft_sunflower", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_sweet_berry_bush {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_sweet_berry_bush", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -14993,6 +15713,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_wither_rose {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_wither_rose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_wither_skeleton_skull {
             get {
                 object obj = ResourceManager.GetObject("minecraft_wither_skeleton_skull", resourceCulture);
@@ -15203,6 +15933,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Missing_Texture {
+            get {
+                object obj = ResourceManager.GetObject("Missing_Texture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mixer {
             get {
                 object obj = ResourceManager.GetObject("Mixer", resourceCulture);
@@ -15216,6 +15956,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap mojang_logo {
             get {
                 object obj = ResourceManager.GetObject("mojang-logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Monster_High {
+            get {
+                object obj = ResourceManager.GetObject("Monster_High", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -15893,6 +16643,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Paintings {
+            get {
+                object obj = ResourceManager.GetObject("Paintings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Paleta {
             get {
                 object obj = ResourceManager.GetObject("Paleta", resourceCulture);
@@ -15906,6 +16666,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap Palo {
             get {
                 object obj = ResourceManager.GetObject("Palo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pantalla {
+            get {
+                object obj = ResourceManager.GetObject("Pantalla", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -16013,6 +16783,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pool {
+            get {
+                object obj = ResourceManager.GetObject("Pool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Posición {
             get {
                 object obj = ResourceManager.GetObject("Posición", resourceCulture);
@@ -16056,6 +16836,26 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap Quartz_Ore {
             get {
                 object obj = ResourceManager.GetObject("Quartz_Ore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Quitar {
+            get {
+                object obj = ResourceManager.GetObject("Quitar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RAM {
+            get {
+                object obj = ResourceManager.GetObject("RAM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -17366,6 +18166,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap Temporizador {
             get {
                 object obj = ResourceManager.GetObject("Temporizador", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Thanks_Alexander {
+            get {
+                object obj = ResourceManager.GetObject("Thanks_Alexander", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

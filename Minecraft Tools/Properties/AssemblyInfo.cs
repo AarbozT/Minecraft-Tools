@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Jupisoft")]
 [assembly: AssemblyProduct("Minecraft Tools by Jupisoft")]
-[assembly: AssemblyCopyright("© 2004 - 2018 by Jupisoft, all rights reserved")]
+[assembly: AssemblyCopyright("© 2004 - 2019 by Jupisoft, all rights reserved")]
 [assembly: AssemblyTrademark("Jupisoft")]
 [assembly: AssemblyCulture("")]
 
