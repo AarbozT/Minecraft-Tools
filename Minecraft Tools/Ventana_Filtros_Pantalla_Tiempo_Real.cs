@@ -1436,7 +1436,7 @@ namespace Minecraft_Tools
                     {
                         Cronómetro_GitHub.Restart();
                     }
-                    else if (Cronómetro_GitHub.ElapsedMilliseconds >= 5000L)
+                    else if (Cronómetro_GitHub.ElapsedMilliseconds >= 2000L)
                     {
                         Menú_Contextual_GitHub.Checked = false;
                         Cronómetro_GitHub.Reset();
