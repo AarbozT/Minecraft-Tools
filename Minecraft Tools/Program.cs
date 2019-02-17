@@ -21,7 +21,7 @@ namespace Minecraft_Tools
         /// <summary>
         /// The Windows registry build date, used to know if the older settings should be deleted.
         /// </summary>
-        internal static readonly string Texto_Fecha = "2019_02_16_21_56_16_078";
+        internal static readonly string Texto_Fecha = "2019_02_17_01_07_13_339";
         /// <summary>
         /// The Minecraft version that most tools of this application will support.
         /// </summary>
