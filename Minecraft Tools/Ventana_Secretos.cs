@@ -324,7 +324,7 @@ namespace Minecraft_Tools
                 //SystemSounds.Asterisk.Play();
                 if (MessageBox.Show(this, "Warning: the secret files are not included by default now.\r\nClick \"Yes\" to download them from mediafire as a zip file.\r\n\r\nOnce downloaded please extract the subfolders of the zip file near the application, in a folder called \"Secrets\", this one should contain the rest of subfolders inside it.\r\n\r\nIf done well you'll be able to extract the secret files from this window, and if it tells you it couldn't find a file, then they will be extracted on a wrong place or maybe inside 2 \"Secrets\" folders, which WinRar sometimes does.\r\n\r\nDo you want to download all the secret files at once from mediafire?", Program.Texto_Título_Versión, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    Program.Ejecutar_Ruta("", ProcessWindowStyle.Normal);
+                    Program.Ejecutar_Ruta("http://www.mediafire.com/file/081rafg4wo6git7/Secrets.zip/file", ProcessWindowStyle.Normal);
                 }
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
