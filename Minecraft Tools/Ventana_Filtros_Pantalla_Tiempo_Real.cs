@@ -1296,7 +1296,7 @@ namespace Minecraft_Tools
                         }
                     }
                 }
-                else // Just for Jupisoft (or users of GitHub Desktop)...
+                else if ((Control.ModifierKeys & Keys.LShiftKey) != Keys.LShiftKey && (Control.ModifierKeys & Keys.RShiftKey) != Keys.RShiftKey) // Just for Jupisoft (or users of GitHub Desktop)...
                 {
                     // This will commit multiple changes "automatically", and it's
                     // designed to check file after file individually and commit
@@ -1444,6 +1444,7 @@ namespace Minecraft_Tools
                         SystemSounds.Hand.Play();
                     }
                 }
+                else Menú_Contextual_GitHub.Checked = false;
 
                 long FPS_Milisegundo = FPS_Cronómetro.ElapsedMilliseconds;
                 long FPS_Segundo = FPS_Milisegundo / 1000L;
