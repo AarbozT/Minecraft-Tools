@@ -763,6 +763,66 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cielo_Abajo {
+            get {
+                object obj = ResourceManager.GetObject("Cielo_Abajo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cielo_Arriba {
+            get {
+                object obj = ResourceManager.GetObject("Cielo_Arriba", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cielo_Atrás {
+            get {
+                object obj = ResourceManager.GetObject("Cielo_Atrás", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cielo_Delante {
+            get {
+                object obj = ResourceManager.GetObject("Cielo_Delante", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cielo_Derecha {
+            get {
+                object obj = ResourceManager.GetObject("Cielo_Derecha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cielo_Izquierda {
+            get {
+                object obj = ResourceManager.GetObject("Cielo_Izquierda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Clay {
             get {
                 object obj = ResourceManager.GetObject("Clay", resourceCulture);
@@ -796,6 +856,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap Cobblestone {
             get {
                 object obj = ResourceManager.GetObject("Cobblestone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Codificación {
+            get {
+                object obj = ResourceManager.GetObject("Codificación", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
