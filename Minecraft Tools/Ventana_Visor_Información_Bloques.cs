@@ -256,7 +256,7 @@ namespace Minecraft_Tools
         {
             try
             {
-                Depurador.Escribir_Excepción(e.Exception != null ? e.Exception.ToString() : null);
+                Depurador.Escribir_Excepción(e.Exception != null ? e.Exception.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true;
                 e.ThrowException = false;
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
