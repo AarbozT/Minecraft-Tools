@@ -843,7 +843,12 @@ namespace Minecraft_Tools
 
                 if (string.Compare(Nombre_1_13, Nombre_1_12_2, true) != 0)
                 {
-                    Lista_Propiedades.Clear(); // Avoid setting wrong properties if the block has changed.
+                    string Nombre_Minúsculas = Nombre_1_12_2.ToLowerInvariant();
+                    if (!Nombre_Minúsculas.Contains("_slab") && !Nombre_Minúsculas.Contains("_stairs"))
+                    {
+                        Lista_Propiedades.Clear(); // Avoid setting wrong properties if the block has changed.
+                    }
+                    Nombre_Minúsculas = null;
                 }
 
                 // Now convert the adapted 1.13+ Minecraft name to an internal index of this program.
