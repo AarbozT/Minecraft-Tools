@@ -217,6 +217,7 @@
             // 
             // TextBox_Semilla
             // 
+            this.TextBox_Semilla.BackColor = System.Drawing.Color.White;
             this.TextBox_Semilla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBox_Semilla.Location = new System.Drawing.Point(168, 0);
             this.TextBox_Semilla.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
