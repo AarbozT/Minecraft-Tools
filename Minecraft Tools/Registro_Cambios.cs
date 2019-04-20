@@ -48,6 +48,11 @@ namespace Minecraft_Tools
                 new Cambios(new DateTime(2019, 04, 21), "1.0.0.0", new string[]
                 {
                     "Today is my birthday!",
+                    "Improved a lot the double structure prediction tool, now it can copy up to 3 coordinates to teleport in game very quickly.",
+                }),
+                new Cambios(new DateTime(2019, 04, 20), "1.0.0.0", new string[]
+                {
+                    "Added a new tool that can predict where 2 structures of the same type might collide and mix as one weird thing.",
                 }),
                 new Cambios(new DateTime(2019, 04, 19), "1.0.0.0", new string[]
                 {
@@ -55,7 +60,7 @@ namespace Minecraft_Tools
                     "Fixed a bug where the wood slabs weren't properly converted (they were replaced by air), and also replaced any double slab with a full regular block.",
                     "Finished the internal NBT structures exporter, it now supports even 1.14+ NBT structures, which are included by default now.",
                     "Added a new tool description text at the bottom of the tool selector, useful to remember what can do any of the tools of this application.",
-
+                    "Fixed a bug where blocks from 1.13 or 1.14+ were replaced by 1.12.2- blocks, the slabs and stairs were loosing it's properties like orientation, etc.",
                 }),
                 new Cambios(new DateTime(2019, 04, 18), "1.0.0.0", new string[]
                 {
