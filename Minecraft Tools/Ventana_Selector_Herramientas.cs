@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -111,6 +112,7 @@ namespace Minecraft_Tools
                 new Herramientas("Minecraft internal structures exporter as 1.12.2- worlds", Resources.Bajar, Estados.Funcional, false, Grupo_Minecraft, typeof(Ventana_Exportador_Estructuras_Internas), "Tool capable of generating a new 1.12.2- world that contains your desired NBT structures inside, like the end cities, shipwrecks, ocean ruins, villages, etc, and all in the same row (X+ axis).", new DateTime(2019, 04, 17/*2018, 3, 17*/)),
                 new Herramientas("Multidimensional mathematical analyzer [TOP SECRET]", Resources.Fractal, Estados.Funcional, true, Grupo_Conocimiento, typeof(Ventana_Analizador_Matemático_Multidimensional), "Tool capable of analyzing multiple mathematic dimensions made by using several bases like 2 and 16 and limitng the values to 256 for example.", new DateTime(2019, 2, 13)),
                 new Herramientas("Monster High characters", Resources.Monster_High, Estados.Funcional, false, Grupo_Conocimiento, typeof(Ventana_Monster_High), "Tool capable of showing a full list of characters of Monster High, with a very detailed biography and several pictures.", new DateTime(2018, 10, 21)),
+                new Herramientas("Multiple structures finder", Resources.Estructura_Monumento.Clone(new Rectangle(2, 2, 16, 16), PixelFormat.Format32bppArgb), Estados.Funcional, false, Grupo_Minecraft, typeof(Ventana_Buscador_Estructuras_Dobles), "Tool capable of finding the coordinates where several structures of the same type might collide with each other, and thus creating something unexpected and sometimes interesting or very hard to find.", new DateTime(2019, 04, 20)),
                 new Herramientas("NBT viewer", Resources.NBT_Byte, Estados.Funcional, false, Grupo_Minecraft, typeof(Ventana_Visor_NBT), "Tool capable of loading any NBT file and explore it's contents as read-only, so for now it can't edit any file or save it back, sorry.", new DateTime(2018, 3, 17)),
                 new Herramientas("Note blocks tuner", Resources.minecraft_note_block, Estados.Funcional, false, Grupo_Minecraft, typeof(Ventana_Afinador_Bloques_Nota), "Tool capable of playing most note block sounds with all of it's multiple notes.", new DateTime(2018, 3, 17)),
                 new Herramientas("Painted structures exporter", Resources.Paleta, Estados.Intermedio, false, Grupo_Minecraft, typeof(Ventana_Exportador_Estructuras_Pintadas), "Tool capable of generating new 1.12.2- Minecraft worlds with custom structures inside, but from images with painted blocks.", new DateTime(2018, 3, 17)),
@@ -325,6 +327,14 @@ namespace Minecraft_Tools
                         else if (string.Compare(Texto_Tipo, typeof(Ventana_Monster_High).FullName, true) == 0)
                         {
                             Ventana_Monster_High Ventana = new Ventana_Monster_High();
+                            Ventana.Variable_Siempre_Visible = Siempre_Visible;
+                            Ventana.ShowDialog(Ventana_Superior);
+                            Ventana.Dispose();
+                            Ventana = null;
+                        }
+                        else if (string.Compare(Texto_Tipo, typeof(Ventana_Buscador_Estructuras_Dobles).FullName, true) == 0)
+                        {
+                            Ventana_Buscador_Estructuras_Dobles Ventana = new Ventana_Buscador_Estructuras_Dobles();
                             Ventana.Variable_Siempre_Visible = Siempre_Visible;
                             Ventana.ShowDialog(Ventana_Superior);
                             Ventana.Dispose();
