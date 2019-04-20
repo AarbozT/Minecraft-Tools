@@ -240,6 +240,12 @@
     <Compile Include="Ventana_Buscador_Archivos_Duplicados.Designer.cs">
       <DependentUpon>Ventana_Buscador_Archivos_Duplicados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventana_Buscador_Estructuras_Dobles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventana_Buscador_Estructuras_Dobles.Designer.cs">
+      <DependentUpon>Ventana_Buscador_Estructuras_Dobles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventana_Contador_FPS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -612,6 +618,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Buscador_Archivos_Duplicados.resx">
       <DependentUpon>Ventana_Buscador_Archivos_Duplicados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventana_Buscador_Estructuras_Dobles.resx">
+      <DependentUpon>Ventana_Buscador_Estructuras_Dobles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Contador_FPS.resx">
       <DependentUpon>Ventana_Contador_FPS.cs</DependentUpon>
