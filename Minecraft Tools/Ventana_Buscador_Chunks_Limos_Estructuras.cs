@@ -260,7 +260,6 @@ namespace Minecraft_Tools
                 TextBox_Semilla.SelectAll();
                 Ocupado = false;
                 Buscar_Chunks_Limos();
-                Temporizador_Principal.Start();
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
         }
@@ -270,6 +269,7 @@ namespace Minecraft_Tools
             try
             {
                 this.Activate();
+                Temporizador_Principal.Start();
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
         }
