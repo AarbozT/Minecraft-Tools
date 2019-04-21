@@ -3018,7 +3018,7 @@
             this.Grupo_Optifine.Size = new System.Drawing.Size(90, 461);
             this.Grupo_Optifine.TabIndex = 8;
             this.Grupo_Optifine.TabStop = false;
-            this.Grupo_Optifine.Text = "MC Optfines";
+            this.Grupo_Optifine.Text = "MC Optifines";
             // 
             // Botón_Optifine_1_13_2
             // 
