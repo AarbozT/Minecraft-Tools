@@ -1315,6 +1315,7 @@ namespace Minecraft_Tools
                             //Fecha = new DateTime(2018, 10, 31); // Used only for testing and debugging.
                             if (Fecha.Month == 12 && Fecha.Day == 24) Splash_Texto = "Merry X-mas!";
                             else if (Fecha.Month == 1 && Fecha.Day == 1) Splash_Texto = "Happy new year!";
+                            else if (Fecha.Month == 4 && Fecha.Day == 21) Splash_Texto = "Happy birthday Jupisoft!";
                             else if (Fecha.Month == 10 && Fecha.Day == 31) Splash_Texto = "OOoooOOOoooo! Spooky!";
                         }
                         //Splash_Texto = "Colormatic"; // Debug of random rainbow colors.
