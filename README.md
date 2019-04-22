@@ -1,5 +1,5 @@
 # Minecraft-Tools
-Minecraft Tools for 1.13.1+ made in C#:
+Minecraft Tools for 1.13 and 1.14+ made in C#:
 
 The new change log can be started by pressing Ctrl+L on the main window. And this repository includes a precompiled executable.
 
