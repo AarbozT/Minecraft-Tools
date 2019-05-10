@@ -840,7 +840,7 @@ namespace Minecraft_Tools
                             {
                                 Estado = CheckState.Checked;
                             }
-                            else
+                            else// if (Valor == 137)
                             {
                                 Estado = CheckState.Indeterminate;
                             }
@@ -939,11 +939,15 @@ namespace Minecraft_Tools
                             }
                         }
                     }
-                    else if (!Cronómetro_GitHub.IsRunning)
+                    else if (!Cronómetro_GitHub.IsRunning) // Countdown to stop.
                     {
                         Cronómetro_GitHub.Restart();
                     }
-                    else if (Cronómetro_GitHub.ElapsedMilliseconds >= 2000L)
+                    /*else if (Cronómetro_GitHub.ElapsedMilliseconds >= 1000L) // Sound warning.
+                    {
+                        SystemSounds.Beep.Play();
+                    }*/
+                    else if (Cronómetro_GitHub.ElapsedMilliseconds >= 2000L) // Stop.
                     {
                         Menú_Contextual_GitHub.Checked = false;
                         Cronómetro_GitHub.Reset();
