@@ -676,6 +676,33 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
 
+        private void Menú_Contextual_Guardar_JPEG_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Picture.Image != null)
+                {
+                    Program.Crear_Carpetas(Program.Ruta_Guardado_Imágenes_Generador_Miniaturas_Color_Medio);
+                    int Ancho = Picture.Image.Width;
+                    int Alto = Picture.Image.Height;
+                    ImageCodecInfo Codificador = Program.Obtener_Imagen_Codificador_Guid(ImageFormat.Jpeg.Guid);
+                    if (Codificador != null) // We can choose any JPEG compression.
+                    {
+                        int Calidad_JPEG = 100; // 0 = Minimum, 100 = Maximum quality.
+                        EncoderParameters Parámetros = new EncoderParameters(1);
+                        Parámetros.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, (long)Calidad_JPEG);
+                        Picture.Image.Save(Program.Ruta_Guardado_Imágenes_Generador_Miniaturas_Color_Medio + "\\" + Program.Obtener_Nombre_Temporal_Sin_Guiones() + " " + Ancho.ToString() + " x " + Alto.ToString() + (Ancho * Alto != 1 ? " pixels" : " pixel") + (!string.IsNullOrEmpty(Variable_Nombre_Imagen) ? " " + Variable_Nombre_Imagen : null) + ".jpg", Codificador, Parámetros);
+                        Parámetros.Dispose();
+                        Parámetros = null;
+                        Codificador = null;
+                    }
+                    else Picture.Image.Save(Program.Ruta_Guardado_Imágenes_Generador_Miniaturas_Color_Medio + "\\" + Program.Obtener_Nombre_Temporal_Sin_Guiones() + " " + Ancho.ToString() + " x " + Alto.ToString() + (Ancho * Alto != 1 ? " pixels" : " pixel") + (!string.IsNullOrEmpty(Variable_Nombre_Imagen) ? " " + Variable_Nombre_Imagen : null) + ".jpg", ImageFormat.Jpeg); // Default compression.
+                    SystemSounds.Asterisk.Play();
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
+        }
+
         private void Menú_Contextual_Guardar_Click(object sender, EventArgs e)
         {
             try
