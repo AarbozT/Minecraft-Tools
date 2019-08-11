@@ -19,6 +19,13 @@ using System.Windows.Forms;
 
 namespace Minecraft_Tools
 {
+    /// <summary>
+    /// WARNING: Using any of the default .NET functions to copy from screen with a Graphics object or
+    /// even copy the current cursor to draw it in real time or so will eventually crash any application
+    /// since .NET is bugged and doesn't release properly the GDI handles, so please never draw the
+    /// current cursor or use the copy from screen methods. The method "BitBlt" used here instead is
+    /// safe and it should never crash because of any GDI handles.
+    /// </summary>
     public partial class Ventana_Filtros_Pantalla_Tiempo_Real : Form
     {
         public Ventana_Filtros_Pantalla_Tiempo_Real()
