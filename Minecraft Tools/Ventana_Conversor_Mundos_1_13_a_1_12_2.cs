@@ -1569,6 +1569,8 @@ namespace Minecraft_Tools
                     else if (Buscar_Propiedad("facing: south", Lista_Propiedades)) Data = 3; // Facing south (attached to a block to its north).
                     else if (Buscar_Propiedad("facing: north", Lista_Propiedades)) Data = 4; // Facing north (attached to a block to its south).
                     else Data = 5; // Facing up (attached to a block beneath it).
+
+                    ID = 50; // Needs a change of ID.
                 }
                 else if (string.Compare(Nombre, "minecraft:fire", true) == 0) // ID: 51.
                 {
@@ -1803,6 +1805,13 @@ namespace Minecraft_Tools
                     else Data = 5; // Facing up (attached to a block beneath it).
 
                     if (Buscar_Propiedad("lit: true", Lista_Propiedades)) ID = 76; // Lit.
+                    else ID = 75; // Unlit. Needs a change of ID.
+
+                    // Bug fix thanks to iaraUM. I forgot to add the ID 75 when the block was redstone_wall_torch
+                    // and since the dictionaries used only use any ID one time, then the redstone_torch had the
+                    // correct ID 75 but the other didn't had any ID assigned to it, which will convert the block
+                    // as Air, so it was always getting lost during the conversion. That made me think that
+                    // possibly other blocks that can attach to a wall might be failing on it's conversions.
                 }
                 else if (string.Compare(Nombre, "minecraft:acacia_button", true) == 0 ||
                     string.Compare(Nombre, "minecraft:birch_button", true) == 0 ||
@@ -2427,6 +2436,8 @@ namespace Minecraft_Tools
                     else if (Buscar_Propiedad("facing: south", Lista_Propiedades)) Data = 3; // south.
                     else if (Buscar_Propiedad("facing: west", Lista_Propiedades)) Data = 4; // west.
                     else if (Buscar_Propiedad("facing: east", Lista_Propiedades)) Data = 5; // east.
+
+                    ID = 177; // Needs a change of ID.
                 }
                 else if (string.Compare(Nombre, "minecraft:end_rod", true) == 0) // ID: 198.
                 {
