@@ -2043,6 +2043,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Estructura_Puesto_Saqueadores {
+            get {
+                object obj = ResourceManager.GetObject("Estructura_Puesto_Saqueadores", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Estructura_Ruinas {
             get {
                 object obj = ResourceManager.GetObject("Estructura_Ruinas", resourceCulture);
@@ -2163,9 +2173,39 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FFT_Cantidad_Notas_3 {
+            get {
+                object obj = ResourceManager.GetObject("FFT_Cantidad_Notas_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FFT_Separación_Notas_3 {
+            get {
+                object obj = ResourceManager.GetObject("FFT_Separación_Notas_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fondo {
             get {
                 object obj = ResourceManager.GetObject("Fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fondo_Barras_Matiz {
+            get {
+                object obj = ResourceManager.GetObject("Fondo_Barras_Matiz", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7463,6 +7503,66 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Light_Map_Indev_Scary_Lighting {
+            get {
+                object obj = ResourceManager.GetObject("Light_Map_Indev_Scary_Lighting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Light_Map_Infinite_Blind_Vision {
+            get {
+                object obj = ResourceManager.GetObject("Light_Map_Infinite_Blind_Vision", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Light_Map_Infinite_Night_Vision {
+            get {
+                object obj = ResourceManager.GetObject("Light_Map_Infinite_Night_Vision", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Light_Map_Inverted_Torch_Lighting {
+            get {
+                object obj = ResourceManager.GetObject("Light_Map_Inverted_Torch_Lighting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Light_Map_Mob_Spawning_Detector {
+            get {
+                object obj = ResourceManager.GetObject("Light_Map_Mob_Spawning_Detector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Light_Map_Rainbow_Torch_Lighting {
+            get {
+                object obj = ResourceManager.GetObject("Light_Map_Rainbow_Torch_Lighting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lista {
             get {
                 object obj = ResourceManager.GetObject("Lista", resourceCulture);
@@ -10243,9 +10343,29 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minecraft_cut_red_sandstone_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_cut_red_sandstone_slab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_cut_sandstone {
             get {
                 object obj = ResourceManager.GetObject("minecraft_cut_sandstone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraft_cut_sandstone_slab {
+            get {
+                object obj = ResourceManager.GetObject("minecraft_cut_sandstone_slab", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -15913,6 +16033,16 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Minecraft_Xbox_360_Edition {
+            get {
+                object obj = ResourceManager.GetObject("Minecraft_Xbox_360_Edition", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minecraft_yellow_banner {
             get {
                 object obj = ResourceManager.GetObject("minecraft_yellow_banner", resourceCulture);
@@ -17236,6 +17366,76 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap Ordenar {
             get {
                 object obj = ResourceManager.GetObject("Ordenar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pack_Custom_Color_Lighting {
+            get {
+                object obj = ResourceManager.GetObject("Pack_Custom_Color_Lighting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pack_Indev_Scary_Lighting {
+            get {
+                object obj = ResourceManager.GetObject("Pack_Indev_Scary_Lighting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pack_Infinite_Blind_Vision {
+            get {
+                object obj = ResourceManager.GetObject("Pack_Infinite_Blind_Vision", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pack_Infinite_Night_Vision {
+            get {
+                object obj = ResourceManager.GetObject("Pack_Infinite_Night_Vision", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pack_Inverted_Torch_Lighting {
+            get {
+                object obj = ResourceManager.GetObject("Pack_Inverted_Torch_Lighting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pack_Mob_Spawning_Detector {
+            get {
+                object obj = ResourceManager.GetObject("Pack_Mob_Spawning_Detector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pack_Rainbow_Torch_Lighting {
+            get {
+                object obj = ResourceManager.GetObject("Pack_Rainbow_Torch_Lighting", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -18913,6 +19113,26 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Teclado_5_Octavas {
+            get {
+                object obj = ResourceManager.GetObject("Teclado_5_Octavas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teclado_5_Octavas_Reflejado {
+            get {
+                object obj = ResourceManager.GetObject("Teclado_5_Octavas_Reflejado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Temporizador {
             get {
                 object obj = ResourceManager.GetObject("Temporizador", resourceCulture);
@@ -19016,6 +19236,16 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap Thanks_Fratelli_Stellari {
             get {
                 object obj = ResourceManager.GetObject("Thanks_Fratelli_Stellari", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Thanks_iaraUM {
+            get {
+                object obj = ResourceManager.GetObject("Thanks_iaraUM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -19483,6 +19713,106 @@ namespace Minecraft_Tools.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Visor_Partituras {
+            get {
+                object obj = ResourceManager.GetObject("Visor_Partituras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visor_Partituras_Barras_Frecuencia_Volumen {
+            get {
+                object obj = ResourceManager.GetObject("Visor_Partituras_Barras_Frecuencia_Volumen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visor_Partituras_Curvas_Lissajous {
+            get {
+                object obj = ResourceManager.GetObject("Visor_Partituras_Curvas_Lissajous", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visor_Partituras_Espaciado_FPS {
+            get {
+                object obj = ResourceManager.GetObject("Visor_Partituras_Espaciado_FPS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visor_Partituras_FFT_1024 {
+            get {
+                object obj = ResourceManager.GetObject("Visor_Partituras_FFT_1024", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visor_Partituras_Gráficos_Frecuencia_Volumen {
+            get {
+                object obj = ResourceManager.GetObject("Visor_Partituras_Gráficos_Frecuencia_Volumen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visor_Partituras_Osciloscopio {
+            get {
+                object obj = ResourceManager.GetObject("Visor_Partituras_Osciloscopio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visor_Partituras_Pentagrama_Rueda_Notas {
+            get {
+                object obj = ResourceManager.GetObject("Visor_Partituras_Pentagrama_Rueda_Notas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visor_Partituras_Teclado_5_Octavas {
+            get {
+                object obj = ResourceManager.GetObject("Visor_Partituras_Teclado_5_Octavas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visor_Partituras_Todo {
+            get {
+                object obj = ResourceManager.GetObject("Visor_Partituras_Todo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Visor_Skins_3D {
             get {
                 object obj = ResourceManager.GetObject("Visor_Skins_3D", resourceCulture);
@@ -19516,6 +19846,476 @@ namespace Minecraft_Tools.Properties {
         internal static System.Drawing.Bitmap X_Ray {
             get {
                 object obj = ResourceManager.GetObject("X_Ray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox {
+            get {
+                object obj = ResourceManager.GetObject("Xbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Adventure_Time {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Adventure_Time", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Adventure_Time_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Adventure_Time_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Candy {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Candy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Candy_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Candy_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Cartoon {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Cartoon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Cartoon_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Cartoon_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Chinese_Mythology {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Chinese_Mythology", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Chinese_Mythology_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Chinese_Mythology_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_City {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_City", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_City_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_City_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Egyptian_Mythology {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Egyptian_Mythology", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Egyptian_Mythology_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Egyptian_Mythology_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Fallout {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Fallout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Fallout_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Fallout_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Fantasy {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Fantasy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Fantasy_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Fantasy_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Festive {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Festive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Festive_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Festive_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Greek_Mythology {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Greek_Mythology", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Greek_Mythology_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Greek_Mythology_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Halloween {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Halloween", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Halloween_2015 {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Halloween_2015", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Halloween_2015_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Halloween_2015_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Halloween_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Halloween_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Halo {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Halo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Halo_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Halo_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Mass_Effect {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Mass_Effect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Mass_Effect_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Mass_Effect_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Natural {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Natural", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Natural_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Natural_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Norse_Mythology {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Norse_Mythology", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Norse_Mythology_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Norse_Mythology_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Pattern {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Pattern", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Pattern_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Pattern_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Pirates_Of_The_Caribbean {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Pirates_Of_The_Caribbean", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Pirates_Of_The_Caribbean_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Pirates_Of_The_Caribbean_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Plastic {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Plastic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Plastic_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Plastic_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Skyrim {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Skyrim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Skyrim_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Skyrim_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Steampunk {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Steampunk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Steampunk_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Steampunk_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Super_Cute_Texture_Pack {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Super_Cute_Texture_Pack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_Super_Cute_Texture_Pack_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_Super_Cute_Texture_Pack_Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_The_Nightmare_Before_Christmas {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_The_Nightmare_Before_Christmas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_360_The_Nightmare_Before_Christmas_Preview {
+            get {
+                object obj = ResourceManager.GetObject("Xbox_360_The_Nightmare_Before_Christmas_Preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
