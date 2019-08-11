@@ -105,8 +105,8 @@ namespace Minecraft_Tools
                 new Herramientas("Help viewer", Resources.Ayuda, Estados.Funcional, false, Grupo_Jupisoft, typeof(Ventana_Visor_Ayuda), "Tool capable of showing a full help about this application and all of it's tools.", new DateTime(2018, 3, 17)),
                 new Herramientas("Hermitcraft members viewer", Resources.Xisumavoid, Estados.Funcional, false, Grupo_Minecraft, typeof(Ventana_Información_Miembros_Hermitcraft), "Tool capable of showing a full list of the Hermitcraft members with it's pictures, Minecraft skins, and a lot of their links and info.", new DateTime(2018, 3, 17)),
                 new Herramientas("Infiniscope [TOP SECRET]", Resources.Ojo_Ciego, Estados.Funcional, true, Grupo_Conocimiento, typeof(Ventana_Infiniscopio), "Tool capable of showing a detailed description to build an old \"alien\" device that's like a telescope of thousands of kilometers, but with only a few centimeters.", new DateTime(2019, 2, 13)),
-                new Herramientas("Júpiter Mauro scores viewer [all under Creative Commons]", Resources.Jupisoft_16, Estados.Funcional, false, Grupo_Conocimiento, typeof(Ventana_Visor_Partituras_Júpiter_Mauro), "Tool capable of showing a full list of all the scores composed by Júpiter Mauro with even synced MIDI playback and cursor position.", new DateTime(2018, 3, 17)),
-                new Herramientas("Magic card guessing", Resources.Montón_Centro, Estados.Funcional, false, Grupo_Conocimiento, typeof(Ventana_Adivinación_Carta_Mágica), "Tool capable of playing a game where you select a card between 21 and select 3 times where it's shown, then the tool will tell you which one it was.", new DateTime(2018, 3, 17)),
+                new Herramientas("Júpiter Mauro music site with score viewer [Creative Commons]", Resources.Jupisoft_16, Estados.Funcional, false, Grupo_Conocimiento, typeof(Ventana_Visor_Partituras_Júpiter_Mauro), "The old tool that used to be here was replaced with a link to the music site of Júpiter Mauro (Jupisoft) to save space in the whole application, sorry.", new DateTime(2018, 3, 17)),
+                new Herramientas("Magic number guessing", Resources.Montón_Centro, Estados.Funcional, false, Grupo_Conocimiento, typeof(Ventana_Adivinación_Número_Mágico), "Tool capable of playing a game where you think of a number between 1 and 21, and click 3 times on the pile it's shown, and after that the tool will tell you which number you thought of. It never fails.", new DateTime(2018, 3, 17)),
                 new Herramientas("Minecraft 1.13+ chunk format information viewer", Resources.Región, Estados.Funcional, true, Grupo_Conocimiento, typeof(Ventana_Visor_Formato_Chunks_1_13), "Tool capable of showing a very detailed explanation of the new Minecraft 1.13 chunk format and how to decode it, use this to update your own tools.", new DateTime(2019, 2, 13)),
                 new Herramientas("Minecraft 1.13+ to 1.12.2- world converter", Resources.Mundo, Estados.Funcional, false, Grupo_Minecraft, typeof(Ventana_Conversor_Mundos_1_13_a_1_12_2), "Tool capable of converting any Minecraft 1.13+ world to a new 1.12.2- world, but any entity or item won't be converted for now.", new DateTime(2018, 3, 17)),
                 new Herramientas("Minecraft internal structures exporter as 1.12.2- worlds", Resources.Bajar, Estados.Funcional, false, Grupo_Minecraft, typeof(Ventana_Exportador_Estructuras_Internas), "Tool capable of generating a new 1.12.2- world that contains your desired NBT structures inside, like the end cities, shipwrecks, ocean ruins, villages, etc, and all in the same row (X+ axis).", new DateTime(2019, 04, 17/*2018, 3, 17*/)),
@@ -126,6 +126,7 @@ namespace Minecraft_Tools
                 new Herramientas("Redstone designer", Resources.minecraft_redstone_block, Estados.Inoperativo, false, Grupo_Minecraft, null, "Tool capable of generating new 1.12.2- Minecraft worlds with your painted redstone circuits and contraptions as images but with real blocks.", new DateTime(2018, 3, 17)),
                 new Herramientas("Resource packs converter with zip and folder support", Resources.Pack_Recursos, Estados.Funcional, false, Grupo_Minecraft, typeof(Ventana_Conversor_Packs_Recursos), "Tool capable of converting resource packs between pack formats 1 to 9, it will always generate a new resource pack.", new DateTime(2019, 3, 11)),
                 new Herramientas("Resource structure rebuilder", Resources.Controles_TreeView, Estados.Funcional, false, Grupo_Minecraft, typeof(Ventana_Reconstructor_Estructura_Archivos_Recursos), "Tool capable of reading the JSON files within the assets folder, and exporting to your desktop the Minecraft resources with their real names.", new DateTime(2018, 3, 17)),
+                //new Herramientas("Score viewer in real time with full sound analysis", Resources.Ventana, Estados.Funcional, true, Grupo_Universal, typeof(Ventana_Visor_Partituras), "Tool capable of showing the score from any sound in real time", new DateTime(2019, 7, 20)), // Searh it on GitHub near this main application as "Score Viewer".
                 new Herramientas("Secrets: hidden", Resources.Candado, Estados.Funcional, true, Grupo_Conocimiento, typeof(Ventana_Secretos), "Tool capable of enabling and exporting highly secret resource packs, and other cool stuff to help you understand better how Minecraft works.", new DateTime(2018, 3, 17)),
                 new Herramientas("Sky box resource packs generator [Optifine]", Resources.Cielo, Estados.Funcional, false, Grupo_Minecraft, typeof(Ventana_Generador_Packs_Recursos_Cielos), "Tool capable of generating new modular resource packs with your desired sky box, made from your desired 6 images.", new DateTime(2019, 3, 24)),
                 //new Herramientas("Sky simulator in 3D", Resources.Cielo, Estados.Inoperativo, false, Grupo_Minecraft, typeof(Ventana_Simulador_Cielo_3D), "", new DateTime(2019, 3, 3)),
@@ -136,13 +137,13 @@ namespace Minecraft_Tools
                 new Herramientas("The End screensaver (WIP)", Resources.minecraft_end_portal_frame, Estados.Intermedio, false, Grupo_Minecraft, typeof(Ventana_Salvapantallas_El_Fin), "Tool capable of simulating the old end portal animation of stars, but currently it's too slow.", new DateTime(2018, 3, 17)),
                 new Herramientas("Thumbnails and average color generator", Resources.Ojo, Estados.Funcional, false, Grupo_Universal, typeof(Ventana_Generador_Miniaturas_Color_Medio), "Tool capable of reducing the colors from any image to only 1, so this will be the average color, like it's shown on my 2D overworld viewer.", new DateTime(2018, 3, 17)),
                 new Herramientas("Villager tradings viewer", Resources.minecraft_emerald_block, Estados.Funcional, false, Grupo_Minecraft, typeof(Ventana_Visor_Ofertas_Aldeanos), "Tool capable of showing a 1.13.2- villager trading picture, with custom background color and exporting.", new DateTime(2018, 3, 17)),
-                new Herramientas("Virtual moon", Resources.Luna, Estados.Intermedio, false, Grupo_Universal, typeof(Ventana_Luna_Virtual), "Tool capable of predicting the moon phases until the year 3000, and even all the eclipses with high accuracy times.", new DateTime(2019, 3, 3)),
+                new Herramientas("Virtual moon", Resources.Luna, Estados.Funcional, false, Grupo_Universal, typeof(Ventana_Luna_Virtual), "Tool capable of predicting the moon phases until the year 3000, and even all the eclipses with high accuracy times.", new DateTime(2019, 3, 3)),
                 new Herramientas("World seeds infinite calculator", Resources.Calculadora, Estados.Funcional, false, Grupo_Universal, typeof(Ventana_Calculadora_Infinita_Semillas_Mundos), "Tool capable of converting any text to a Minecraft numerical seed, and it even extends the Java code to show the real seed with infinite bits (for real).", new DateTime(2018, 3, 17)),
                 new Herramientas("XNA resources extractor [don't use it for illegal things]", Resources.XNA, Estados.Funcional, false, Grupo_Universal, typeof(Ventana_Extractor_Recursos_XNA), "Tool capable of extracting and saving the XNA resources from any game that uses XNA 4.0 or so, like Stardew Valley, Terraria, etc.", new DateTime(2019, 3, 23)),
                 //new Herramientas("None (select it manually everytime)", Resources.Ejecutar, Estados.Funcional, Categorías.Normal, null, "", new DateTime(2018, 3, 17)),
             };
 
-            internal static void Ejecutar_Herramienta(int Índice_Herramienta, bool Siempre_Visible, Form Ventana_Superior)
+            internal static void Ejecutar_Herramienta(int Índice_Herramienta, bool Siempre_Visible, Ventana_Principal Ventana_Superior)
             {
                 try
                 {
@@ -309,9 +310,9 @@ namespace Minecraft_Tools
                             Ventana.Dispose();
                             Ventana = null;
                         }
-                        else if (string.Compare(Texto_Tipo, typeof(Ventana_Adivinación_Carta_Mágica).FullName, true) == 0)
+                        else if (string.Compare(Texto_Tipo, typeof(Ventana_Adivinación_Número_Mágico).FullName, true) == 0)
                         {
-                            Ventana_Adivinación_Carta_Mágica Ventana = new Ventana_Adivinación_Carta_Mágica();
+                            Ventana_Adivinación_Número_Mágico Ventana = new Ventana_Adivinación_Número_Mágico();
                             Ventana.Variable_Siempre_Visible = Siempre_Visible;
                             Ventana.ShowDialog(Ventana_Superior);
                             Ventana.Dispose();
@@ -427,7 +428,16 @@ namespace Minecraft_Tools
                         {
                             Ventana_Nombre_Usuario Ventana = new Ventana_Nombre_Usuario();
                             Ventana.Variable_Siempre_Visible = Siempre_Visible;
-                            Ventana.ShowDialog(Ventana_Superior);
+                            if (Ventana.ShowDialog(Ventana_Superior) == DialogResult.OK)
+                            {
+                                Program.Texto_Usuario = Ventana.Texto_Usuario;
+                                Ventana_Superior.Registro_Guardar_Opciones();
+                                Program.Texto_Título = "Minecraft Tools for " + Program.Texto_Usuario + " by Jupisoft";
+                                Program.Texto_Programa = "Minecraft Tools for " + Program.Texto_Usuario;
+                                Program.Texto_Título_Versión = "Minecraft Tools " + Program.Texto_Versión + " for " + Program.Texto_Usuario + " by Jupisoft";
+                                Ventana_Superior.Text = Program.Texto_Título + " - [Minecraft: " + Program.Texto_Minecraft_Versión + ", Vanilla blocks known: " + Program.Traducir_Número(Minecraft.Bloques.Matriz_Bloques.Length) + "]";
+                                Ventana_Superior.Barra_Estado_Etiqueta_Sugerencia.Text = "Welcome dear " + Program.Texto_Usuario + ", I wish you a great day.";
+                            }
                             Ventana.Dispose();
                             Ventana = null;
                         }
@@ -439,6 +449,16 @@ namespace Minecraft_Tools
                             Ventana.Dispose();
                             Ventana = null;
                         }
+                        /*else if (string.Compare(Texto_Tipo, typeof(Ventana_Visor_Partituras).FullName, true) == 0)
+                        {
+                            Ventana_Superior.Visible = false;
+                            Ventana_Visor_Partituras Ventana = new Ventana_Visor_Partituras();
+                            //Ventana.Variable_Siempre_Visible = Siempre_Visible;
+                            Ventana.ShowDialog(Ventana_Superior);
+                            Ventana.Dispose();
+                            Ventana = null;
+                            Ventana_Superior.Visible = true;
+                        }*/
                         else if (string.Compare(Texto_Tipo, typeof(Ventana_Secretos).FullName, true) == 0)
                         {
                             Ventana_Secretos Ventana = new Ventana_Secretos();
@@ -523,11 +543,12 @@ namespace Minecraft_Tools
                         }
                         else if (string.Compare(Texto_Tipo, typeof(Ventana_Visor_Partituras_Júpiter_Mauro).FullName, true) == 0)
                         {
-                            Ventana_Visor_Partituras_Júpiter_Mauro Ventana = new Ventana_Visor_Partituras_Júpiter_Mauro();
+                            Program.Ejecutar_Ruta("http://jupisoft.x10host.com/", ProcessWindowStyle.Normal);
+                            /*Ventana_Visor_Partituras_Júpiter_Mauro Ventana = new Ventana_Visor_Partituras_Júpiter_Mauro();
                             Ventana.Variable_Siempre_Visible = Siempre_Visible;
                             Ventana.ShowDialog(Ventana_Superior);
                             Ventana.Dispose();
-                            Ventana = null;
+                            Ventana = null;*/
                         }
                         else if (string.Compare(Texto_Tipo, typeof(Ventana_Visor_Cuadros).FullName, true) == 0)
                         {
