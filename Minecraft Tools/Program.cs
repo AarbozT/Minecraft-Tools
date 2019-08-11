@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -22,11 +23,11 @@ namespace Minecraft_Tools
         /// <summary>
         /// The Windows registry build date, used to know if the older settings should be deleted.
         /// </summary>
-        internal static readonly string Texto_Fecha = "2019_05_10_07_39_02_183";
+        internal static readonly string Texto_Fecha = "2019_08_11_16_45_53_224";
         /// <summary>
         /// The Minecraft version that most tools of this application will support.
         /// </summary>
-        internal static readonly string Texto_Minecraft_Versión = "1.14";
+        internal static readonly string Texto_Minecraft_Versión = "1.14.4";
 
         /// <summary>
         /// This is only used to give this application to some users as a different edition, so the main tool will always be a pre-selected one.
@@ -42,7 +43,7 @@ namespace Minecraft_Tools
         internal static string Texto_Usuario = Environment.UserName;
         internal static string Texto_Título = "Minecraft Tools by Jupisoft";
         internal static string Texto_Programa = "Minecraft Tools";
-        internal static readonly string Texto_Versión = "1.14.0.0";
+        internal static readonly string Texto_Versión = "1.14"; // Only update for each major version of Minecraft.
         internal static readonly string Texto_Versión_Fecha = Texto_Versión + " (" + Texto_Fecha/*.Replace("_", null)*/ + ")";
         internal static string Texto_Título_Versión = Texto_Título + " " + Texto_Versión;
 
@@ -96,7 +97,7 @@ namespace Minecraft_Tools
         /// </summary>
         internal static readonly string Ruta_Cartas_79 = Application.StartupPath + "\\Cards";
         /// <summary>
-        /// Array used to store the 79 cards used in this application by the "Magic card guessing" and "Line of life" tools. The copyright of these cards is by Heraclio Fournier, Vitoria, Spain.
+        /// Array used to store the 79 cards used in this application by the "Magic card guessing" and "Line of life" tools.
         /// </summary>
         internal static Bitmap[] Matriz_Cartas_79 = null;
 
@@ -507,6 +508,11 @@ namespace Minecraft_Tools
             return Color.FromArgb(255, 255, 255);
         }
 
+        /// <summary>
+        /// Function that returns one of the 1.530 possible 24 bits RGB colors with full saturation and middle brightness.
+        /// </summary>
+        /// <param name="Índice">Any value between 0 and 1529. Red = 0, Yellow = 255, Green = 510, Cyan = 765, blue = 1020, purple = 1275. If the value is below 0 or above 1529, pure white will be returned instead.</param>
+        /// <returns>Returns an ARGB color based on the selected index, or white if out of bounds.</returns>
         internal static Color Obtener_Color_Puro_1530(int Índice)
         {
             try
@@ -935,6 +941,57 @@ namespace Minecraft_Tools
             return "??-??-????, ??:??:??.???";
         }
 
+        internal static string Traducir_Día_Semana(DateTime Fecha, bool Habilitar_CurrentInfo)
+        {
+            if (Habilitar_CurrentInfo == false)
+            {
+                if (Fecha.DayOfWeek == DayOfWeek.Monday) return "Monday";
+                else if (Fecha.DayOfWeek == DayOfWeek.Tuesday) return "Tuesday";
+                else if (Fecha.DayOfWeek == DayOfWeek.Wednesday) return "Wednesday";
+                else if (Fecha.DayOfWeek == DayOfWeek.Thursday) return "Thursday";
+                else if (Fecha.DayOfWeek == DayOfWeek.Friday) return "Friday";
+                else if (Fecha.DayOfWeek == DayOfWeek.Saturday) return "Saturday";
+                else if (Fecha.DayOfWeek == DayOfWeek.Sunday) return "Sunday";
+            }
+            else
+            {
+                string Texto = Fecha.ToString("dddd", DateTimeFormatInfo.CurrentInfo);
+                if (string.IsNullOrEmpty(Texto) == false) return Texto.Substring(0, 1).ToUpperInvariant() + (Texto.Length > 1 ? Texto.Substring(1, Texto.Length - 1) : null);
+            }
+            return "?";
+        }
+
+        internal static string Traducir_Fecha(DateTime Fecha, bool Habilitar_Día_Semana, bool Habilitar_Segundos, bool Habilitar_Milisegundos)
+        {
+            try
+            {
+                if (Fecha != null && Fecha >= DateTime.MinValue && Fecha <= DateTime.MaxValue)
+                {
+                    string Año = Fecha.Year.ToString();
+                    string Mes = Fecha.Month.ToString();
+                    string Día = Fecha.Day.ToString();
+                    string Hora = Fecha.Hour.ToString();
+                    string Minuto = Fecha.Minute.ToString();
+                    string Segundo = Fecha.Second.ToString();
+                    string Milisegundo = Fecha.Millisecond.ToString();
+                    string Día_Semana = Traducir_Día_Semana(Fecha, false);
+                    while (Año.Length < 4) Año = "0" + Año;
+                    while (Mes.Length < 2) Mes = "0" + Mes;
+                    while (Día.Length < 2) Día = "0" + Día;
+                    while (Hora.Length < 2) Hora = "0" + Hora;
+                    while (Minuto.Length < 2) Minuto = "0" + Minuto;
+                    while (Segundo.Length < 2) Segundo = "0" + Segundo;
+                    while (Milisegundo.Length < 3) Milisegundo = "0" + Milisegundo;
+                    return (Habilitar_Día_Semana == false ? null : Día_Semana + ", ") + Día + "-" + Mes + "-" + Año + ", " + Hora + ":" + Minuto + (Habilitar_Segundos == false ? null : ":" + Segundo + (Habilitar_Milisegundos == false ? null : "." + Milisegundo));
+                }
+            }
+            catch (Exception Excepción)
+            {
+                Application.OnThreadException(Excepción);
+            }
+            return "??-??-????, ??:??" + (Habilitar_Segundos == false ? null : ":??" + (Habilitar_Milisegundos == false ? null : ".???"));
+        }
+
         /// <summary>
         /// Translates a DateTime value into English localization.
         /// </summary>
@@ -1000,6 +1057,25 @@ namespace Minecraft_Tools
             }
             catch (Exception Excepción) { Application.OnThreadException(Excepción); }
             return "??-??-????, ??:??:??.???";
+        }
+
+        internal static string Traducir_Intervalo(TimeSpan Intervalo)
+        {
+            try
+            {
+                string Días = Math.Abs(Intervalo.Days).ToString();
+                string Horas = Math.Abs(Intervalo.Hours).ToString();
+                string Minutos = Math.Abs(Intervalo.Minutes).ToString();
+                string Segundos = Math.Abs(Intervalo.Seconds).ToString();
+                string Milisegundos = Math.Abs(Intervalo.Milliseconds).ToString();
+                while (Horas.Length < 2) Horas = "0" + Horas;
+                while (Minutos.Length < 2) Minutos = "0" + Minutos;
+                while (Segundos.Length < 2) Segundos = "0" + Segundos;
+                while (Milisegundos.Length < 3) Milisegundos = "0" + Milisegundos;
+                return (Intervalo.TotalDays >= 0 ? null : "-") + Días + ":" + Horas + ":" + Minutos + ":" + Segundos + "." + Milisegundos;
+            }
+            catch { }
+            return "0:00:00:00.000";
         }
 
         internal static string Traducir_Intervalo(TimeSpan Intervalo, bool Habilitar_Signo, bool Habilitar_Días, bool Habilitar_Milisegundos)
@@ -3184,7 +3260,7 @@ namespace Minecraft_Tools
                 }
                 Depurador.Iniciar_Depurador();
                 Minecraft_Splashes.Lista_Líneas.Insert(0, "Now with " + Program.Traducir_Número(Minecraft_Splashes.Lista_Líneas.Count) + " splashes!"); // Add an extra splash that tells how many there are.
-                Copias_Seguridad.Iniciar_Copias_Seguridad();
+                //Copias_Seguridad.Iniciar_Copias_Seguridad(); // Not used yet.
                 Lista_Caracteres_Prohibidos.AddRange(Path.GetInvalidPathChars());
                 Lista_Caracteres_Prohibidos.AddRange(Path.GetInvalidFileNameChars());
                 try { Rendimiento_Procesador = new PerformanceCounter("Processor", "% Processor Time", "_Total", true); }
@@ -3262,20 +3338,6 @@ namespace Minecraft_Tools
                 }
                 catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
                 try { SevenZip.SevenZipBase.SetLibraryPath(Environment.Is64BitProcess ? Application.StartupPath + "\\7z64.dll" : Application.StartupPath + "\\7z.dll"); }
-                catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
-                try
-                {
-                    // Remove any duplicated Jupisoft score.
-                    for (int Índice = Jupisoft_Scores.Lista_Partituras_Jupisoft.Count - 1; Índice >= 0; Índice--)
-                    {
-                        string Título = Jupisoft_Scores.Lista_Partituras_Jupisoft[Índice].Título;
-                        string Álbum = Jupisoft_Scores.Lista_Partituras_Jupisoft[Índice].Álbum;
-                        if (Título.Contains("[MIX]") || Título.Contains("[REMIX]") || Álbum.Contains("HIGH MIXES") || Álbum.Contains("EXTENDED MIXES") || Álbum.Contains("INFINITE MIXES") || Álbum.Contains("LOW MIXES") || Álbum.Contains("REMIXES"))
-                        {
-                            Jupisoft_Scores.Lista_Partituras_Jupisoft.RemoveAt(Índice);
-                        }
-                    }
-                }
                 catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
                 Application.Run(new Ventana_Principal());
             }
