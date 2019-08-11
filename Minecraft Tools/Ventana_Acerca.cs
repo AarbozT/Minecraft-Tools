@@ -25,7 +25,7 @@ namespace Minecraft_Tools
         internal string Texto_Desarrollador = "Jupisoft (Júpiter Mauro, from Spain)";
         internal string Texto_Copyright = "© 2004 - " + Math.Max(2019, DateTime.Now.Year).ToString() + " by Jupisoft, all rights reserved";
         internal string Texto_Comentarios = "\"Only for the Glory of God\", quote from Johann Sebastian Bach, and thanks to all the people that have posted comments";
-        internal string Texto_Librerías = "Magick.NET, SevenZipSharp and Substrate. Some images are copyright by Mojang, Mattel, Heraclio Fournier, etc";
+        internal string Texto_Librerías = "Magick.NET, SevenZipSharp and Substrate. Some images are copyright by Mojang, Mattel and others";
         internal static List<string> Lista_Gracias = new List<string>(); //new List<string>(new string[] { "BigBadLoser", "Brad Breeck", "C418", "David Maeso", "DenBob", "Fratelli Stellari", "Mattel", "MrLesk", "MSpaceDev", "Minecraft Forum", "minepowaa", "Mojang", "PM_ME_YOUR_HOOMAN", "ScotsMiser", "swagmiter", "The FLipside Forum", "Xisumavoid" });
         internal bool Variable_Siempre_Visible = false;
 
