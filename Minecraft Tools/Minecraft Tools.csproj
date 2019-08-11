@@ -67,6 +67,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,6 +77,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Analizador_Matemático_Multidimensional.cs" />
@@ -83,11 +85,31 @@
     <Compile Include="Base36.cs" />
     <Compile Include="Calculadora_Infinita.cs" />
     <Compile Include="Copias_Seguridad.cs" />
+    <Compile Include="FFTW_Interop.cs" />
+    <Compile Include="FFTW_Managed.cs" />
+    <Compile Include="FFTW_Test.cs" />
+    <Compile Include="FFT_Lomont.cs" />
     <Compile Include="Hermitcraft.cs" />
     <Compile Include="Invocación.cs" />
     <Compile Include="JSON_Java.cs" />
     <Compile Include="Jupisoft_Encrypting_Decrypting.cs" />
-    <Compile Include="Jupisoft_Scores.cs" />
+    <Compile Include="Luna_Virtual.cs" />
+    <Compile Include="MathematicsCore\BaseClasses\CurveBase.cs" />
+    <Compile Include="MathematicsCore\BaseClasses\CyclicCurveBase.cs" />
+    <Compile Include="MathematicsCore\BaseClasses\FunctionBase.cs" />
+    <Compile Include="MathematicsCore\BaseClasses\PolarCurveBase.cs" />
+    <Compile Include="MathematicsCore\BaseClasses\PolarCyclicCurveBase.cs" />
+    <Compile Include="MathematicsCore\Curve.cs" />
+    <Compile Include="MathematicsCore\Curves\Lissajous.cs" />
+    <Compile Include="MathematicsCore\Curves\Rose.cs" />
+    <Compile Include="MathematicsCore\CyclicCurve.cs" />
+    <Compile Include="MathematicsCore\CyclicPolarCurve.cs" />
+    <Compile Include="MathematicsCore\Function.cs" />
+    <Compile Include="MathematicsCore\Functions\Cos.cs" />
+    <Compile Include="MathematicsCore\Functions\Exp.cs" />
+    <Compile Include="MathematicsCore\Functions\Sin.cs" />
+    <Compile Include="MathematicsCore\NumberTheory.cs" />
+    <Compile Include="MathematicsCore\PolarCurve.cs" />
     <Compile Include="Midi.cs" />
     <Compile Include="Midi2.cs" />
     <Compile Include="Minecraft_Biomas.cs" />
@@ -211,11 +233,11 @@
     <Compile Include="Ventana_Acerca.Designer.cs">
       <DependentUpon>Ventana_Acerca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventana_Adivinación_Carta_Mágica.cs">
+    <Compile Include="Ventana_Adivinación_Número_Mágico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventana_Adivinación_Carta_Mágica.Designer.cs">
-      <DependentUpon>Ventana_Adivinación_Carta_Mágica.cs</DependentUpon>
+    <Compile Include="Ventana_Adivinación_Número_Mágico.Designer.cs">
+      <DependentUpon>Ventana_Adivinación_Número_Mágico.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventana_Administrador_Copias_Seguridad.cs">
       <SubType>Form</SubType>
@@ -354,12 +376,6 @@
     </Compile>
     <Compile Include="Ventana_Visor_Bloques_3D.Designer.cs">
       <DependentUpon>Ventana_Visor_Bloques_3D.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ventana_Visor_Partituras_Júpiter_Mauro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventana_Visor_Partituras_Júpiter_Mauro.Designer.cs">
-      <DependentUpon>Ventana_Visor_Partituras_Júpiter_Mauro.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventana_Salvapantallas_Bloques.cs">
       <SubType>Form</SubType>
@@ -579,6 +595,7 @@
     <Compile Include="Ventana_Visor_Ofertas_Aldeanos.Designer.cs">
       <DependentUpon>Ventana_Visor_Ofertas_Aldeanos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventana_Visor_Partituras_Júpiter_Mauro.cs" />
     <Compile Include="Ventana_Visor_Recetas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -611,8 +628,8 @@
     <EmbeddedResource Include="Ventana_Acerca.resx">
       <DependentUpon>Ventana_Acerca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventana_Adivinación_Carta_Mágica.resx">
-      <DependentUpon>Ventana_Adivinación_Carta_Mágica.cs</DependentUpon>
+    <EmbeddedResource Include="Ventana_Adivinación_Número_Mágico.resx">
+      <DependentUpon>Ventana_Adivinación_Número_Mágico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Administrador_Copias_Seguridad.resx">
       <DependentUpon>Ventana_Administrador_Copias_Seguridad.cs</DependentUpon>
@@ -682,9 +699,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Visor_Bloques_3D.resx">
       <DependentUpon>Ventana_Visor_Bloques_3D.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ventana_Visor_Partituras_Júpiter_Mauro.resx">
-      <DependentUpon>Ventana_Visor_Partituras_Júpiter_Mauro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Salvapantallas_Bloques.resx">
       <DependentUpon>Ventana_Salvapantallas_Bloques.cs</DependentUpon>
@@ -2841,6 +2855,22 @@
     <None Include="Resources\Pack_Inverted_Torch_Lighting.png" />
     <None Include="Resources\Pack_Mob_Spawning_Detector.png" />
     <None Include="Resources\Pack_Rainbow_Torch_Lighting.png" />
+    <None Include="Resources\Fondo_Barras_Matiz.png" />
+    <None Include="Resources\Teclado_5_Octavas_Reflejado.png" />
+    <None Include="Resources\Teclado_5_Octavas.png" />
+    <None Include="Resources\Visor_Partituras_Gráficos_Frecuencia_Volumen.png" />
+    <None Include="Resources\Visor_Partituras_FFT_1024.png" />
+    <None Include="Resources\Visor_Partituras_Curvas_Lissajous.png" />
+    <None Include="Resources\Visor_Partituras_Barras_Frecuencia_Volumen.png" />
+    <None Include="Resources\Visor_Partituras_Pentagrama_Rueda_Notas.png" />
+    <None Include="Resources\Visor_Partituras_Teclado_5_Octavas.png" />
+    <None Include="Resources\Visor_Partituras_Osciloscopio.png" />
+    <None Include="Resources\Visor_Partituras.png" />
+    <None Include="Resources\Visor_Partituras_Espaciado_FPS.png" />
+    <None Include="Resources\Visor_Partituras_Todo.png" />
+    <None Include="Resources\FFT_Separación_Notas_3.png" />
+    <None Include="Resources\FFT_Cantidad_Notas_3.png" />
+    <None Include="Resources\Thanks_iaraUM.png" />
     <Content Include="Zlib\LICENSE.txt" />
     <None Include="Resources\Correo.png" />
     <None Include="Resources\Paleta.png" />
