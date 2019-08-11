@@ -138,11 +138,27 @@ namespace Minecraft_Tools
                 ),
                 new Agradecimientos
                 (
+                    "iaraUM",
+                    "https://github.com/iaraUM",
+                    new DateTime(2019, 7, 7),
+                    "GitHub",
+                    "https://github.com/Jupisoft111/Minecraft-Tools/issues/1"
+                ),
+                new Agradecimientos
+                (
                     "ISpectre23",
                     "https://www.youtube.com/channel/UCuvzTPOhPtXK_knOx73E34w",
                     new DateTime(2002, 3, 30),
                     "Electronic music",
                     "http://jupisoft.x10host.com/html/thank_you_03_ispectre23.html"
+                ),
+                new Agradecimientos
+                (
+                    "kpqvz2",
+                    "https://www.minecraftforum.net/members/kpqvz2",
+                    new DateTime(2019, 6, 15),
+                    "Minecraft Forum",
+                    "https://www.minecraftforum.net/members/kpqvz2"
                 ),
                 new Agradecimientos
                 (
