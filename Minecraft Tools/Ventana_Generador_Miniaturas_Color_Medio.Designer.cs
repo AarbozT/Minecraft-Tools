@@ -83,6 +83,7 @@
             this.Menú_Contextual_Copiar = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Contextual_Copiar_Texto = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Contextual_Separador_4 = new System.Windows.Forms.ToolStripSeparator();
+            this.Menú_Contextual_Guardar_JPEG = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Contextual_Guardar = new System.Windows.Forms.ToolStripMenuItem();
             this.Menú_Contextual_Guardar_Texto = new System.Windows.Forms.ToolStripMenuItem();
             this.Tabla_Principal = new System.Windows.Forms.TableLayoutPanel();
@@ -422,10 +423,11 @@
             this.Menú_Contextual_Copiar,
             this.Menú_Contextual_Copiar_Texto,
             this.Menú_Contextual_Separador_4,
+            this.Menú_Contextual_Guardar_JPEG,
             this.Menú_Contextual_Guardar,
             this.Menú_Contextual_Guardar_Texto});
             this.Menú_Contextual.Name = "Menú_Contextual";
-            this.Menú_Contextual.Size = new System.Drawing.Size(352, 380);
+            this.Menú_Contextual.Size = new System.Drawing.Size(352, 402);
             // 
             // Menú_Contextual_Visor_Ayuda
             // 
@@ -573,6 +575,14 @@
             // 
             this.Menú_Contextual_Separador_4.Name = "Menú_Contextual_Separador_4";
             this.Menú_Contextual_Separador_4.Size = new System.Drawing.Size(348, 6);
+            // 
+            // Menú_Contextual_Guardar_JPEG
+            // 
+            this.Menú_Contextual_Guardar_JPEG.Image = global::Minecraft_Tools.Properties.Resources.Guardar;
+            this.Menú_Contextual_Guardar_JPEG.Name = "Menú_Contextual_Guardar_JPEG";
+            this.Menú_Contextual_Guardar_JPEG.Size = new System.Drawing.Size(351, 22);
+            this.Menú_Contextual_Guardar_JPEG.Text = "Save as a JPEG image with quality 100";
+            this.Menú_Contextual_Guardar_JPEG.Click += new System.EventHandler(this.Menú_Contextual_Guardar_JPEG_Click);
             // 
             // Menú_Contextual_Guardar
             // 
@@ -1237,5 +1247,6 @@
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Exportar_2;
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Exportar_16;
         private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Exportar_256;
+        private System.Windows.Forms.ToolStripMenuItem Menú_Contextual_Guardar_JPEG;
     }
 }
