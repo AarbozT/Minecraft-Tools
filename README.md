@@ -1,19 +1,23 @@
 # Minecraft-Tools
-Minecraft Tools for 1.13.1+ made in C#:
+Minecraft Tools for 1.14.4+ made in C#:
 
 The new change log can be started by pressing Ctrl+L on the main window. And this repository includes a precompiled executable.
+
+* EDIT: to save several hundreds of MB some of the bigger secret files were removed from the main application. So almost all features will still be fully working, but if you happen to want the missing secret files, then please download this big file from mediafire (please use some kind of pop-up blocker in your browser since mediafire is full of publicity), then extract it's contents in the same folder as the main executable in a way that the folder named "Secrets" inside the zip file ends up near your executable named "Minecraft Tools.exe", if done properly, when the secrets window is shown, then you should see that most of it's previously grayed buttons are now enabled, thisw means that all the files are now ready to work:
+
+http://www.mediafire.com/file/?/file
 
 * EDIT: a file named "A24938DB" with 26.601 real Minecraft skins inside is missing from "Minecraft-Tools-master\Minecraft Tools\bin\Debug\Secrets\Skins\" because is over 25 MB (it's about 57 MB), so if you want to have it, now you can download it from here, but please add it manually to the path described above once you've downloaded the source code of this application and extracted it from it's zip file using the Secrets window (read the internal help for more info on how to show and enable the secret files by pressing F1):
 
 http://www.mediafire.com/file/o2genjqdcekxa65/A24938DB/file
 
-Or if you just want the skins in a zip ready to use here is an old link:
+Also if you just want 26.601 real Minecraft skins in a single zip file ready to use here is an old link:
 
 http://www.mediafire.com/file/rhbf9vd9e002170/26601+Minecraft+Skins.rar
 
 Hello everyone my goal is to have an "all-in-one" free Minecraft tool, that could be used for anything Minecraft related. I have no intention to compete against others to see which one makes the best tool, but instead compete against myself to see how far I'll be able to develop it. I've never wanted any fame or money, I'm just looking for perfection in my creations, and to achieve this I knew I had to release it's source code to be able to help the Minecraft community as well, and since several people asked me to publish my app here, now you'll also be able to collaborate with your own ideas to improve it even more, so feel free to download it and play with it's code. Thanks a lot for your attention! :-)
 
-Some of it's main features include:
+Some of it's main features include (outdated, now it has a lot more unique and cool tools, so please try it out):
 
 - Pixel art generator with the highest quality available
 - NBT viewer and editor (editor not yet implemented)
@@ -46,6 +50,6 @@ Anyone is more than welcome to collaborate in this project and make it more perf
 
 Also feel free to use any part of it's code in your own project, but please remember to give credit to me as the original author.
 
-Note: the application shows English as it's language, but internally is programmed in Spanish, which is my country.
+Note: the application shows English it's language, but internally is programmed in Spanish, which is where I'm from.
 
 Thanks a lot for all your help and have a great day! ;-)
