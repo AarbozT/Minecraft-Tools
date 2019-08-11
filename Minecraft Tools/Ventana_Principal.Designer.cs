@@ -1455,7 +1455,6 @@
         private System.Windows.Forms.ToolStripSeparator Barra_Estado_Separador_1;
         private System.Windows.Forms.ToolStripLabel Barra_Estado_Etiqueta_Memoria;
         private System.Windows.Forms.ToolStripSeparator Barra_Estado_Separador_2;
-        private System.Windows.Forms.ToolStripLabel Barra_Estado_Etiqueta_Sugerencia;
         private System.Windows.Forms.ToolStripSeparator Barra_Estado_Separador_3;
         private System.Windows.Forms.Timer Temporizador_Principal;
         private System.Windows.Forms.ToolStripSeparator Menú_Principal_Ver_Separador_1;
@@ -1557,6 +1556,7 @@
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Donaciones;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ayuda_Minecraft_Forum_Jupisoft_Eliminado;
         private System.Windows.Forms.ToolStripMenuItem Menú_Principal_Ver_Modo_Oscuro;
+        internal System.Windows.Forms.ToolStripLabel Barra_Estado_Etiqueta_Sugerencia;
     }
 }
 
