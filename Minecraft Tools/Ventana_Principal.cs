@@ -734,6 +734,68 @@ namespace Minecraft_Tools
                     }
                 }
                 if (!string.IsNullOrEmpty(Texto)) Clipboard.SetText(Repeticiones.ToString() + "\r\n\r\n" + Texto + "\r\n" + Texto_Diccionario);*/
+
+                // Resource pack resolution converter (for lower PCs) [04-08-2019].
+                // Result: success, but crashes, it also needs to change other files.
+                /*string Ruta_Entrada = @"C:\Users\Jupisoft\AppData\Roaming\.minecraft\resourcepacks\128x Pulchra Revisited 1.14+_";
+                string Ruta_Salida = @"C:\Users\Jupisoft\AppData\Roaming\.minecraft\resourcepacks\128x Pulchra Revisited 1.14+";
+                string[] Matriz_Rutas = Directory.GetFiles(Ruta_Entrada, "*", SearchOption.AllDirectories);
+                if (Matriz_Rutas != null && Matriz_Rutas.Length > 0)
+                {
+                    foreach (string Ruta in Matriz_Rutas)
+                    {
+                        Program.Crear_Carpetas(Path.GetDirectoryName(Ruta_Salida + Ruta.Substring(Ruta_Entrada.Length)));
+                        //ImageMagick.MagickImage Imagen = null;
+                        Image Imagen_Original = null;
+                        FileStream Lector = new FileStream(Ruta, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                        if (Lector != null)
+                        {
+                            if (Lector.Length > 0L)
+                            {
+                                //try { Imagen = new ImageMagick.MagickImage(Lector); }
+                                try { Imagen_Original = Image.FromStream(Lector, false, false); }
+                                catch { Imagen_Original = null; }
+                            }
+                            if (Imagen_Original != null)
+                            {
+                                int Ancho = Imagen_Original.Width;
+                                int Alto = Imagen_Original.Height;
+                                Bitmap Imagen = new Bitmap(Ancho, Alto, !Image.IsAlphaPixelFormat(Imagen_Original.PixelFormat) ? PixelFormat.Format24bppRgb : PixelFormat.Format32bppArgb);
+                                Graphics Pintar = Graphics.FromImage(Imagen);
+                                Pintar.CompositingMode = CompositingMode.SourceCopy;
+                                Pintar.CompositingQuality = CompositingQuality.HighQuality;
+                                Pintar.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                                Pintar.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                                Pintar.SmoothingMode = SmoothingMode.HighQuality;
+                                Pintar.DrawImage(Imagen_Original, new Rectangle(0, 0, Ancho, Alto), new Rectangle(0, 0, Ancho, Alto), GraphicsUnit.Pixel);
+                                Pintar.Dispose();
+                                Pintar = null;
+                                Imagen_Original.Dispose();
+                                Imagen_Original = null;
+                                Imagen.Save(Ruta_Salida + Ruta.Substring(Ruta_Entrada.Length), ImageFormat.Png);
+                                Imagen.Dispose();
+                                Imagen = null;
+                                Lector.Close();
+                                Lector.Dispose();
+                                Lector = null;
+                                /*Imagen.BackgroundColor = new ImageMagick.MagickColor(Color.Transparent);
+                                Imagen.BorderColor = new ImageMagick.MagickColor(Color.Transparent);
+                                //Imagen.Interlace = ImageMagick.Interlace.Png;
+                                Imagen.Interpolate = ImageMagick.PixelInterpolateMethod.Spline;
+                                Imagen.Resize((Imagen.Width * 64) / 512, (Imagen.Height * 64) / 512);
+                                Imagen.ToBitmap(ImageFormat.Png).Save(Ruta_Salida + Ruta.Substring(Ruta_Entrada.Length), ImageFormat.Png);*/
+                            /*}
+                            else
+                            {
+                                Lector.Close();
+                                Lector.Dispose();
+                                Lector = null;
+                                File.Copy(Ruta, Ruta_Salida + Ruta.Substring(Ruta_Entrada.Length));
+                            }
+                        }
+                    }
+                }
+                Matriz_Rutas = null;*/
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); Variable_Excepción_Total++; Variable_Excepción = true; }
         }
@@ -918,7 +980,7 @@ namespace Minecraft_Tools
                 {
                     if (string.IsNullOrEmpty(Program.Texto_Usuario))
                     {
-                        Mostrar_Herramientas = true;
+                        /*Mostrar_Herramientas = true;
                         Program.Texto_Usuario = Environment.UserName;
                         Ventana_Nombre_Usuario Ventana = new Ventana_Nombre_Usuario();
                         Ventana.Variable_Nuevo_Usuario = true;
@@ -934,7 +996,9 @@ namespace Minecraft_Tools
                             Registro_Guardar_Opciones(); // Save the default user name, so the application won't ask again for a new user name.
                         }
                         Ventana.Dispose();
-                        Ventana = null;
+                        Ventana = null;*/
+                        Program.Texto_Usuario = Environment.UserName;
+                        Registro_Guardar_Opciones(); // Save the default user name, so the application won't ask again for a new user name.
                     }
                     else // If the loaded user name only contains spaces, load the default one instead
                     {
