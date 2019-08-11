@@ -45,6 +45,61 @@ namespace Minecraft_Tools
                     "",
                     ""
                 }),*/
+                new Cambios(new DateTime(2019, 08, 11), "1.14.4.0", new string[]
+                {
+                    "Fixed a serious bug thanks to iaraUM, where the 1.13+ to 1.12.2- world converter was missing unlit redstone torches on any wall, and regular torches and banners as well.",
+                    "Now won't ask for a user name the first time unless later manually changed from the help menu. The default name will now be the Windows user name.",
+                    "Cleaned a lot the whole application by removing the less used features which includes very big files, like the seceret ones, so now it should be easier to download.",
+                    "Fixed a bug where the change of the user name from the tool selector wasn't saved properly like it did from the help menu.",
+                    "Converted the magic card guessing tool to a magic number guessing, so all the cards are now gone and the numbers are drawn in real time to save even more space.",
+                    "Removed the newly added Score Viewer tool, since on 64 bits it was lagging a lot and it's on a full project on GitHub for 32 bits near this one now.",
+                    "Removed also the Júpiter Mauro score viewer to save even more space, now instead of it it goes to the online site, which does all from before and even more cool things.",
+                    "Also removed the file with all the scores from Jupisoft, so saved almost 1 MB of extra space.",
+                }),
+                new Cambios(new DateTime(2019, 08, 08), "1.14.4.0", new string[]
+                {
+                    "Added inside the thumbnails generator a new option to export the inmages as JPEG with quality 100 (maximum).",
+                }),
+                new Cambios(new DateTime(2019, 07, 29), "1.14.4.0", new string[]
+                {
+                    "Sadly the yellow kitten die tonight, so there are still 4 left.",
+                    "The number of the octaves where too high by 1, so hopefully now it has been corrected even on the keyboard with 5 octaves.",
+                }),
+                new Cambios(new DateTime(2019, 07, 26), "1.14.4.0", new string[]
+                {
+                    "Added a mouse wheel functionality to change the visualizaton of the panel where the mouse cursor is standing, which is now shown on the status bar.",
+                    "Updated the score viewer to 64 bits by using the corresponding FFTW library, but it's seems to perform a lot slower since then.",
+                    "After a the too slow score viewer it has splitted into a new project on GitHub, and now it's made with 32 bits, so please use that instead.",
+                }),
+                new Cambios(new DateTime(2019, 07, 25), "1.14.3.0", new string[]
+                {
+                    "Added a lot of visualizations and settings to the score viewer, now it's even better, soon the settings will be remembered forever in the registry.",
+                }),
+                new Cambios(new DateTime(2019, 07, 24), "1.14.3.0", new string[]
+                {
+                    "Finished enough the first release of the score viewer tool, now it even supports a simulated audio input if it fails to record in real time.",
+                }),
+                new Cambios(new DateTime(2019, 07, 23), "1.14.3.0", new string[]
+                {
+                    "Added Lissajous curves to show the frequency changes, but it seems to use a lot of CPU.",
+                    "Added a direct sample to pixel conversion, which might be used to show low frequencies like a \"kick\", which might be used to detect the tempo of a song.",
+                    "2 more kittens have been born from the same mother, a white siamese and one fully yellow."
+                }),
+                new Cambios(new DateTime(2019, 07, 22), "1.14.3.0", new string[]
+                {
+                    "3 new kittens have been born, one with mixed black, white and yellow, one siamese a bit gray, and another siamese with mixed gray spots.",
+                    "Added from scratch most of the visualizations for the score viewer tool.",
+                }),
+                new Cambios(new DateTime(2019, 07, 21), "1.14.3.0", new string[]
+                {
+                    "Added a new core viewer tool, which will be the most powerful audio tool ever made by Jupisoft, sadly for now it needs to be compiled as 32 bits due to the FFTW.",
+                }),
+                new Cambios(new DateTime(2019, 05, 26), "1.14.3.0", new string[]
+                {
+                    "TODO: the structure icons aren't loading properly due to changes inside the chunk's NBT structures. Soon this should be fixed forever.",
+                    "Replaced the moon image with a new HD image at 640 x 640 pixels for the virtual moon tool.",
+                    "Updated the code from the virtual moon tool, now it already works on real time until the year 2100.",
+                }),
                 new Cambios(new DateTime(2019, 05, 10), "1.14.0.0", new string[]
                 {
                     "Replaced the custom light level resource packs generator with a custom light maps, which can even generate mob spawing detector or infinite night vision packs.",
