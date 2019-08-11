@@ -45,6 +45,7 @@ namespace Minecraft_Tools
             Slime_chunk_farm,
             Text,
             Painted_structure,
+            Floating_city,
             Total // Don't use
         }
 
@@ -100,12 +101,66 @@ namespace Minecraft_Tools
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
         }
 
+        internal void Dibujar_Iteraciones(Graphics Pintar, double[] Matriz_Ángulos_Seno, double[] Matriz_Ángulos_Coseno, double Radio, double Centro, double X, double Y, int Iteración, int Iteraciones)
+        {
+            try
+            {
+                Pintar.ResetTransform();
+                Pintar.TranslateTransform((float)X, (float)Y);
+                Pintar.DrawEllipse(Pens.Black, (float)(-Radio), (float)(-Radio), (float)(Radio * 2d), (float)(Radio * 2d));
+                //Pintar.DrawEllipse(/*Pens.Black*/new Pen(Program.Obtener_Color_Puro_1530(Program.Rand.Next(0, 1530))), (float)(-Radio), (float)(-Radio), (float)(Radio * 2d), (float)(Radio * 2d));
+                Pintar.ResetTransform();
+                Pintar.TranslateTransform((float)Centro, (float)Centro);
+                //Pintar.DrawLine(/*Pens.Red*/new Pen(Program.Obtener_Color_Puro_1530(Program.Rand.Next(0, 1530))), (float)(X - Centro), (float)(Y - Centro), (float)0, (float)0);
+                if (Iteración < Iteraciones)
+                {
+                    for (int Índice_Ángulo = 0; Índice_Ángulo < Matriz_Ángulos_Seno.Length; Índice_Ángulo++)
+                    {
+                        Dibujar_Iteraciones(Pintar, Matriz_Ángulos_Seno, Matriz_Ángulos_Coseno, Radio, Centro, X - Matriz_Ángulos_Seno[Índice_Ángulo], Y - Matriz_Ángulos_Coseno[Índice_Ángulo], Iteración + 1, Iteraciones);
+                    }
+                }
+            }
+            catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
+        }
+
         private void Ventana_Generador_Estructuras_Masivas_Shown(object sender, EventArgs e)
         {
             try
             {
                 Temporizador_Principal.Start();
                 this.Activate();
+
+                /*// Draw the "Flower of life" and other shapes [2019_06_03_04_56_59_864]...
+                double Dimensiones = 2048d;
+                Bitmap Imagen = new Bitmap((int)Dimensiones, (int)Dimensiones, PixelFormat.Format32bppArgb);
+                Graphics Pintar = Graphics.FromImage(Imagen);
+                Pintar.CompositingMode = CompositingMode.SourceOver;
+                Pintar.CompositingQuality = CompositingQuality.HighQuality;
+                Pintar.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                Pintar.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                Pintar.SmoothingMode = SmoothingMode.None; // HighQuality;
+                Pintar.TextRenderingHint = TextRenderingHint.AntiAlias;
+                Pintar.Clear(Color.White);
+
+                double Centro = Dimensiones / 2d;
+                double Radio = 128d;
+                int Ángulos = 6;
+                double[] Matriz_Ángulos_Seno = new double[Ángulos];
+                double[] Matriz_Ángulos_Coseno = new double[Ángulos];
+                for (int Índice_Ángulo = 0; Índice_Ángulo < Ángulos; Índice_Ángulo++)
+                {
+                    Matriz_Ángulos_Seno[Índice_Ángulo] = Radio * Math.Sin((((360d * (double)Índice_Ángulo) / (double)Ángulos) * Math.PI) / 180d);
+                    Matriz_Ángulos_Coseno[Índice_Ángulo] = Radio * Math.Cos((((360d * (double)Índice_Ángulo) / (double)Ángulos) * Math.PI) / 180d);
+                }
+                Dictionary<PointF, object> Diccionario_Centros = new Dictionary<PointF, object>();
+                PointF Posición = new PointF((float)(Dimensiones / 2d), (float)(Dimensiones / 2d));
+                int Iteraciones = 5;
+                Dibujar_Iteraciones(Pintar, Matriz_Ángulos_Seno, Matriz_Ángulos_Coseno, Radio, Centro, Centro, Centro, 0, Iteraciones);
+                Pintar.Dispose();
+                Pintar = null;
+                Program.Guardar_Imagen_Temporal(Imagen);
+                Imagen.Dispose();
+                Imagen = null;*/
             }
             catch (Exception Excepción) { Depurador.Escribir_Excepción(Excepción != null ? Excepción.ToString() : null); }
         }
@@ -1847,6 +1902,71 @@ namespace Minecraft_Tools
                                 Bloques = null;
                                 Mundo = null;
                             }
+                        }
+                        else if (Variable_Estructura == Estructuras.Floating_city)
+                        {
+                            // ...
+
+                            /*Diámetro_16 = Variable_Diámetro + 16;
+                            Bloques_Ancho = 0;
+                            Bloques_Alto = 0;
+                            for (int Índice_Z = -16, Chunk_Z = -1; Índice_Z < Diámetro_16; Índice_Z += 16, Chunk_Z++, Bloques_Alto += 16)
+                            {
+                                Bloques_Ancho = 0;
+                                for (int Índice_X = -16, Chunk_X = -1; Índice_X < Diámetro_16; Índice_X += 16, Chunk_X++, Bloques_Ancho += 16)
+                                {
+                                    ChunkRef Chunk = Chunks.CreateChunk(Chunk_X, Chunk_Z);
+                                    Chunk.IsLightPopulated = true; // For 1.13+ conversion support.
+                                    Chunk.IsTerrainPopulated = true;
+                                    Chunk.Blocks.AutoLight = false;
+                                    if (Índice_X > -1 && Índice_Z > -1 && Índice_X < Variable_Diámetro && Índice_Z < Variable_Diámetro)
+                                    {
+                                        for (int Z = 0; Z < 16; Z++)
+                                        {
+                                            for (int X = 0; X < 16; X++)
+                                            {
+                                                Chunk.Blocks.SetID(X, 0, Z, (int)BlockType.BEDROCK); // Structure floor
+                                            }
+                                        }
+                                    }
+                                    Chunk.Blocks.RebuildHeightMap();
+                                    Chunk.Blocks.RebuildBlockLight();
+                                    Chunk.Blocks.RebuildSkyLight();
+                                }
+                            }
+                            if (Construir_Paredes_Cristal)
+                            {
+                                Bloques_Ancho -= 16;
+                                Bloques_Alto -= 16;
+                                for (int Índice_X = -16; Índice_X < Bloques_Ancho - 1; Índice_X++) // North glass wall
+                                {
+                                    for (int Índice_Y = 0; Índice_Y < 63; Índice_Y++)
+                                    {
+                                        Bloques.SetID(Índice_X, Índice_Y, -16, Índice_Y != 0 ? (int)BlockType.GLASS : (int)BlockType.BEDROCK);
+                                    }
+                                }
+                                for (int Índice_Z = -16; Índice_Z < Bloques_Alto - 1; Índice_Z++) // East glass wall
+                                {
+                                    for (int Índice_Y = 0; Índice_Y < 63; Índice_Y++)
+                                    {
+                                        Bloques.SetID(Bloques_Ancho - 1, Índice_Y, Índice_Z, Índice_Y != 0 ? (int)BlockType.GLASS : (int)BlockType.BEDROCK);
+                                    }
+                                }
+                                for (int Índice_X = Bloques_Ancho - 1; Índice_X >= -16; Índice_X--) // South glass wall
+                                {
+                                    for (int Índice_Y = 0; Índice_Y < 63; Índice_Y++)
+                                    {
+                                        Bloques.SetID(Índice_X, Índice_Y, Bloques_Alto - 1, Índice_Y != 0 ? (int)BlockType.GLASS : (int)BlockType.BEDROCK);
+                                    }
+                                }
+                                for (int Índice_Z = Bloques_Alto - 1; Índice_Z >= -16; Índice_Z--) // West glass wall
+                                {
+                                    for (int Índice_Y = 0; Índice_Y < 63; Índice_Y++)
+                                    {
+                                        Bloques.SetID(-16, Índice_Y, Índice_Z, Índice_Y != 0 ? (int)BlockType.GLASS : (int)BlockType.BEDROCK);
+                                    }
+                                }
+                            }*/
                         }
                     }
                     for (int Índice_Z = -16, Chunk_Z = -1; Índice_Z < Diámetro_16; Índice_Z += 16, Chunk_Z++)
