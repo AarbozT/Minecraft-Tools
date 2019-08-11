@@ -758,7 +758,7 @@ namespace Minecraft_Tools
             "100% vegetarian!",
             "100% peaceful!",
             "99% silent!",
-            "Always at version 1.0!",
+            "At the same version of Minecraft!", //"Always at version 1.0!",
             "All-in-one!",
             "Remembering past lives!",
             "Death is an illusion!",
@@ -1173,6 +1173,8 @@ namespace Minecraft_Tools
             "Now with a 3D block simulator!",
             "Now with more universal tools!",
             "Intel HD Graphics crashes with VBOs!",
+            "Optifine can turn off the VBOs!",
+            "Thank you Optifine!",
             "Try Raven Pack for Twitch by ISpectre23!",
             "Now with secret knowledge tools!",
             "1st dimension fractal: diagonal line!",
@@ -1184,7 +1186,12 @@ namespace Minecraft_Tools
             "Seed \"Draculaura\" for MC 1.13!",
             "Seed -1994576438 for MC 1.13!",
             "Now with resource pack converter!",
-            "Click on the lightning to select a tool!",
+            "Click on the lightning to start a tool!",
+            "Minecraft Earth!",
+            "Now with audio recording in real time!",
+            "Now with lissajous curves!",
+            "Now with a real time FFT!",
+            "Now with a score viewer!",
         });
 
         /// <summary>
